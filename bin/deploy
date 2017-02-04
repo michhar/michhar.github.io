@@ -8,7 +8,7 @@ set -e
 echo "Started deploying"
 
 # Checkout gh-pages branch.
-if [ `git branch | grep gh-pages` ]
+if [ `git branch | grep master` ]
 then
   git branch -D master
 fi
