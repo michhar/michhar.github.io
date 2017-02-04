@@ -1,0 +1,95 @@
+
+##########################################
+#     Change these variables !important
+##########################################
+
+# Set this for Copyright in the footer
+owner: michhar
+
+
+# Optional quote in the footer
+# To disable set enable to false
+quote:
+  enable: true
+
+  quote: A.I. must have algorithmic accountability so that humans can undo unintended harm. We must design these technologies for the expected and the unexpected.
+  author: Satya Nadella
+
+# Set this to your main site title
+# In the head - ff page doesnt have its own title,
+# Site title will be used instead
+title: micheleen_blog
+
+# Description and title below nav in the header
+punch-line: true
+
+# Your logo for the header
+logo:
+  title: micheleen_harris
+  subtitle: analytics_trainer
+
+
+include:
+  - pages
+
+# Following needed for disqus integration
+# Set your 'disqus' short name
+disqus: 'blog-vf2v0kav1a'
+
+# Uncomment if deployed locally
+#u# rl: https://localhost:4000
+
+# Set your host if deployed not locally
+# For example "https://yourGitHub.github.io"
+url: https://michhar.github.io
+
+# Change this to your base URL starting with forward slash if site is in gh-pages branch
+# For example /branchName
+baseurl:
+
+# Change this to your google analytics ID
+google_analytics: MicheleenAnalytics
+
+# Contact form pupublic key
+# contact_PK:
+
+##########################################
+#          Optional variables
+##########################################
+
+
+# Set maximum posts per page
+paginate: 5
+
+# Set permalink
+permalink: /:categories/:title
+
+# Set excerpt separator
+truncate_size: 40
+
+##########################################
+#          Do not change these variables
+##########################################
+
+sass:
+  sass_dir: _sass
+sass:
+    style: compressed
+
+include:
+  - pages
+
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap # add /sitemap.xml file
+
+paginate_path: /_pages/page:num
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+
+assets:
+  autoprefixer:
+    browsers: ["last 2 versions","> 5%","IE 9", "IE 11"]
