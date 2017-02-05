@@ -271,15 +271,19 @@ The code for this set of helper functions can be found [here](https://docs.micro
 
 Just include `ptvs_virtualenv_proxy` in the base of your project along with the `web.config` (and auto-created `requirements.txt` and `runserver.py`).
 
+Finally, to test all of this code locally just click the run button in the navi in VS (your default browser should also appear there).
+
+Congrats, you have tested this locally and things seem to be good.
+
 ### Deploy the Flask Web App
 
 #### Option 1: Set up a GitHub Repository as the Deployment Option
 
 This is the most customizable way, hence more complex, but also the most transparent and easy to troubleshoot.  
 
-1.  Log in to GitHub and create a new repository, initializing with a README and a .gitignore for Visual Studio files.
-2.  In Git bash on the Desktop, type into the terminal the command to clone the new repository, for example, my repository is called `flask-webapp-aml` so I clone with (I'm using SSH because it will allow me to push changes back up):
-  * `git clone git@github.com:michhar/flask-webapp-aml.git`
+1.  Log in to GitHub and create a new repository (I called mine `flask-webapp-aml`, initializing with a README and a .gitignore for Visual Studio files.
+2.  In Git bash on the Desktop, type into the terminal the command to clone the new repository, for example: (I'm using SSH because it will allow me to push changes back up):
+  * `git clone git@github.com:<your github username without these triangle brackets>/flask-webapp-aml.git`
 3. Copy all of the project code to this new repository folder locally (I just `cp` on the command line in Git bash) to match this structure:
 
   ```text
