@@ -204,7 +204,7 @@ Now that we have some new code to handle calling the AML web service and html te
 Before we publish, we must add two configuration-type files:
 
 1.  A web configuration file (web.config)
-*  Virtual environment proxy (ptvs_virtualenv_proxy.py)
+2.  Virtual environment proxy (ptvs_virtualenv_proxy.py)
 
 The `web.config` file may need some modifications, however the virtual environment proxy file should work as is from this folder.
 
@@ -310,6 +310,7 @@ This is the most customizable way, hence more complex, but also the most transpa
  ![image of entering in keys to Azure portal app service]({{ site.baseurl }}/resources/images/flaskapp-adding-sys-vars.jpg)
 8.  Ensure that, in the Portal, under Application Settings, Python is set to the appropriate version (default is that "Python" is Off in settings - so will need to manually switch to it's version).
 8.  If we go back to the "Deployment options" we can see how our build is going.  This process will automatically happen for us every time a new change is made to our GitHub repository.  Ensure that this build completes successfully.
+9.  Finally, if you go to "Overview" and click on the web app's URL, you'll see your site.
 
 Congrats on completing this process!  You should now have a functioning barebones, machine learning web app.  Go ahead and try it out. :)
 
