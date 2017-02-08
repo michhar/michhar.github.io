@@ -29,7 +29,7 @@ That all being said, most of this post is about creating the Flask web app.  I'l
 ### Before you Begin, a Few Things to Do...
 
 #### Tools
-- [recommended]**Visual Studio** installed (using 2017 release candidate) ([https://www.visualstudio.com/vs/visual-studio-2017-rc/](https://www.visualstudio.com/vs/visual-studio-2017-rc/)) with Python Tools for Visual Studio installed (to get the Flask Web App template)
+- [recommended]**Visual Studio** installed (Community 2015 Edition is what I use; NB:  the preview of 2017 is adding PTVS soon...I'll update on this later;  also, VS 2017 is available for Mac OSX) ([Visual Studio Community](https://www.visualstudio.com/downloads/)) with **Python Tools for Visual Studio** installed (to get the Flask Web App template) which can be added during the install of VS or separately from [here](https://www.visualstudio.com/vs/python/)
 - **Git Bash** or **git** installed - included in git download
   * [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
@@ -60,7 +60,7 @@ A similar guide with good diagrams on deploying the experiment as a web service 
 
 **Note:  Under REQUEST/RESPONSE for the AML Studio experiment (found after deploying as web service from Studio), one will find all of the specs needed to work with this endpoint.**
 
-Let's write a web app!  We're going to begin in Visual Studio (I'm checking out the new VS 2017 release candidate, by the way).  Did you know VS 2017 is available for Mac as well?!  What's especially cool is that developers can share projects across Mac and Windows.  The Python Tools for Visual Studio extension isn't available, however, on VS 2017 RC for Mac so I'm eagerly awaiting this capability.  Will report back later.  Since it is available for us on Windows we will be using the awesome Flask Web Project template that comes with it to kick start our web app dev.
+Let's write a web app!  We're going to begin in Visual Studio.  As an aside, did you know VS 2017 is available for Mac?!  What's especially cool is that developers can share projects across Mac and Windows.  The Python Tools for Visual Studio extension isn't available, however, on VS 2017 so I'm eagerly awaiting this capability.  Will report back later.  Since VS 2015 with PTVS is available for us on Windows we will be using the awesome Flask Web Project template that comes with it to kick start our web app dev in Windows 10.
 
 *  Open VS
 
