@@ -17,11 +17,26 @@ Ok, so I have an interesting REST endpoint (in my case, a machine learning model
 
 Essentially, we are making a web app wrapper around a data submission and retrieval REST endpoint that is created through Azure Machine Learning (AML) Studio ([https://studio.azureml.net](https://studio.azureml.net)), a friendly and powerful machine learning tool with a handy browser UI.  In this post, the endpoint is a service that clusters companies based on descriptive text (our input data).  The clustering model, a k-means algorithm, has been trained on close to 500 wikipedia entries, a cool example of [unsupervised learning](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-algorithm-choice#unsupervised).  If you don't know much yet about AML Studio and would like to know more [this](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-what-is-ml-studio) is a good place to start or dive in and learn by doing with a quick getting-started tutorial [here](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-create-experiment).  You'll need to know, at least, how to publish an experiment from Studio to get your Flask web app going.
 
-The ML web service is based around an AML scoring experiment, built from a training experiment in which `K-Means Clustering` module is used to assign companies to groups based on features in their processed Wikipedia text.   The `Extract N-Gram Features from Text` module (more info [here](https://msdn.microsoft.com/library/azure/a8a662d0-89bb-48c9-8562-9b9589124c4a)) is used after some initial cleansing of the text data (remove stop words, numbers, special characters, detect sentences, etc. - see the `Preprocess Text` AML module [here](https://msdn.microsoft.com/en-us/library/mt762915.aspx)) to extract features upon which to train the k-means clustering model and reduce the dimensionality to the most important chunks of information.  The scoring experiment uses a stored vocabulary from the training data n-gram feature extraction process.
+The ML web service is based around an AML scoring experiment, built from a training experiment in which `K-Means Clustering` module is used to assign companies to groups based on features in their processed Wikipedia text.   The `Extract N-Gram Features from Text` module (more info [here](https://msdn.microsoft.com/library/azure/a8a662d0-89bb-48c9-8562-9b9589124c4a)) is used after some initial cleansing of the text data (remove stop words, numbers, special characters, detect sentences, etc. - see the `Preprocess Text` AML module [here](https://msdn.microsoft.com/en-us/library/mt762915.aspx)) to extract features upon which to train the k-means clustering model and reduce the dimensionality to the most important chunks of information.  The scoring experiment uses a stored vocabulary from the training data n-gram feature extraction process (a good explanation of n-grams can be found in this blog on extracting features from text for classification, a different kind of ML algorithm - check it out [here](https://www.microsoft.com/developerblog/real-life-code/2015/11/30/Text-based-Feature-Representations-1-Gram-2-Gram-or-3-Gram-But-Just-How-Many-Gram.html)).
+
+
+Real quick, an example of extracting n-grams from:  "_Time lost is never found._"
+
+* An example from the blog link I just listed above (this [one](https://www.microsoft.com/developerblog/real-life-code/2015/11/30/Text-based-Feature-Representations-1-Gram-2-Gram-or-3-Gram-But-Just-How-Many-Gram.html))
+
+Where n=1, that is a uni-gram	| 	Where n=2, that is a bi-gram	| 	Where n=3, that is a tri-gram |
+| --- | --- | --- |
+Time	| 	Time lost	 |	Time lost is |
+lost	| 	lost is	 |	lost is never |
+is	| 	is never	| 	is never found |
+never	| 	never found	 |   | 	 
+found	 |	 |	 |	 
+
+So, you have an idea of the initial training dataset (but imagine 10,000 or more of these n-grams as our features from all of that Wikipedia text - it can be seen why feature selection is sometimes helpful for narrowing down to the most important features and we can also do this with the `Extract N-Gram Features from Text` module in AML).  Ok, let's move on to the app building fun.
 
 Our web app is going to utilize a microframework for building web apps purely in the Python programming language.  A big reason to begin in this framework is that Python, a popular Data Science language, is easy to read and learn and Visual Studio has a Flask web app template as part of the Python Tools for Visual Studio extension, making life much easier for us.  Python, as a language, is also known for being a popular web app development language and has other projects like [Django](https://www.djangoproject.com/) and [Bottle](https://bottlepy.org/docs/dev/) for these ends (also with templates in VS).
 
-That all being said, most of this post is about creating the Flask web app.  I'll leave it to other guides and articles to discuss working with AML in detail.
+That all being said, most of this post is about creating the Flask web app.  I'll leave it to other guides and articles to discuss working with AML and k-means in detail.
 
 ![input for webapp]({{ site.baseurl }}/resources/images/webapp-input.PNG)
 **Above:  The deployed web app site**
