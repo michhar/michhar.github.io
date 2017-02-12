@@ -15,9 +15,9 @@ tags:
 
 ### Step 1 The AML Workflow
 
-We start with an Azure Machine Learning "experiment" (or a file, see [Step 2 Second Way](#step-2-second-way)) or what I like to call data science workflow (I'll use the word workflow here).  In it I've fed some cleansed data into a k-means clustering algorithm.  
+We start with an Azure Machine Learning "experiment" (or a file, see [Step 2 Second Way](#step-2-second-way)) or what I like to call data science workflow (I'll use the word workflow here).  In it I've fed some cleansed data into a k-means clustering algorithm (I like this brief post on [k-means](http://stanford.edu/~cpiech/cs221/handouts/kmeans.html) and it's got python snippets as well!).
 
-This workflow is for text feature extraction, selection and clustering based on extracted features as n-grams (see the thrid paragraph [here](https://michhar.github.io/posts/a-python-flask-webapp-gets-smart) for a quick explanation of this workflow and n-grams).  I have one workflow with an _a priori_ value for the centroids of 10 for the k-means algorithm.  Here's a screenshot of the workflow (starting dataset is a listing of 500 Wikipedia articles, cleaned up, along with some category labels for "groundtruth" comparisons later).
+This workflow is for text feature extraction, selection and clustering based on extracted features as n-grams (check out the intro [here](https://michhar.github.io/posts/a-python-flask-webapp-gets-smart) for a quick explanation of this workflow and n-grams).  I have one workflow with an _a priori_ value for the centroids of 10 for the k-means algorithm.  Here's a screenshot of the workflow (starting dataset is a listing of 500 Wikipedia articles, cleaned up, along with some category labels for "groundtruth" comparisons later - remember k-means is [unsupervised](http://machinelearningmastery.com/supervised-and-unsupervised-machine-learning-algorithms/)).
 
 ![show training workflow]({{ site.baseurl }}/resources/images/cm_workflow.png)
 
@@ -25,12 +25,12 @@ This workflow is already ready for you to use for free (using a Microsoft ID lik
 
 https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2
 
-Just to highlight, n the AML workflow I selected my desired columns for the confusion matrix with `Select Columns in Dataset` module to get 'Category' and 'Assignment' (cluster assignment as an integer from 0 to number of centroids I specified at the beginning).
+Just to highlight, in the AML workflow I selected my desired columns for the confusion matrix with `Select Columns in Dataset` module to get 'Category' and 'Assignment' (cluster assignment as an integer from 0 to number of centroids I specified at the beginning).
 
 ### Step 2 First Way
 
-1.  I added a `Convert to CSV` module (as you can see in above workflow diagram) after the `Select Columns in Dataset`.
-2. Then I right clicked on the output node of the `Convert to CSV` and a little menu popped up from which I selected "Open in a new Notebook" and "Python 3".
+1.  Notice, I added a `Convert to CSV` module (as you can see in above workflow diagram) after the `Select Columns in Dataset`.
+2. I right clicked on the output node of the `Convert to CSV` and a little menu popped up from which I selected "Open in a new Notebook" and "Python 3" (because Python 3 rules of course - my R colleagues are going to really chide me now).
 
 ![show opening as notebook]({{ site.baseurl }}/resources/images/cm_open_as_notebook.png)
 
