@@ -1,4 +1,4 @@
 ---
 slug: data-science
-name: Data Science
+name: Data-Science
 ---
