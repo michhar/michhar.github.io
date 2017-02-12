@@ -17,7 +17,7 @@ tags:
 
 We start with an Azure Machine Learning "experiment" (or a file, see [Step 2 Second Way](#step-2-second-way)) or what I like to call data science workflow (I'll use the word workflow here).  In it I've fed some cleansed data into a k-means clustering algorithm.  
 
-This workflow is for text feature extraction, selection and clustering based on extracted features as n-grams (see the thrid paragraph [here](https://michhar.github.io/posts/a-python-flask-webapp-gets-smart) for a quick explanation of this workflow and n-grams).  I have one workflow with an _a priori_ value for the centroids of 20 and one for 10 to start with for the k-means algorithm.  In this post I'll be handling the 10 centroid example.  Here's a screenshot of the workflow (starting dataset is a group of 500 Wikipedia articles, cleaned up).
+This workflow is for text feature extraction, selection and clustering based on extracted features as n-grams (see the thrid paragraph [here](https://michhar.github.io/posts/a-python-flask-webapp-gets-smart) for a quick explanation of this workflow and n-grams).  I have one workflow with an _a priori_ value for the centroids of 10 for the k-means algorithm.  Here's a screenshot of the workflow (starting dataset is a listing of 500 Wikipedia articles, cleaned up, along with some category labels for "groundtruth" comparisons later).
 
 ![show training workflow]({{ site.baseurl }}/resources/images/cm_workflow.png)
 
@@ -25,7 +25,7 @@ This workflow is already ready for you to use for free (using a Microsoft ID lik
 
 https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2
 
-* In the AML workflow I selected desired columns with `Select Columns in Dataset` module to get 'Category' and 'Assignment' (cluster assignment as an integer from 0 to number of centroids I specified at the beginning).
+Just to highlight, n the AML workflow I selected my desired columns for the confusion matrix with `Select Columns in Dataset` module to get 'Category' and 'Assignment' (cluster assignment as an integer from 0 to number of centroids I specified at the beginning).
 
 ### Step 2 First Way
 
@@ -48,11 +48,11 @@ ds = experiment.get_intermediate_dataset(
 frame = ds.to_dataframe()
 ```
 
-This imported our final dataset as a `pandas` DataFrame.
+And imported our final dataset as a `pandas` DataFrame.
 
 To get a confusion matrix we use `pandas.crosstab` and `matplotlib` as follows:
 
-I created a cell and used `pandas`'s `crosstab` to aggregate the Categories and Assignments into a matrix.
+I created a cell and used `pandas`'s `crosstab` to aggregate the Categories by Assignments and place into a matrix.
 
 ```python
 # Creating our confusion matrix data
@@ -102,7 +102,7 @@ Health Care                   3  0   0  1   1  0   0   0   0  47
 ...
 ```
 
-And finally, I used `matplotlib` and an example from the python docs, with this code,
+And finally, I used `matplotlib` and a modified example from the python docs, with this code,
 
 ```python
 # Plot our confusion matrix
@@ -156,7 +156,7 @@ plot_confusion_matrix(cm, normalize=True,
 
 ```
 
-to create these plots (a non-normalized and normalized confusion matrix):
+to create the following awesome plots (a non-normalized and normalized confusion matrix):
 
 ![show the matrices]({{ site.baseurl }}/resources/images/confusion_matrices.png)
 
