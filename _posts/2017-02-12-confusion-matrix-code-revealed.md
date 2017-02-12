@@ -5,7 +5,7 @@ comments: true
 description: Some python code snippets around a useful ML metric
 tags:
     - python
-    - machine-learning
+    - data-science
     - azure
 ---
 
