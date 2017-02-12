@@ -23,7 +23,7 @@ This workflow is for text feature extraction, selection and clustering based on 
 
 This workflow is already ready for you to use for free (using a Microsoft ID like outlook.com, xbox, hotmail, etc. accounts.)  Find it in Cortana Intelligence Gallery (love this place for all of its abundance of resources):  
 
-https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2
+[https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2](https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2)
 
 Just to highlight, in the AML workflow I selected my desired columns for the confusion matrix with `Select Columns in Dataset` module to get 'Category' and 'Assignment' (cluster assignment as an integer from 0 to number of centroids I specified at the beginning).
 
@@ -48,9 +48,9 @@ ds = experiment.get_intermediate_dataset(
 frame = ds.to_dataframe()
 ```
 
-And imported our final dataset as a `pandas` DataFrame.
+And imported my final dataset as a `pandas` DataFrame.
 
-To get a confusion matrix we use `pandas.crosstab` and `matplotlib` as follows:
+To get a confusion matrix I use `pandas.crosstab` and `matplotlib`.
 
 I created a cell and used `pandas`'s `crosstab` to aggregate the Categories by Assignments and place into a matrix.
 
