@@ -118,7 +118,7 @@ def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.BuPu, normal
     
     if normalize:
         # Normalize each row by the row sum
-        sum_col = [a[0] for a in cm.sum(axis=1)[:, np.newaxis]]
+        sum_row = [a[0] for a in cm.sum(axis=1)[:, np.newaxis]]
         df_cm = pd.DataFrame(cm)
         df_sum = pd.DataFrame(sum_row)
         df = df_cm.as_matrix() / df_sum.as_matrix()
