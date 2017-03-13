@@ -31,8 +31,7 @@ coolname_project
         __init__.py
         somecoolmodule.py
         command_line.py
-        tests/
-            __init__.py
+        test/
             test_somecoolmodule.py
             test_command_line.py
     docs/
@@ -123,9 +122,11 @@ This is what I've gleaned so far from guides.
 
 `coolname/` — the source folder with sub-modules (e.g. sub-module file called `dosomething.py`) and containing an `__init__.py` file (usually empty, but req'd for installation)
 
-`coolname/tests/` — unit tests folder; this folder is a package itself so should have a `__init__.py` (usually empty) with test files called, for example, `test_dosomething.py`.
+`coolname/test/` — package folder to hold tests; place files that begin with "test" such as `test_dosomething.py` so that programs like [`pytest`](http://doc.pytest.org/en/latest/contents.html) can find them and execute.
 
-`setup.py` — script to install/test the package and provide metadata (e.g. the long_description for PyPi)
+NOTE:  There's an alternative test folder structure where the test-containing folder is named `tests` (plural) and placed at the base of the package (with `setup.py`) - check out [this](http://doc.pytest.org/en/latest/goodpractices.html) doc on `pytest`'ing and folder structures.
+
+`setup.py` — script to install/test the package and provide metadata (e.g. the long_description for PyPi) - necessary to have a `pip` installable package.
 
 `README` — basic information on the package, how to use, how to install, etc.
 
