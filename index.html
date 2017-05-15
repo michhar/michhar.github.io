@@ -32,6 +32,11 @@ title: "Waterfalls of data"
             <a href="{{ 'tag/' | relative_url }}{{ tag }}">{{ tag }}</a>
           {% endfor %}
         </div>
+        <br>
+        <div class="article-list-tags">
+          <img src="{{ post.logo }}" alt="post logo" href="{{ post.url | relative_url }}" width="30%" align="center"></img>
+        </div>
+
       </div>
     </li>
   {% endfor %}

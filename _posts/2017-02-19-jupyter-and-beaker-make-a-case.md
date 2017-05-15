@@ -3,6 +3,7 @@ layout: post
 title: The Notebook Superhero -- Is It Always a Contest?
 comments: true
 description: A discussion around Beaker and Jupyter notebooks
+logo:  "../resources/images/jupyter_beaker/header_beaker_n_jupyter.jpg"
 tags:
     - r
     - python

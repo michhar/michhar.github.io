@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Wading in a tide pool of choices, how do I begin writing a package in python?
+title: Wading In a Tide Pool of Choices, How Do I Begin Writing a Package in Python?
 comments: true
 description: Answer - there are guidelines and a general consensus with a touch of flexibility
+logo: "../resources/images/packages1/whatspackage.jpg"
 tags:
     - python
     - dev

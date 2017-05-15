@@ -3,6 +3,7 @@ layout: post
 title: OCRBot Gets Attached
 comments: true
 description: A short chatterbot dev story Part 3
+logo:  "../resources/images/bot_part3/knn_mharris_letters.jpg"
 tags:
     - bots
     - dev

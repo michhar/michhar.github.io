@@ -3,6 +3,7 @@ layout: post
 title: Tips I've Learned by Being a Trainer for a Year
 comments: true
 description: A few things I've picked up on for giving a successful and engaging tutorial/workshop.
+logo:  "../resources/images/hyd_class.jpg"
 tags:
     - teaching
 ---
