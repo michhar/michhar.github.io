@@ -3,87 +3,87 @@
   <channel>
     <title>Waterfalls of data</title>
     <description></description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://michhar.github.io</link>
+    <atom:link href="https://michhar.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>How I Became a Data Scientist Part 1</title>
         <description>My personal path</description>
         <pubDate>Mon, 15 May 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/posts/data-science-story-part1</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/data-science-story-part1</guid>
+        <link>https://michhar.github.io/posts/data-science-story-part1</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/data-science-story-part1</guid>
       </item>
     
       <item>
         <title>Wading In a Tide Pool of Choices, How Do I Begin Writing a Package in Python?</title>
         <description>Answer - there are guidelines and a general consensus with a touch of flexibility</description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/two-cents-on-python-package-structure</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/two-cents-on-python-package-structure</guid>
+        <link>https://michhar.github.io/posts/two-cents-on-python-package-structure</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/two-cents-on-python-package-structure</guid>
       </item>
     
       <item>
         <title>OCRBot Gets Attached</title>
         <description>A short chatterbot dev story Part 3</description>
         <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/ocrbot-gets-attached</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/ocrbot-gets-attached</guid>
+        <link>https://michhar.github.io/posts/ocrbot-gets-attached</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/ocrbot-gets-attached</guid>
       </item>
     
       <item>
         <title>The Notebook Superhero -- Is It Always a Contest?</title>
         <description>A discussion around Beaker and Jupyter notebooks</description>
         <pubDate>Sun, 19 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/jupyter-and-beaker-make-a-case</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/jupyter-and-beaker-make-a-case</guid>
+        <link>https://michhar.github.io/posts/jupyter-and-beaker-make-a-case</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/jupyter-and-beaker-make-a-case</guid>
       </item>
     
       <item>
         <title>Javascript and Python Meet through Magic and IPython</title>
         <description>A short, simple post on passing variables between these two languages in Jupyter notebooks</description>
         <pubDate>Sat, 18 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/javascript-and-python-have-a-party</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/javascript-and-python-have-a-party</guid>
+        <link>https://michhar.github.io/posts/javascript-and-python-have-a-party</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/javascript-and-python-have-a-party</guid>
       </item>
     
       <item>
         <title>A Simple, Presentable Confusion Matrix with K-means Data</title>
         <description>Some python code snippets around a useful ML metric</description>
         <pubDate>Sun, 12 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/confusion-matrix-code-revealed</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/confusion-matrix-code-revealed</guid>
+        <link>https://michhar.github.io/posts/confusion-matrix-code-revealed</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/confusion-matrix-code-revealed</guid>
       </item>
     
       <item>
         <title>Creating a Python Flask Web App that Uses an Azure Machine Learning Model to Cluster Text Features - A True Smart App</title>
         <description>A tech piece on using one of my favorite web microframeworks to serve up some ML</description>
         <pubDate>Sun, 05 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/a-python-flask-webapp-gets-smart</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/a-python-flask-webapp-gets-smart</guid>
+        <link>https://michhar.github.io/posts/a-python-flask-webapp-gets-smart</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/a-python-flask-webapp-gets-smart</guid>
       </item>
     
       <item>
         <title>OCRBot Makes a Connection to the Cloud</title>
         <description>A short chatterbot dev story Part 2</description>
         <pubDate>Tue, 15 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/ocrbot-makes-a-connection</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/ocrbot-makes-a-connection</guid>
+        <link>https://michhar.github.io/posts/ocrbot-makes-a-connection</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/ocrbot-makes-a-connection</guid>
       </item>
     
       <item>
         <title>Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</title>
         <description>A short chatterbot dev story</description>
         <pubDate>Mon, 07 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/posts/how-to-bot-on-mac</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/how-to-bot-on-mac</guid>
+        <link>https://michhar.github.io/posts/how-to-bot-on-mac</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/how-to-bot-on-mac</guid>
       </item>
     
       <item>
         <title>Tips I've Learned by Being a Trainer for a Year</title>
         <description>A few things I've picked up on for giving a successful and engaging tutorial/workshop.</description>
         <pubDate>Mon, 24 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/posts/teaching-notes-post</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/teaching-notes-post</guid>
+        <link>https://michhar.github.io/posts/teaching-notes-post</link>
+        <guid isPermaLink="true">https://michhar.github.io/posts/teaching-notes-post</guid>
       </item>
     
   </channel>
