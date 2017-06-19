@@ -39,374 +39,374 @@
 // Highlighting types
 // =============================================================================
 
-// Comment
+// // Comment
 
-.highlight .c {
-  font-style: italic;
-  color: #998;
-}
+// .highlight .c {
+//   font-style: italic;
+//   color: #998;
+// }
 
-// Error
+// // Error
 
-.highlight .err {
-  color: #a61717;
-  background-color: #e3d2d2;
-}
+// .highlight .err {
+//   color: #a61717;
+//   background-color: #e3d2d2;
+// }
 
-// Keyword
+// // Keyword
 
-.highlight .k {
-  font-weight: bold;
-}
+// .highlight .k {
+//   font-weight: bold;
+// }
 
-// Operator
+// // Operator
 
-.highlight .o {
-  font-weight: bold;
-}
+// .highlight .o {
+//   font-weight: bold;
+// }
 
-// Comment.Multiline
+// // Comment.Multiline
 
-.highlight .cm {
-  font-style: italic;
-  color: #998;
-}
+// .highlight .cm {
+//   font-style: italic;
+//   color: #998;
+// }
 
-// Comment.Single
+// // Comment.Single
 
-.highlight .cp {
-  font-weight: bold;
-  color: #999;
-}
+// .highlight .cp {
+//   font-weight: bold;
+//   color: #999;
+// }
 
-// Comment.Single
+// // Comment.Single
 
-.highlight .c1 {
-  font-style: italic;
-  color: #998;
-}
+// .highlight .c1 {
+//   font-style: italic;
+//   color: #998;
+// }
 
-// Comment.Special
+// // Comment.Special
 
-.highlight .cs {
-  font-style: italic;
-  font-weight: bold;
-  color: #999;
-}
+// .highlight .cs {
+//   font-style: italic;
+//   font-weight: bold;
+//   color: #999;
+// }
 
-// Generic.Deleted
+// // Generic.Deleted
 
-.highlight .gd {
-  color: #000;
-  background-color: #fdd;
-}
+// .highlight .gd {
+//   color: #000;
+//   background-color: #fdd;
+// }
 
-// Generic.Deleted.Specific
+// // Generic.Deleted.Specific
 
-.highlight .gd .x {
-  color: #000;
-  background-color: #faa;
-}
+// .highlight .gd .x {
+//   color: #000;
+//   background-color: #faa;
+// }
 
-// Generic.Emph
+// // Generic.Emph
 
-.highlight .ge {
-  font-style: italic;
-}
+// .highlight .ge {
+//   font-style: italic;
+// }
 
-// Generic.Error
+// // Generic.Error
 
-.highlight .gr {
-  color: #a00;
-}
+// .highlight .gr {
+//   color: #a00;
+// }
 
-// Generic.Heading
+// // Generic.Heading
 
-.highlight .gh {
-  color: #999;
-}
+// .highlight .gh {
+//   color: #999;
+// }
 
-// Generic.Inserted
+// // Generic.Inserted
 
-.highlight .gi {
-  color: #000;
-  background-color: #dfd;
-}
+// .highlight .gi {
+//   color: #000;
+//   background-color: #dfd;
+// }
 
-// Generic.Inserted.Specific
+// // Generic.Inserted.Specific
 
-.highlight .gi .x {
-  color: #000;
-  background-color: #afa;
-}
+// .highlight .gi .x {
+//   color: #000;
+//   background-color: #afa;
+// }
 
-// Generic.Output
+// // Generic.Output
 
-.highlight .go {
-  color: #888;
-}
+// .highlight .go {
+//   color: #888;
+// }
 
-// Generic.Prompt
+// // Generic.Prompt
 
-.highlight .gp {
-  color: #555;
-}
+// .highlight .gp {
+//   color: #555;
+// }
 
-// Generic.Strong
+// // Generic.Strong
 
-.highlight .gs {
-  font-weight: bold;
-}
+// .highlight .gs {
+//   font-weight: bold;
+// }
 
-// Generic.Subheading
+// // Generic.Subheading
 
-.highlight .gu {
-  color: #aaa;
-}
+// .highlight .gu {
+//   color: #aaa;
+// }
 
-// Generic.Traceback
+// // Generic.Traceback
 
-.highlight .gt {
-  color: #a00;
-}
+// .highlight .gt {
+//   color: #a00;
+// }
 
-// Keyword.Constant
+// // Keyword.Constant
 
-.highlight .kc {
-  font-weight: bold;
-}
+// .highlight .kc {
+//   font-weight: bold;
+// }
 
-// Keyword.Declaration
+// // Keyword.Declaration
 
-.highlight .kd {
-  font-weight: bold;
-}
+// .highlight .kd {
+//   font-weight: bold;
+// }
 
-// Keyword.Pseudo
+// // Keyword.Pseudo
 
-.highlight .kp {
-  font-weight: bold;
-}
+// .highlight .kp {
+//   font-weight: bold;
+// }
 
-// Keyword.Reserved
+// // Keyword.Reserved
 
-.highlight .kr {
-  font-weight: bold;
-}
+// .highlight .kr {
+//   font-weight: bold;
+// }
 
-// Keyword.Type
+// // Keyword.Type
 
-.highlight .kt {
-  font-weight: bold;
-  color: #458;
-}
+// .highlight .kt {
+//   font-weight: bold;
+//   color: #458;
+// }
 
-// Literal.Number
+// // Literal.Number
 
-.highlight .m {
-  color: #099;
-}
+// .highlight .m {
+//   color: #099;
+// }
 
-// Literal.String
+// // Literal.String
 
-.highlight .s {
-  color: #d14;
-}
+// .highlight .s {
+//   color: #d14;
+// }
 
-// Name.Attribute
+// // Name.Attribute
 
-.highlight .na {
-  color: #008080;
-}
+// .highlight .na {
+//   color: #008080;
+// }
 
-// Name.Builtin
+// // Name.Builtin
 
-.highlight .nb {
-  color: #0086b3;
-}
+// .highlight .nb {
+//   color: #0086b3;
+// }
 
-// Name.Class
+// // Name.Class
 
-.highlight .nc {
-  font-weight: bold;
-  color: #458;
-}
+// .highlight .nc {
+//   font-weight: bold;
+//   color: #458;
+// }
 
-// Name.Constant
+// // Name.Constant
 
-.highlight .no {
-  color: #008080;
-}
+// .highlight .no {
+//   color: #008080;
+// }
 
-// Name.Entity
+// // Name.Entity
 
-.highlight .ni {
-  color: #800080;
-}
+// .highlight .ni {
+//   color: #800080;
+// }
 
-// Name.Exception
+// // Name.Exception
 
-.highlight .ne {
-  font-weight: bold;
-  color: #900;
-}
+// .highlight .ne {
+//   font-weight: bold;
+//   color: #900;
+// }
 
-// Name.Function
+// // Name.Function
 
-.highlight .nf {
-  font-weight: bold;
-  color: #900;
-}
+// .highlight .nf {
+//   font-weight: bold;
+//   color: #900;
+// }
 
-// Name.Namespace
+// // Name.Namespace
 
-.highlight .nn {
-  color: #555;
-}
+// .highlight .nn {
+//   color: #555;
+// }
 
-// Name.Tag
+// // Name.Tag
 
-.highlight .nt {
-  color: #000080;
-}
+// .highlight .nt {
+//   color: #000080;
+// }
 
-// Name.Variable
+// // Name.Variable
 
-.highlight .nv {
-  color: #008080;
-}
+// .highlight .nv {
+//   color: #008080;
+// }
 
-// Operator.Word
+// // Operator.Word
 
-.highlight .ow {
-  font-weight: bold;
-}
+// .highlight .ow {
+//   font-weight: bold;
+// }
 
-// Text.Whitespace
+// // Text.Whitespace
 
-.highlight .w {
-  color: #bbb;
-}
+// .highlight .w {
+//   color: #bbb;
+// }
 
-// Literal.Number.Float
+// // Literal.Number.Float
 
-.highlight .mf {
-  color: #099;
-}
+// .highlight .mf {
+//   color: #099;
+// }
 
-// Literal.Number.Hex
+// // Literal.Number.Hex
 
-.highlight .mh {
-  color: #099;
-}
+// .highlight .mh {
+//   color: #099;
+// }
 
-// Literal.Number.Integer
+// // Literal.Number.Integer
 
-.highlight .mi {
-  color: #099;
-}
+// .highlight .mi {
+//   color: #099;
+// }
 
-// Literal.Number.Oct
+// // Literal.Number.Oct
 
-.highlight .mo {
-  color: #099;
-}
+// .highlight .mo {
+//   color: #099;
+// }
 
-// Literal.String.Backtick
+// // Literal.String.Backtick
 
-.highlight .sb {
-  color: #d14;
-}
+// .highlight .sb {
+//   color: #d14;
+// }
 
-// Literal.String.Char
+// // Literal.String.Char
 
-.highlight .sc {
-  color: #d14;
-}
+// .highlight .sc {
+//   color: #d14;
+// }
 
-// Literal.String.Doc
+// // Literal.String.Doc
 
-.highlight .sd {
-  color: #d14;
-}
+// .highlight .sd {
+//   color: #d14;
+// }
 
-// Literal.String.Double
+// // Literal.String.Double
 
-.highlight .s2 {
-  color: #d14;
-}
+// .highlight .s2 {
+//   color: #d14;
+// }
 
-// Literal.String.Escape
+// // Literal.String.Escape
 
-.highlight .se {
-  color: #d14;
-}
+// .highlight .se {
+//   color: #d14;
+// }
 
-// Literal.String.Heredoc
+// // Literal.String.Heredoc
 
-.highlight .sh {
-  color: #d14;
-}
+// .highlight .sh {
+//   color: #d14;
+// }
 
-// Literal.String.Interpol
+// // Literal.String.Interpol
 
-.highlight .si {
-  color: #d14;
-}
+// .highlight .si {
+//   color: #d14;
+// }
 
-// Literal.String.Other
+// // Literal.String.Other
 
-.highlight .sx {
-  color: #d14;
-}
+// .highlight .sx {
+//   color: #d14;
+// }
 
-// Literal.String.Regex
+// // Literal.String.Regex
 
-.highlight .sr {
-  color: #009926;
-}
+// .highlight .sr {
+//   color: #009926;
+// }
 
-// Literal.String.Single
+// // Literal.String.Single
 
-.highlight .s1 {
-  color: #d14;
-}
+// .highlight .s1 {
+//   color: #d14;
+// }
 
-// Literal.String.Symbol
+// // Literal.String.Symbol
 
-.highlight .ss {
-  color: #990073;
-}
+// .highlight .ss {
+//   color: #990073;
+// }
 
-// Name.Builtin.Pseudo
+// // Name.Builtin.Pseudo
 
-.highlight .bp {
-  color: #999;
-}
+// .highlight .bp {
+//   color: #999;
+// }
 
-// Name.Variable.Class
+// // Name.Variable.Class
 
-.highlight .vc {
-  color: #008080;
-}
+// .highlight .vc {
+//   color: #008080;
+// }
 
-// Name.Variable.Global
+// // Name.Variable.Global
 
-.highlight .vg {
-  color: #008080;
-}
+// .highlight .vg {
+//   color: #008080;
+// }
 
-// Name.Variable.Instance
+// // Name.Variable.Instance
 
-.highlight .vi {
-  color: #008080;
-}
+// .highlight .vi {
+//   color: #008080;
+// }
 
-// Literal.Number.Integer.Long
+// // Literal.Number.Integer.Long
 
-.highlight .il {
-  color: #099;
-}
+// .highlight .il {
+//   color: #099;
+// }
 
 // GitHub highlighting to override above
 

@@ -7,6 +7,14 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Overlaying a Website on top of a GitHub Repository</title>
+        <description>With static site generators (tweaks included)</description>
+        <pubDate>Sun, 18 Jun 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/posts/my-new-static-site-generator-hobby</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/my-new-static-site-generator-hobby</guid>
+      </item>
+    
+      <item>
         <title>How I Became a Data Scientist Part 1</title>
         <description>My personal path</description>
         <pubDate>Mon, 15 May 2017 00:00:00 -0700</pubDate>
@@ -76,14 +84,6 @@
         <pubDate>Mon, 07 Nov 2016 00:00:00 -0800</pubDate>
         <link>http://localhost:4000/posts/how-to-bot-on-mac</link>
         <guid isPermaLink="true">http://localhost:4000/posts/how-to-bot-on-mac</guid>
-      </item>
-    
-      <item>
-        <title>Tips I've Learned by Being a Trainer for a Year</title>
-        <description>A few things I've picked up on for giving a successful and engaging tutorial/workshop.</description>
-        <pubDate>Mon, 24 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/posts/teaching-notes-post</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/teaching-notes-post</guid>
       </item>
     
   </channel>

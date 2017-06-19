@@ -3,12 +3,12 @@
 // =============================================================================
 
 .highlight {
-  padding: 50px;
+  padding: 20px;
   margin: 0;
-  margin: 30px 0;
+  margin: 10px 0;
   overflow: auto;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   background-color: darken($gray-darkest, 5);
   border-radius: $base-border-radius;
   pre {
@@ -16,13 +16,24 @@
   }
 }
 
-// Inline highlighting
+// Inline highlighting - dark
+
+// .highlighter-rouge {
+//   padding: 2px 4px;
+//   font-size: 14px;
+//   color: dimgrey;
+//   background: darken($gray-darkest, 5);
+//   border: 1px solid $base-border-color;
+//   border-radius: 1px;
+// }
+
+// Inline highlighting - light
 
 .highlighter-rouge {
   padding: 2px 4px;
   font-size: 14px;
-  color: dimgrey;
-  background: darken($gray-darkest, 5);
+  color: cornflowerblue;
+  background: lighten($gray-lightest, 6);
   border: 1px solid $base-border-color;
   border-radius: 1px;
 }
