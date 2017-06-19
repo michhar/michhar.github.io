@@ -3,35 +3,37 @@ layout: post
 title: Overlaying a Website on top of a GitHub Repository
 comments: true
 description: With static site generators (tweaks included)
-logo: "../resources/images/sitegenpost/octocat_web.png"
+logo: "../resources/images/sitegenpost/octocat_web_mharris.png"
 tags:
     - web-dev
 ---
 
-![Chalk screenshot]({{ site.baseurl }}/resources/images/sitegenpost/octocat_web.png)
-<p align="right"><b>Designer octocat (dare I say, drawn by me)</b></p>
+![My octocat logo]({{ site.baseurl }}/resources/images/sitegenpost/octocat_web_mharris.png)
+<p align="right"><b>Designer octocat</b></p>
 
 
 **tl:dr**:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
-I recently discovered I can have a static website for each GitHub repositories, which seems a bit insane.  That being said, it certainly would be nice to be able to attractively present some of my content found in my carefully written Markdown files to showcase my work.
+I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I've painstakingly written in Markdown files to showcase my work.
 
-Using static site generators, like Jekyll or MkDocs (and others — good article [here](https://www.fullstackpython.com/static-site-generator.html)) combined with a templating engine like Jinga, opened up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.
+Using static site generators, like Jekyll or MkDocs (and others — good article [here](https://www.fullstackpython.com/static-site-generator.html)) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.
 
-Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such.  However, if you like reStructuredText or HTML better there are generators out there for you.
+![My personal webjeda cards site]({{ site.baseurl }}/resources/images/sitegenpost/my_webjeda_main.png)
+<p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
+
+Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide [here](https://guides.github.com/features/mastering-markdown/)).  However, if you like reStructuredText or HTML better there are generators out there for you.
 
 There's a great site to shop for a Jekyll theme (where I began this journey), [here](http://jekyllthemes.org/).  They are mostly slanted towards blog writers as that was the reason for the genesis of Jekyll by the founder of GitHub (thanks Tom Preston-Werner!  Find out more about Jekyll on [this](https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/#jekyll) blog).
 
-There is of course the use of GitHub pages to simply render the repo's README markdown file by clicking on **Settings** and scrolling down to **GitHub Pages**, then selecting a theme directly at that point.  
+There is of course the use of GitHub Pages to simply render the repo's README markdown file by clicking on **Settings** and scrolling down to **GitHub Pages**, then selecting a theme directly at that point.  
 
-I'm just scratching the surface here on another way.
-
-The generators I chose also all look good on hand-held devices.
+Basically, I'm just scratching the surface here on another way.  Also, the generators I chose all look good on hand-held devices - an important aspect to consider.
 
 These are some scenarios for the site generators I'm introducing based on research and actual work I've done:
 
 * **Chalk**
   * Blogs
+  * Things listed by dates
 
 * **Webjeda Cards**
   * Blogs
@@ -44,7 +46,7 @@ These are some scenarios for the site generators I'm introducing based on resear
 
 With the following information, hopefully you can begin to successfully build sites based on these generators.  I hope to fork them at some point for contributing back and encourage you to do so if you figure out something useful.
 
-Note on project setup:  some themes or static site generators that use repositories for content, have a branch for building the site and a branch (usually `gh-pages`) for the site's files (MkDocs sites do this).  Some just work under `master` or have a mirrored dev branch.
+Clarification on project setups:  some themes or static site generators that use repositories for content, have a branch for building the site (source) and a branch (usually called `gh-pages`) for the sites deployment files (MkDocs sites do this).  Some themes just work under `master` or have a mirrored dev branch.
 
 ### Chalk
 
@@ -55,7 +57,7 @@ _Chalk is a high quality, completely customizable, performant and 100% free blog
 
 Creator's Profile:  [https://github.com/nielsenramon](https://github.com/nielsenramon)
 
-Chalk is my favorite for blogging.  It's simple and clean in its look.  However, Chalk doesn't support the standard way of working with Jekyll on GitHub pages due to custom plugins.  There's a little bit more complexity necessary to build the site with these plugins, but all of the scripts are provided so it's actually quite easy in the long run.
+Chalk is my favorite Jekyll theme for blogging.  It's simple and clean in its look.  However, Chalk doesn't support the standard way of working with Jekyll on GitHub pages due to custom plugins.  There's a little bit more complexity around building the site with these plugins, but all of the scripts are provided so it's actually quite easy in the long run to build and deploy to GitHub Pages or another hosting service.
 
 Check out these sites:
 
@@ -105,9 +107,9 @@ _Webjeda Cards is a Bootstrap based jekyll theme for portfolio, photography or a
 
 Creator's Profile:  [https://github.com/sharu725](https://github.com/sharu725)
 
-This Jekyll theme is fantastic for more modular postings (like course or product listings).  It could also be a great place to show off your work.  Perhaps, for example, this could be the main page of your GitHub Pages site and you could link to all of your repos you'd like to share from a card layout design.
+This Jekyll theme is fantastic for more modular postings (like course or product listings).  It could also be a great place to show off your work like photos you've taken with a nice write-up.  Perhaps, this could be the main page of your site and you could link to all of the repos you'd like to share from this card layout design.
 
-You can of course simply use the master branch here for building _and_ deploying, but it's always nice to have a separate branch we often see called `gh-pages` for the site's content.
+Setup note:  you can of course simply use the master branch here for building _and_ deploying, but it's always nice to have a separate branch we often see called `gh-pages` for the sites actual deployed content.
 
 Check out these sites:
 

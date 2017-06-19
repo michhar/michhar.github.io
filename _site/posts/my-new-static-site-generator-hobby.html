@@ -9,19 +9,19 @@
 
   <meta property="og:title" content="Overlaying a Website on top of a GitHub Repository">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://michhar.github.io/posts/my-new-static-site-generator-hobby">
+  <meta property="og:url" content="http://localhost:4000/posts/my-new-static-site-generator-hobby">
   <meta property="og:description" content="With static site generators (tweaks included)">
   <meta property="og:site_name" content="Waterfalls of data">
-  <meta property="og:image" content="https://michhar.github.io/assets/og-image.png">
+  <meta property="og:image" content="http://localhost:4000/assets/og-image.png">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://michhar.github.io/posts/my-new-static-site-generator-hobby">
+  <meta name="twitter:url" content="http://localhost:4000/posts/my-new-static-site-generator-hobby">
   <meta name="twitter:title" content="Overlaying a Website on top of a GitHub Repository">
   <meta name="twitter:description" content="With static site generators (tweaks included)">
-  <meta name="twitter:image" content="https://michhar.github.io/assets/og-image.png">
+  <meta name="twitter:image" content="http://localhost:4000/assets/og-image.png">
 
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link href="https://michhar.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Waterfalls of data Last 10 blog posts" />
+  <link href="http://localhost:4000/feed.xml" type="application/rss+xml" rel="alternate" title="Waterfalls of data Last 10 blog posts" />
 
   
     <link type="text/css" rel="stylesheet" href="/assets/light.css">
@@ -97,24 +97,25 @@
           </header>
 
           <div class="article-content">
-            <p><img src="/resources/images/sitegenpost/octocat_web.png" alt="Chalk screenshot" /></p>
-<p align="right"><b>Designer octocat (dare I say, drawn by me)</b></p>
+            <p><img src="/resources/images/sitegenpost/octocat_web_mharris.png" alt="My octocat logo" /></p>
+<p align="right"><b>Designer octocat</b></p>
 
 <p><strong>tl:dr</strong>:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.</p>
 
-<p>I recently discovered I can have a static website for each GitHub repositories, which seems a bit insane.  That being said, it certainly would be nice to be able to attractively present some of my content found in my carefully written Markdown files to showcase my work.</p>
+<p>I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I’ve painstakingly written in Markdown files to showcase my work.</p>
 
-<p>Using static site generators, like Jekyll or MkDocs (and others — good article <a href="https://www.fullstackpython.com/static-site-generator.html">here</a>) combined with a templating engine like Jinga, opened up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.</p>
+<p>Using static site generators, like Jekyll or MkDocs (and others — good article <a href="https://www.fullstackpython.com/static-site-generator.html">here</a>) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.</p>
 
-<p>Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such.  However, if you like reStructuredText or HTML better there are generators out there for you.</p>
+<p><img src="/resources/images/sitegenpost/my_webjeda_main.png" alt="My personal webjeda cards site" /></p>
+<p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
+
+<p>Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide <a href="https://guides.github.com/features/mastering-markdown/">here</a>).  However, if you like reStructuredText or HTML better there are generators out there for you.</p>
 
 <p>There’s a great site to shop for a Jekyll theme (where I began this journey), <a href="http://jekyllthemes.org/">here</a>.  They are mostly slanted towards blog writers as that was the reason for the genesis of Jekyll by the founder of GitHub (thanks Tom Preston-Werner!  Find out more about Jekyll on <a href="https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/#jekyll">this</a> blog).</p>
 
-<p>There is of course the use of GitHub pages to simply render the repo’s README markdown file by clicking on <strong>Settings</strong> and scrolling down to <strong>GitHub Pages</strong>, then selecting a theme directly at that point.</p>
+<p>There is of course the use of GitHub Pages to simply render the repo’s README markdown file by clicking on <strong>Settings</strong> and scrolling down to <strong>GitHub Pages</strong>, then selecting a theme directly at that point.</p>
 
-<p>I’m just scratching the surface here on another way.</p>
-
-<p>The generators I chose also all look good on hand-held devices.</p>
+<p>Basically, I’m just scratching the surface here on another way.  Also, the generators I chose all look good on hand-held devices - an important aspect to consider.</p>
 
 <p>These are some scenarios for the site generators I’m introducing based on research and actual work I’ve done:</p>
 
@@ -122,6 +123,7 @@
   <li><strong>Chalk</strong>
     <ul>
       <li>Blogs</li>
+      <li>Things listed by dates</li>
     </ul>
   </li>
   <li><strong>Webjeda Cards</strong>
@@ -141,7 +143,7 @@
 
 <p>With the following information, hopefully you can begin to successfully build sites based on these generators.  I hope to fork them at some point for contributing back and encourage you to do so if you figure out something useful.</p>
 
-<p>Note on project setup:  some themes or static site generators that use repositories for content, have a branch for building the site and a branch (usually <code class="highlighter-rouge">gh-pages</code>) for the site’s files (MkDocs sites do this).  Some just work under <code class="highlighter-rouge">master</code> or have a mirrored dev branch.</p>
+<p>Clarification on project setups:  some themes or static site generators that use repositories for content, have a branch for building the site (source) and a branch (usually called <code class="highlighter-rouge">gh-pages</code>) for the sites deployment files (MkDocs sites do this).  Some themes just work under <code class="highlighter-rouge">master</code> or have a mirrored dev branch.</p>
 
 <h3 id="chalk">Chalk</h3>
 
@@ -152,7 +154,7 @@
 
 <p>Creator’s Profile:  <a href="https://github.com/nielsenramon">https://github.com/nielsenramon</a></p>
 
-<p>Chalk is my favorite for blogging.  It’s simple and clean in its look.  However, Chalk doesn’t support the standard way of working with Jekyll on GitHub pages due to custom plugins.  There’s a little bit more complexity necessary to build the site with these plugins, but all of the scripts are provided so it’s actually quite easy in the long run.</p>
+<p>Chalk is my favorite Jekyll theme for blogging.  It’s simple and clean in its look.  However, Chalk doesn’t support the standard way of working with Jekyll on GitHub pages due to custom plugins.  There’s a little bit more complexity around building the site with these plugins, but all of the scripts are provided so it’s actually quite easy in the long run to build and deploy to GitHub Pages or another hosting service.</p>
 
 <p>Check out these sites:</p>
 
@@ -207,9 +209,9 @@
 
 <p>Creator’s Profile:  <a href="https://github.com/sharu725">https://github.com/sharu725</a></p>
 
-<p>This Jekyll theme is fantastic for more modular postings (like course or product listings).  It could also be a great place to show off your work.  Perhaps, for example, this could be the main page of your GitHub Pages site and you could link to all of your repos you’d like to share from a card layout design.</p>
+<p>This Jekyll theme is fantastic for more modular postings (like course or product listings).  It could also be a great place to show off your work like photos you’ve taken with a nice write-up.  Perhaps, this could be the main page of your site and you could link to all of the repos you’d like to share from this card layout design.</p>
 
-<p>You can of course simply use the master branch here for building <em>and</em> deploying, but it’s always nice to have a separate branch we often see called <code class="highlighter-rouge">gh-pages</code> for the site’s content.</p>
+<p>Setup note:  you can of course simply use the master branch here for building <em>and</em> deploying, but it’s always nice to have a separate branch we often see called <code class="highlighter-rouge">gh-pages</code> for the sites actual deployed content.</p>
 
 <p>Check out these sites:</p>
 
@@ -266,13 +268,13 @@
 
           <div class="article-share">
             
-            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Overlaying a Website on top of a GitHub Repository - https://michhar.github.io/posts/my-new-static-site-generator-hobby by @rheartpython', 'newwindow', 'width=500, height=225'); return false;">
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Overlaying a Website on top of a GitHub Repository - http://localhost:4000/posts/my-new-static-site-generator-hobby by @rheartpython', 'newwindow', 'width=500, height=225'); return false;">
               <span class="icon icon-social-twitter"></span>
             </a>
-            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://michhar.github.io/posts/my-new-static-site-generator-hobby', 'newwindow', 'width=500, height=500'); return false;">
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/my-new-static-site-generator-hobby', 'newwindow', 'width=500, height=500'); return false;">
               <span class="icon icon-social-facebook"></span>
             </a>
-            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=https://michhar.github.io/posts/my-new-static-site-generator-hobby', 'newwindow', 'width=550, height=400'); return false;">
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/posts/my-new-static-site-generator-hobby', 'newwindow', 'width=550, height=400'); return false;">
               <span class="icon icon-social-googleplus"></span>
             </a>
           </div>
