@@ -1,4 +1,0 @@
----
-slug: dev
-name: Dev
----

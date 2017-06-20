@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Overlaying a Website on top of a GitHub Repository
-comments: true
-description: With static site generators (tweaks included)
-logo: "../resources/images/sitegenpost/octocat_web_mharris.png"
-tags:
-    - web-dev
+title:  "Overlaying a Website on top of a GitHub Repository"
+date:   2017-06-18 11:34:20
+categories: web-dev
+author: Micheleen Harris
+highlight: true
+image: /img/sitegenpost/octocat_web_mharris.png
 ---
+
+**tl:dr**:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
 ![My octocat logo]({{ site.baseurl }}/resources/images/sitegenpost/octocat_web_mharris.png)
 <p align="right"><b>Designer octocat</b></p>
-
-
-**tl:dr**:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
 I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I've painstakingly written in Markdown files to showcase my work.
 

@@ -1,4 +1,0 @@
----
-slug: narrative
-name: Narrative
----

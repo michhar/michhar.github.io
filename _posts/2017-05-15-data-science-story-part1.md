@@ -1,17 +1,15 @@
 ---
 layout: post
-title: How I Became a Data Scientist Part 1
-comments: true
-description: My personal path
-logo:  "../resources/images/becomedatascientist/teachlearn.jpg"
-tags:
-    - datascience
-    - narrative
+title:  "How I Became a Data Scientist Part 1"
+date:   2017-05-15 00:00:00
+categories: data-science narrative
+author: Micheleen Harris
+image: /img/sitegenpost/octocat_web_mharris.png
 ---
 
-![teach equals learn logo pic]({{ site.baseurl }}/resources/images/becomedatascientist/teachlearn.jpg)
-
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
+
+![teach equals learn logo pic]({{ site.baseurl }}/resources/images/becomedatascientist/teachlearn.jpg)
 
 Last week, I had the amazing opportunity of co-presenting a talk called "Navigating the AI Revolution" at Microsoft's developer conference, //build 2017.  I spoke about questions we can answer with machine learning and mentioned a little bit about **my path into data science**.  Afterwards, many folks approached me about this path and asked for some more guidance and advice.  I thought I'd begin by expanding on my story of how I started out.  My hope is that something in here is helpful to you.
 
