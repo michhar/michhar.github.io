@@ -3,11 +3,8 @@ layout: post
 title: Python for Data Science Goes Into the Wild
 comments: true
 description: A report back on a tutorial on Python at the Data Science Summit in Atlanta, GA, 2016.
-image:  /img/novelty.png
-tags:
-    - python
-    - data-science
-    - jupyter
+cover:  /img/novelty.png
+tags: [python, data-science, jupyter, teaching]
 ---
 
 I had a great time interacting with some of the most motivated people I've ever met at the **Data Science Summit** in Atlanta, GA, on September 26 and 27th.  

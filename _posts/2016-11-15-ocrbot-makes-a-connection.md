@@ -3,10 +3,8 @@ layout: post
 title: OCRBot Makes a Connection to the Cloud
 comments: true
 description: A short chatterbot dev story Part 2
-image:  /images/ocrbot_skype_on_stats.png
-tags:
-    - bots
-    - dev
+cover:  /images/ocrbot_skype_on_stats.png
+tags: [bots, dev]
 ---
 
 ![ocrbot skype]({{ site.baseurl }}/resources/images/ocrbot_skype_on_stats.png)<br>

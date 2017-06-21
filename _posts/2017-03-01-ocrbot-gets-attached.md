@@ -3,10 +3,8 @@ layout: post
 title: OCRBot Gets Attached
 comments: true
 description: A short chatterbot dev story Part 3
-image:  /img/bot_part3/knn_mharris_letters.jpg
-tags:
-    - bots
-    - dev
+cover:  /img/bot_part3/knn_mharris_letters.jpg
+tags: [bots, dev]
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  Chatterbots are trending bigtime!  Here, we continue the story of OCRBot, a word recognizing chatbot.  OCRBot's new ability to get image text from attachments is revealed (adding to it's existing ability to take image web links).  So, we can snap a picture of some text and OCRbot finds the words.  This could lead us into even more exciting realms like text to speech or translation.

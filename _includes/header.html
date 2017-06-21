@@ -1,43 +1,26 @@
-  <header class="mdl-layout__header">
-
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">{{ site.title }}</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      
-
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable is-upgraded">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="js-search__input">
-          <i class="material-icons">search</i>
-        </label>
-
-        <div class="mdl-textfield__expandable-holder" >
-          <input class="mdl-textfield__input super-search__input" type="text" id="js-search__input" />
-        </div>
-      </div>
-
-      <button class="mdl-button mdl-js-button mdl-button--icon" id="menu-lower-left">
-        <i class="material-icons">more_vert</i>
-      </button>
-
-      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-left">
-        {% for option in site.more_vert %}
-        <li><a href="{{ option[1].link }}" class="mdl-menu__item">{{ option[1].name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </header>
-
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Menu</span>
-    <nav class="mdl-navigation">
-    {% for page in site.pages %}
-      {% if page.title %}
-      <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-      {% endif %}
-    {% endfor %}
-    </nav>
-
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title">
+      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </h1>
+    {% if site.description %}
+    <h2 class="site-description">{{ site.description }}</h2>
+    {% endif %}
   </div>
-
+  <nav class="site-nav">
+    <ul class="trigger">
+      <li class="{% if page.url == '/index.html' %}link-active{% endif %}"><a class="page-link" href="{{ site.baseurl | prepend:site.url }}/">Home</a></li>
+      {% if site.data.projects and site.data.projects | size > 0 %}
+      <li class="has-submenu">
+        <a class="page-link hover-link" href="#projects">Projects &gt;</a>
+        <ul class="submenu">
+        {% for project in site.data.projects %}
+          <li><a class="page-link" href="{{ project.url }}">{{ project.name }}</a></li>
+        {% endfor %}
+          <li><a href="/resume/" class="page-link">My Resume´</a></li>
+        </ul>
+      </li>
+      {%  endif %}
+    </ul>
+  </nav>
+</header>

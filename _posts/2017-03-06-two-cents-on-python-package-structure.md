@@ -3,10 +3,8 @@ layout: post
 title: Wading In a Tide Pool of Choices, How Do I Begin Writing a Package in Python?
 comments: true
 description: Answer - there are guidelines and a general consensus with a touch of flexibility
-image: /img/packages1/whatspackage.jpg
-tags:
-    - python
-    - dev
+cover: /img/packages1/whatspackage.jpg
+tags: [python, dev]
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  There's more than one way to create the structure and setup the project, but we start with a name and a magical file called `setup.py`.

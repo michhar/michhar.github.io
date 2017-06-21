@@ -3,9 +3,9 @@ layout: post
 title:  "How I Became a Data Scientist Part 1"
 description: My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package and more...
 date:   2017-05-15 00:00:00
-categories: data-science narrative
+tags: [data-science, narrative]
 author: Micheleen Harris
-image: /img/RheartPython.png
+cover: /img/becomedatascientist/teachlearn.jpg
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.

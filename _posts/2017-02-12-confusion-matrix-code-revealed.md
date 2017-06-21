@@ -3,11 +3,8 @@ layout: post
 title: A Simple, Presentable Confusion Matrix with K-means Data
 comments: true
 description: Some python code snippets around a useful ML metric
-image:  /img/cm_lets_python.jpg
-tags:
-    - python
-    - data-science
-    - azure
+cover:  /img/cm_lets_python.jpg
+tags: [python,  data-science, azure]
 ---
 
 ![show the matrices]({{ site.baseurl }}/resources/images/cm_lets_python.jpg)

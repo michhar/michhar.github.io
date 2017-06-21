@@ -1,25 +1,34 @@
 ---
 layout: default
 ---
-<div class="post-ribbon"></div>
-<main class="post-main mdl-layout__content">
-  <div class="post-container mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    <div class="post-section mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-      <div class="mdl-color-text--grey-500">
-      {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}{% if page.categories %} • {% for cat in page.categories %} {{ cat }} {% endfor %} {% endif %}
-      </div>
-      <h3>{{ page.title }}</h3>
-      <article class="post-content">
-        <p>{{ content }}</p>
-      </article>
-      <!-- Disqus comments -->
-      {% if site.disqus %}
-      <div>
-        <h3>Comments</h3>
-        {% include disqus.html %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</main>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    {% include read_time.html %}
+    {% if page.cover and page.cover != "" %}
+    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+      <img itemprop="url" src="{{ page.cover }}" alt="{{ page.title }}" />
+    </figure>
+    {% endif %}
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+          
+  </header>
+
+  <div class="post-content" itemprop="articleBody">{{ content }}</div>
+  {% if site.mailchimp and site.mailchimp != "" %}
+  <footer>
+  <form action="{{site.mailchimp}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form" target="_blank" novalidate="">
+    <legend>Liked the post? Subscribe to get notified of new ones.</legend>
+    <p><input type="email" value="" name="EMAIL" class="mui-form-control mui-empty" id="mce-EMAIL" placeholder="Your email"></p>
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_98dffea21944db66c8fa221ec_8cc0f04ed1" tabindex="-1" value=""></div>
+    <p><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mui-btn mui-btn-primary"></p>
+  </form>
+  {% if site.disqus %}
+    <p class="comment-begin"><a href="#" id="showComments"><i class="fa fa-comment-o"></i>Comments</a></p>
+    <div id="disqus_thread"></div>
+  {% endif %}
+  </footer>
+  {% endif %}
+
+</article>

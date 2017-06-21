@@ -3,17 +3,11 @@ layout: post
 title: The Notebook Superhero -- Is It Always a Contest?
 comments: true
 description: A discussion around Beaker and Jupyter notebooks
-image:  /img/jupyter_beaker/header_beaker_n_jupyter.jpg
-tags:
-    - r
-    - python
-    - notebooks
-    - jupyter
+cover:  /img/jupyter_beaker/header_beaker_n_jupyter.jpg
+tags: [r, python, notebooks, jupyter]
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  Once you learn how to use one kind of notebook system, the knowledge will transfer easily to another.  Here, we're discussing two, Jupyter and Beaker.  Because Jupyter is much more mature of a project, it'd probably be the best place to start.  But for those with that extreme sense of adventure and/or use Python 2 a lot with other languages, give the Beaker notebooks a chance.  Loads of potential for data scientists there.
-
-![is there a wall between jupyter and beaker]({{ site.baseurl }}/resources/images/jupyter_beaker/header_beaker_n_jupyter.jpg)
 
 ### What's a notebook?
 

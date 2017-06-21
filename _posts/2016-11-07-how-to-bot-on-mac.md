@@ -5,10 +5,7 @@ category: Notes_Posts
 comments: true
 description: A short chatterbot dev story
 image:  /img/ocrbot_local.png
-tags:
-    - bots
-    - dev
-    - mac
+tags: [bots, dev, mac]
 ---
 
 ![ocrbot local]({{ site.baseurl }}/resources/images/ocrbot_local.png)<br>
