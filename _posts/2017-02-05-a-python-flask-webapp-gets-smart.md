@@ -7,8 +7,6 @@ cover:  /img/flask-post-diagram.png
 tags: [python, web-dev, visual-studio]
 ---
 
-![input for webapp]({{ site.baseurl }}/resources/images/flask-post-diagram.png)
-
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  Azure Machine Learning + Visual Studio + Python Flask + GitHub + Azure = A Live Custom ML Model for You!
 
 Ok, so I have an interesting REST endpoint (in my case, a machine learning model for using a company's Wikipedia article to find similar companies), what can I do next?  Why not serve it up in a simple web app to impress friends and wow colleagues?  (Really, you can use this intel to create a web app around any REST endpoint, as half of my purpose in writing this is to show how fast and easy Python Flask is).

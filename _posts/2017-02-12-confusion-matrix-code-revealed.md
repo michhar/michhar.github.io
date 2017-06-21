@@ -7,8 +7,6 @@ cover:  /img/cm_lets_python.jpg
 tags: [python,  data-science, azure]
 ---
 
-![show the matrices]({{ site.baseurl }}/resources/images/cm_lets_python.jpg)
-
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  We make a confusion matrix (or ML metric) in python for a k-means algorithm and it's good lookin' :)
 
 ### Step 1 The AML Workflow

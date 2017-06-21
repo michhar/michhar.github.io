@@ -10,8 +10,6 @@ cover: /img/becomedatascientist/teachlearn.jpg
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
 
-![teach equals learn logo pic]({{ site.baseurl }}/img/becomedatascientist/teachlearn.jpg)
-
 Last week, I had the amazing opportunity of co-presenting a talk called "Navigating the AI Revolution" at Microsoft's developer conference, //build 2017.  I spoke about questions we can answer with machine learning and mentioned a little bit about **my path into data science**.  Afterwards, many folks approached me about this path and asked for some more guidance and advice.  I thought I'd begin by expanding on my story of how I started out.  My hope is that something in here is helpful to you.
 
 Before I was a data scientist I was a developer.  TBH I'm now a developer again and getting to do more data science than ever before.  One of my favorite articles of late states that the real prerequisite for machine learning is not math, but rather **data analysis** skills like data viz and wrangling (link [here](https://www.r-bloggers.com/the-real-prerequisite-for-machine-learning-isnt-math-its-data-analysis/)).  But what's next, i.e., how did I begin actually learning data science...

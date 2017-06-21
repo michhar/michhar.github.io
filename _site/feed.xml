@@ -6,12 +6,12 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Jun 2017 10:18:16 -0700</pubDate>
-    <lastBuildDate>Wed, 21 Jun 2017 10:18:16 -0700</lastBuildDate>
+    <pubDate>Wed, 21 Jun 2017 11:14:20 -0700</pubDate>
+    <lastBuildDate>Wed, 21 Jun 2017 11:14:20 -0700</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>Overlaying a Website on top of a GitHub Repository</title>
+        <title>Overlaying a Website on Top of a GitHub Repository</title>
         <description>tl:dr:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
 </description>
@@ -94,7 +94,7 @@
     
       <item>
         <title>Javascript and Python Meet through Magic and IPython</title>
-        <description>
+        <description>A little exchange
 
 </description>
         <pubDate>Sat, 18 Feb 2017 00:00:00 -0800</pubDate>
@@ -112,7 +112,7 @@
     
       <item>
         <title>A Simple, Presentable Confusion Matrix with K-means Data</title>
-        <description>
+        <description>tl;dr:  We make a confusion matrix (or ML metric) in python for a k-means algorithm and it’s good lookin’ :)
 
 </description>
         <pubDate>Sun, 12 Feb 2017 00:00:00 -0800</pubDate>
@@ -130,7 +130,7 @@
     
       <item>
         <title>Creating a Python Flask Web App that Uses an Azure Machine Learning Model to Cluster Text Features - A True Smart App</title>
-        <description>
+        <description>tl;dr:  Azure Machine Learning + Visual Studio + Python Flask + GitHub + Azure = A Live Custom ML Model for You!
 
 </description>
         <pubDate>Sun, 05 Feb 2017 00:00:00 -0800</pubDate>
@@ -148,8 +148,7 @@
     
       <item>
         <title>OCRBot Makes a Connection to the Cloud</title>
-        <description>
-A short conversation with OCRBot on Skype - using the Bot Framework on the Azure Cloud
+        <description>A short conversation with OCRBot on Skype - using the Bot Framework on the Azure Cloud
 
 Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
 
@@ -167,8 +166,7 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
     
       <item>
         <title>Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</title>
-        <description>
-Command Line Emulator for the Bot Framework - interacting with ocrbot on Shakespeare
+        <description>Command Line Emulator for the Bot Framework - interacting with ocrbot on Shakespeare
 
 
 </description>

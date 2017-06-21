@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Overlaying a Website on top of a GitHub Repository"
+title:  "Overlaying a Website on Top of a GitHub Repository"
 description:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 date:   2017-06-18 11:34:20
 tags: [web-dev]

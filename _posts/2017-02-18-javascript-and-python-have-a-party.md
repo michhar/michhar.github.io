@@ -7,8 +7,6 @@ cover:  /img/js_python_friends/header_pic.jpg
 tags: [python, javascript, jupyter]
 ---
 
-![jupyter love]({{ site.baseurl }}/resources/images/js_python_friends/header_pic.jpg)
-
 ### A little exchange
 
 _Python_:  "I want your silly game to have a starting value of 100 for life points for all players."

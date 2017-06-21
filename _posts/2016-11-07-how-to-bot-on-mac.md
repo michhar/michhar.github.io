@@ -8,7 +8,6 @@ image:  /img/ocrbot_local.png
 tags: [bots, dev, mac]
 ---
 
-![ocrbot local]({{ site.baseurl }}/resources/images/ocrbot_local.png)<br>
 **Command Line Emulator for the Bot Framework - interacting with ocrbot on Shakespeare**
 <br><br>
 

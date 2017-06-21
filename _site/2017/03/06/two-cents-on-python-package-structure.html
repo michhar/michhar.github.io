@@ -32,6 +32,13 @@
   
   <meta name="twitter:card" content="summary" />
   
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/03/06/two-cents-on-python-package-structure.html";
+        this.page.identifier = "/2017/03/06/two-cents-on-python-package-structure.html";
+    };
+  </script>
+  
   
     
   <meta property="article:tag" content="python">
@@ -105,8 +112,6 @@
   </header>
 
   <div class="post-content" itemprop="articleBody"><p><a href="https://en.wikipedia.org/wiki/TL;DR"><strong>tl;dr</strong></a>:  There’s more than one way to create the structure and setup the project, but we start with a name and a magical file called <code class="highlighter-rouge">setup.py</code>.</p>
-
-<p><img src="/resources/images/packages1/whatspackage.jpg" alt="colorful package structure" /></p>
 
 <p>I’ve pulled from several sources (see Resources below) and have mashed them together to create a brief synopsis of what I plan on doing for my first python package.  I thought I’d share these findings with you.  I’ve tried to be python 2/3 agnostic as needed.</p>
 
@@ -260,7 +265,7 @@ To use (with caution), simply do::
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Waterfalls of Data</li>
-          <li><a href="mailto:"></a></li>
+          <li><a href="mailto:michhar@microsoft.com">michhar@microsoft.com</a></li>
           <li><em>Powered by <a href="http://bitwiser.in/Jekyll-Read/" target="_blank">Jekyll-Read</a> theme.</em></li>
         </ul>
       </div>
@@ -292,6 +297,18 @@ To use (with caution), simply do::
   </div>
 </footer>
 <script type="text/javascript" src="http://localhost:4000/js/script.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86308542-1', '');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+
 
 
   </body>

@@ -20,7 +20,7 @@ layout: default
         </a>
       {% endif %}
       <summary>
-        <p>{{ post.excerpt | strip_html }}</p>
+        <p>{{ post.description | strip_html }}</p>
       </summary>
       </section>
       <footer class="read-more"><a href="{{ post.url | prepend: site.baseurl }}">Continue Reading →</a></footer>

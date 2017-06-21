@@ -3,11 +3,10 @@ layout: post
 title: OCRBot Makes a Connection to the Cloud
 comments: true
 description: A short chatterbot dev story Part 2
-cover:  /images/ocrbot_skype_on_stats.png
+cover:  /img/ocrbot_skype_on_stats.png
 tags: [bots, dev]
 ---
 
-![ocrbot skype]({{ site.baseurl }}/resources/images/ocrbot_skype_on_stats.png)<br>
 **A short conversation with OCRBot on Skype - using the Bot Framework on the Azure Cloud**
 <br><br>
 Update:  November 16, 2016 Microsoft announced the [Azure Bot Service](https://azure.microsoft.com/en-us/services/bot-service/) in Preview.
