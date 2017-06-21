@@ -38,16 +38,6 @@
   <meta property="twitter:image" content="//img/jupyter_beaker/header_beaker_n_jupyter.jpg" />
   
   <meta name="twitter:card" content="summary" />
-
-
-
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2017/02/19/jupyter-and-beaker-make-a-case.html";
-        this.page.identifier = "/2017/02/19/jupyter-and-beaker-make-a-case.html";
-    };
-  </script>
   
   
     
@@ -78,26 +68,19 @@
   <nav class="site-nav">
     <ul class="trigger">
       <li class=""><a class="page-link" href="http://localhost:4000/">Home</a></li>
+            <li class=""><a class="page-link" href="about.html">About</a></li>
       
       <li class="has-submenu">
         <a class="page-link hover-link" href="#projects">Projects &gt;</a>
         <ul class="submenu">
         
-          <li><a class="page-link" href="/medium-draft/">Medium Draft</a></li>
+          <li><a class="page-link" href="https://github.com/michhar/python4ds-notebooks/">Python for Data Science</a></li>
         
-          <li><a class="page-link" href="/kattappa/">Kattappa</a></li>
+          <li><a class="page-link" href="https://github.com/michhar/cntk-playground/">My CNTK Playground</a></li>
         
-          <li><a class="page-link" href="/Jekyll-Read/">Jekyll Read</a></li>
+          <li><a class="page-link" href="https://github.com/michhar/python-jupyter-notebooks/">Python Notebooks on Azure</a></li>
         
-          <li><a class="page-link" href="/bitwiser-material/">Bitwiser-Material</a></li>
-        
-          <li><a class="page-link" href="/bitwiser/">Bitwiser</a></li>
-        
-          <li><a class="page-link" href="/medium-style-confirm/">Medium Style Confirm</a></li>
-        
-          <li><a class="page-link" href="/blurt/">Blurt</a></li>
-        
-          <li><a href="/resume/" class="page-link">My Resume´</a></li>
+          <!--<li><a href="/cv/MHarris_CV_2017.pdf" class="page-link">My Resume´</a></li>-->
         </ul>
       </li>
       
@@ -126,7 +109,6 @@
     </figure>
     
     <p class="post-meta"><time datetime="2017-02-19T00:00:00-08:00" itemprop="datePublished">February 19, 2017</time></p>
-
   </header>
 
   <div class="post-content" itemprop="articleBody"><p><a href="https://en.wikipedia.org/wiki/TL;DR"><strong>tl;dr</strong></a>:  Once you learn how to use one kind of notebook system, the knowledge will transfer easily to another.  Here, we’re discussing two, Jupyter and Beaker.  Because Jupyter is much more mature of a project, it’d probably be the best place to start.  But for those with that extreme sense of adventure and/or use Python 2 a lot with other languages, give the Beaker notebooks a chance.  Loads of potential for data scientists there.</p>
@@ -159,7 +141,7 @@
 
 <h3 id="jupyter--customizable-and-sometimes-magic">Jupyter:  customizable and sometimes magic</h3>
 
-<p><img src="/resources/images/jupyter_beaker/jupyter_grade3theme.png" alt="jupyter with a grade3 theme" /></p>
+<p><img src="/img/jupyter_beaker/jupyter_grade3theme.png" alt="jupyter with a grade3 theme" /></p>
 <p align="right"><b>A Python 3 flavored Jupyter notebook with a "grade3" theme (theme from Kyle Dunovan's jupyter-themes repo)</b></p>
 
 <p>The Jupyter project is much more mature than the Beaker project and thus has a reliable and almost totally bug-free experience (nothing is completely bug-free).  It’s pretty much the classic notebook system, but gives the us the ability to use it for reproducible research, publish papers, do presentations with live code, create blogs (not this one, although it’s in markdown at least), and the list goes on.  It’s a mature project with many add-ons and features available.</p>
@@ -197,7 +179,7 @@
 
 <h3 id="beaker--a-true-polyglot">Beaker:  a true polyglot</h3>
 
-<p><img src="/resources/images/jupyter_beaker/beaker_d3.png" alt="beaker screenshot" /></p>
+<p><img src="/img/jupyter_beaker/beaker_d3.png" alt="beaker screenshot" /></p>
 
 <p align="right"><b>Python 2 and JavaScript with D3 sharing variables (entire code sample is in the D3 Demo notebook that comes with Beaker)</b></p>
 
@@ -255,7 +237,7 @@
 
 <h3 id="themes--design-can-win-people-over">Themes:  design can win people over</h3>
 
-<p><img src="/resources/images/jupyter_beaker/jupyter_basic_js.png" alt="" /></p>
+<p><img src="/img/jupyter_beaker/jupyter_basic_js.png" alt="" /></p>
 <p align="right"><b>A Jupyter notebook with the `mm_dark_theme` (theme by Milos Miljkovic and found on GitHub)</b></p>
 
 <p>Out of the box, we get a couple of themes for our notebooks with Beaker,  Default and Ambiance.  With Jupyter, we can add any theme we’d like or like to create in a few ways, but my favorite and simplest is just adding a <code class="highlighter-rouge">custom.js</code> and <code class="highlighter-rouge">custom.css</code>  to a folder called <code class="highlighter-rouge">~/.jupyter/custom/</code> (create one if it’s not there).  The <code class="highlighter-rouge">~</code> refers to the user’s base directory, often used in Unix systems.</p>
@@ -283,10 +265,27 @@
 
 </article>
 
+<!--Discus comments:-->
+
+
+<script>/* Google Analytics*/
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86308542-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
       </div>
     </div>
+    
 
-    <footer class="site-footer">
+    
+
+<footer class="site-footer">
   <div class="wrapper">
     <!--<h2 class="footer-heading">Waterfalls of Data</h2>-->
     <div class="footer-col-wrapper">
@@ -308,9 +307,8 @@
           
           
           <li>
-            <a class="sh-twt" href="#" target="_blank" onclick="window.open('https://twitter.com/share?url='+window.location.href+'&via=rheartpython','_blank','height=300,width=600');return false;">
-    <span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</a>
+            <a href="https://twitter.com/rheartpython"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">rheartpython</span></a>
 
           </li>
           
@@ -326,18 +324,6 @@
   </div>
 </footer>
 <script type="text/javascript" src="http://localhost:4000/js/script.js"></script>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-86308542-1', '');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-</script>
-
 
 
   </body>

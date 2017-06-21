@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function loadDisqus() {
       if(disqus_shortname === ''){
-          disqus_shortname = 'blog-vf2v0kav1a';
+          disqus_shortname = 'micheleenharris';
           dt.innerHTML = 'Loading comments...';
           (function() {
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

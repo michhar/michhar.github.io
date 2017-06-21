@@ -4,16 +4,16 @@
     <url>
       <loc>http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</loc>
       
-        <lastmod>2017-06-18T04:34:20-07:00</lastmod>
+        <lastmod>2017-06-18T00:00:00-07:00</lastmod>
       
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/2017/05/14/data-science-story-part1.html</loc>
+      <loc>http://localhost:4000/2017/05/15/data-science-story-part1.html</loc>
       
-        <lastmod>2017-05-14T17:00:00-07:00</lastmod>
+        <lastmod>2017-05-15T00:00:00-07:00</lastmod>
       
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
@@ -111,47 +111,27 @@
   
   
   <url>
-    <loc>http://localhost:4000/medium-draft/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/python4ds-notebooks/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/kattappa/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/cntk-playground/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/Jekyll-Read/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/python-jupyter-notebooks/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>http://localhost:4000/bitwiser-material/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   
-  <url>
-    <loc>http://localhost:4000/bitwiser/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    
   
-  <url>
-    <loc>http://localhost:4000/medium-style-confirm/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blurt/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+    
   
     
   

@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Tips I've Learned by Being a Trainer for a Year
+title: Tips I have Learned by Being a Trainer for a Year
 comments: true
 description: A few things I've picked up on for giving a successful and engaging tutorial/workshop.
 cover:  /img/hyd_class.jpg
 tags: [teaching]
 ---
-
 
 ## Teaching notes
 
@@ -16,7 +15,7 @@ The isolation and separateness that ones feels in a room of mostly strangers, ab
 
 This technique forms very useful connections that will serve in the future when one person may need help or a discussion needs to take place to formulate a question to the instructor.  When the hands-on-labs role around, the students now know some of their neighbors and can work together on a problem.  When it comes time for a build-a-thon or hackathon, the students will likely feel more comfortable forming groups.
 
-![attendees at work]({{ site.baseurl }}/resources/images/hyd_class.jpg)
+![attendees at work]({{ site.baseurl }}/img/hyd_class.jpg)
 
 ### Lead with a motivating example or at least "what you will be able to do by the end"
 
@@ -42,7 +41,7 @@ At the end you may have the students leave the sticky notes (a red is dissatisfi
 
 Some attendees expressing their appreciation:
 
-![stars on the wall]({{ site.baseurl }}/resources/images/stars_small_edit.png)
+![stars on the wall]({{ site.baseurl }}/img/stars_small_edit.png)
 
 ### Credits
 

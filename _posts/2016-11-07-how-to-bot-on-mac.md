@@ -44,7 +44,7 @@ var bot = new builder.UniversalBot(connector);
 
 Interacting with ocrbot could look like:
 
-![console connector]{{ site.baseurl }}(/resources/images/ocrbot_console_connect.png)<br>
+![console connector]{{ site.baseurl }}(/img/ocrbot_console_connect.png)<br>
 
 It's simple, but we don't get to see the actual JSON that gets passed to the bot and the JSON passed back.  If we want to be able to see the message and also write code that can be used for production later, the Bot Framework Emulator is the way to go.   Note, this is the beginning of my server.js Node.js file - see my [ocrbot github repo](https://github.com/michhar/bot-education-ocrbot) for the complete project and code and the included [lab file](https://github.com/michhar/bot-education-ocrbot/blob/master/LabStart.md) for more instructions on doing this at home.  We replace  `ConsoleConnector` with `ChatConnector`, for a full deployment-compatible setup, as follows:
 
@@ -245,7 +245,7 @@ Let's take this image:
 
 The emulator experience will look a little something like:
 
-![ocrbot local on stats]({{ site.baseurl }}/resources/images/ocrbot_on_stats.png)<br>
+![ocrbot local on stats]({{ site.baseurl }}/img/ocrbot_on_stats.png)<br>
 **Command Line Emulator for the Bot Framework - interacting with ocrbot locally on stats**
 
 In conclusion, to get started now, check out the github repo and start playing with the code and emulator.  For more instructions check out [this lab](https://github.com/michhar/bot-education-ocrbot/blob/master/LabStart.md).  Chat later!

@@ -13,7 +13,6 @@ layout: default
     </figure>
     {% endif %}
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-
   </header>
 
   <div class="post-content" itemprop="articleBody">{{ content }}</div>
@@ -25,11 +24,49 @@ layout: default
     <div style="position: absolute; left: -5000px;"><input type="text" name="b_98dffea21944db66c8fa221ec_8cc0f04ed1" tabindex="-1" value=""></div>
     <p><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mui-btn mui-btn-primary"></p>
   </form>
-  {% if site.disqus %}
-    <p class="comment-begin"><a href="#" id="showComments"><i class="fa fa-comment-o"></i>Comments</a></p>
-    <div id="disqus_thread"></div>
-  {% endif %}
+
+
+
+
   </footer>
   {% endif %}
 
 </article>
+
+<!--Discus comments:-->
+{% if page.comments %}
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = "https://michhar.github.io/tutorial_posts/notebooks1-post";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "notebooks1-post"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//blog-vf2v0kav1a.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                                      
+                                
+{% endif %}
+
+<script>/* Google Analytics*/
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86308542-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

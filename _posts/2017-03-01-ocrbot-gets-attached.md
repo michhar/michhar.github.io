@@ -17,7 +17,7 @@ For the first two stories, see [Part 1](https://michhar.github.io/posts/how-to-b
 
 Have you ever just wanted the text extracted from, perhaps a page in a book or a funny comic that's sitting around in an image?  Or maybe it'd be helpful to take a snapshot of a menu item wherein the font is a bit too small or you forgot your reading glasses, however, it's easy to read on your phone as plain text. Now, if you send the OCRBot an image (jpeg, png, gif, bmp are its known formats), on one of its supported conversational platforms like Skype or Slack, you'll get that text you crave.
 
-![ocr bot with my coaster]({{ site.baseurl }}/resources/images/bot_part3/ocrbot_skype.jpg)
+![ocr bot with my coaster]({{ site.baseurl }}/img/bot_part3/ocrbot_skype.jpg)
 
 <p align="right"><b>OCRBot on Skype - using a photo I just took of my favorite coaster sitting on my coffee table currently</b></p>
 
@@ -36,14 +36,14 @@ In the Cognitive Services OCR, we have the idea of word detection within boundin
 
 Pre-processing example:
 
-![pre-processing example]({{ site.baseurl }}/resources/images/bot_part3/pre_process.jpg)
+![pre-processing example]({{ site.baseurl }}/img/bot_part3/pre_process.jpg)
 
 <p align="right"><b>An example of image pre-processing for character recognition:  fixing skew, binarisation, despekling, and line removal</b></p>
 
 k-nearest neighbor example:
 
 
-![k-nearest neighbors example]({{ site.baseurl }}/resources/images/bot_part3/knn_mharris_letters.jpg)
+![k-nearest neighbors example]({{ site.baseurl }}/img/bot_part3/knn_mharris_letters.jpg)
 
 <p align="right"><b>Classifying the orange letter as a blue D or green P.  Note, that if k is 3, the orange letter is classified as a blue D, but with a k of 7 it is classified as a green P.  The structure of the data can cause for a tricky problem in k-NN</b></p>
 
@@ -135,6 +135,6 @@ I'm actually not sure what will be in store for OCRBot next.  There are so many 
 
 Thanks for reading!
 
-![happy bot]({{ site.baseurl }}/resources/images/bot_part3/ocrbot_attached.jpg)
+![happy bot]({{ site.baseurl }}/img/bot_part3/ocrbot_attached.jpg)
 
 

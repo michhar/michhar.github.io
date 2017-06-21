@@ -34,7 +34,7 @@ Our web app is going to utilize a microframework for building web apps purely in
 
 That all being said, most of this post is about creating the Flask web app.  I'll leave it to other guides and articles to discuss working with AML and k-means in detail.
 
-![input for webapp]({{ site.baseurl }}/resources/images/webapp-input.PNG)
+![input for webapp]({{ site.baseurl }}/img/webapp-input.PNG)
 **Above:  The deployed web app site**
 
 ### Before you Begin, a Few Things to Do...
@@ -58,7 +58,7 @@ That all being said, most of this post is about creating the Flask web app.  I'l
 
 The scoring experiment which utilizes the k-means model and n-gram featurizer vocabulary created in the training experiment has the following layout in AML Studio:
 
-![kmeans/ngram scoring experiment]({{ site.baseurl }}/resources/images/aml-studio-scoring.png)
+![kmeans/ngram scoring experiment]({{ site.baseurl }}/img/aml-studio-scoring.png)
 
 The scoring experiment you will need can be found [here](https://gallery.cortanaintelligence.com/Experiment/N-Grams-and-Clustering-Find-similar-companies-Scoring-Exp-2) (this will allow you to launch it in AML Studio).  Essentially, we are using AML Studio as a clever way to deploy a web service and not much more, but it's capabilities as a canvas for creating a data science workflow are worth checking out if you like a visual workflow-type setup.
 
@@ -322,14 +322,14 @@ This is the most customizable way, hence more complex, but also the most transpa
 6.  Create an App Service Web App in the Azure Portal (https://portal.azure.com) by clicking "+" and search for "web app", then go through the wizard to create one.
 6.  Update the Deployment options in the Azure Portal for the web app.  For our Web App, under "APP DEPLOYMENT", open the "Deployment options" blade.  For Choose Source, choose GitHub (you may have to log in to your GitHub here to link it).  Under Choose project, pick the GitHub repository to which you just pushed code and click OK.
 7.  Now we add a couple of variables to the Azure Portal Web App for safe-keeping.  There are "environmental variables" in the code (they look like `os.environ.get('FOO')`):  one for the AML Web Service's URL and one for the API_KEY - these are the necessary values we need to access our published AML scoring experiment.  To have these available for our web app we need to put them somewhere discoverable and that is as variables under "App settings" in the "Application settings" blade for our own Web App in the Azure Portal.
- ![image of entering in keys to Azure portal app service]({{ site.baseurl }}/resources/images/flaskapp-adding-sys-vars.jpg)
+ ![image of entering in keys to Azure portal app service]({{ site.baseurl }}/img/flaskapp-adding-sys-vars.jpg)
 8.  Ensure that, in the Portal, under Application Settings, Python is set to the appropriate version (default is that "Python" is Off in settings - so will need to manually switch to it's version).
 8.  If we go back to the "Deployment options" we can see how our build is going.  This process will automatically happen for us every time a new change is made to our GitHub repository.  Ensure that this build completes successfully.
 9.  Finally, if you go to "Overview" and click on the web app's URL, you'll see your site.
 
 Congrats on completing this process!  You should now have a functioning barebones, machine learning web app.  Go ahead and try it out. :)
 
-![input for webapp]({{ site.baseurl }}/resources/images/webapp-output.PNG)
+![input for webapp]({{ site.baseurl }}/img/webapp-output.PNG)
 
 If you encounter any problems, check the Troubleshooting section below, Azure docs, or StackOverflow.  Also, leave a comment if it's a bug in the code or process.
 

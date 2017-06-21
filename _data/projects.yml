@@ -1,20 +1,8 @@
-- name: Medium Draft
-  url: /medium-draft/
+- name: Python for Data Science
+  url: https://github.com/michhar/python4ds-notebooks/
 
-- name: Kattappa
-  url: /kattappa/
+- name: My CNTK Playground
+  url: https://github.com/michhar/cntk-playground/
 
-- name: Jekyll Read
-  url: /Jekyll-Read/
-
-- name: Bitwiser-Material
-  url: /bitwiser-material/
-
-- name: Bitwiser
-  url: /bitwiser/
-
-- name: Medium Style Confirm
-  url: /medium-style-confirm/
-
-- name: Blurt
-  url: /blurt/
+- name: Python Notebooks on Azure
+  url: https://github.com/michhar/python-jupyter-notebooks/

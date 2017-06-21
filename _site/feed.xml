@@ -6,16 +6,16 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Jun 2017 12:03:45 -0700</pubDate>
-    <lastBuildDate>Wed, 21 Jun 2017 12:03:45 -0700</lastBuildDate>
+    <pubDate>Wed, 21 Jun 2017 13:57:52 -0700</pubDate>
+    <lastBuildDate>Wed, 21 Jun 2017 13:57:52 -0700</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>Overlaying a Website on Top of a GitHub Repository</title>
+        <title>Overlaying a Website ontop of a GitHub Repository</title>
         <description>tl:dr:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
 </description>
-        <pubDate>Sun, 18 Jun 2017 04:34:20 -0700</pubDate>
+        <pubDate>Sun, 18 Jun 2017 00:00:00 -0700</pubDate>
         <link>http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</guid>
         
@@ -29,9 +29,9 @@
         <description>tl;dr:  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
 
 </description>
-        <pubDate>Sun, 14 May 2017 17:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/05/14/data-science-story-part1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/14/data-science-story-part1.html</guid>
+        <pubDate>Mon, 15 May 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/05/15/data-science-story-part1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/15/data-science-story-part1.html</guid>
         
         <category>data-science</category>
         
@@ -186,7 +186,7 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
       </item>
     
       <item>
-        <title>Tips I've Learned by Being a Trainer for a Year</title>
+        <title>Tips I have Learned by Being a Trainer for a Year</title>
         <description>Teaching notes
 
 </description>

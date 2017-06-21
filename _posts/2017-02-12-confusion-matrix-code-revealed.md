@@ -15,7 +15,7 @@ Our story starts with an Azure Machine Learning experiment or what I like to cal
 
 This workflow is for text feature extraction, selection and clustering based on extracted features as n-grams (check out the intro [here](https://michhar.github.io/posts/a-python-flask-webapp-gets-smart) for a quick explanation of this workflow and n-grams).  I have one workflow with an _a priori_ value for the centroids of 10 for the k-means algorithm.  Here's a screenshot of the workflow (starting dataset is a listing of 500 Wikipedia articles, cleaned up, along with some category labels for "groundtruth" comparisons later - remember, k-means is unsupervised).
 
-![show training workflow]({{ site.baseurl }}/resources/images/cm_workflow.png)
+![show training workflow]({{ site.baseurl }}/img/cm_workflow.png)
 
 This workflow is already ready for you to use for free (using a Microsoft ID like outlook.com, xbox, hotmail, etc. accounts.)  Find it in Cortana Intelligence Gallery (love this place for all of its abundance of resources):  
 
@@ -28,7 +28,7 @@ Just to highlight, in the AML workflow I selected my desired columns for the con
 1.  Notice, I added a `Convert to CSV` module (as you can see in above workflow diagram) after the `Select Columns in Dataset`.
 2. I right clicked on the output node of the `Convert to CSV` and a little menu popped up from which I selected "Open in a new Notebook" and "Python 3" (because Python 3 rules of course - my R colleagues are going to really chide me now).
 
-![show opening as notebook]({{ site.baseurl }}/resources/images/cm_open_as_notebook.png)
+![show opening as notebook]({{ site.baseurl }}/img/cm_open_as_notebook.png)
 
 This opened up a jupyter notebook with the following code snippet:
 
@@ -154,19 +154,19 @@ plot_confusion_matrix(cm, normalize=True,
 
 to create the following awesome plots (a non-normalized and normalized confusion matrix):
 
-![show the matrices]({{ site.baseurl }}/resources/images/confusion_matrices.png)
+![show the matrices]({{ site.baseurl }}/img/confusion_matrices.png)
 
 
 ### Step 2 Second Way
 
   
-I could have exported the AML Studio data as a file from the `Convert to CSV` module and downloaded the dataset after running.  I would then upload the dataset to a notebook (as is also shown in the sample notebook [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/A_Simple_Confusion_Matrix.ipynb)) and use the csv file with a 'Category' column and 'Assigments' column like is found [here](https://github.com/michhar/michhar.github.io/tree/gh-pages-source/resources/data).  It imports the data as a `pandas` dataframe.
+I could have exported the AML Studio data as a file from the `Convert to CSV` module and downloaded the dataset after running.  I would then upload the dataset to a notebook (as is also shown in the sample notebook [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/A_Simple_Confusion_Matrix.ipynb)) and use the csv file with a 'Category' column and 'Assigments' column like is found [here](https://github.com/michhar/michhar.github.io/tree/gh-pages-source/data).  It imports the data as a `pandas` dataframe.
 
 The code snippet would have been:
 
 ```python
 # Dataset living on my github account exported from Azure ML
-url = 'https://raw.githubusercontent.com/michhar/michhar.github.io/gh-pages-source/resources/data/ngrams_and_clustering_result_dataset.csv'
+url = 'https://raw.githubusercontent.com/michhar/michhar.github.io/gh-pages-source/data/ngrams_and_clustering_result_dataset.csv'
 
 # Importing the csv data with pandas
 frame = pd.read_csv(url)

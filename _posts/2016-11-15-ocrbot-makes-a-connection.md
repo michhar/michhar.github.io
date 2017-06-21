@@ -34,7 +34,7 @@ The Bot Framework gives me an easy way to connect my bot so that it's compatible
 In the last post ("Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac"), we met ocrbot and chatted with this bot locally (the upper path in the diagram below).  This time we are going to deploy ocrbot to the cloud and communicate on a real channel (the lower path in the diagram below).
 
 <br>
-![ocrbot skype]({{ site.baseurl }}/resources/images/Sketch3.png)<br>
+![ocrbot skype]({{ site.baseurl }}/img/Sketch3.png)<br>
 **My process for connecting ocrbot to the cloud**
 <br>
 
@@ -69,13 +69,13 @@ And these are my steps at a glance:
 I logged into [GitHub](https://github.com), a free code and document repository, and navigated to the [bot-education-ocrbot](https://github.com/michhar/bot-education-ocrbot) repository.  Next, I forked the repository so that it would appear in my GitHub account profile.  From there, I can now use it, push/pull and annotate with markdown text.
 
 <br>
-![fork repo]({{ site.baseurl }}/resources/images/repo_fork.png)
+![fork repo]({{ site.baseurl }}/img/repo_fork.png)
 **Forking the ocrbot repository**
 <br>
 
 I like to change the README to say something specific to why I forked it like:
 <br><br>
-![fork repo]({{ site.baseurl }}/resources/images/repo_change_readme.png)
+![fork repo]({{ site.baseurl }}/img/repo_change_readme.png)
 **Modifying README markdown file**
 <br>
 
@@ -86,7 +86,7 @@ Honestly, except for communicating on a channel with the bot, this is the cooles
 So, since I'm using Microsoft's cloud, Azure, I signed into the Azure portal at [https://portal.azure.com](https://portal.azure.com).  I then added a Web App by clicking the "+" icon and searching for "web app" (also, found under "Web and Mobile").
 
 <br>
-![select web app]({{ site.baseurl }}/resources/images/portal_select_webapp.png)
+![select web app]({{ site.baseurl }}/img/portal_select_webapp.png)
 **Selecting Web App from portal menu**
 <br>
 
@@ -96,7 +96,7 @@ I then went to my resources in the portal (the blue cube - first icon below the 
 
 
 <br>
-![select github]({{ site.baseurl }}/resources/images/portal_select_github.png)
+![select github]({{ site.baseurl }}/img/portal_select_github.png)
 **Selecting GitHub from the web app deployment source blade (aka App Service) menu**
 <br>
 
@@ -107,7 +107,7 @@ The final setup step in this section was to add placeholder variables for the BF
 To do this I clicked on "Application Settings" under "Settings" (just below the "Deployment options").  This took me to a blade within which I scrolled down to "App settings" and entered in key-value pairs with filler text that correspond to the variable names in the `configuration.js` from my project (so, `MICROSOFT_APP_ID` and `MICROSOFT_APP_PASSWORD`).  I didn't need to do it right at that point, but thought it'd be a good idea so I didn't overlook later (a string on my finger):
 
 <br>
-![web app settings]({{ site.baseurl }}/resources/images/portal_sys_vars.png)
+![web app settings]({{ site.baseurl }}/img/portal_sys_vars.png)
 **App environment variables which correspond to the environment variables in ocrbot's config file**
 <br>
 
@@ -126,7 +126,7 @@ This part is pretty painless.  Basically, we go to the Bot Framework Developer's
 I called my bot, ocrbot (doesn't have to be unique) and gave it a public handle, ocrbot100 (has to be globally unique).
 
 <br>
-![web app settings]({{ site.baseurl }}/resources/images/register_name.png)
+![web app settings]({{ site.baseurl }}/img/register_name.png)
 **My ocrbot's profile**
 <br>
 
@@ -141,21 +141,21 @@ Except for pasting these values back into the Azure portal, the registration in 
 Finally, the really fun part:  here, I got to check my bot's connection and then have a real conversation.  Back in the BF Dev Portal I went to "Test connection to your bot" and clicked on the "Test" button as shown here which pings my bot's messaging endpoint to confirm a connection.
 
 <br>
-![web app settings]({{ site.baseurl }}/resources/images/dev_portal_test.png)
+![web app settings]({{ site.baseurl }}/img/dev_portal_test.png)
 **Testing in the Developer's Portal**
 <br>
 
 I finally and with excitement scrolled down on the page shown above and clicked on "Add to Skype."  After launching Skype (I had to make sure I was logged into Skype with the same Microsoft ID I was using in the Dev Portal) I tried sending some messages:  a greeting and some image URLs from the web.  I was curious to see if ocrbot liked Johnny Cash.  Why not?
 
 <br>
-![web app settings]({{ site.baseurl }}/resources/images/skype_johnny_cash.png)
+![web app settings]({{ site.baseurl }}/img/skype_johnny_cash.png)
 **ocrbot goes country - or at least reads country song lyrics from an image**
 <br>
 
 To test the nifty continuous deployment from GitHub, I changed ocrbot's message on GitHub and sync'd that repository in the Azure Portal (under the web app service and "Deployment Options").  This happened mid-conversation:
 
 <br>
-![web app settings]({{ site.baseurl }}/resources/images/skype_github_update.png)
+![web app settings]({{ site.baseurl }}/img/skype_github_update.png)
 **ocrbot's message updated mid-conversation**
 <br>
 
