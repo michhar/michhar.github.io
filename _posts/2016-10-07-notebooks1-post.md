@@ -93,7 +93,7 @@ y_pred_outliers = clf.predict(X_weird)
 
 Which when plotted in `matplotlib` results in revealing some decision boundaries around if a value is weird or not from the iris dataset (and some made-up values for testing):
 
-![anomalies in scikit-learn image]({{ site.baseurl }}/resources/images/novelty.png)
+![anomalies in scikit-learn image]({{ site.baseurl }}/img/novelty.png)
 
 You can find the Notebooks offering at [https://notebooks.azure.com](https://notebooks.azure.com) and the Python course on the main page with the tutorials near the bottom and titled  *Fundamentals of Data Science with Python*.  It's free, just like the product, Azure Notebooks.  The course is actually a *Library*.  
 

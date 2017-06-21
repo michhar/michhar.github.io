@@ -93,7 +93,7 @@ Recommended tweaks:
    ```
 
 ![Chalk screenshot my site](/img/sitegenpost/my_chalk_main.png)
-<p align="right"><b>My Chalk-based site with icons on main page</b></p>
+<p align="right"><b>A tweaked Chalk-based site with icons on main page</b></p>
 
 ### Webjeda Cards
 

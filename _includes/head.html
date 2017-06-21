@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- Social -->
-  <meta property="fb:admins" content="1554290006" />
+  <!--<meta property="fb:admins" content="1554290006" />-->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   {% if page.tags and page.tags.size > 0 %}
@@ -28,14 +28,27 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   {% endif %}
   <meta property="og:site_name" content="{{ site.title }}" />
-  {% if page.cover %}
+
+  <!--{% if page.cover %}
   <meta property="og:image" content="{{page.cover}}" />
   <meta property="twitter:image" content="{{page.cover}}" />
   {% else %}
   <meta name="og:image" content="{{ "sharer.png" | prepend: site.baseurl | prepend: site.url }}" />
   <meta name="twitter:image" content="{{ "sharer.png" | prepend: site.baseurl | prepend: site.url }}" />
   {% endif %}
+  <meta name="twitter:card" content="summary" />-->
+
+  {% if page.cover %}
+  <meta property="og:image" content="{{ site.baseurl }}/{{page.cover}}" />
+  <meta property="twitter:image" content="{{ site.baseurl }}/{{page.cover}}" />
+  {% else %}
+  <meta name="og:image" content="{{ site.baseurl }}/img/sharer.png" />
+  <meta name="twitter:image" content="{{ site.baseurl }}/img/sharer.png" />
+  {% endif %}
   <meta name="twitter:card" content="summary" />
+
+
+
   {% if site.disqus %}
   <script type="text/javascript">
     var disqus_config = function () {
