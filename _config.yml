@@ -27,7 +27,7 @@ markdown: kramdown
 mailchimp: 
 
 # Analytics
-# ga_id: UA-86308542-1
+ga_id: UA-86308542-1
 ga_domain: https://michhar.github.io
 # disqus: blog-vf2v0kav1a
 disqus: micheleenharris
