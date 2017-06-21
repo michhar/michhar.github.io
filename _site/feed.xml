@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Waterfalls of Data</title>
+    <title>Your awesome title</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Jun 2017 13:02:06 -0700</pubDate>
-    <lastBuildDate>Tue, 20 Jun 2017 13:02:06 -0700</lastBuildDate>
+    <pubDate>Tue, 20 Jun 2017 18:38:19 -0700</pubDate>
+    <lastBuildDate>Tue, 20 Jun 2017 18:38:19 -0700</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Overlaying a Website on top of a GitHub Repository</title>
-        <description>&lt;p&gt;&lt;strong&gt;tl:dr&lt;/strong&gt;:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;tl:dr&lt;/strong&gt;:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/octocat_web_mharris.png&quot; alt=&quot;My octocat logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/octocat_web_mharris.png&quot; alt=&quot;My octocat logo&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Designer octocat&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I’ve painstakingly written in Markdown files to showcase my work.&lt;/p&gt;
 
 &lt;p&gt;Using static site generators, like Jekyll or MkDocs (and others — good article &lt;a href=&quot;https://www.fullstackpython.com/static-site-generator.html&quot;&gt;here&lt;/a&gt;) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/my_webjeda_main.png&quot; alt=&quot;My personal webjeda cards site&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/my_webjeda_main.png&quot; alt=&quot;My personal webjeda cards site&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Usage of the Jekyll Webjeda theme for a course listing site&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide &lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot;&gt;here&lt;/a&gt;).  However, if you like reStructuredText or HTML better there are generators out there for you.&lt;/p&gt;
@@ -62,7 +62,7 @@
 
 &lt;h3 id=&quot;chalk&quot;&gt;Chalk&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/chalk_main.png&quot; alt=&quot;Chalk screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/chalk_main.png&quot; alt=&quot;Chalk screenshot&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Chalk demo site&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll.&lt;/em&gt;&lt;/p&gt;
@@ -112,12 +112,12 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/my_chalk_main.png&quot; alt=&quot;Chalk screenshot my site&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/my_chalk_main.png&quot; alt=&quot;Chalk screenshot my site&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;My Chalk-based site with icons on main page&lt;/b&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;webjeda-cards&quot;&gt;Webjeda Cards&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/webjeda_main.png&quot; alt=&quot;Webjeda screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/webjeda_main.png&quot; alt=&quot;Webjeda screenshot&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Webjeda demo site&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Webjeda Cards is a Bootstrap based jekyll theme for portfolio, photography or any kind of blog.&lt;/em&gt;&lt;/p&gt;
@@ -168,7 +168,7 @@
 
 &lt;h3 id=&quot;mkdocs&quot;&gt;MkDocs&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/sitegenpost/my_mkdocs_main.png&quot; alt=&quot;MkDocs screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/sitegenpost/my_mkdocs_main.png&quot; alt=&quot;MkDocs screenshot&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Docs for one of my projects using the readthedocs theme&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;MkDocs is a fast, simple and downright gorgeous static site generator that’s geared towards building project documentation.&lt;/em&gt;&lt;/p&gt;
@@ -192,7 +192,7 @@
         <title>How I Became a Data Scientist Part 1</title>
         <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/becomedatascientist/teachlearn.jpg&quot; alt=&quot;teach equals learn logo pic&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/becomedatascientist/teachlearn.jpg&quot; alt=&quot;teach equals learn logo pic&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Last week, I had the amazing opportunity of co-presenting a talk called “Navigating the AI Revolution” at Microsoft’s developer conference, //build 2017.  I spoke about questions we can answer with machine learning and mentioned a little bit about &lt;strong&gt;my path into data science&lt;/strong&gt;.  Afterwards, many folks approached me about this path and asked for some more guidance and advice.  I thought I’d begin by expanding on my story of how I started out.  My hope is that something in here is helpful to you.&lt;/p&gt;
 
@@ -204,7 +204,7 @@
 
 &lt;p&gt;At the beginning, this historic tweet by Josh Wills was both funny and helpful to me – giving me perspective.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/becomedatascientist/datascientistdef.png&quot; alt=&quot;Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/becomedatascientist/datascientistdef.png&quot; alt=&quot;Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Before I presented on AI to 700 people at //build, before I taught an ML package at a workshop, before I had read docs and gone through the tutorials and before I had trolled YouTube for ML videos, I had attended the Open Data Science Conference in the Fall of 2015.  &lt;strong&gt;I networked, as we do&lt;/strong&gt;, and met a group of devs/data scientists/physicists/biologists interested in data science like me (a great, diverse group of super smart people!) and immediately got involved in a Python workshop group (GitHub &lt;a href=&quot;https://github.com/PythonWorkshop&quot;&gt;organization&lt;/a&gt;).  I got asked to help them give a workshop on ML, scikit-learn and tensorflow they were planning for the following year because I had a some basic Python materials they could use.&lt;/p&gt;
 
@@ -246,9 +246,9 @@
     
       <item>
         <title>Wading In a Tide Pool of Choices, How Do I Begin Writing a Package in Python?</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/resources/images/packages1/whatspackage.jpg&quot; alt=&quot;colorful package structure&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  There’s more than one way to create the structure and setup the project, but we start with a name and a magical file called &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.py&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  There’s more than one way to create the structure and setup the project, but we start with a name and a magical file called &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/resources/images/packages1/whatspackage.jpg&quot; alt=&quot;colorful package structure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve pulled from several sources (see Resources below) and have mashed them together to create a brief synopsis of what I plan on doing for my first python package.  I thought I’d share these findings with you.  I’ve tried to be python 2/3 agnostic as needed.&lt;/p&gt;
 
@@ -401,11 +401,11 @@ To use (with caution), simply do::
     
       <item>
         <title>OCRBot Gets Attached</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/resources/images/bot_part3/knn_mharris_letters.jpg&quot; alt=&quot;k-nearest neighbors example&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  Chatterbots are trending bigtime!  Here, we continue the story of OCRBot, a word recognizing chatbot.  OCRBot’s new ability to get image text from attachments is revealed (adding to it’s existing ability to take image web links).  So, we can snap a picture of some text and OCRbot finds the words.  This could lead us into even more exciting realms like text to speech or translation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/bot_part3/knn_mharris_letters.jpg&quot; alt=&quot;k-nearest neighbors example&quot; /&gt;&lt;/p&gt;
 
 &lt;p align=&quot;right&quot;&gt;&lt;b&gt;For OCR, commonly a k-nearest neighbors classifier is used for character recognition&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  Chatterbots are trending bigtime!  Here, we continue the story of OCRBot, a word recognizing chatbot.  OCRBot’s new ability to get image text from attachments is revealed (adding to it’s existing ability to take image web links).  So, we can snap a picture of some text and OCRbot finds the words.  This could lead us into even more exciting realms like text to speech or translation.&lt;/p&gt;
 
 &lt;p&gt;For the first two stories, see &lt;a href=&quot;https://michhar.github.io/posts/how-to-bot-on-mac&quot;&gt;Part 1&lt;/a&gt; and &lt;a href=&quot;https://michhar.github.io/posts/ocrbot-makes-a-connection&quot;&gt;Part 2&lt;/a&gt;.&lt;/p&gt;
 
@@ -549,9 +549,9 @@ To use (with caution), simply do::
     
       <item>
         <title>The Notebook Superhero -- Is It Always a Contest?</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/resources/images/jupyter_beaker/header_beaker_n_jupyter.jpg&quot; alt=&quot;is there a wall between jupyter and beaker&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  Once you learn how to use one kind of notebook system, the knowledge will transfer easily to another.  Here, we’re discussing two, Jupyter and Beaker.  Because Jupyter is much more mature of a project, it’d probably be the best place to start.  But for those with that extreme sense of adventure and/or use Python 2 a lot with other languages, give the Beaker notebooks a chance.  Loads of potential for data scientists there.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/TL;DR&quot;&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;&lt;/a&gt;:  Once you learn how to use one kind of notebook system, the knowledge will transfer easily to another.  Here, we’re discussing two, Jupyter and Beaker.  Because Jupyter is much more mature of a project, it’d probably be the best place to start.  But for those with that extreme sense of adventure and/or use Python 2 a lot with other languages, give the Beaker notebooks a chance.  Loads of potential for data scientists there.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/resources/images/jupyter_beaker/header_beaker_n_jupyter.jpg&quot; alt=&quot;is there a wall between jupyter and beaker&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;whats-a-notebook&quot;&gt;What’s a notebook?&lt;/h3&gt;
 

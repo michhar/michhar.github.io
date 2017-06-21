@@ -3,14 +3,16 @@ layout: post
 title: Python for Data Science Goes Into the Wild
 comments: true
 description: A report back on a tutorial on Python at the Data Science Summit in Atlanta, GA, 2016.
-logo:  "../resources/images/novelty.png"
+image:  /img/novelty.png
 tags:
     - python
     - data-science
     - jupyter
 ---
 
-I had a great time interacting with some of the most motivated people I've ever met at the **Data Science Summit** in Atlanta, GA, on September 26 and 27th.  The attendees showed up to learn new skills in the analytics domain.  A colleague and I delivered two courses for the price of one (well, at the very least they were in the same room - choose your own adventure) and we saw people so motivated, they worked for a full 3 hour session, heads down, and with an intense drive.  The courses were self-paced and self-guided with us there as proctors.  The other course in the room was on Microsoft R Server and SQL Server R Services, however my expertise lay in **Python for Data Science**, a course I created and that was recently released on the landing page of [https://notebooks.azure.com](https://notebooks.azure.com).  This course's audience includes those:
+I had a great time interacting with some of the most motivated people I've ever met at the **Data Science Summit** in Atlanta, GA, on September 26 and 27th.  
+
+The attendees showed up to learn new skills in the analytics domain.  A colleague and I delivered two courses for the price of one (well, at the very least they were in the same room - choose your own adventure) and we saw people so motivated, they worked for a full 3 hour session, heads down, and with an intense drive.  The courses were self-paced and self-guided with us there as proctors.  The other course in the room was on Microsoft R Server and SQL Server R Services, however my expertise lay in **Python for Data Science**, a course I created and that was recently released on the landing page of [https://notebooks.azure.com](https://notebooks.azure.com).  This course's audience includes those:
   
 * New to Python
 * Experienced with Python, but not data science

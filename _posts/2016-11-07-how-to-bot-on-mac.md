@@ -4,7 +4,7 @@ title: Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
 category: Notes_Posts
 comments: true
 description: A short chatterbot dev story
-logo:  "../resources/images/ocrbot_local.png"
+image:  /img/ocrbot_local.png
 tags:
     - bots
     - dev

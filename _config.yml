@@ -1,18 +1,18 @@
 # Site settings
-title: Waterfalls of Data
+title: Your awesome title
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://michhar.github.io" # the base hostname & protocol for your site
-twitter_username: rheartpython
-github_username:  michhar
-# google_play: 'GDGX'
-# google_plus_com: '109485346959707049693'  # Community link
-# google_plus_per: '+GDGManagua'  #Personal link
-# facebook_app_id: 12345
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+google_play: 'GDGX'
+google_plus_com: '109485346959707049693'  # Community link
+google_plus_per: '+GDGManagua'  #Personal link
+facebook_app_id: 12345
 
 # Layout settings
 header_type: default  # values [ drawer, default ]
@@ -30,8 +30,8 @@ more_vert:
     name: Cool Option 3
     link: www.myawesomelink.com
 
-disqus: false
-disqus_shortname: 
+disqus: true
+disqus_shortname: 'gdgmanagua'
 
 # Build settings
 markdown: kramdown

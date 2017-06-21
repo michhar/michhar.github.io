@@ -3,7 +3,7 @@ layout: post
 title: Javascript and Python Meet through Magic and IPython
 comments: true
 description: A short, simple post on passing variables between these two languages in Jupyter notebooks
-logo:  "../resources/images/js_python_friends/header_pic.jpg"
+image:  /img/js_python_friends/header_pic.jpg
 tags:
     - python
     - javascript

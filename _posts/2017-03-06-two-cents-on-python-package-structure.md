@@ -9,9 +9,9 @@ tags:
     - dev
 ---
 
-![colorful package structure]({{ site.baseurl }}/resources/images/packages1/whatspackage.jpg)
-
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  There's more than one way to create the structure and setup the project, but we start with a name and a magical file called `setup.py`.
+
+![colorful package structure]({{ site.baseurl }}/resources/images/packages1/whatspackage.jpg)
 
 I've pulled from several sources (see Resources below) and have mashed them together to create a brief synopsis of what I plan on doing for my first python package.  I thought I'd share these findings with you.  I've tried to be python 2/3 agnostic as needed.
 

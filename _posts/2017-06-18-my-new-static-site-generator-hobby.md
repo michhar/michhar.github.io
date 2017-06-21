@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Overlaying a Website on top of a GitHub Repository"
+description:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 date:   2017-06-18 11:34:20
 categories: web-dev
 author: Micheleen Harris
@@ -8,16 +9,16 @@ highlight: true
 image: /img/sitegenpost/octocat_web_mharris.png
 ---
 
-**tl:dr**:  A quick discovery post on easily laying a cool, templated static website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
+**tl:dr**:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
-![My octocat logo]({{ site.baseurl }}/resources/images/sitegenpost/octocat_web_mharris.png)
+![My octocat logo](/img/sitegenpost/octocat_web_mharris.png)
 <p align="right"><b>Designer octocat</b></p>
 
 I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I've painstakingly written in Markdown files to showcase my work.
 
 Using static site generators, like Jekyll or MkDocs (and others — good article [here](https://www.fullstackpython.com/static-site-generator.html)) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.
 
-![My personal webjeda cards site]({{ site.baseurl }}/resources/images/sitegenpost/my_webjeda_main.png)
+![My personal webjeda cards site](/img/sitegenpost/my_webjeda_main.png)
 <p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
 
 Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide [here](https://guides.github.com/features/mastering-markdown/)).  However, if you like reStructuredText or HTML better there are generators out there for you.
@@ -49,7 +50,7 @@ Clarification on project setups:  some themes or static site generators that use
 
 ### Chalk
 
-![Chalk screenshot]({{ site.baseurl }}/resources/images/sitegenpost/chalk_main.png)
+![Chalk screenshot](/img/sitegenpost/chalk_main.png)
 <p align="right"><b>Chalk demo site</b></p>
 
 _Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll._
@@ -94,12 +95,12 @@ Recommended tweaks:
 	---
    ```
 
-![Chalk screenshot my site]({{ site.baseurl }}/resources/images/sitegenpost/my_chalk_main.png)
+![Chalk screenshot my site](/img/sitegenpost/my_chalk_main.png)
 <p align="right"><b>My Chalk-based site with icons on main page</b></p>
 
 ### Webjeda Cards
 
-![Webjeda screenshot]({{ site.baseurl }}/resources/images/sitegenpost/webjeda_main.png)
+![Webjeda screenshot](/img/sitegenpost/webjeda_main.png)
 <p align="right"><b>Webjeda demo site</b></p>
 
 _Webjeda Cards is a Bootstrap based jekyll theme for portfolio, photography or any kind of blog._
@@ -145,7 +146,7 @@ Recommended tweaks:
 
 ### MkDocs
 
-![MkDocs screenshot]({{ site.baseurl }}/resources/images/sitegenpost/my_mkdocs_main.png)
+![MkDocs screenshot](/img/sitegenpost/my_mkdocs_main.png)
 <p align="right"><b>Docs for one of my projects using the readthedocs theme</b></p>
 
 _MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation._

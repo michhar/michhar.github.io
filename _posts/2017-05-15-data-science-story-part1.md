@@ -1,15 +1,16 @@
 ---
 layout: post
 title:  "How I Became a Data Scientist Part 1"
+description: My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package and more...
 date:   2017-05-15 00:00:00
 categories: data-science narrative
 author: Micheleen Harris
-image: /img/sitegenpost/octocat_web_mharris.png
+image: /img/RheartPython.png
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
 
-![teach equals learn logo pic]({{ site.baseurl }}/resources/images/becomedatascientist/teachlearn.jpg)
+![teach equals learn logo pic]({{ site.baseurl }}/img/becomedatascientist/teachlearn.jpg)
 
 Last week, I had the amazing opportunity of co-presenting a talk called "Navigating the AI Revolution" at Microsoft's developer conference, //build 2017.  I spoke about questions we can answer with machine learning and mentioned a little bit about **my path into data science**.  Afterwards, many folks approached me about this path and asked for some more guidance and advice.  I thought I'd begin by expanding on my story of how I started out.  My hope is that something in here is helpful to you.
 
@@ -19,7 +20,7 @@ Before I was a data scientist I was a developer.  TBH I'm now a developer again 
 
 At the beginning, this historic tweet by Josh Wills was both funny and helpful to me -- giving me perspective.
 
-![Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.]({{ site.baseurl }}/resources/images/becomedatascientist/datascientistdef.png)
+![Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.]({{ site.baseurl }}/img/becomedatascientist/datascientistdef.png)
 
 Before I presented on AI to 700 people at //build, before I taught an ML package at a workshop, before I had read docs and gone through the tutorials and before I had trolled YouTube for ML videos, I had attended the Open Data Science Conference in the Fall of 2015.  **I networked, as we do**, and met a group of devs/data scientists/physicists/biologists interested in data science like me (a great, diverse group of super smart people!) and immediately got involved in a Python workshop group (GitHub [organization](https://github.com/PythonWorkshop)).  I got asked to help them give a workshop on ML, scikit-learn and tensorflow they were planning for the following year because I had a some basic Python materials they could use.
 

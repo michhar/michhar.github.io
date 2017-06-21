@@ -3,18 +3,17 @@ layout: post
 title: OCRBot Gets Attached
 comments: true
 description: A short chatterbot dev story Part 3
-logo:  "../resources/images/bot_part3/knn_mharris_letters.jpg"
+image:  /img/bot_part3/knn_mharris_letters.jpg
 tags:
     - bots
     - dev
 ---
 
+[**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  Chatterbots are trending bigtime!  Here, we continue the story of OCRBot, a word recognizing chatbot.  OCRBot's new ability to get image text from attachments is revealed (adding to it's existing ability to take image web links).  So, we can snap a picture of some text and OCRbot finds the words.  This could lead us into even more exciting realms like text to speech or translation.
+
 ![k-nearest neighbors example]({{ site.baseurl }}/resources/images/bot_part3/knn_mharris_letters.jpg)
 
 <p align="right"><b>For OCR, commonly a k-nearest neighbors classifier is used for character recognition</b></p>
-
-
-[**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  Chatterbots are trending bigtime!  Here, we continue the story of OCRBot, a word recognizing chatbot.  OCRBot's new ability to get image text from attachments is revealed (adding to it's existing ability to take image web links).  So, we can snap a picture of some text and OCRbot finds the words.  This could lead us into even more exciting realms like text to speech or translation.
 
 For the first two stories, see [Part 1](https://michhar.github.io/posts/how-to-bot-on-mac) and [Part 2](https://michhar.github.io/posts/ocrbot-makes-a-connection).
 
