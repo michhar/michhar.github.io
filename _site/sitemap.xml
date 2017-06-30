@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://michhar.github.io/2017/06/18/my-new-static-site-generator-hobby.html</loc>
+      <loc>http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</loc>
       
         <lastmod>2017-06-18T00:00:00-07:00</lastmod>
       
@@ -11,7 +11,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/05/15/data-science-story-part1.html</loc>
+      <loc>http://localhost:4000/2017/05/15/data-science-story-part1.html</loc>
       
         <lastmod>2017-05-15T00:00:00-07:00</lastmod>
       
@@ -20,7 +20,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/03/06/two-cents-on-python-package-structure.html</loc>
+      <loc>http://localhost:4000/2017/03/06/two-cents-on-python-package-structure.html</loc>
       
         <lastmod>2017-03-06T00:00:00-08:00</lastmod>
       
@@ -29,7 +29,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/03/01/ocrbot-gets-attached.html</loc>
+      <loc>http://localhost:4000/2017/03/01/ocrbot-gets-attached.html</loc>
       
         <lastmod>2017-03-01T00:00:00-08:00</lastmod>
       
@@ -38,7 +38,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/02/19/jupyter-and-beaker-make-a-case.html</loc>
+      <loc>http://localhost:4000/2017/02/19/jupyter-and-beaker-make-a-case.html</loc>
       
         <lastmod>2017-02-19T00:00:00-08:00</lastmod>
       
@@ -47,7 +47,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/02/18/javascript-and-python-have-a-party.html</loc>
+      <loc>http://localhost:4000/2017/02/18/javascript-and-python-have-a-party.html</loc>
       
         <lastmod>2017-02-18T00:00:00-08:00</lastmod>
       
@@ -56,7 +56,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/02/12/confusion-matrix-code-revealed.html</loc>
+      <loc>http://localhost:4000/2017/02/12/confusion-matrix-code-revealed.html</loc>
       
         <lastmod>2017-02-12T00:00:00-08:00</lastmod>
       
@@ -65,7 +65,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2017/02/05/a-python-flask-webapp-gets-smart.html</loc>
+      <loc>http://localhost:4000/2017/02/05/a-python-flask-webapp-gets-smart.html</loc>
       
         <lastmod>2017-02-05T00:00:00-08:00</lastmod>
       
@@ -74,7 +74,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2016/11/15/ocrbot-makes-a-connection.html</loc>
+      <loc>http://localhost:4000/2016/11/15/ocrbot-makes-a-connection.html</loc>
       
         <lastmod>2016-11-15T00:00:00-08:00</lastmod>
       
@@ -83,7 +83,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/notes_posts/2016/11/07/how-to-bot-on-mac.html</loc>
+      <loc>http://localhost:4000/notes_posts/2016/11/07/how-to-bot-on-mac.html</loc>
       
         <lastmod>2016-11-07T00:00:00-08:00</lastmod>
       
@@ -92,7 +92,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2016/10/24/teaching-notes-post.html</loc>
+      <loc>http://localhost:4000/2016/10/24/teaching-notes-post.html</loc>
       
         <lastmod>2016-10-24T00:00:00-07:00</lastmod>
       
@@ -101,7 +101,7 @@
     </url>
   
     <url>
-      <loc>https://michhar.github.io/2016/10/07/notebooks1-post.html</loc>
+      <loc>http://localhost:4000/2016/10/07/notebooks1-post.html</loc>
       
         <lastmod>2016-10-07T00:00:00-07:00</lastmod>
       
@@ -111,19 +111,19 @@
   
   
   <url>
-    <loc>https://michhar.github.iohttps://github.com/michhar/python4ds-notebooks/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/python4ds-notebooks/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://michhar.github.iohttps://github.com/michhar/cntk-playground/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/cntk-playground/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://michhar.github.iohttps://github.com/michhar/python-jupyter-notebooks/</loc>
+    <loc>http://localhost:4000https://github.com/michhar/python-jupyter-notebooks/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
