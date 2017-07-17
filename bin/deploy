@@ -7,7 +7,7 @@ set -e
 
 echo "Started deploying"
 
-git checkout gh-pages-source
+git checkout gh-pages-theme4
 # Build source site.
 bower install
 bundle exec jekyll build
@@ -15,7 +15,7 @@ bundle exec jekyll build
 # Push to gh-pages.
 git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-git push -f -q origin gh-pages-source
+git push -f -q origin gh-pages-theme4
 
 # Checkout master branch, delete and then recreate branch
 if [ `git branch | grep master` ]
