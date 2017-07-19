@@ -40,7 +40,7 @@ git push -f -q origin master
 
 # Move back to previous branch.
 git checkout -
-bower install
+#bower install
 
 echo "Deployed Successfully!"
 
