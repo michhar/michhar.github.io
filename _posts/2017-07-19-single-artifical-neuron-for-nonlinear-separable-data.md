@@ -15,7 +15,7 @@ cover: /img/single_layer_neuron/linearly_sep_leukemia.png
 
 The intent of this post originally was to show the inner workings and limitations of a single artificial neuron using some moderately complex, noisy data; a challenge of sorts - "is this noisy data linearly separable with a single artificial neuron and if not, why is that?".  
 
-However, I found with some data and algorithm exploration, that I could distinguish between two types of leukemia - a naive approach and not really biologically significant, but an interesting outcome nonetheless.  So, even though this post is about the data science, it also touches on a potential method to use in the real world.
+However, I found with some data and algorithm exploration, that I could distinguish between two types of leukemia — a naive approach and not really biologically significant, but an interesting outcome nonetheless.  So, even though this post is about the data science, it also touches on a potential method to use in the real world.
 
 In this post, you'll find information on the use of PCA for data reduction/feature engineering, scaling and normalization for preprocessing, the Adaline algorithm (artificial neuron), different activation functions, among other topics and concepts.
 
@@ -30,7 +30,7 @@ In this post, you'll find information on the use of PCA for data reduction/featu
 
 ### What is an Adaline artificial neuron
 
-The ADAptive LInear NEuron (Adaline) algorithm is very similar to a Perceptron (simplest of the artificial neurons) except that in the Perceptron the weights are updated based on a unit step activation function output (see figure below) whereas Adaline uses a linear activation function to update it's weights giving it a more robust result (that even converges with samples that are not completely separable by a linear hyperplane, unlike the Perception).  In Adaline a _quantizer_ after the activation function, is used to then predict class labels.
+The ADAptive LInear NEuron (Adaline) algorithm is very similar to a Perceptron (simplest of the artificial neurons) except that in the Perceptron the weights are updated based on a unit step activation function output (see figure below) whereas Adaline uses a linear activation function to update it's weights giving it a more robust result (that even converges with samples that are not completely separable by a linear hyperplane, unlike the Perceptron).  In Adaline a _quantizer_ after the activation function, is used to then predict class labels.
 
 Beyond the linear activation function and the _quantizer_, we see the use of a _cost function_, or _objective function_, to update the weights.  In this case we want to minimize this function with an optimization method.  The optimization of the _cost function_ happens with yet another function aptly and simply named an _optimization function_.  In this case our optimization function is _stochastic gradient decent_, which one can of as "climbing down a hill" (using part of the data to calculate, shuffled as well) to get to the minima of the cost function's convex curve (as it updates weights iteratively from a shuffled dataset).
 
@@ -84,7 +84,7 @@ Full code [here](https://github.com/michhar/python-jupyter-notebooks/blob/master
 
 **We still get linear classification boundaries**
 
-These single-neuron classifiers can only result in linear decision boundaries, even if using a non-linear activation, because it's still using a single threshhold value, `z` as in diagram above, to decide whether a data point is classified as 1 or -1.
+These single-neuron classifiers can only result in linear decision boundaries, even if using a non-linear activation, because it's still using a single threshold value, `z` as in diagram above, to decide whether a data point is classified as 1 or -1.
 
 ### The noisy data
 
@@ -100,7 +100,7 @@ leuk = fetch_mldata('leukemia', transpose_data=True,
                       data_home=test_data_home)
 ```
 
-The data is a small, but wide acute lymphocytic leukemia (ALL) vs. acute myelogenous leukemia (AML) dataset.  It has approximlately 7000 biological markers (our features), vs. 72 samples (our data points).
+The data is a small, but wide acute lymphocytic leukemia (ALL) vs. acute myelogenous leukemia (AML) dataset.  It has approximately 7000 biological markers (our features), vs. 72 samples (our data points).
 
 Given the noisy nature of the data and possible skewedness, it was standardized and normalized with convenience functions from `scikit-learn`:
 
@@ -128,7 +128,7 @@ X_test = normalizer.transform(X_test)
 
 Full code [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb) and [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py).
 
-I tried just one feature reduction with PCA to reduce all 7129 dimensions to 2D at first.  However, I could not separate out the ALL samples from AML - this wasn't necessarily immportant to my post on Adaline neurons I was writing, but I decided to try something I'd read about recently for kicks.  In fact the idea sprung from a comment in a Python script where a perceptron was used to create non-linear separation of data for a plot (from [this](https://github.com/daniel-e/pymltools/blob/master/plot_scripts/plot_perceptron_nonlin.py) script on github).  The comment went:
+I tried just one feature reduction with PCA to reduce all 7129 dimensions to 2D at first.  However, I could not separate out the ALL samples from AML - this wasn't necessarily important to my post on Adaline neurons I was writing, but I decided to try something I'd read about recently for kicks.  In fact the idea sprung from a comment in a Python script where a perceptron was used to create non-linear separation of data for a plot (from [this](https://github.com/daniel-e/pymltools/blob/master/plot_scripts/plot_perceptron_nonlin.py) script on Github).  The comment went:
 
 ```
 # map the data into a space with one addition dimension so that
