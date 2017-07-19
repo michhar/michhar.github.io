@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data</title>
+  <meta name="description" content="tl:dr:  Getting a simple, predictive framework distinguishing two types of leukemia based on biological markers from a single-layer neural network was not th...">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/07/19/single-artifical-neuron-for-nonlinear-separable-data.html">
+  <link rel="alternate" type="application/rss+xml" title="Waterfalls of Data" href="http://localhost:4000/feed.xml">
+
+  <!-- Social -->
+  <!--<meta property="fb:admins" content="1554290006" />-->
+  <meta property="og:title" content="On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data" />
+  <meta name="twitter:title" content="On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data" />
+  
+  <meta name="keywords" content="single-layer,artificial-neuron,adaline,PCA,leukemia,sigmoid-activation," />
+  
+  <meta property="og:description" content="tl:dr:  Getting a simple, predictive framework distinguishing two types of leukemia based on biological markers from a single-layer neural network was not th..." />
+  <meta name="twitter:description" content="tl:dr:  Getting a simple, predictive framework distinguishing two types of leukemia based on biological markers from a single-layer neural network was not th..." />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:site_name" content="Waterfalls of Data" />
+
+  <!--
+  <meta property="og:image" content="/img/single_layer_neuron/linearly_sep_leukemia.png" />
+  <meta property="twitter:image" content="/img/single_layer_neuron/linearly_sep_leukemia.png" />
+  
+  <meta name="twitter:card" content="summary" />-->
+
+  
+  <meta property="og:image" content="//img/single_layer_neuron/linearly_sep_leukemia.png" />
+  <meta property="twitter:image" content="//img/single_layer_neuron/linearly_sep_leukemia.png" />
+  
+  <meta name="twitter:card" content="summary" />
+  
+  
+    
+  <meta property="article:tag" content="single-layer">
+    
+  <meta property="article:tag" content="artificial-neuron">
+    
+  <meta property="article:tag" content="adaline">
+    
+  <meta property="article:tag" content="PCA">
+    
+  <meta property="article:tag" content="leukemia">
+    
+  <meta property="article:tag" content="sigmoid-activation">
+    
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title">
+      <a href="/">Waterfalls of Data</a>
+    </h1>
+    
+    <h2 class="site-description">Data science in the world of software dev
+</h2>
+    
+  </div>
+  <nav class="site-nav">
+    <ul class="trigger">
+      <li class=""><a class="page-link" href="http://localhost:4000/">Home</a></li>
+            <li class=""><a class="page-link" href="/about.html">About</a></li>
+      
+      <li class="has-submenu">
+        <a class="page-link hover-link" href="#projects">Projects &gt;</a>
+        <ul class="submenu">
+        
+          <li><a class="page-link" href="https://github.com/michhar/python4ds-notebooks/">Python for Data Science</a></li>
+        
+          <li><a class="page-link" href="https://github.com/michhar/cntk-playground/">My CNTK Playground</a></li>
+        
+          <li><a class="page-link" href="https://github.com/michhar/python-jupyter-notebooks/">Python Notebooks on Azure</a></li>
+        
+          <!--<li><a href="/cv/MHarris_CV_2017.pdf" class="page-link">My Resume´</a></li>-->
+        </ul>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data</h1>
+    <p class="reading-time" title="Estimated read time">
+  5 mins read
+</p>
+  <a class="sh-twt" href="#" target="_blank" onclick="window.open('https://twitter.com/share?url='+window.location.href+'&via=rheartpython','_blank','height=300,width=600');return false;">
+    <span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a>
+
+    
+    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+      <img itemprop="url" src="/img/single_layer_neuron/linearly_sep_leukemia.png" alt="On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data" />
+    </figure>
+    
+    <p class="post-meta"><time datetime="2017-07-19T00:00:00-07:00" itemprop="datePublished">July 19, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody"><p><strong>tl:dr</strong>:  Getting a simple, predictive framework distinguishing two types of leukemia based on biological markers from a single-layer neural network was not the intent of this exercise. It is, however, indicative of the power of a single artificial neuron and thoughtful feature reduction.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>The intent of this post originally was to show the inner workings and limitations of a single artificial neuron using some moderately complex, noisy data; a challenge of sorts - “is this noisy data linearly separable with a single artificial neuron and if not, why is that?”.</p>
+
+<p>However, I found with some data and algorithm exploration, that I could distinguish between two types of leukemia - a naive approach and not really biologically significant, but an interesting outcome nonetheless.  So, even though this post is about the data science, it also touches on a potential method to use in the real world.</p>
+
+<p>In this post, you’ll find information on the use of PCA for data reduction/feature engineering, scaling and normalization for preprocessing, the Adaline algorithm (artificial neuron), different activation functions, among other topics and concepts.</p>
+
+<ul>
+  <li><a href="#what-is-an-adaline-artificial-neuron">What is an Adaline artificial neuron</a></li>
+  <li><a href="#adaline-with-a-sigmoid-activation-function">Adaline with a sigmoid activation function</a></li>
+  <li><a href="#choosing-an-activation-function">Choosing an activation function</a></li>
+  <li><a href="#the-noisy-data">The noisy data</a></li>
+  <li><a href="#3d-to-run-through-network-and-2d-to-gain-insights">3D to run through network and 2D to gain insights</a></li>
+  <li><a href="#conclusion-from-my-experiment">Conclusion from my experiment</a></li>
+  <li><a href="#credits-and-further-reading">Credits and further reading</a></li>
+</ul>
+
+<h3 id="what-is-an-adaline-artificial-neuron">What is an Adaline artificial neuron</h3>
+
+<p>The ADAptive LInear NEuron (Adaline) algorithm is very similar to a Perceptron (simplest of the artificial neurons) except that in the Perceptron the weights are updated based on a unit step activation function output (see figure below) whereas Adaline uses a linear activation function to update it’s weights giving it a more robust result (that even converges with samples that are not completely separable by a linear hyperplane, unlike the Perception).  In Adaline a <em>quantizer</em> after the activation function, is used to then predict class labels.</p>
+
+<p>Beyond the linear activation function and the <em>quantizer</em>, we see the use of a <em>cost function</em>, or <em>objective function</em>, to update the weights.  In this case we want to minimize this function with an optimization method.  The optimization of the <em>cost function</em> happens with yet another function aptly and simply named an <em>optimization function</em>.  In this case our optimization function is <em>stochastic gradient decent</em>, which one can of as “climbing down a hill” (using part of the data to calculate, shuffled as well) to get to the minima of the cost function’s convex curve (as it updates weights iteratively from a shuffled dataset).</p>
+
+<p>A really great discussion from which much of this information was adapted can be found in Sebastian Raschka’s <em>Python Machine Learning</em> book (link <a href="https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning">here</a>) and excellent blog post on this topic <a href="http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">here</a> on the single-layer neurons.</p>
+
+<h3 id="adaline-with-a-sigmoid-activation-function">Adaline with a sigmoid activation function</h3>
+
+<p>I grabbed Raschka’s ADAptive LInear NEuron (Adaline) classifier open-source code <a href="https://github.com/PacktPublishing/Python-Machine-Learning/blob/master/3547_02_Code.ipynb">here</a> (the AdalineSGD class) and updated the activation function to logistic sigmoid from a linear function.</p>
+
+<p>Note, with the Adaline (versus the Perceptron) we use a continuous number rather than the binary class label, to compute the model error and update the weights.  Then to predict a class label, another function is used called a <em>quantizer</em>.  Also, the weights are updated in a more sophisticated manner.</p>
+
+<h3 id="choosing-an-activation-function">Choosing an activation function</h3>
+
+<p><img src="/img/single_layer_neuron/singleneuron_activation.png" alt="" /></p>
+
+<p>In code, given this “net input” function:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">net_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="s">"""Calculate net input"""</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>I update the activation function from linear as in:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="s">"""Compute linear activation"""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>To a logistic sigmoidal function:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="s">"""Compute sigmoidal activation
+        
+        Returns
+        -------
+        A 1d array of length n_samples
+
+        """</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">v</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
+
+</code></pre>
+</div>
+
+<p>Full code <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb">here</a> and <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py">here</a>.</p>
+
+<p><strong>We still get linear classification boundaries</strong></p>
+
+<p>These single-neuron classifiers can only result in linear decision boundaries, even if using a non-linear activation, because it’s still using a single threshhold value, <code class="highlighter-rouge">z</code> as in diagram above, to decide whether a data point is classified as 1 or -1.</p>
+
+<h3 id="the-noisy-data">The noisy data</h3>
+
+<p>The data was downloaded from the Machine Learning Data Set Repository <a href="https://mldata.org">mldata.org</a> using a convenience function from <code class="highlighter-rouge">scikit-learn</code>.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.datasets.mldata</span> <span class="kn">import</span> <span class="n">fetch_mldata</span>
+
+<span class="c"># Fetch a small leukemia dataset from mldata.org</span>
+<span class="c">#   http://mldata.org/repository/data/viewslug/leukemia-all-vs-aml/</span>
+<span class="n">test_data_home</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
+<span class="n">leuk</span> <span class="o">=</span> <span class="n">fetch_mldata</span><span class="p">(</span><span class="s">'leukemia'</span><span class="p">,</span> <span class="n">transpose_data</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                      <span class="n">data_home</span><span class="o">=</span><span class="n">test_data_home</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>The data is a small, but wide acute lymphocytic leukemia (ALL) vs. acute myelogenous leukemia (AML) dataset.  It has approximlately 7000 biological markers (our features), vs. 72 samples (our data points).</p>
+
+<p>Given the noisy nature of the data and possible skewedness, it was standardized and normalized with convenience functions from <code class="highlighter-rouge">scikit-learn</code>:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span><span class="p">,</span> <span class="n">Normalizer</span>
+
+<span class="c"># Fit the scalar to the training dataset for </span>
+<span class="c">#   zero mean and unit variance of features.</span>
+<span class="c">#   Using a robust scaler which is more resistent to outliers.</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">RobustScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c"># Apply the transform</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c"># Apply the same transform to the test dataset </span>
+<span class="c">#   (simulating what happens when we get new data)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c"># Normalizing data as well to scale samples to unit norm</span>
+<span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Full code <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb">here</a> and <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py">here</a>.</p>
+
+<p>I tried just one feature reduction with PCA to reduce all 7129 dimensions to 2D at first.  However, I could not separate out the ALL samples from AML - this wasn’t necessarily immportant to my post on Adaline neurons I was writing, but I decided to try something I’d read about recently for kicks.  In fact the idea sprung from a comment in a Python script where a perceptron was used to create non-linear separation of data for a plot (from <a href="https://github.com/daniel-e/pymltools/blob/master/plot_scripts/plot_perceptron_nonlin.py">this</a> script on github).  The comment went:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># map the data into a space with one addition dimension so that
+# it becomes linearly separable
+</code></pre>
+</div>
+
+<p>So, I gave it a shot.</p>
+
+<h3 id="3d-to-run-through-network-and-2d-to-gain-insights">3D to run through network and 2D to gain insights</h3>
+
+<p>My next step was to try feeding the neural network the data in 3D space (the 3 features or components from the first PCA reduction).</p>
+
+<p>I then reduced the 3D data to 2D, mainly to visualize it.  A hyperplane was drawn (blank dashed line) to represent the decision boundary.  The surface in the diagram below is representative of a sigmoidal output along the direction of the weight vector.</p>
+
+<p><img src="/img/single_layer_neuron/linearly_sep_leukemia.png" alt="" /></p>
+
+<p>Full code <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb">here</a> and <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py">here</a>.</p>
+
+<p>Note, the stochastic part of the single-neuron optimizer, stochastic gradient decent, causes some variation in the results if run again.  It might be a good idea to do a batch version of the Adaline neuron.  Another note is that one does not necessarily have to use a logistic sigmoidal activation function; it was just used here as an experiment and to prove to myself I’d always get a linear decision boundary.</p>
+
+<h3 id="conclusion-from-my-experiment">Conclusion from my experiment</h3>
+
+<p>I was surprised and impressed that I got a linearly separable result!  Albeit, that was not the intent of this exercise, but indicative of the power of a single neuron and thoughtful feature reduction.  It makes me wonder what a small neural network could do!</p>
+
+<h3 id="credits-and-further-reading">Credits and further reading</h3>
+
+<ol>
+  <li>Sebastian Raschka’s <em>Python Machine Learning</em> <a href="https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning">book</a></li>
+  <li>The open-source notebooks with code accompanying the <em>Python Machine Learning</em> book <a href="https://github.com/PacktPublishing/Python-Machine-Learning">here</a> and related code <a href="https://github.com/rasbt/mlxtend/tree/master/mlxtend/classifier">here</a></li>
+  <li>Raschka’s blog <a href="http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">post</a> on <em>Single-Layer Neural Networks and Gradient Descent</em></li>
+  <li><code class="highlighter-rouge">Scikit-learn</code>’s preprocessing data module <a href="http://scikit-learn.org/stable/modules/preprocessing.html">link</a> for scaling features and samples</li>
+</ol>
+</div>
+  
+
+</article>
+
+<!--Discus comments:-->
+
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = "https://michhar.github.io/tutorial_posts/notebooks1-post";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "notebooks1-post"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//blog-vf2v0kav1a.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                                      
+                                
+
+
+<script>/* Google Analytics*/
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86308542-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+      </div>
+    </div>
+    
+
+    
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <!--<h2 class="footer-heading">Waterfalls of Data</h2>-->
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Waterfalls of Data</li>
+          <li><a href="mailto:michhar@microsoft.com">michhar@microsoft.com</a></li>
+          <li><em>Powered by <a href="http://bitwiser.in/Jekyll-Read/" target="_blank">Jekyll-Read</a> theme.</em></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/michhar"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">michhar</span></a>
+
+          </li>
+          
+          
+          <li>
+            <a href="https://twitter.com/rheartpython"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">rheartpython</span></a>
+
+          </li>
+          
+          <li>Subscribe <a href="/feed.xml">via RSS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-3">
+        <p>Data science in the world of software dev
+</p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="http://localhost:4000/js/script.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86308542-1', 'https://michhar.github.io');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+
+
+
+  </body>
+
+</html>
