@@ -9,7 +9,7 @@ echo "Started deploying"
 
 git checkout gh-pages-theme4
 # Build source site.
-bower install
+#bower install
 bundle exec jekyll build
 
 # Push to gh-pages.

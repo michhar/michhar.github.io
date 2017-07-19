@@ -4,10 +4,10 @@
     <title>Waterfalls of Data</title>
     <description>Data science in the world of software dev
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Jul 2017 07:59:07 -0700</pubDate>
-    <lastBuildDate>Wed, 19 Jul 2017 07:59:07 -0700</lastBuildDate>
+    <link>https://michhar.github.io/</link>
+    <atom:link href="https://michhar.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 19 Jul 2017 08:01:00 -0700</pubDate>
+    <lastBuildDate>Wed, 19 Jul 2017 08:01:00 -0700</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -16,8 +16,8 @@
 
 </description>
         <pubDate>Wed, 19 Jul 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/07/19/single-artifical-neuron-for-nonlinear-separable-data.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/07/19/single-artifical-neuron-for-nonlinear-separable-data.html</guid>
+        <link>https://michhar.github.io/2017/07/19/single-artifical-neuron-for-nonlinear-separable-data.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/07/19/single-artifical-neuron-for-nonlinear-separable-data.html</guid>
         
         <category>single-layer</category>
         
@@ -40,8 +40,8 @@
 
 </description>
         <pubDate>Sun, 18 Jun 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/18/my-new-static-site-generator-hobby.html</guid>
+        <link>https://michhar.github.io/2017/06/18/my-new-static-site-generator-hobby.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/06/18/my-new-static-site-generator-hobby.html</guid>
         
         <category>web-dev</category>
         
@@ -54,8 +54,8 @@
 
 </description>
         <pubDate>Mon, 15 May 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/05/15/data-science-story-part1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/15/data-science-story-part1.html</guid>
+        <link>https://michhar.github.io/2017/05/15/data-science-story-part1.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/05/15/data-science-story-part1.html</guid>
         
         <category>data-science</category>
         
@@ -70,8 +70,8 @@
 
 </description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/03/06/two-cents-on-python-package-structure.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/06/two-cents-on-python-package-structure.html</guid>
+        <link>https://michhar.github.io/2017/03/06/two-cents-on-python-package-structure.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/03/06/two-cents-on-python-package-structure.html</guid>
         
         <category>python</category>
         
@@ -86,8 +86,8 @@
 
 </description>
         <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/03/01/ocrbot-gets-attached.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/01/ocrbot-gets-attached.html</guid>
+        <link>https://michhar.github.io/2017/03/01/ocrbot-gets-attached.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/03/01/ocrbot-gets-attached.html</guid>
         
         <category>bots</category>
         
@@ -102,8 +102,8 @@
 
 </description>
         <pubDate>Sun, 19 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/02/19/jupyter-and-beaker-make-a-case.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/19/jupyter-and-beaker-make-a-case.html</guid>
+        <link>https://michhar.github.io/2017/02/19/jupyter-and-beaker-make-a-case.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/02/19/jupyter-and-beaker-make-a-case.html</guid>
         
         <category>r</category>
         
@@ -122,8 +122,8 @@
 
 </description>
         <pubDate>Sat, 18 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/02/18/javascript-and-python-have-a-party.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/18/javascript-and-python-have-a-party.html</guid>
+        <link>https://michhar.github.io/2017/02/18/javascript-and-python-have-a-party.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/02/18/javascript-and-python-have-a-party.html</guid>
         
         <category>python</category>
         
@@ -140,8 +140,8 @@
 
 </description>
         <pubDate>Sun, 12 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/02/12/confusion-matrix-code-revealed.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/12/confusion-matrix-code-revealed.html</guid>
+        <link>https://michhar.github.io/2017/02/12/confusion-matrix-code-revealed.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/02/12/confusion-matrix-code-revealed.html</guid>
         
         <category>python</category>
         
@@ -158,8 +158,8 @@
 
 </description>
         <pubDate>Sun, 05 Feb 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/02/05/a-python-flask-webapp-gets-smart.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/05/a-python-flask-webapp-gets-smart.html</guid>
+        <link>https://michhar.github.io/2017/02/05/a-python-flask-webapp-gets-smart.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2017/02/05/a-python-flask-webapp-gets-smart.html</guid>
         
         <category>python</category>
         
@@ -178,8 +178,8 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
 
 </description>
         <pubDate>Tue, 15 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/15/ocrbot-makes-a-connection.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/15/ocrbot-makes-a-connection.html</guid>
+        <link>https://michhar.github.io/2016/11/15/ocrbot-makes-a-connection.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2016/11/15/ocrbot-makes-a-connection.html</guid>
         
         <category>bots</category>
         
@@ -195,8 +195,8 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
 
 </description>
         <pubDate>Mon, 07 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/notes_posts/2016/11/07/how-to-bot-on-mac.html</link>
-        <guid isPermaLink="true">http://localhost:4000/notes_posts/2016/11/07/how-to-bot-on-mac.html</guid>
+        <link>https://michhar.github.io/notes_posts/2016/11/07/how-to-bot-on-mac.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/notes_posts/2016/11/07/how-to-bot-on-mac.html</guid>
         
         <category>bots</category>
         
@@ -215,8 +215,8 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
 
 </description>
         <pubDate>Mon, 24 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/24/teaching-notes-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/24/teaching-notes-post.html</guid>
+        <link>https://michhar.github.io/2016/10/24/teaching-notes-post.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2016/10/24/teaching-notes-post.html</guid>
         
         <category>teaching</category>
         
@@ -229,8 +229,8 @@ Update:  November 16, 2016 Microsoft announced the Azure Bot Service in Preview.
 
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/07/notebooks1-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/07/notebooks1-post.html</guid>
+        <link>https://michhar.github.io/2016/10/07/notebooks1-post.html</link>
+        <guid isPermaLink="true">https://michhar.github.io/2016/10/07/notebooks1-post.html</guid>
         
         <category>python</category>
         
