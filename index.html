@@ -3,57 +3,59 @@ layout: default
 ---
 
 <div class="home">
-  <section class="post-list">
-    {% for post in paginator.posts %}
-    <article class="post-list-item" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" itemprop="name headline">{{ post.title }}</a></h2>
-      </header>
-      <section>
-      <p><time datetime="{{post.date | date_to_xmlschema}}" class="post-meta" itemprop="datePublished">{{post.date | date:"%B %-d, %Y" }}</time> &middot; <em>{% assign words = post.content | number_of_words %}
-          {% if words < 360 %}1 min{% else %}{{ words | divided_by:250 }} mins{% endif %} read</em>      
-</p>
-
-
-
-      {% if post.cover and post.cover != "" %}
-        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-        <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img itemprop="url" src="{{ post.cover }}" alt="{{post.title}}" />
-        </figure>
-        </a>
-      {% endif %}
-      <summary>
-        <p>{{ post.description | strip_html }}</p>
-      </summary>
-      </section>
-      <footer class="read-more"><a href="{{ post.url | prepend: site.baseurl }}">Continue Reading →</a></footer>
-    </article>
-    {% endfor %}
-  </section>
-  <div class="pagination">
-    {% if paginator.previous_page %}
-       <a href="{{ paginator.previous_page_path }}" class="previous">&lt;&lt;&nbsp;Previous</a>
-    {% else %}
-        <span class="previous">&lt;&lt;&nbsp;Previous</span>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">Next&nbsp;&gt;&gt;</a>
-    {% else %}
-        <span class="next ">Next&nbsp;&gt;&gt;</span>
-    {% endif %}
+  
+  
+ <div class="col col-12">
+      <div class="col col-3">
+          <div class="block glass"  style="background-image:url(assets/avatar.jpg)">      
+          </div>
+      </div>
+      <div class="col col-9">
+        <div class="block glass">
+            <div class="block-body">
+                <h2>Yo, I'm Dude Labouwski</h2>
+                <p class="grey-text">Aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores ausLorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus</p>
+            </div>
+        </div>
+      </div>  
   </div>
+  <div class="col col-12">
+    {% for port in site.data.portfolio %}
+      <div class="col col-{{port.width}}">
+        <div class="block" style="background-image:url(assets/{{port.img}})">
+            <div class="block-body height-{{port.height}}">              
+                <h2 class="align-bottom-right">
+                  {{ port.title }}
+                </h2>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  <div class="col col-9">
+    {% for post in site.posts %}
+      <div class="col col-{{post.width}}">
+        <div class="block {{post.color}}">
+            <div class="block-body height-{{post.height}}">
+                <span class="post-meta white-text">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                <h2>
+                  <a class="post-link white-text" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h2>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    <div class="col col-3">
+        <div class="block glass">
+            <div class="block-body">
+                <h3 class="margin-bot">Skills</h3>                
+                {% for skill in site.data.skills %}
+                <span class="post-meta white-text">{{skill.descr}}</span>
+                <div class="progress margin-bot"><div class="progress-{{skill.xp}}"></div></div>                
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
-
-
-<script>/* Google Analytics*/
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-86308542-1', 'auto');
-  ga('send', 'pageview');
-
-</script>

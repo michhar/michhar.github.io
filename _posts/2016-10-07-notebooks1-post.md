@@ -1,4 +1,7 @@
 ---
+color:  orange
+width:   6
+height:  3
 layout: post
 title: Python for Data Science Goes Into the Wild
 comments: true

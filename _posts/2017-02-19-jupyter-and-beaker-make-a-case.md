@@ -1,4 +1,7 @@
 ---
+color:  green
+width:   6 
+height:  1
 layout: post
 title: The Notebook Superhero -- Is It Always a Contest?
 description: A discussion around Beaker and Jupyter notebooks

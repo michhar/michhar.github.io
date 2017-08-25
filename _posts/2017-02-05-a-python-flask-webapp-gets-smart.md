@@ -1,6 +1,9 @@
 ---
+color:  red
+width:   6
+height:  3
 layout: post
-title: Creating a Python Flask Web App that Uses an Azure Machine Learning Model to Cluster Text Features - A True Smart App
+title: Creating a Smart Python Flask Web App using Azure Machine Learning
 comments: true
 description: A tech piece on using one of my favorite web microframeworks to serve up some ML
 cover:  /img/flask-post-diagram.png

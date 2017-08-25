@@ -1,46 +1,13 @@
-
-
 <footer class="site-footer">
+
   <div class="wrapper">
-    <!--<h2 class="footer-heading">{{ site.title }}</h2>-->
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          <li><em>Powered by <a href="http://bitwiser.in/Jekyll-Read/" target="_blank">Jekyll-Read</a> theme.</em></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter-footer.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-          <li>Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-col-3">
+  
+    <div class="col-wrapper">     
+     
         <p>{{ site.description }}</p>
-        {% if site.mailchimp and site.mailchimp != "" %}
-        <form action="{{site.mailchimp}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form" target="_blank" novalidate="">
-          <legend>Subscribe to get notified of new posts.</legend>
-          <p><input type="email" value="" name="EMAIL" class="mui-form-control mui-empty" id="mce-EMAIL" placeholder="Your email"></p>
-          <div style="position: absolute; left: -5000px;"><input type="text" name="b_98dffea21944db66c8fa221ec_8cc0f04ed1" tabindex="-1" value=""></div>
-          <p><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mui-btn mui-btn-primary"></p>
-        </form>
-        {% endif %}
-      </div>
+     
     </div>
+
   </div>
+
 </footer>
-<script type="text/javascript" src="{{ "/js/script.js" | prepend: site.baseurl | prepend: site.url}}"></script>
-{% if site.ga_id %}
-  {% include analytics.html %}
-{% endif %}

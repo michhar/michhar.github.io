@@ -1,6 +1,9 @@
 ---
+color:  orange
+width:   6
+height:  3
 layout: post
-title:  On using an Adaline Artificial Neuron for the Classification of Non-Linearly Separable, Noisy Data
+title:  On using an Adaline Artificial Neuron for the Classification
 comments: true
 description:  Some fun with activation functions and dimensionality reduction
 tags: [single-layer, artificial-neuron, adaline, PCA, leukemia, sigmoid-activation]

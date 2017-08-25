@@ -1,4 +1,7 @@
 ---
+color:  red
+width:   6
+height:  3
 layout: post
 title:  "How I Became a Data Scientist Part 1"
 comments: true

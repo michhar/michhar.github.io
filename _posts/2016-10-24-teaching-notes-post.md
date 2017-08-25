@@ -1,4 +1,7 @@
 ---
+color:  blue
+width:   6
+height:  3
 layout: post
 title: Tips I have Learned by Being a Trainer for a Year
 comments: true

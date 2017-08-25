@@ -1,4 +1,7 @@
 ---
+color:  lime
+width:   6
+height:  6
 layout: post
 title:  Overlaying a Website ontop of a GitHub Repository
 comments: true

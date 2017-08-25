@@ -1,4 +1,7 @@
 ---
+color:  grey
+width:   6
+height:  3
 layout: post
 title: OCRBot Gets Attached
 comments: true

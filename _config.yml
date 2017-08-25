@@ -6,28 +6,14 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-gems: [jekyll-paginate]
-title: Waterfalls of Data
-email: michhar@microsoft.com
+title: My Portfolio
+email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Data science in the world of software dev
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://michhar.github.io" # the base hostname & protocol for your site
-twitter_username: rheartpython
-github_username:  michhar
-sass:
-  style: compressed
-# Pagination
-paginate: 5
-paginate_path: "page:num"
+  Jannik Richter, jannik811@gmail.com
+baseurl: "/jekyll-slender-template" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
 # Build settings
 markdown: kramdown
-
-# Newsletter URL
-mailchimp: 
-
-# Analytics
-ga_id: UA-86308542-1
-ga_domain: https://michhar.github.io
-# disqus: blog-vf2v0kav1a
-disqus: micheleenharris

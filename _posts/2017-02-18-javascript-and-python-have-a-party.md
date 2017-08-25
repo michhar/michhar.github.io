@@ -1,4 +1,7 @@
 ---
+color:  lime
+width:   6
+height:  3
 layout: post
 title: Javascript and Python Meet through Magic and IPython
 comments: true
