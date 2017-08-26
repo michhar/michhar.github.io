@@ -2,253 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc25b6a5-7d65-4b9f-bc34-749bb69f4eaa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/a-python-flask-webapp-gets-smart/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/about/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/css/sass/main.sass" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3387 2.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3387.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3455.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3531.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3567.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3568.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3575.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3649.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3655.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3676.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3677.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/IMG_3738.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/alaska.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/bef_main_page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/bef_post.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/bg_about.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/bg_contact.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/bora-bora.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/canyon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/chimi_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/climb_sketch_mharris.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/ecuador_warmup_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/face.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/favicon/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/flower_blue_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/flower_orange.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/himalayan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/indonesia.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/malaysia.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/nevada.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/new-york.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/new-zealand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/prague_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/rainier1_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/rainier1a_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/sweden.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/img/tomatillo_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/js/custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/js/jquery-3.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/assets/js/jquery.vide.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/confusion-matrix-code-revealed/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/contact/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/data-science-story-part1/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/how-to-bot-on-mac/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/RheartPython.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/Sketch3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/aml-studio-scoring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/aml-studio-training.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/becomedatascientist/datascientistdef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/becomedatascientist/teachlearn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/chatbot_w_mountain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/cm_lets_python.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/cm_open_as_notebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/cm_workflow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/confusion_matrices.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/dev_portal_test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/first_diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/flask-post-diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/flaskapp-adding-sys-vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/github_config.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/hyd_class.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/ngram_kmeans.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/novelty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/ocrbot_console_connect.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/ocrbot_local.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/ocrbot_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/ocrbot_skype_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/portal_select_github.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/portal_select_webapp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/portal_signin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/portal_sys_vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/register_name.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/repo_change_readme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/repo_fork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/skype_add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/skype_github_update.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/skype_johnny_cash.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/stars_small_edit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/webapp-input.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/webapp-output.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/img/welcome_card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/javascript-and-python-have-a-party/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/jupyter-and-beaker-make-a-case/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/my-new-static-site-generator-hobby/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/notebooks1-post/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/ocrbot-gets-attached/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/ocrbot-makes-a-connection/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/page2/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/sample/2017-07-12-the-wonderful-himalayan/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/single-artifical-neuron-for-nonlinear-separable-data/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/sitemap.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/tags/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/teaching-notes-post/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/site/two-cents-on-python-package-structure/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/a-python-flask-webapp-gets-smart/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/about/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/css/sass/main.sass" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3387 2.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3387.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3455.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3531.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3567.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3568.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3575.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3649.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3655.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3676.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3677.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/IMG_3738.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/alaska.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/bef_main_page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/bef_post.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/bg_about.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/bg_contact.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/bora-bora.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/canyon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/chimi_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/climb_sketch_mharris.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/ecuador_warmup_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/face.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/favicon/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/flower_blue_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/flower_orange.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/himalayan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/indonesia.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/malaysia.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/nevada.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/new-york.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/new-zealand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/prague_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/rainier1_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/rainier1a_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/sweden.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/img/tomatillo_mharris.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/js/custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/js/jquery-3.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/assets/js/jquery.vide.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/confusion-matrix-code-revealed/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/contact/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/data-science-story-part1/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/how-to-bot-on-mac/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/RheartPython.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/Sketch3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/aml-studio-scoring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/aml-studio-training.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/becomedatascientist/datascientistdef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/becomedatascientist/teachlearn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/chatbot_w_mountain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/cm_lets_python.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/cm_open_as_notebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/cm_workflow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/confusion_matrices.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/dev_portal_test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/first_diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/flask-post-diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/flaskapp-adding-sys-vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/github_config.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/hyd_class.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/ngram_kmeans.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/novelty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/ocrbot_console_connect.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/ocrbot_local.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/ocrbot_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/ocrbot_skype_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/portal_select_github.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/portal_select_webapp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/portal_signin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/portal_sys_vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/register_name.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/repo_change_readme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/repo_fork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/skype_add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/skype_github_update.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/skype_johnny_cash.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/stars_small_edit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/webapp-input.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/webapp-output.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/img/welcome_card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/javascript-and-python-have-a-party/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/jupyter-and-beaker-make-a-case/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/my-new-static-site-generator-hobby/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/notebooks1-post/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/ocrbot-gets-attached/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/ocrbot-makes-a-connection/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/page2/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/sample/2017-07-12-the-wonderful-himalayan/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/single-artifical-neuron-for-nonlinear-separable-data/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/sitemap.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/tags/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/teaching-notes-post/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/site/two-cents-on-python-package-structure/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/footer.html" afterPath="$PROJECT_DIR$/_includes/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/social_footer.html" afterPath="$PROJECT_DIR$/_includes/social_footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/main.html" afterPath="$PROJECT_DIR$/_layouts/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/a-python-flask-webapp-gets-smart/index.html" afterPath="$PROJECT_DIR$/_site/a-python-flask-webapp-gets-smart/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/confusion-matrix-code-revealed/index.html" afterPath="$PROJECT_DIR$/_site/confusion-matrix-code-revealed/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/data-science-story-part1/index.html" afterPath="$PROJECT_DIR$/_site/data-science-story-part1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/how-to-bot-on-mac/index.html" afterPath="$PROJECT_DIR$/_site/how-to-bot-on-mac/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/javascript-and-python-have-a-party/index.html" afterPath="$PROJECT_DIR$/_site/javascript-and-python-have-a-party/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/jupyter-and-beaker-make-a-case/index.html" afterPath="$PROJECT_DIR$/_site/jupyter-and-beaker-make-a-case/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/my-new-static-site-generator-hobby/index.html" afterPath="$PROJECT_DIR$/_site/my-new-static-site-generator-hobby/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/notebooks1-post/index.html" afterPath="$PROJECT_DIR$/_site/notebooks1-post/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/ocrbot-gets-attached/index.html" afterPath="$PROJECT_DIR$/_site/ocrbot-gets-attached/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/ocrbot-makes-a-connection/index.html" afterPath="$PROJECT_DIR$/_site/ocrbot-makes-a-connection/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/page2/index.html" afterPath="$PROJECT_DIR$/_site/page2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/robots.txt" afterPath="$PROJECT_DIR$/_site/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sample/2017-07-12-the-wonderful-himalayan/index.html" afterPath="$PROJECT_DIR$/_site/sample/2017-07-12-the-wonderful-himalayan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/single-artifical-neuron-for-nonlinear-separable-data/index.html" afterPath="$PROJECT_DIR$/_site/single-artifical-neuron-for-nonlinear-separable-data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/teaching-notes-post/index.html" afterPath="$PROJECT_DIR$/_site/teaching-notes-post/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/two-cents-on-python-package-structure/index.html" afterPath="$PROJECT_DIR$/_site/two-cents-on-python-package-structure/index.html" />
     </list>
+    <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_includes/footer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -318,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="social_footer.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="social_footer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_includes/social_footer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -434,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -519,6 +274,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -667,6 +423,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dc25b6a5-7d65-4b9f-bc34-749bb69f4eaa" name="Default" comment="" />
@@ -679,15 +438,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="957" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24894515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2477396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -702,6 +461,28 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2477396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -711,6 +492,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/_posts/2017-02-19-jupyter-and-beaker-make-a-case.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-03-01-ocrbot-gets-attached.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-05-15-data-science-story-part1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -727,7 +530,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="135">
             <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -738,7 +540,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -760,7 +561,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="60">
             <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -771,7 +571,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -782,7 +581,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -793,7 +591,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -921,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1200">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +726,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="45">
             <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -941,7 +736,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="330">
             <caret line="22" column="63" lean-forward="false" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -952,7 +746,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="135">
             <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -963,7 +756,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -974,7 +766,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="60">
             <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -985,7 +776,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -996,7 +786,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1007,7 +796,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="15">
             <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1057,17 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2016-10-07-notebooks1-post.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1092,18 +869,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/social_footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="76" lean-forward="false" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-10-07-notebooks1-post.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
           <folding />
         </state>
       </provider>
