@@ -1,5 +1,5 @@
 ---
-img:  flower_orange.jpg
+img:  IMG_3649.JPG
 layout: post
 title: Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
 category: Notes_Posts

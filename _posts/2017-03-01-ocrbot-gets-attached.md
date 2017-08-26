@@ -1,5 +1,5 @@
 ---
-img: flower_orange.jpg
+img: flower_blue_mharris.jpg
 layout: post
 title: OCRBot Gets Attached
 comments: true

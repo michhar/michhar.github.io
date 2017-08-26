@@ -1,5 +1,5 @@
 ---
-img: rainier1a_mharris.jpg
+img: rainier1_mharris.jpg
 layout: post
 title:  "How I Became a Data Scientist Part 1"
 comments: true

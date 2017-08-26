@@ -1,5 +1,5 @@
 ---
-img:  flower_orange.jpg
+img: IMG_3567.JPG
 layout: post
 title: A Simple, Presentable Confusion Matrix with K-means Data
 comments: true

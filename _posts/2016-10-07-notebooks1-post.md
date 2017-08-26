@@ -3,7 +3,7 @@ layout: post
 title: Python for Data Science Goes Into the Wild
 comments: true
 description: A report back on a tutorial on Python at the Data Science Summit in Atlanta, GA, 2016.
-img:  chimi_mharris.jpg
+img:  IMG_3387.JPG
 tags: [python, data-science, jupyter, teaching]
 ---
 

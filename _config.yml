@@ -12,9 +12,9 @@ banner-title:  Waterfalls of Data # add banner title
 banner-desc: Data science in the world of software dev # add banner description
 
 # Author settings
-author-pic:  # your photo
-author-name: # your name
-about-author: # about author
+author-pic:  climb_sketch_mharris.JPG # your photo
+author-name: Micheleen Harris # your name
+about-author: pythonista data science dev glacier seeker sock knitter # about author
 email:  # your email
 phone:  # your pnone number
 website: https://michhar.github.io # you website

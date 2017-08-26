@@ -1,5 +1,5 @@
 ---
-img:  flower_orange.jpg
+img:  IMG_3655.JPG
 layout: post
 title: Tips I have Learned by Being a Trainer for a Year
 comments: true

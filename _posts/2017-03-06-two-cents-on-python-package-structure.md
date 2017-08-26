@@ -1,5 +1,5 @@
 ---
-img: flower_orange.jpg
+img: ecuador_warmup_mharris.jpg
 layout: post
 title: Wading In a Tide Pool of Choices, How to Write a Package in Python?
 comments: true

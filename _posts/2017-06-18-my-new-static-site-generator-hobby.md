@@ -4,7 +4,7 @@ title:  Overlaying a Website ontop of a GitHub Repository
 comments: true
 description:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 tags: [web]
-img: tomatillo_mharris.jpg
+img: IMG_3455.JPG
 ---
 
 ![Octocat](/img/sitegenpost/octocat_web_mharris.png)

@@ -1,5 +1,5 @@
 ---
-img:  flower_orange.jpg
+img: IMG_3531.JPG
 layout: post
 title: Javascript and Python Meet through Magic and IPython
 comments: true

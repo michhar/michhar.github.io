@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "On using an Adaline Artificial Neuron for Classification"
-img: flower_orange.jpg
+img: chimi_mharris.jpg
 date: 2017-07-19 12:55:00 +0800
 description: Some fun with activation functions and dimensionality reduction
 tag: [single-layer, artificial-neuron, adaline, PCA, leukemia, sigmoid-activation]

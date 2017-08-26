@@ -1,5 +1,5 @@
 ---
-img:  flower_orange.jpg
+img:  IMG_3568.JPG
 layout: post
 title: Creating a Smart Python Flask Web App using Azure Machine Learning
 comments: true
