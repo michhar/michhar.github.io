@@ -1,7 +1,5 @@
 ---
-color:  purple
-width:   6
-height:  3
+img:  flower_orange.jpg
 layout: post
 title: Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
 category: Notes_Posts

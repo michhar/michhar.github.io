@@ -1,24 +1,27 @@
 ---
-color:  lime
-width:   6
-height:  6
 layout: post
 title:  Overlaying a Website ontop of a GitHub Repository
 comments: true
 description:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
-tags: [web-dev]
-highlight: true
-cover: /img/sitegenpost/octocat_web_mharris.png
+tags: [web]
+img: tomatillo_mharris.jpg
 ---
 
-**tl:dr**:  A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
+![Octocat](/img/sitegenpost/octocat_web_mharris.png)
+
+**tl:dr**:  A little post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.
 
 I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I've painstakingly written in Markdown files to showcase my work.
 
 Using static site generators, like Jekyll or MkDocs (and others — good article [here](https://www.fullstackpython.com/static-site-generator.html)) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.
 
-![My personal webjeda cards site](/img/sitegenpost/my_webjeda_main.png)
+![My personal webjeda cards site]({{site.baseurl}}/img/sitegenpost/my_webjeda_main.png)
+
 <p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
+
+
+![My personal webjeda cards site](/assets/img/flower_orange.jpg)
+
 
 Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide [here](https://guides.github.com/features/mastering-markdown/)).  However, if you like reStructuredText or HTML better there are generators out there for you.
 

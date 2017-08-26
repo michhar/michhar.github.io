@@ -1,9 +1,7 @@
 ---
 layout: post
 title: OCRBot Makes a Connection to the Cloud
-color:  pink
-width:   6
-height:  3
+img:  flower_orange.jpg
 comments: true
 description: A short chatterbot dev story Part 2
 cover:  /img/ocrbot_skype_on_stats.png

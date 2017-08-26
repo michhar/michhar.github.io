@@ -1,12 +1,9 @@
 ---
-color:  orange
-width:   6
-height:  3
 layout: post
 title: Python for Data Science Goes Into the Wild
 comments: true
 description: A report back on a tutorial on Python at the Data Science Summit in Atlanta, GA, 2016.
-cover:  /img/novelty.png
+img:  chimi_mharris.jpg
 tags: [python, data-science, jupyter, teaching]
 ---
 

@@ -1,7 +1,5 @@
 ---
-color:  yellow
-width:   6
-height:  3
+img:  flower_orange.jpg
 layout: post
 title: A Simple, Presentable Confusion Matrix with K-means Data
 comments: true

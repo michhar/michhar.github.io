@@ -1,14 +1,14 @@
 ---
-color:  blue
-width:   6
-height:  3
+img:  flower_orange.jpg
 layout: post
 title: Tips I have Learned by Being a Trainer for a Year
 comments: true
 description: A few things I've picked up on for giving a successful and engaging tutorial/workshop.
-cover:  /img/hyd_class.jpg
 tags: [teaching]
 ---
+
+cover:  /img/hyd_class.jpg
+
 
 ## Teaching notes
 

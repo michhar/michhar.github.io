@@ -1,7 +1,5 @@
 ---
-color:  red
-width:   6
-height:  3
+img:  flower_orange.jpg
 layout: post
 title: Creating a Smart Python Flask Web App using Azure Machine Learning
 comments: true

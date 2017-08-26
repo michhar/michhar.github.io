@@ -1,13 +1,9 @@
-<footer class="site-footer">
 
+<footer class="main_footer">
   <div class="wrapper">
-  
-    <div class="col-wrapper">     
-     
-        <p>{{ site.description }}</p>
-     
+    {% include social_footer.html %}
+    <div class="copyright">
+      <p>&copy; {{site.time | date: '%Y'}} All rights reserved. Design by <a href="https://artemsheludko.github.io" target="_blank">Artem Sheludko</a></p>
     </div>
-
   </div>
-
-</footer>
+</footer> <!-- End Section Footer -->

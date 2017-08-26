@@ -1,13 +1,10 @@
 ---
-color:  red
-width:   6
-height:  3
+img: rainier1a_mharris.jpg
 layout: post
 title:  "How I Became a Data Scientist Part 1"
 comments: true
 description: My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package and more...
 tags: [data-science, narrative]
-cover: /img/becomedatascientist/datascientistdef.png
 ---
 
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
@@ -20,7 +17,11 @@ Before I was a data scientist I was a developer.  TBH I'm now a developer again 
 
 At the beginning, this historic tweet by Josh Wills was both funny and helpful to me -- giving me perspective.
 
+<img src="/img/becomedatascientist/datascientistdef.png" width="65%" height="65%" border>
+
 ![Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.]({{ site.baseurl }}/img/becomedatascientist/datascientistdef.png)
+
+![](/assets/img/rainier1a_mharris.jpg)
 
 Before I presented on AI to 700 people at //build, before I taught an ML package at a workshop, before I had read docs and gone through the tutorials and before I had trolled YouTube for ML videos, I had attended the Open Data Science Conference in the Fall of 2015.  **I networked, as we do**, and met a group of devs/data scientists/physicists/biologists interested in data science like me (a great, diverse group of super smart people!) and immediately got involved in a Python workshop group (GitHub [organization](https://github.com/PythonWorkshop)).  I got asked to help them give a workshop on ML, scikit-learn and tensorflow they were planning for the following year because I had a some basic Python materials they could use.
 
