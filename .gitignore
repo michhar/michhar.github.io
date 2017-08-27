@@ -1,5 +1,7 @@
+\.idea/
 .idea/
 .DS_Store
+\.DS_Store
 bower
 .asset-cache
 \\.DS_Store
