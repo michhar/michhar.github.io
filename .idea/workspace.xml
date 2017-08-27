@@ -2,103 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9885b6c1-a259-43ae-937d-fce9ba1aa689" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/scale.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/RheartPython.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/Sketch3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/aml-studio-scoring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/aml-studio-training.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/chatbot_w_mountain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/cm_open_as_notebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/cm_workflow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/confusion_matrices.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/dev_portal_test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/flask-post-diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/github_config.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ngram_kmeans.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/novelty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_console_connect.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_local.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_skype_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_select_github.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_select_webapp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_signin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_sys_vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/register_name.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/repo_change_readme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/repo_fork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_github_update.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_johnny_cash.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/stars_small_edit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/webapp-input.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/webapp-output.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/RheartPython.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Sketch3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/aml-studio-scoring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/aml-studio-training.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/chatbot_w_mountain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cm_open_as_notebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cm_workflow.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/confusion_matrices.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/dev_portal_test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/flask-post-diagram.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/github_config.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ngram_kmeans.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/novelty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ocrbot_console_connect.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ocrbot_local.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ocrbot_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ocrbot_skype_on_stats.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/portal_select_github.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/portal_select_webapp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/portal_signin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/portal_sys_vars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/register_name.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/repo_change_readme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/repo_fork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/skype_add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/skype_github_update.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/skype_johnny_cash.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/stars_small_edit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/webapp-input.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/webapp-output.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/becomedatascientist/teachlearn.jpg" afterPath="$PROJECT_DIR$/_site/img/becomedatascientist/teachlearn.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/cm_lets_python.jpg" afterPath="$PROJECT_DIR$/_site/img/cm_lets_python.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/first_diagram.jpg" afterPath="$PROJECT_DIR$/_site/img/first_diagram.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/flaskapp-adding-sys-vars.jpg" afterPath="$PROJECT_DIR$/_site/img/flaskapp-adding-sys-vars.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/hyd_class.jpg" afterPath="$PROJECT_DIR$/_site/img/hyd_class.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/img/welcome_card.jpg" afterPath="$PROJECT_DIR$/_site/img/welcome_card.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/becomedatascientist/teachlearn.jpg" afterPath="$PROJECT_DIR$/img/becomedatascientist/teachlearn.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/cm_lets_python.jpg" afterPath="$PROJECT_DIR$/img/cm_lets_python.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/first_diagram.jpg" afterPath="$PROJECT_DIR$/img/first_diagram.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/flaskapp-adding-sys-vars.jpg" afterPath="$PROJECT_DIR$/img/flaskapp-adding-sys-vars.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/hyd_class.jpg" afterPath="$PROJECT_DIR$/img/hyd_class.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/welcome_card.jpg" afterPath="$PROJECT_DIR$/img/welcome_card.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/a-python-flask-webapp-gets-smart/index.html" afterPath="$PROJECT_DIR$/_site/a-python-flask-webapp-gets-smart/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/confusion-matrix-code-revealed/index.html" afterPath="$PROJECT_DIR$/_site/confusion-matrix-code-revealed/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/contact/index.html" afterPath="$PROJECT_DIR$/_site/contact/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/data-science-story-part1/index.html" afterPath="$PROJECT_DIR$/_site/data-science-story-part1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/how-to-bot-on-mac/index.html" afterPath="$PROJECT_DIR$/_site/how-to-bot-on-mac/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/javascript-and-python-have-a-party/index.html" afterPath="$PROJECT_DIR$/_site/javascript-and-python-have-a-party/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/jupyter-and-beaker-make-a-case/index.html" afterPath="$PROJECT_DIR$/_site/jupyter-and-beaker-make-a-case/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/my-new-static-site-generator-hobby/index.html" afterPath="$PROJECT_DIR$/_site/my-new-static-site-generator-hobby/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/notebooks1-post/index.html" afterPath="$PROJECT_DIR$/_site/notebooks1-post/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/ocrbot-gets-attached/index.html" afterPath="$PROJECT_DIR$/_site/ocrbot-gets-attached/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/ocrbot-makes-a-connection/index.html" afterPath="$PROJECT_DIR$/_site/ocrbot-makes-a-connection/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/page2/index.html" afterPath="$PROJECT_DIR$/_site/page2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/robots.txt" afterPath="$PROJECT_DIR$/_site/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sample/2017-07-12-the-wonderful-himalayan/index.html" afterPath="$PROJECT_DIR$/_site/sample/2017-07-12-the-wonderful-himalayan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/single-artifical-neuron-for-nonlinear-separable-data/index.html" afterPath="$PROJECT_DIR$/_site/single-artifical-neuron-for-nonlinear-separable-data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/teaching-notes-post/index.html" afterPath="$PROJECT_DIR$/_site/teaching-notes-post/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/two-cents-on-python-package-structure/index.html" afterPath="$PROJECT_DIR$/_site/two-cents-on-python-package-structure/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/sass/_syntax.scss" afterPath="$PROJECT_DIR$/assets/css/sass/_syntax.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_about.sassc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_contact.sassc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_dark.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_post.sassc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_smooth.sassc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_syntax.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_about.sass" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_base.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_contact.sass" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_layout.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_post.sass" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_smooth.sass" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_syntax-highlighting.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_syntax.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_sass/_variables.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/a-python-flask-webapp-gets-smart/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/css/sass/main.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3387 2.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3387.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3455.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3531.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3567.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3568.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3575.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3649.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3655.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3676.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3677.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/IMG_3738.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/alaska.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/bef_main_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/bef_post.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/bg_about.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/bg_contact.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/bora-bora.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/canyon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/chimi_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/climb_sketch_mharris.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/ecuador_warmup_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/face.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/favicon/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/flower_blue_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/flower_orange.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/himalayan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/indonesia.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/malaysia.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/nevada.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/new-york.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/new-zealand.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/prague_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/rainier1_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/rainier1a_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/sweden.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/img/tomatillo_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/js/custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/js/jquery-3.2.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/js/jquery.vide.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bin/deploy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bin/scale.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bin/setup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/confusion-matrix-code-revealed/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/contact/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/data-science-story-part1/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/how-to-bot-on-mac/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/RheartPython.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/Sketch3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/aml-studio-scoring.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/aml-studio-training.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/becomedatascientist/datascientistdef.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/becomedatascientist/teachlearn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/bot_part3/knn_mharris.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/bot_part3/knn_mharris_letters.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/bot_part3/ocrbot_attached.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/bot_part3/ocrbot_skype.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/bot_part3/pre_process.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/chatbot_w_mountain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/cm_lets_python.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/cm_open_as_notebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/cm_workflow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/confusion_matrices.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/dev_portal_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon-32.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon-48.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon-64.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/faviconfiles/main_front.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/first_diagram.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/flask-post-diagram.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/flaskapp-adding-sys-vars.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/github_config.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/hyd_class.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/js_python_friends/header_pic.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/jupyter_beaker/beaker_d3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/jupyter_beaker/header_beaker_n_jupyter.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/jupyter_beaker/jupyter_basic_js.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/jupyter_beaker/jupyter_grade3theme.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/main_front.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/main_front2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/main_front4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ngram_kmeans.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/novelty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_console_connect.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_local.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_on_stats.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/ocrbot_skype_on_stats.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/packages1/whatspackage.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_select_github.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_select_webapp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_signin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/portal_sys_vars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/quotes.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/register_name.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/repo_change_readme.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/repo_fork.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sharer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/single_layer_neuron/linearly_sep_leukemia.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/single_layer_neuron/linearly_sep_leukemia_linear.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/single_layer_neuron/perceptron.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/single_layer_neuron/perceptron_vs_adaline.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/single_layer_neuron/singleneuron_activation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/chalk_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/mkdocs_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/my_chalk_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/my_mkdocs_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/my_webjeda_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/octocat_web_mharris.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/sitegenpost/webjeda_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_github_update.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/skype_johnny_cash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/stars_small_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/webapp-input.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/webapp-output.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/img/welcome_card.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/javascript-and-python-have-a-party/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/jupyter-and-beaker-make-a-case/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/my-new-static-site-generator-hobby/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/notebooks1-post/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ocrbot-gets-attached/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ocrbot-makes-a-connection/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/page2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/sample/2017-07-12-the-wonderful-himalayan/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/single-artifical-neuron-for-nonlinear-separable-data/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/teaching-notes-post/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/two-cents-on-python-package-structure/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_about.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_contact.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_dark.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_media.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_post.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_smooth.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_syntax-highlighting.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_syntax.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_syntax.scss.bkup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_tags.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_variables.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/_variables.sass2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/main.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_arrow_top.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_banner.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_cards.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_comment_area.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_footer.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_header.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_newsletter.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/parts/_pagination.sass" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/tools/_animate.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/sass/tools/_normalize.scss" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/_site/assets/css/main.css" afterPath="$PROJECT_DIR$/css/main.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/_site/assets/css/sass/dark.scss" afterPath="$PROJECT_DIR$/_sass/_dark.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_base.scssc" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_base.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_layout.scssc" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_layout.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_syntax-highlighting.scssc" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_syntax-highlighting.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_variables.scssc" afterPath="$PROJECT_DIR$/.sass-cache/ce509f75c3c4b2b5c60efd5c63d84681e90d0abf/_variables.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/head.html" afterPath="$PROJECT_DIR$/_includes/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="$PROJECT_DIR$/_includes/header.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,30 +215,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_layouts/post.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="76" column="27" lean-forward="false" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_syntax.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax.scss">
+        <entry file="file://$PROJECT_DIR$/_sass/_syntax.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-344">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -144,7 +226,47 @@
         </entry>
       </file>
       <file leaf-file-name="_syntax-highlighting.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax-highlighting.scss">
+        <entry file="file://$PROJECT_DIR$/_sass/_syntax-highlighting.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_layout.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1935">
+              <caret line="129" column="21" lean-forward="false" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_sass/_base.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -153,29 +275,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_variables.sass" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/sass/_variables.sass">
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_includes/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scale.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/scale.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>image</find>
+      <find>include</find>
+      <find>img</find>
+      <find>post body</find>
+      <find>post</find>
+      <find>pagi</find>
+      <find>text-color</find>
+      <find>text_color</find>
+      <find>$text-color;</find>
+      <find>max-width</find>
+      <find>highlight</find>
+      <find>pre</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,9 +310,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/_layouts/post.html" />
-        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/assets/css/sass/_syntax.scss" />
         <option value="$PROJECT_DIR$/bin/scale.py" />
+        <option value="$PROJECT_DIR$/assets/css/sass/_variables.sass" />
+        <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/assets/css/sass/_post.sass" />
+        <option value="$PROJECT_DIR$/assets/css/sass/_base.scss" />
+        <option value="$PROJECT_DIR$/assets/css/sass/_layout.scss" />
+        <option value="$PROJECT_DIR$/assets/css/sass/main.sass" />
+        <option value="$PROJECT_DIR$/assets/css/main.sass" />
+        <option value="$PROJECT_DIR$/assets/css/main.css.bkup" />
+        <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/_includes/head.html" />
+        <option value="$PROJECT_DIR$/_sass/_layout.scss" />
+        <option value="$PROJECT_DIR$/_sass/_base.scss" />
+        <option value="$PROJECT_DIR$/_sass/_variables.scss" />
+        <option value="$PROJECT_DIR$/assets/css/sass/_syntax-highlighting.scss" />
+        <option value="$PROJECT_DIR$/_sass/_syntax-highlighting.scss" />
+        <option value="$PROJECT_DIR$/css/main.scss" />
+        <option value="$PROJECT_DIR$/_includes/header.html" />
       </list>
     </option>
   </component>
@@ -234,6 +376,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,7 +418,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="_sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="_layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="michhar.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,6 +457,12 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/css/sass" />
+      <recent name="$PROJECT_DIR$/assets/css" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ApexTest" factoryName="Apex Test">
@@ -428,18 +618,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -447,9 +639,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -460,23 +650,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
+    <entry file="file://$PROJECT_DIR$/bin/scale.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="76" column="27" lean-forward="false" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        <state relative-caret-position="45">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax.scss">
+    <entry file="file://$PROJECT_DIR$/_layouts/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -484,9 +684,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax-highlighting.scss">
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_mixins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/tools/_normalize.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2732">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/parts/_header.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="27" lean-forward="false" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css.bkup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -494,19 +766,233 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/sass/_variables.sass">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_about.sass">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/scale.py">
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/main.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="343">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_variables.sass2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_tags.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax_post.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax.scss.bkup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_smooth.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_post.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_media.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_include-media.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_dark.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="102" column="26" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_dark.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_post.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_contact.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="26" lean-forward="false" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="21" lean-forward="false" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="659" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4952" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_syntax.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-344">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/sass/_syntax-highlighting.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="2" lean-forward="false" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_syntax-highlighting.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

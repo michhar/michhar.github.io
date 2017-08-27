@@ -6,6 +6,9 @@ permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+sass:
+  style: compressed
+
 # Banner settings
 #video: mountains.mp4 # add banner video. Add your video file to the folder video
 banner-title:  Waterfalls of Data # add banner title
