@@ -7,16 +7,15 @@
 
 .highlight {
   padding: 20px;
-  margin: 0;
-  margin: 10px 0;
+  margin: 30px 0px;
   overflow: auto;
   font-weight: 400;
   font-size: 14px;
   //background-color: darken($gray-darkest, 5);
-  background-color: black;
+  background: $black;
   border-radius: $base-border-radius;
   pre {
-    margin: 0;
+    margin: 30px 0px;
   }
 }
 
@@ -36,7 +35,6 @@
 .highlighter-rouge {
   padding: 2px 4px;
   font-size: 14px;
-  color: cornflowerblue;
   background: lighten($gray-lightest, 6);
   border: 1px solid $base-border-color;
   border-radius: 1px;
@@ -57,6 +55,7 @@
 
 .highlight pre {
   background-color: darken($gray-darkest, 30);
+
 }
 
 .highlight .hll {

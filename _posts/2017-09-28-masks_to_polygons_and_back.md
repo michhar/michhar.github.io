@@ -10,9 +10,12 @@ tag: [polygons, masks, opencv, shapely, python]
 A Monarch butterfly courtesy of National Geographic Kids
 ![monarch butterfly](http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Bugs/H-P/monarch-butterfly-grass.adapt.945.1.jpg)
 
-**tl:dr**:  We use OpenCV Python binding and Shapely library to create a mask, convert it to some polygons and then back to an image as a mask - noting some interesting properties of OpenCV and useful tricks with these libraries.
+**tl:dr**:  Masks are areas of interest in an image set to one color, or pixel value, surrounded by a contrast color or colors.  In this technical how-to, I use the OpenCV Python binding and Shapely library to create a mask, convert it to shapes as polygons, and then back to a masked image - noting some interesting properties of OpenCV and useful tricks with these libraries.
 
 All of the code below can be found in [this](https://github.com/michhar/python-jupyter-notebooks/blob/master/datatools/DealingWithGeospatialImages.ipynb) Python jupyter notebook.
+
+Why are masks and polygons important?  Imagine you'd like to identify all of the pixels in a brain scan that correspond to a certain feature of the brain - maybe identify the location and contours of a mass.  Creating a mask, or highlighting just the feature's pixels on a backdrop of one contrast color, would be a good start, then understanding the shape of that masked feature as identified as polygons would give more information and perhaps help a doctor better understand any abnormalities.  But say we had a machine that only identified shapes and we wanted the masked image.  We could do so with the following process and code.  Finally, and this is how I began exploring this topic, if one wanted to create a trained machine learning model for semantic image segmentation, or essentially classifying groups of pixels, a masked image and its class label (is this greenery or human-made structure?) plus shapes would be very nice to have for training.
+
 
 My end **goal** was to turn a masked image (image with pixels of interest set to zero) into some polygon shapes and then back again using a couple of popular tools in Python.  This was motivated by a real customer engagement around semantic image segmentation and I thought it might be useful to someone in the future.
 
