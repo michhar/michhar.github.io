@@ -7,16 +7,16 @@ description: Using opencv and shapely in Python to create polygons and back
 tag: [polygons, masks, opencv, shapely, python]
 ---
 
-A Monarch buttefly courtesy of National Geographic Kids
+A Monarch butterfly courtesy of National Geographic Kids
 ![monarch butterfly](http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Bugs/H-P/monarch-butterfly-grass.adapt.945.1.jpg)
 
-**tl:dr**:  We use Opencv Python wrapper and Shapely library to create a mask, convert it to some polygons and then back to an image as a mask - noting some interesting properties of opencv and useful tricks.
+**tl:dr**:  We use OpenCV Python binding and Shapely library to create a mask, convert it to some polygons and then back to an image as a mask - noting some interesting properties of OpenCV and useful tricks with these libraries.
 
 All of the code below can be found in [this](https://github.com/michhar/python-jupyter-notebooks/blob/master/datatools/DealingWithGeospatialImages.ipynb) Python jupyter notebook.
 
 My end **goal** was to turn a masked image (image with pixels of interest set to zero) into some polygon shapes and then back again using a couple of popular tools in Python.  This was motivated by a real customer engagement around semantic image segmentation and I thought it might be useful to someone in the future.
 
-> Lesson 1: **opencv reads in as BGR and matplotlib reads in a RGB**, just in case that is ever an issue.
+> Lesson 1: **`opencv` reads in as BGR and `matplotlib` reads in a RGB**, just in case that is ever an issue.
 
 I tested this as follows:
 
@@ -175,6 +175,6 @@ Final result:
 
 Notice the slight loss of detail - this is because we are removing really tiny polygons (see `min_area` parameter).
 
-I leave it up to you to download [this]() Python jupyter notebook and try using the RGB image for masking and creating Polygons and back.  Do the results change?  Try this on your own images and have fun!
+I leave it up to you to download [this](https://github.com/michhar/python-jupyter-notebooks/blob/master/datatools/DealingWithGeospatialImages.ipynb) Python jupyter notebook and try using the RGB image for masking and creating Polygons and back.  Do the results change?  Try this on your own images and have fun!
 
 
