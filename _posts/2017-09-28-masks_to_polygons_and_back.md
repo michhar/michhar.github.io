@@ -2,9 +2,10 @@
 layout: post
 title: "Shapely Shapes and OpenCV Visions"
 img: yosemite_mharris.jpg
-date: 2017-09-28 12:01:00 +2300
+date: 2017-09-28 12:55:00 +1800
 description: Using opencv and shapely in Python to create polygons and back
 tag: [polygons, masks, opencv, shapely, python]
+comments: true
 ---
 
 A Monarch butterfly courtesy of National Geographic Kids

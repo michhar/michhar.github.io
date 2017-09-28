@@ -5,6 +5,7 @@ img: chimi_mharris.jpg
 date: 2017-07-19 12:55:00 +0800
 description: Some fun with activation functions and dimensionality reduction
 tag: [single-layer, artificial-neuron, adaline, PCA, leukemia, sigmoid-activation]
+comments: true
 ---
 
 **tl:dr**:  Getting a simple, predictive framework distinguishing two types of leukemia based on biological markers from a single-layer neural network was not the intent of this exercise. It is, however, indicative of the power of a single artificial neuron and thoughtful feature reduction.
