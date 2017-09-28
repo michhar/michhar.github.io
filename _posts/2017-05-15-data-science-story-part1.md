@@ -1,7 +1,7 @@
 ---
 img: rainier1_mharris.jpg
 layout: post
-title:  "How I Became a Data Scientist Part 1"
+title:  "How I Became a Data Scientist"
 comments: true
 description: My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package and more...
 tags: [data-science, narrative]
