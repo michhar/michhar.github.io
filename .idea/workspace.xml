@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a302d5-dcd2-4cb8-9081-d9c0cdf1bc1f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2017-09-27-masks_to_polygons_and_back_pretty_butterfly.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/scale.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3387 2.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3387 2.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3387.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3387.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3455.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3455.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3531.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3531.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3567.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3567.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3568.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3568.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3575.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3575.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3649.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3649.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3655.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3655.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3676.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3676.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3677.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3677.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/IMG_3738.JPG" afterPath="$PROJECT_DIR$/assets/img/IMG_3738.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/alaska.jpg" afterPath="$PROJECT_DIR$/assets/img/alaska.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/bef_main_page.jpg" afterPath="$PROJECT_DIR$/assets/img/bef_main_page.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/bef_post.jpg" afterPath="$PROJECT_DIR$/assets/img/bef_post.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/bg_about.jpg" afterPath="$PROJECT_DIR$/assets/img/bg_about.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/bg_contact.jpg" afterPath="$PROJECT_DIR$/assets/img/bg_contact.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/bora-bora.jpg" afterPath="$PROJECT_DIR$/assets/img/bora-bora.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/canyon.jpg" afterPath="$PROJECT_DIR$/assets/img/canyon.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/chimi_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/chimi_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/climb_sketch_mharris.JPG" afterPath="$PROJECT_DIR$/assets/img/climb_sketch_mharris.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/ecuador_warmup_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/ecuador_warmup_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/face.jpg" afterPath="$PROJECT_DIR$/assets/img/face.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/flower_blue_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/flower_blue_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/flower_orange.jpg" afterPath="$PROJECT_DIR$/assets/img/flower_orange.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/himalayan.jpg" afterPath="$PROJECT_DIR$/assets/img/himalayan.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/indonesia.jpg" afterPath="$PROJECT_DIR$/assets/img/indonesia.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/malaysia.jpg" afterPath="$PROJECT_DIR$/assets/img/malaysia.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/nevada.jpg" afterPath="$PROJECT_DIR$/assets/img/nevada.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/new-york.jpg" afterPath="$PROJECT_DIR$/assets/img/new-york.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/new-zealand.jpg" afterPath="$PROJECT_DIR$/assets/img/new-zealand.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/prague_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/prague_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/rainier1_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/rainier1_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/rainier1a_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/rainier1a_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/sweden.jpg" afterPath="$PROJECT_DIR$/assets/img/sweden.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/tomatillo_mharris.jpg" afterPath="$PROJECT_DIR$/assets/img/tomatillo_mharris.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-05-15-data-science-story-part1.md" afterPath="$PROJECT_DIR$/_posts/2017-05-15-data-science-story-part1.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md" afterPath="$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +13,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md">
+      <file leaf-file-name="2017-09-28-masks_to_polygons_and_back.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="495">
@@ -166,9 +126,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="959" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24464285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24464285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -199,7 +158,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -210,7 +169,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -221,7 +180,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -352,17 +311,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1506561863000" expanded="false" signature="13795:13858" ph="..." />
-            <marker date="1506561863000" expanded="false" signature="14048:14108" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14272:14810" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14304:14799" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14382:14648" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14920:15422" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14944:15412" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="14976:15245" ph="..." />
-            <marker date="1506561863000" expanded="true" signature="15273:15403" ph="..." />
-            <marker date="1506561863000" expanded="false" signature="15284:15290" ph="©" />
-            <marker date="1506561863000" expanded="true" signature="15759:16163" ph="..." />
+            <marker date="1506562099000" expanded="false" signature="13795:13858" ph="..." />
+            <marker date="1506562099000" expanded="false" signature="14048:14108" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14209:14747" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14241:14736" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14319:14585" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14857:15359" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14881:15349" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="14913:15182" ph="..." />
+            <marker date="1506562099000" expanded="true" signature="15210:15340" ph="..." />
+            <marker date="1506562099000" expanded="false" signature="15221:15227" ph="©" />
+            <marker date="1506562099000" expanded="true" signature="15696:16100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -372,7 +331,7 @@
         <state relative-caret-position="543">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
-            <marker date="1506561863000" expanded="false" signature="8086:8092" ph="©" />
+            <marker date="1506562099000" expanded="false" signature="8086:8092" ph="©" />
           </folding>
         </state>
       </provider>
@@ -518,7 +477,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back_pretty_butterfly.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-28-masks_to_polygons_and_back.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="495">
