@@ -2,7 +2,7 @@
 layout: post
 title: "The Cognitive Toolkit (CNTK) Understands How You Feel"
 img: cntk.jpg
-date: 2017-12-07 12:55:00 +0000
+date: 2017-12-12 12:55:00 +0000
 description: CNTK and tiny faces
 tag: [cntk, deep-learning, computer-vision, machine-learning]
 comments: true
