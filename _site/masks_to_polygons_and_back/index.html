@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Shapely Shapes and OpenCV Visions - Waterfalls of Data - Data science in the world of software dev</title>
+	<meta name="description" content="Using opencv and shapely in Python to create polygons and back">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#d25469">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#d25469">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#d25469">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+  
+<header class="main_header">
+  <a href="/" class="logo">WD</a>
+  <nav class="main_menu">
+    <a href="/about/">About</a>
+    <!--<a href="/contact/">Contact</a>-->
+  </nav>
+</header> <!-- End Section Header -->
+
+<main class="post_content">
+  <article class="post">
+    <header>
+      <div class="post_image">
+        <img src=/assets/img/yosemite_mharris.jpg alt="Shapely Shapes and OpenCV Visions">
+      </div>
+      <div class="post_description">
+        <p class="post_meta">2017, Sep 28</p>
+        <h1 class="post_title">Shapely Shapes and OpenCV Visions</h1>
+      </div>
+    </header> <!-- End Header -->
+
+    <div class="entry_content">
+      <p>A Monarch butterfly courtesy of National Geographic Kids
+<img src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Bugs/H-P/monarch-butterfly-grass.adapt.945.1.jpg" alt="monarch butterfly" /></p>
+
+<p><strong>tl:dr</strong>:  Masks are areas of interest in an image set to one color, or pixel value, surrounded by a contrast color or colors.  In this technical how-to, I use the OpenCV Python binding and Shapely library to create a mask, convert it to shapes as polygons, and then back to a masked image - noting some interesting properties of OpenCV and useful tricks with these libraries.</p>
+
+<p>All of the code below can be found in <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/datatools/DealingWithGeospatialImages.ipynb">this</a> Python jupyter notebook.</p>
+
+<p>Why are masks and polygons important?  Imagine you’d like to identify all of the pixels in a brain scan that correspond to a certain feature of the brain - maybe identify the location and contours of a mass.  Creating a mask, or highlighting just the feature’s pixels on a backdrop of one contrast color, would be a good start, then understanding the shape of that masked feature as identified as polygons would give more information and perhaps help a doctor better understand any abnormalities.  But say we had a machine that only identified shapes and we wanted the masked image.  We could do so with the following process and code.  Finally, and this is how I began exploring this topic, if one wanted to create a trained machine learning model for semantic image segmentation, or essentially classifying groups of pixels, a masked image and its class label (is this greenery or human-made structure?) plus shapes would be very nice to have for training.</p>
+
+<p>My end <strong>goal</strong> was to turn a masked image (image with pixels of interest set to zero) into some polygon shapes and then back again using a couple of popular tools in Python.  This was motivated by a real customer engagement around semantic image segmentation and I thought it might be useful to someone in the future.</p>
+
+<blockquote>
+  <p>Lesson 1: <strong><code class="highlighter-rouge">opencv</code> reads in as BGR and <code class="highlighter-rouge">matplotlib</code> reads in a RGB</strong>, just in case that is ever an issue.</p>
+</blockquote>
+
+<p>I tested this as follows:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="n">img_file</span> <span class="o">=</span> <span class="s">'monarch.jpg'</span>
+
+<span class="c"># Matplotlib reads as RGB</span>
+<span class="n">img_plt</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_file</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_plt</span><span class="p">)</span>
+
+<span class="c"># Read as unchanged so that the transparency is not ignored as it would normally be by default</span>
+<span class="c"># Reads as BGR</span>
+<span class="n">img_cv2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_file</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_cv2</span><span class="p">)</span>
+
+<span class="c"># Convert opencv BGR back to RGB</span>
+<span class="c"># See https://www.scivision.co/numpy-image-bgr-to-rgb/ for more conversions</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">img_cv2</span><span class="p">[</span><span class="o">...</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p><strong>With the following results:</strong></p>
+
+<p>Matplotlib RGB:
+<img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/plt_read_monarch.png" alt="rgb" /></p>
+
+<p>OpenCV BGR:
+<img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/cv2_read_monarch.png" alt="bgr" /></p>
+
+<p>OpenCV BGR converted back:
+<img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/converted_back_rgb_monarch.png" alt="bgr to rgb" /></p>
+
+<p>Let’s define our helper functions and not worry too much about the details right now (the original source of these helpers was a Kaggle post by Konstantin Lopuhin <a href="https://www.kaggle.com/lopuhin/full-pipeline-demo-poly-pixels-ml-poly">here</a> - you’ll need to be logged into Kaggle to see it).</p>
+
+<p>Helper to create <code class="highlighter-rouge">MultiPolygon</code>s from a masked image as <code class="highlighter-rouge">numpy</code> array:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mask_to_polygons</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">min_area</span><span class="o">=</span><span class="mf">10.</span><span class="p">):</span>
+    <span class="s">"""Convert a mask ndarray (binarized image) to Multipolygons"""</span>
+    <span class="c"># first, find contours with cv2: it's much faster than shapely</span>
+    <span class="n">image</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">hierarchy</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span>
+                                  <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_CCOMP</span><span class="p">,</span>
+                                  <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">contours</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">MultiPolygon</span><span class="p">()</span>
+    <span class="c"># now messy stuff to associate parent and child contours</span>
+    <span class="n">cnt_children</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">child_contours</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">hierarchy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="c"># http://docs.opencv.org/3.1.0/d9/d8b/tutorial_py_contours_hierarchy.html</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">parent_idx</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hierarchy</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">parent_idx</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">child_contours</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+            <span class="n">cnt_children</span><span class="p">[</span><span class="n">parent_idx</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contours</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="c"># create actual polygons filtering by area (removes artifacts)</span>
+    <span class="n">all_polygons</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">cnt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">contours</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">child_contours</span> <span class="ow">and</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">min_area</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">cnt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+            <span class="n">poly</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span>
+                <span class="n">shell</span><span class="o">=</span><span class="n">cnt</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:],</span>
+                <span class="n">holes</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnt_children</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="p">[])</span>
+                       <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">min_area</span><span class="p">])</span>
+            <span class="n">all_polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+    <span class="n">all_polygons</span> <span class="o">=</span> <span class="n">MultiPolygon</span><span class="p">(</span><span class="n">all_polygons</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_polygons</span>
+</code></pre>
+</div>
+
+<p>Helper to create masked image as <code class="highlighter-rouge">numpy</code> array from <code class="highlighter-rouge">MultiPolygon</code>s:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mask_for_polygons</span><span class="p">(</span><span class="n">polygons</span><span class="p">,</span> <span class="n">im_size</span><span class="p">):</span>
+    <span class="s">"""Convert a polygon or multipolygon list back to
+       an image mask ndarray"""</span>
+    <span class="n">img_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">im_size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">polygons</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">img_mask</span>
+    <span class="c"># function to round and convert to int</span>
+    <span class="n">int_coords</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="nb">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">exteriors</span> <span class="o">=</span> <span class="p">[</span><span class="n">int_coords</span><span class="p">(</span><span class="n">poly</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="k">for</span> <span class="n">poly</span> <span class="ow">in</span> <span class="n">polygons</span><span class="p">]</span>
+    <span class="n">interiors</span> <span class="o">=</span> <span class="p">[</span><span class="n">int_coords</span><span class="p">(</span><span class="n">pi</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="k">for</span> <span class="n">poly</span> <span class="ow">in</span> <span class="n">polygons</span>
+                 <span class="k">for</span> <span class="n">pi</span> <span class="ow">in</span> <span class="n">poly</span><span class="o">.</span><span class="n">interiors</span><span class="p">]</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">fillPoly</span><span class="p">(</span><span class="n">img_mask</span><span class="p">,</span> <span class="n">exteriors</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">fillPoly</span><span class="p">(</span><span class="n">img_mask</span><span class="p">,</span> <span class="n">interiors</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img_mask</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Lesson 2:  If you want a more “blocky” polygon representation to save space or memory use the approximation method (add to the <code class="highlighter-rouge">mask_to_polygons</code> method).</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="c"># Approximate contours for a smaller polygon array to save on memory</span>
+    <span class="n">contours</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">approxPolyDP</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">cnt</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>We read the image in again:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Read in image unchanged</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_file</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+
+<span class="c"># View</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'bicubic'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>We convert to a luminance image with Scikit-Image’s <code class="highlighter-rouge">rgb2gray</code> flattening it in the channel dimension:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Convert to a luminance image or an array which is the same size as</span>
+<span class="c"># the input array, but with the channel dimension removed - flattened</span>
+<span class="n">BW</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+<span class="c"># View</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">BW</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'bicubic'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>With this result:
+<img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/rgb2gray_monarch.png" alt="rgb2gray" /></p>
+
+<blockquote>
+  <p>Lesson 3:  For a quick mask we can use OpenCV’s <code class="highlighter-rouge">convertScaleAbs</code> function and it also is needed for the helper</p>
+</blockquote>
+
+<p>As far as this pre-processing step goes, <code class="highlighter-rouge">cv2.convertScaleAbs</code> converts the image to an 8-bit unsigned integer with 1 channel, essentially flattening it and getting it ready to create some polygons (actually <code class="highlighter-rouge">MultiPolygon</code>s in this case).</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Convert to CV_8UC1 for creating polygons with shapely</span>
+<span class="c"># CV_8UC1 is an 8-bit unsigned integer with 1 channel</span>
+<span class="n">BW</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convertScaleAbs</span><span class="p">(</span><span class="n">BW</span><span class="p">)</span>
+
+<span class="c"># View</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">BW</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'bicubic'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>With this result:
+<img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/scale_abs_monarch.png" alt="flattened" /></p>
+
+<p>Now let’s let our functions do the real work!  Convert to polygons and then back to a masked image:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Get the polygons using shapely</span>
+<span class="n">polys</span> <span class="o">=</span> <span class="n">mask_to_polygons</span><span class="p">(</span><span class="n">BW</span><span class="p">,</span> <span class="n">min_area</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># Convert the polygons back to a mask image to validate that all went well</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">mask_for_polygons</span><span class="p">(</span><span class="n">polys</span><span class="p">,</span> <span class="n">BW</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c"># View - you'll see some loss in detail compared to the before-polygon </span>
+<span class="c"># image if min_area is high - go ahead and try different numbers!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'nearest'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Final result:</p>
+
+<p><img src="https://raw.githubusercontent.com/michhar/python-jupyter-notebooks/master/datatools/imgs/back_to_mask_monarch.png" alt="polygon back to mask" /></p>
+
+<p>Notice the slight loss of detail - this is because we are removing really tiny polygons (see <code class="highlighter-rouge">min_area</code> parameter).</p>
+
+<p>I leave it up to you to download <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/datatools/DealingWithGeospatialImages.ipynb">this</a> Python jupyter notebook and try using the RGB image for masking and creating Polygons and back.  Do the results change?  Try this on your own images and have fun!</p>
+
+
+    </div>
+    
+    <div class="post_wrapper">
+      <footer class="post_footer cf">
+        <div class="post_share">
+          <span>Share:</span>
+          <a href="https://twitter.com/intent/tweet?text=Shapely Shapes and OpenCV Visions&url=/masks_to_polygons_and_back/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://facebook.com/sharer.php?u=/masks_to_polygons_and_back/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://plus.google.com/share?url=/masks_to_polygons_and_back/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+        </div>
+        <div class="post_tag">
+          <span>Tags:</span>
+          
+          <a href="/tags#polygons" class="tag">polygons</a>
+          
+          <a href="/tags#masks" class="tag">masks</a>
+          
+          <a href="/tags#opencv" class="tag">opencv</a>
+          
+          <a href="/tags#shapely" class="tag">shapely</a>
+          
+          <a href="/tags#python" class="tag">python</a>
+          
+        </div>
+      </footer>
+    </div>
+  </article> <!-- End Section Post -->
+
+  <section class="author cf">
+    <div class="post_wrapper">
+      <div class="author_image">
+        <img src="/assets/img/climb_sketch_mharris.JPG" alt="Author face">
+      </div>
+      <div class="author_info">
+        <h2 class="author_title">Micheleen Harris</h2>
+        <p class="author_subtitle">pythonista data science dev glacier seeker sock knitter</p>
+        <div class="author_social">
+          
+          
+
+          
+          <span class="author_website"><i class="fa fa-link" aria-hidden="true"></i> <a href="https://michhar.github.io" target="_blank">https://michhar.github.io</a></span>
+                      
+        </div>
+      </div>
+    </div>
+  </section> <!-- End Section Author -->
+
+  <section class="recent_box">
+    <div class="post_wrapper">
+      <h2 class="recent_title">Recent post</h2>
+      <div class="recent_list">
+        
+          
+            <a href="/masks_to_polygons_and_back/" class="recent_item" style="background-image: url( /assets/img/yosemite_mharris.jpg )"><span>Shapely Shapes and OpenCV Visions</span></a>
+          
+        
+          
+            <a href="/single-artifical-neuron-for-nonlinear-separable-data/" class="recent_item" style="background-image: url( /assets/img/chimi_mharris.jpg )"><span>On using an Adaline Artificial Neuron for Classification</span></a>
+          
+        
+          
+            <a href="/my-new-static-site-generator-hobby/" class="recent_item" style="background-image: url( /assets/img/IMG_3455.JPG )"><span>Overlaying a Website ontop of a GitHub Repository</span></a>
+          
+        
+          
+            <a href="/data-science-story-part1/" class="recent_item" style="background-image: url( /assets/img/rainier1_mharris.jpg )"><span>How I Became a Data Scientist</span></a>
+          
+        
+          
+            <a href="/two-cents-on-python-package-structure/" class="recent_item" style="background-image: url( /assets/img/ecuador_warmup_mharris.jpg )"><span>Wading In a Tide Pool of Choices, How to Write a Package in Python?</span></a>
+          
+        
+          
+            <a href="/ocrbot-gets-attached/" class="recent_item" style="background-image: url( /assets/img/flower_blue_mharris.jpg )"><span>OCRBot Gets Attached</span></a>
+          
+        
+      </div>
+    </div>
+  </section> <!-- End Section Recent Box -->
+  
+  
+<section class="comment_area">
+  <div class="comment_wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//michhar.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Section Comment Area -->
+  
+</main> <!-- End Section Post Content -->
+
+
+<footer class="main_footer">
+  <div class="wrapper">
+    
+<ul class="social_footer">
+  
+  <li><a href="https://github.com/michhar" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+  
+  
+  <li><a href="https://twitter.com/rheartpython" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+  
+  
+  
+  
+  
+</ul>
+    <div class="copyright">
+      <p>&copy; 2017 All rights reserved. <a href="https://michhar.github.io" target="_blank">Micheleen Harris</a></p>
+    </div>
+  </div>
+</footer> <!-- End Section Footer -->
+
+
+  
+<div class="top" title="Top"><i class="fa fa-chevron-up" aria-hidden="true"></i></div> <!-- End Top Scroll -->
+  
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jquery.vide.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<!-- End Javascript -->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86308542-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+</body>
+</html>
