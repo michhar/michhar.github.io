@@ -13,9 +13,9 @@ git checkout theme-bef
 jekyll build
 
 # Push to gh-pages.
-git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-git push -f -q origin theme-bef
+# git add -fA
+# git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
+# git push -f -q origin theme-bef
 
 # Checkout master branch, delete and then recreate branch
 if [ `git branch | grep master` ]
