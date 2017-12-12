@@ -28,7 +28,9 @@ The data consists of 48x48 pixel grayscale images of faces. The faces have been 
 
 ## How I set things up
 
-Since I'm on a Mac, I chose to use the Docker image of CNTK.  By following this [Doc](https://docs.microsoft.com/en-us/cognitive-toolkit/CNTK-Docker-Containers) I got a Jupyter notebook up and running with CNTK with all of the Tutorial notebooks at the ready and the ability to upload or create new ones as needed.
+Since I'm on a Mac, I chose to use the Docker image of CNTK (instructions found [here](https://docs.microsoft.com/en-us/cognitive-toolkit/CNTK-Docker-Containers)).  This pulls down an image of a pre-created system and I run it in my own Docker container basically recreating an Ubuntu setup with CNTK locally.  It's pretty neat!  And then I can run Jupyter notebooks on my system and pull in local files and write out data as needed.  Let me show you how and then after we'll talk about the CNNs.
+
+By following this [Doc](https://docs.microsoft.com/en-us/cognitive-toolkit/CNTK-Docker-Containers) I got a Jupyter notebook up and running with CNTK with all of the Tutorial notebooks at the ready and the ability to upload or create new ones as needed.
 
 I ran these commands to get a Jupyter notebook set up with CNTK (v2.1 used here).  
 
@@ -41,7 +43,9 @@ An important note:  in the `run` command for Docker I mounted a volume with `"$P
     docker exec -it cntk-jupyter-notebooks bash -c "source /cntk/activate-cntk && jupyter-notebook --no-browser --port=8888 --ip=0.0.0.0 --notebook-dir=/cntk/Tutorials --allow-root"
 
 
-I tried many different CNN network architectures (simple three-layer CNN, ones with pooling and dropout layers, etc.) and several hyperparameter combinations (minibatch sizes for training, learning rate, etc.).  Here are just a few basic improvement tips for image classification based on what I found and a bit on how to do this with CNTK - my hope is that you can do this on your own.
+## What I Did In a Nutshell
+
+So, I tried many different CNN network architectures (simple three-layer CNN, ones with pooling and dropout layers, etc.) and several hyperparameter combinations (minibatch sizes for training, learning rate, etc.).  Here are just a few basic improvement tips for image classification based on what I found and a bit on how to do this with CNTK, plus my results - my hope is that you can do this on your own with some tips to start or maybe add to your workflow.
 
 **The Jupyter notebooks associated with this post can be found on GitHub [here](https://github.com/michhar/python-jupyter-notebooks/tree/master/cntk)**
 
@@ -74,13 +78,13 @@ def normalize(arr):
 
 ### Improvement #3:  Adjust or even search hyperparameter space
 
-Just as an example, I took the learning rate down 10x (from 0.2 to 0.02) and my resulting accuracy increased approximately 5%.
+Play with the hyperparameters.  I had a code cell full of my hyperparameters, e.g. learning rate and minibatch sizes.  I varied one or two at a time.  Just as an example, I took the learning rate down 10x (from 0.2 to 0.02) and my resulting accuracy increased approximately 5%.  Using the [CNTK train package](https://docs.microsoft.com/en-us/python/api/cntk.train.training_session?view=cntk-py-2.1) one can design a "trainer" object encapsulating all training tasks and include parameter ranges inside it.  I also played with the strides and filter sizes or receptive fields in my CNN for the convolutional and pooling layers (see the Stanford CV course [notes](http://cs231n.github.io/convolutional-networks/#conv) for great explanations of pretty much anything CNN and much more).  My big tip if you are starting out is simply to tune these adjustable parameters yourself and see what happens.
 
 ### Improvement #4:  Add more layers (but be careful of overfitting)
 
-Interestingly, layering in three pooling layers in between the convolutional layers (last one before the dense output layer) resulted in about another 5% jump in accuracy on the test set.
+Interestingly, layering in three pooling layers in between the convolutional layers (last one before the dense output layer) resulted in about another 5% jump in accuracy on the test set.  (more on CNNs in the Stanford course [notes](http://cs231n.github.io/convolutional-networks))
 
-Here's what the model looked like in the CNTK Python API:
+Here's what the relatively simple model looked like in the CNTK Python API:
 
 ```python
 def create_model(features):
@@ -100,15 +104,47 @@ def create_model(features):
     return model(features)
 ```
 
-If you have seen some networks in CNTK, note I'm using the Sequential notation "shortcut" which you can find in this [Doc](https://cntk.ai/pythondocs/layerref.html#sequential).
+If you have seen some networks in CNTK, note I'm using the Sequential notation "shortcut" for repeating some layers, but maybe with different params (more in this [Doc](https://cntk.ai/pythondocs/layerref.html#sequential)).
 
-> It's not a bad idea to read a paper or two!
+The above "simple" CNN resulted in an average test error of 28.53%.
 
 I decided I'd like to try a more complex network and so began reading some papers on emotion recognition.  I came across one that appeared to be using the same size images (likely the same dataset).  Their proposed CNN architecture looked like this ([Ref](https://arxiv.org/pdf/1706.01509.pdf)):
 
 ![Propsed architecture from paper](/img/cntk_feels/proposed_cnn_Dachapally.png)
 
-A slightly modified version of this architecture looks like this in the CNTK Python API (my update was to increase the number of filters for each conv layer):
+I implemented the paper's architecture in the CNTK Python API as follows (it had 5935330 parameters in 12 parameter tensors):
+
+```python
+def create_model(features):
+    with C.layers.default_options(init=C.glorot_uniform(), activation=C.relu):
+        model = C.layers.Sequential([
+            C.layers.For(range(3), lambda i: [
+                C.layers.Convolution2D(filter_shape=
+                    [(5,5), (5,5), (3,3)][i], 
+                                     num_filters=10, 
+                                     pad=True, 
+                                     strides=(1,1)),
+                    [C.layers.AveragePooling(filter_shape=(2,2),
+                                    strides=1, 
+                                    pad=True),
+                    C.layers.MaxPooling(filter_shape=(2,2),
+                                    strides=1, 
+                                    pad=True),
+                    C.layers.MaxPooling(filter_shape=(2,2),
+                                    strides=1, 
+                                    pad=True)][i]]),
+            C.layers.Dense(256),
+            C.layers.Dropout(0.5),
+            C.layers.Dense(128),
+            C.layers.Dropout(0.5),
+            C.layers.Dense(num_output_classes, activation=None)
+        ])
+    return model(features)
+```
+
+The above CNN architecture which matched the paper, resulted in a 25.61% average test error.  Let's see if we can do even better.
+
+A slightly modified, even more complex version of this architecture looks like this in the CNTK Python API (my update was to increase the number of filters for each conv layer):
 
 ```python
 def create_model(features):
@@ -132,17 +168,17 @@ def create_model(features):
     return model(features)
 ```
 
-In the end I had 37917906 parameters in 12 parameter tensors with a final training error of 32.81% and average test error of 22.35% (which, to be honest, could indicate an issue of under or over-fitting).  A validation step would be highly recommended in this case given sufficient computational power.
+In the last architecture I had 37917906 parameters in 12 parameter tensors with an average test error of 22.35% (which, to be honest, could cause an issue of over-fitting due to the very large number of parameters - just something to consider).  A validation step would be highly recommended in this case given sufficient computational power!
 
 ## Conclusion
 
-I picked a few random pictures from an online image search of happy and sad faces.  With my error rate of 22% it did pretty well, even on pictures of my own face (not shown).  These, for instance were correctly id'd as happy and sad.
+I picked a few random pictures from an online image search of happy and sad faces.  With my error rate of 22% it did pretty well, even on pictures of my own face (not shown).  These, for instance, were correctly identified as happy and sad.
 
 ![happy and sad kids](/img/cntk_feels/kids_happy_sad.png)
 
 (Note, the images may not show correctly as their 48x48 square size in this browser).
 
-The improvements are not an exhaustive list of everything one can try to gain better results, but do represent some common ways to deal with image data using CNNs.  If you have GPU-acceleration options, give some more complex network architectures a try - you could spin up an Azure Deep Learning VM which is what I usually do at my day job.  Happy deep learning!
+The improvements are not an exhaustive list of everything one can try to gain better results of course, but do represent some common ways to deal with image data using CNNs.  If you have GPU-acceleration options, give some more complex network architectures a try - you could spin up an Azure Deep Learning VM which is what I usually do at my day job.  Happy deep learning!
 
 **The Jupyter notebooks associated with this post can be found on GitHub [here](https://github.com/michhar/python-jupyter-notebooks/tree/master/cntk)**
 
