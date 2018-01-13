@@ -10,9 +10,7 @@ echo "Started deploying"
 git checkout theme-mkdocs
 
 # Build source site.
-cd mkdocs_proj
 mkdocs build
-cd ..
 
 # Push to gh-pages.
 git add -fA
@@ -27,9 +25,8 @@ fi
 git checkout -b master
 
 # Delete and move files.
-# find . -maxdepth 1 ! -name 'site' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
-mv mkdocs_proj/site/* .
-rm -rf mkdocs_proj
+find . -maxdepth 1 ! -name 'site' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
+mv site/* .
 
 # # Push to master.
 # git add -fA
