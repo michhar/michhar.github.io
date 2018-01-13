@@ -1,5 +1,5 @@
 .sass-cache
-site/
+site
 # OS generated files #
 ######################
 .DS_Store
@@ -9,7 +9,7 @@ site/
 .Trashes
 ehthumbs.db
 Thumbs.db
-_site/
+site/
 .idea/
 bower
 .asset-cache
