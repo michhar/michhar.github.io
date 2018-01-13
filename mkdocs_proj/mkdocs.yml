@@ -1,0 +1,57 @@
+site_name: Micheleen's Blog
+pages:
+    - Home: index.md
+    # - 2016:
+    - 'The Cognitive Toolkit (CNTK) Understands How You Feel': 'cntk-has-feelings-too.md'
+    - 'Shapely Shapes and OpenCV Visions': 'masks_to_polygons_and_back.md'
+    - 'On using an Adaline Artificial Neuron for Classification': 'single-artifical-neuron-for-nonlinear-separable-data.markdown'
+    - 'Overlaying a Website ontop of a GitHub Repository': 'my-new-static-site-generator-hobby.md' # 2017-06-18
+    - 'On Being a Data Scientist': 'data-science-story-part1.md' # 2017-05-15
+    - 'Wading In a Tide Pool of Choices, How to Write a Package in Python?': 'two-cents-on-python-package-structure.md' # 2017-03-06
+    - 'OCRBot Gets Attached': 'ocrbot-gets-attached.md' # 2017-03-01
+    - 'The Notebook Superhero -- Is It Always a Contest?':  'jupyter-and-beaker-make-a-case.md' # 2017-02-19
+    - 'Javascript and Python Meet through Magic and IPython': 'javascript-and-python-have-a-party.md' # 2017-02-18
+    - 'A Simple, Presentable Confusion Matrix with K-means Data': 'confusion-matrix-code-revealed.md' # 2017-02-12
+    - 'Creating a Smart Python Flask Web App using Azure Machine Learning': 'a-python-flask-webapp-gets-smart.md' # 2017-02-05
+    - 'OCRBot Makes a Connection to the Cloud': 'ocrbot-makes-a-connection.md' # 2016-11-15
+    - 'Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac': 'how-to-bot-on-mac.md' # 2016-11-07
+    - 'Tips I have Learned by Being a Trainer for a Year': 'teaching-notes-post.md'
+    - 'Python for Data Science Goes Into the Wild': 'notebooks1-post.md'
+
+theme: 
+  name: 'material'
+  palette:
+    primary: 'teal'
+    secondary: 'blue'
+
+
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+# google_analytics: ['UA-86308542-1', 'https://michhar.github.io']
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/michhar'
+    - type: 'twitter'
+      link: 'https://twitter.com/rheartpython'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/micheleenharris'
