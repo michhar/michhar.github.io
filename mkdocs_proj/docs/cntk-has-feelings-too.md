@@ -8,6 +8,9 @@ tag: [cntk, deep-learning, computer-vision, machine-learning]
 comments: true
 ---
 
+![header pic](/assets/img/cntk.jpg)
+
+
 **Posted:**  2017-12-12
 
 ## Some Background
