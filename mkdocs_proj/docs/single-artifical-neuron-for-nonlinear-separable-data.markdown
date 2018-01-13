@@ -46,7 +46,7 @@ Note, with the Adaline (versus the Perceptron) we use a continuous number rather
 
 ### Choosing an activation function
 
-![]({{ site.baseurl }}/img/single_layer_neuron/singleneuron_activation.png)
+![](/img/single_layer_neuron/singleneuron_activation.png)
 
 In code, given this "net input" function:
 
@@ -144,7 +144,7 @@ My next step was to try feeding the neural network the data in 3D space (the 3 f
 
 I then reduced the 3D data to 2D, mainly to visualize it.  A hyperplane was drawn (blank dashed line) to represent the decision boundary.  The surface in the diagram below is representative of a sigmoidal output along the direction of the weight vector.
 
-![]({{ site.baseurl }}/img/single_layer_neuron/linearly_sep_leukemia.png)
+![](/img/single_layer_neuron/linearly_sep_leukemia.png)
 
 Full code [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb) and [here](https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py).
 

@@ -22,9 +22,6 @@ Using static site generators, like Jekyll or MkDocs (and others — good article
 <p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
 
 
-![My personal webjeda cards site](/assets/img/flower_orange.jpg)
-
-
 Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide [here](https://guides.github.com/features/mastering-markdown/)).  However, if you like reStructuredText or HTML better there are generators out there for you.
 
 There's a great site to shop for a Jekyll theme (where I began this journey), [here](http://jekyllthemes.org/).  They are mostly slanted towards blog writers as that was the reason for the genesis of Jekyll by the founder of GitHub (thanks Tom Preston-Werner!  Find out more about Jekyll on [this](https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/#jekyll) blog).

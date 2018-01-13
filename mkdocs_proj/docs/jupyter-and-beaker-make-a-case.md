@@ -40,7 +40,7 @@ Differences and distinguishing factors discussed below.
 
 ### Jupyter:  customizable and sometimes magic 
 
-![jupyter with a grade3 theme]({{ site.baseurl }}/img/jupyter_beaker/jupyter_grade3theme.png)
+![jupyter with a grade3 theme](/img/jupyter_beaker/jupyter_grade3theme.png)
 <p align="right"><b>A Python 3 flavored Jupyter notebook with a "grade3" theme (theme from Kyle Dunovan's jupyter-themes repo)</b></p>
 
 The Jupyter project is much more mature than the Beaker project and thus has a reliable and almost totally bug-free experience (nothing is completely bug-free).  It's pretty much the classic notebook system, but gives the us the ability to use it for reproducible research, publish papers, do presentations with live code, create blogs (not this one, although it's in markdown at least), and the list goes on.  It's a mature project with many add-ons and features available.
@@ -77,7 +77,7 @@ You can find the Jupyter project on GitHub at [https://github.com/jupyter/notebo
 
 ### Beaker:  a true polyglot
 
-![beaker screenshot]({{ site.baseurl }}/img/jupyter_beaker/beaker_d3.png)
+![beaker screenshot](/img/jupyter_beaker/beaker_d3.png)
 
 <p align="right"><b>Python 2 and JavaScript with D3 sharing variables (entire code sample is in the D3 Demo notebook that comes with Beaker)</b></p>
 
@@ -130,7 +130,7 @@ It appears Beaker by default expects, as it [says here](https://github.com/twosi
 
 ### Themes:  design can win people over
 
-![]({{ site.baseurl }}/img/jupyter_beaker/jupyter_basic_js.png)
+![](/img/jupyter_beaker/jupyter_basic_js.png)
 <p align="right"><b>A Jupyter notebook with the `mm_dark_theme` (theme by Milos Miljkovic and found on GitHub)</b></p>
 
 Out of the box, we get a couple of themes for our notebooks with Beaker,  Default and Ambiance.  With Jupyter, we can add any theme we'd like or like to create in a few ways, but my favorite and simplest is just adding a `custom.js` and `custom.css`  to a folder called `~/.jupyter/custom/` (create one if it's not there).  The `~` refers to the user's base directory, often used in Unix systems. 

@@ -7,6 +7,8 @@ description: My path into data science involved dabbling in a new programming la
 tags: [data-science, narrative]
 ---
 
+![](/assets/img/rainier1a_mharris.jpg)
+
 [**tl;dr**](https://en.wikipedia.org/wiki/TL;DR):  My path into data science involved dabbling in a new programming language, stalking GitHub for a popular machine learning package, doing some networking and finding some other people to teach.
 
 **Posted:**  2017-05-15
@@ -19,11 +21,7 @@ Before I was a data scientist I was a developer.  TBH I'm now a developer again 
 
 At the beginning, this historic tweet by Josh Wills was both funny and helpful to me -- giving me perspective.
 
-<img src="/img/becomedatascientist/datascientistdef.png" width="65%" height="65%" border>
-
 ![Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician.](/img/becomedatascientist/datascientistdef.png)
-
-![](/assets/img/rainier1a_mharris.jpg)
 
 Before I presented on AI to 700 people at //build, before I taught an ML package at a workshop, before I had read docs and gone through the tutorials and before I had trolled YouTube for ML videos, I had attended the Open Data Science Conference in the Fall of 2015.  **I networked, as we do**, and met a group of devs/data scientists/physicists/biologists interested in data science like me (a great, diverse group of super smart people!) and immediately got involved in a Python workshop group (GitHub [organization](https://github.com/PythonWorkshop)).  I got asked to help them give a workshop on ML, scikit-learn and tensorflow they were planning for the following year because I had a some basic Python materials they could use.
 
@@ -42,8 +40,5 @@ I didn't start out teaching or creating courses by any means.  I started out by 
 > Tip:  Pick a language like R or Python and plan to create some training material on something analytical for work or fun
 
 All of this certainly required experience in a new language, Python, adopted by the data science community along with R as the go-to programming language for its intuitive syntax, readability, and existing math libraries, among other reasons.  I had been dabbling in Python for a few years, doing basic math and web programming.  I really grokked Python, however, after I had **created a Python course of my own** (find it [here](https://notebooks.azure.com/rheartpython/libraries/PythonDS101)) — see a theme here? :)
-
-In Part 2, I will expand on diving into ML and more tidbits on learning data science.
-
 
 
