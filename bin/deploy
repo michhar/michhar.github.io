@@ -34,7 +34,7 @@ mv site/* .
 # git push -f -q origin master
 
 # Move back to previous branch.
-git checkout -
+# git checkout -
 
 echo "Deployed Successfully!"
 
