@@ -1,6 +1,7 @@
 .*.icloud
 .sass-cache
 /site
+site
 # OS generated files #
 ######################
 .DS_Store
