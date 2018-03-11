@@ -15,7 +15,7 @@ comments: true
 
 ## Context
 
-I wanted to quickly deploy a Microsoft Cogntive Toolkit (CNTK) machine learning model I'd trained for classification, testing locally with the Python code I wrote, then dockerizing and testing that locally.  If local worked, I wished to deploy the tested, dockerized service to a Kubernetes cluster (with just a handful of commands if possible - and, yes, it is).
+I wanted to quickly deploy a Microsoft Cogntive Toolkit (CNTK) machine learning model I'd trained for classification, testing locally with the Python code I wrote, then dockerizing and testing that locally, also.  If local worked, I wished to deploy the tested, dockerized service to a Kubernetes cluster (with just a handful of commands if possible - and, yes, it is).
 
 This post is mainly about the commands to use for deploying with the new, in Preview, AzureML CLI, however for example scoring files and schema with CNTK, see the [References](#references) below.  
 
@@ -269,7 +269,7 @@ Finis!
 * There are different input data type options for sending up to the service and you can specify this when you generate the schema for the service call.
 * Install the Azure ML CLI into the system Python if using a DSVM and the main Python in a local setup with (from this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli)):
     `! sudo pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file`
-* When creating the image with the `az ml` cli, remember to include all files necessary with the `-d` flag such as the `conda_dep.yml` or any label files.  Avoid using the `-c` flag for the `conda_dep.yml` file, using `-d` instead.  Also, a `requirements.txt` file, with the `pip` installable packages, should be specified with the `-p` flag.
+* When creating the image with the `az ml` cli, remember to include all files necessary with the `-d` flag such as any label or data files.  Avoid using the `-c` flag for the conda dependencies file for the time being.  If needed installs, a `requirements.txt` file can be used with the `pip` installable packages specified, and should be specified with the `-p` flag.
 
 **Overview**
 
