@@ -269,7 +269,7 @@ Finis!
 * There are different input data type options for sending up to the service and you can specify this when you generate the schema for the service call.
 * Install the Azure ML CLI into the system Python if using a DSVM and the main Python in a local setup with (from this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli)):
     `! sudo pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file`
-* When creating the image with the `az ml` cli, remember to include all files necessary with the `-d` flag such as any label or data files.  Avoid using the `-c` flag for the conda dependencies file for the time being.  If needed installs, a `requirements.txt` file can be used with the `pip` installable packages specified, and should be specified with the `-p` flag.
+* When creating the image with the `az ml` cli, remember to include all files necessary with the `-d` flag such as any label or data files.  Avoid using the `-c` flag for the conda dependencies file for the time being.  If particluar installs are needed, a `requirements.txt` file can be used with the `pip` installable packages specified and this files should go after a`-p` flag.
 
 **Overview**
 
