@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Deploying and Testing Quicking a Machine Learning Model with AzureML CLI"
-img: cntk.jpg
+title: "Deploying and Testing a Machine Learning Model Quickly with AzureML CLI"
+img: IMG_3455.JPG
 date: 2018-03-11 12:55:00 +0000
 description: 
 tag: [azureml, deploy, machine-learning, cntk]
@@ -11,7 +11,7 @@ comments: true
 ![header pic](/assets/img/IMG_3455.JPG)
 
 
-**Posted:**  2017-03-11
+**Posted:**  2018-03-11
 
 ## Context
 
@@ -25,6 +25,8 @@ This post is mainly about the commands to use for deploying with the new, in Pre
 2.  Docker installed (for local service testing) - [Ref](https://docs.docker.com/get-started/)
 3.  A scoring script (see [References](#references) for examples)
 4.  Any other necessary files like labels or necessary `pip` installs in a `requirements.txt`
+
+Note:  The following was all done in Jupyter on a Linux Ubuntu Data Science Virutal Machine ([Doc](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro))
 
 ## Overview
 
