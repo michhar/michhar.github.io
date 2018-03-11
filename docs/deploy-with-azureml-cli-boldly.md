@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploying and Testing a Machine Learning Model Quickly with AzureML CLI"
+title: "Deploying a Machine Learning Model Quickly with AzureML CLI"
 img: IMG_3455.JPG
 date: 2018-03-11 12:55:00 +0000
 description: 
@@ -267,7 +267,7 @@ Finis!
 **Important Notes**
 
 * There are different input data type options for sending up to the service and you can specify this when you generate the schema for the service call.
-* The team must install the Azure ML CLI into the system Python if using a DSVM and the main Python in a local setup with (from this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli)):
+* Install the Azure ML CLI into the system Python if using a DSVM and the main Python in a local setup with (from this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli)):
     `! sudo pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file`
 * When creating the image with the `az ml` cli, remember to include all files necessary with the `-d` flag such as the `conda_dep.yml` or any label files.  Avoid using the `-c` flag for the `conda_dep.yml` file, using `-d` instead.  Also, a `requirements.txt` file, with the `pip` installable packages, should be specified with the `-p` flag.
 
@@ -277,12 +277,14 @@ Finis!
 * Deployment walkthrough <a href="https://azure.github.io/LearnAI-Bootcamp/lab04.2-deploying_a_scoring_service_to_aks/0_README" target="_blank">Ref</a>
 
 **More on Deployment**
+
 * Microsoft Blog on deploying from Azure ML Workbench and the Azure ML CLI <a href="https://blogs.technet.microsoft.com/machinelearning/2017/09/25/deploying-machine-learning-models-using-azure-machine-learning/" target="_blank">Ref</a>
 * Setting up with the Azure ML CLI for deployment 
 <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration" target="_blank">Doc</a>
 * Non-CLI deployment methods (AML alternative) <a href="https://github.com/Azure/ACS-Deployment-Tutorial" target="_blank">Ref</a>
 
 **Scoring File and Schema Creation References**
+
 * Example of schema generation <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#2-create-a-schemajson-file" target="_blank">Doc</a>
 * Example of the scoring file showing a CNTK model and serializing an image as a `PANDAS` data type for input data to service <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py" target="_blank">Ref</a>
 * Example of the scoring file showing a `scikit-learn` model and a `STANDARD` data type (json) for input data to service <a href="https://github.com/Azure/Machine-Learning-Operationalization/blob/master/samples/python/code/newsgroup/score.py" target="_blank">Ref</a>
