@@ -11,14 +11,6 @@
 
     
     <url>
-     <loc>/deploy-with-azureml-cli-boldly/</loc>
-     <lastmod>2018-03-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
      <loc>/cntk-has-feelings-too/</loc>
      <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>

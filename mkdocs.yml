@@ -2,7 +2,7 @@ site_name: Micheleen's Blog
 pages:
     - Home: index.md
     # - 2016:
-    - 'Deploying a Machine Learning Model Easily with Azure ML CLI': 'deploy-with-azureml-cli-boldly.md'
+    #- 'Deploying a Machine Learning Model Easily with Azure ML CLI': 'deploy-with-azureml-cli-boldly.md'
     - 'The Cognitive Toolkit (CNTK) Understands How You Feel': 'cntk-has-feelings-too.md'
     - 'Shapely Shapes and OpenCV Visions': 'masks_to_polygons_and_back.md'
     - 'On using an Adaline Artificial Neuron for Classification': 'single-artifical-neuron-for-nonlinear-separable-data.markdown'
