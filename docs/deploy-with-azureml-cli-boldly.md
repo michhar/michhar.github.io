@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploying a Machine Learning Model Quickly with AzureML CLI"
+title: "Deploying a Machine Learning Model Easily with Azure ML CLI"
 img: IMG_3455.JPG
 date: 2018-03-11 12:55:00 +0000
 description: 
@@ -15,9 +15,9 @@ comments: true
 
 ## Context
 
-I wanted to quickly deploy a Microsoft Cogntive Toolkit (CNTK) machine learning model I'd trained for classification, testing locally with the Python code I wrote, then dockerizing and testing that locally, also.  If local worked, I wished to deploy the tested, dockerized service to a Kubernetes cluster (with just a handful of commands if possible - and, yes, it is).
+I was looking for an easy way to deploy a machine learning model I'd trained for classification, built with Microsoft Cogntive Toolkit (CNTK), a deep learning framework.  I wanted still to test locally with the Python code I wrote, then dockerize and test my image locally, as well.  If the local image ran, I wished to, then, deploy the tested, dockerized service to a cluster for a realtime scoring endpoint (with just a handful of commands if possible - and, indeed, it was).
 
-This post is mainly about the commands to use for deploying with the new, in Preview, AzureML CLI, however for example scoring files and schema with CNTK, see the [References](#references) below.  
+This post is mainly about the commands to use for deploying with the new, in Preview, Azure ML CLI, however for example scoring files and schema with CNTK, see the [References](#references) below.
 
 ## Prerequisites
 
