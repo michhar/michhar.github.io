@@ -36,7 +36,7 @@ The general story goes as follows.  There is a local testing grounds and a remot
 
 ### To Begin
 
-1.  Write a scoring script that has `run` and `init` methods, with a `main` method to make the service payload schema (run this script to generate the schema)
+1.  Write a scoring script that has `run` and `init` methods, with a `main` method to make the service payload schema (an example [Ref](https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py)).  The scoring script is packaged up for use later, but has a dual purpose of generating a schema for the service.  Run this script to generate the schema.  Package and deploy this script to make prediction service.
 2.  Write a conda dependencies and/or `pip` install requirements file (this will have the reference to the CNTK wheel to install cntk into the docker image - we'll talk about in a second)
 3.  Register three Environment Providers (for the cluster deployment)
 5.  Create a Model Management Account in Azure
@@ -46,8 +46,8 @@ The general story goes as follows.  There is a local testing grounds and a remot
 ### For a Local Deployment test (always a good idea)
 
 1.  Set up the local Environment in Azure and switch to it
-2.  Register a model to the Environment (the ML model, e.g. a saved CNTK model in a [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) based format)
-3.  Create a manifest for the model (or multiple models)
+2.  Register a model (the ML model, e.g. a saved CNTK model in a [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) based format)
+3.  Create a manifest for all requirements to build an image (e.g. model, dependencies and can include multiple models)
 4.  Create a docker image with the environment and pertinent files
 5.  Create and deploy the service using the docker image
 
@@ -58,7 +58,7 @@ The general story goes as follows.  There is a local testing grounds and a remot
 
 ## The Command Sequence
 
-After creating the scoring file, `score.py`, and placing all necessary package installs into a `requirements.txt` file we can begin with our deployment.
+After creating the scoring file, `score.py` here, and placing all necessary package installs into a `requirements.txt` file (for a Python package manager to use) we can begin our deployment.
 
 
 ### Deploy locally to test
@@ -115,31 +115,37 @@ To start the setup process, you need to register a few environment providers by 
 ```
 
 
-**Register a model to the Environment (the ML model, e.g. a save CNTK model in a [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) based format)**
+**Register a model  (the ML model, e.g. a saved CNTK model in a [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) based format)**
 
 ```bash
 # Get help on this
 ! az ml model register --help
 ```
 
+This will output the model ID:
 ```bash
 # az ml model register --model [path to model file] --name [model name]
-! az ml model register --model happy_classifier_cntk.model --name happy_classifier_cntk.model
-
+! az ml model register --model happy_classifier_cntk.model --name happy_classifier_cntk.registered.model
 ```
 
-**Create a manifest for the model (or multiple models)**
+```bash
+# Show the registered models
+! az ml model list -o table
+```
+
+**Create a manifest for all requirements to build an image**
 
 ```bash
 # Get help on this
 ! az ml manifest create --help
 ```
 
+After having the requirements file (user generated list of `pip` installable packages needed) and the service schema file (representing the json payload for the service call which is created by running the `main` method in `score.py` mentioned above, e.g., `python score.py`), one can create the manifest to hold this information along with other requirements.
+
 ```bash
-# az ml manifest create --manifest-name [your new manifest name] -f [path to code file] -r [runtime for the image, e.g. spark-py] -p [pip installs, e.g. requirements.txt] -d [extra files, e.g. a label file] -s [service schema. e.g. service_schema.json] --verbose --debug
+# az ml manifest create --manifest-name [your new manifest name] --model-id [model id] -f [path to code file] -r [runtime for the image, e.g. spark-py] -p [pip installs, e.g. requirements.txt] -d [extra files, e.g. a label file] -s [service schema. e.g. service_schema.json] --verbose --debug
 # Note must have requirements file and manifest name mustn't have underscores but rather '.' or '-'
-! az ml manifest create --manifest-name happyclassifiermanifest --model-id [model id] -r python -p requirements.txt -d target_set.txt -f score.py -s service_schema.json #--verbose --debug
-# Note:  took away -d conda_dep.yml because it was unnecessary, not harmful, just not needed, replaced with requirements.txt
+! az ml manifest create --manifest-name happyclassifiermanifest --model-id [model id from register command] -r python -p requirements.txt -d target_set.txt -f score.py -s service_schema.json #--verbose --debug
 ```
 
 ```bash
@@ -149,15 +155,21 @@ To start the setup process, you need to register a few environment providers by 
 **Create a docker image with the environment and pertinent files**
 
 ```bash
+# Ensure correct permissions for docker and add user to docker group
+! sudo chmod -R ugo+rwx /var/run/
+! sudo usermod -aG docker [your current user]
+```
+
+```bash
 # Get help on this
 ! az ml image create --help
 ```
 
+This will produce an image ID:
 ```bash
 # az ml image create -n [image name] --manifest-id [the manifest ID]
 ! az ml image create -n happyclassifierimage --manifest-id [manifest id]
 ```
-
 
 ```bash
 # Get the usage in order to pull the image
@@ -171,18 +183,11 @@ To start the setup process, you need to register a few environment providers by 
 ! az ml env get-credentials -g happyprojrg -n localenv
 ```
 
-
 ```bash
-# (Optional) Change permissions for docker and add user to docker group
-! sudo chmod -R ugo+rwx /var/run/
-! sudo usermod -aG docker [your current user]
-```
-
-
-```bash
-# Log in to docker and pull down image from ACR
+# Log in to docker and pull down image from ACR, then run
 ! docker login -u [username] -p [password] [loginServer]
 ! docker pull [image name from usage command]
+! docker run [image name from usage command]
 ```
 
 **Create and deploy the service using the docker image**
