@@ -8,9 +8,6 @@ tag: [azureml, deploy, machine-learning, cntk]
 comments: true
 ---
 
-![header pic](/assets/img/IMG_3455.JPG)
-
-
 **Posted:**  2018-03-11
 
 ## Context
