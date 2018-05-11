@@ -69,7 +69,7 @@ def train(self, trainData, maxEpochs, learnRate):
 
 > Pro tip:  "When working with neural networks, it's common, but not required, to work with the float32 rather than float64 data type" - Lee Stott
 
-Now, followed with these arrays which will hold the signals(remember these are gradients without their input terms mainly for convenience) (`oSignals` the one from output to hidden and `hSignals` the hidden to input layer).
+Now, followed with these arrays which will hold the signals (remember these are gradients without their input terms mainly for convenience) (`oSignals` the one from output to hidden and `hSignals` the hidden to input layer).
 
 ```python
 oSignals = np.zeros(shape=[self.no], dtype=np.float32)
@@ -132,181 +132,6 @@ for j in range(self.nh):
 
 Updating the weight matrix now with these gradients will be left up to the reader (or use that code sample link above).
 
-### Keras
-
-```python
-
-def createCNNModel(num_classes):
-    """ Adapted from: # http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/
-# """
-    # Create the model
-    model = Sequential()
-    model.add(Convolution2D(32, 3, 3, input_shape=(125, 200, 3), border_mode='same', activation='relu', W_constraint=maxnorm(3)))
-    model.add(Dropout(0.2))
-    model.add(Convolution2D(32, 3, 3, activation='relu', border_mode='same', W_constraint=maxnorm(3)))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Flatten())
-    model.add(Dense(512, activation='relu', W_constraint=maxnorm(3)))
-    model.add(Dropout(0.5))
-    model.add(Dense(num_classes, activation='softmax'))
-```
-
-What you don't see is:
-
-
-
-### PyTorch
-
-(CNN)
-
-```python
-# CNN Model (2 conv layer)
-class CNN(nn.Module):
-    def __init__(self):
-        super(CNN, self).__init__()
-        self.layer1 = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=5, padding=2),
-            nn.BatchNorm2d(16),
-            nn.ReLU(),
-            nn.MaxPool2d(2))
-        self.layer2 = nn.Sequential(
-            nn.Conv2d(16, 32, kernel_size=5, padding=2),
-            nn.BatchNorm2d(32),
-            nn.ReLU(),
-            nn.MaxPool2d(2))
-        self.fc = nn.Linear(7*7*32, 10)
-        
-    def forward(self, x):
-        out = self.layer1(x)
-        out = self.layer2(out)
-        out = out.view(out.size(0), -1)
-        out = self.fc(out)
-        return out
-        
-cnn = CNN()
-```
-
-### Tensorflow
-
-CNN with the Layers and Estimators libraries
-
-```python
-def cnn_model_fn(features, labels, mode):
-  """Model function for CNN."""
-  # Input Layer
-  input_layer = tf.reshape(features["x"], [-1, 28, 28, 1])
-
-  # Convolutional Layer #1
-  conv1 = tf.layers.conv2d(
-      inputs=input_layer,
-      filters=32,
-      kernel_size=[5, 5],
-      padding="same",
-      activation=tf.nn.relu)
-
-  # Pooling Layer #1
-  pool1 = tf.layers.max_pooling2d(inputs=conv1, pool_size=[2, 2], strides=2)
-
-  # Convolutional Layer #2 and Pooling Layer #2
-  conv2 = tf.layers.conv2d(
-      inputs=pool1,
-      filters=64,
-      kernel_size=[5, 5],
-      padding="same",
-      activation=tf.nn.relu)
-  pool2 = tf.layers.max_pooling2d(inputs=conv2, pool_size=[2, 2], strides=2)
-
-  # Dense Layer
-  pool2_flat = tf.reshape(pool2, [-1, 7 * 7 * 64])
-  dense = tf.layers.dense(inputs=pool2_flat, units=1024, activation=tf.nn.relu)
-  dropout = tf.layers.dropout(
-      inputs=dense, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
-
-  # Logits Layer
-  logits = tf.layers.dense(inputs=dropout, units=10)
-
-  predictions = {
-      # Generate predictions (for PREDICT and EVAL mode)
-      "classes": tf.argmax(input=logits, axis=1),
-      # Add `softmax_tensor` to the graph. It is used for PREDICT and by the
-      # `logging_hook`.
-      "probabilities": tf.nn.softmax(logits, name="softmax_tensor")
-  }
-
-[snipped]
-```
-
-For more see tensorflow in the [References](#references) below.
-
-### Cognitive Toolkit (CNTK)
-
-CNN for MNIST images with Layer API
-
-```python
-def create_basic_model(input, out_dims):
-    with C.layers.default_options(init=C.glorot_uniform(), activation=C.relu):
-        net = C.layers.Convolution((5,5), 32, pad=True)(input)
-        net = C.layers.MaxPooling((3,3), strides=(2,2))(net)
-
-        net = C.layers.Convolution((5,5), 32, pad=True)(net)
-        net = C.layers.MaxPooling((3,3), strides=(2,2))(net)
-
-        net = C.layers.Convolution((5,5), 64, pad=True)(net)
-        net = C.layers.MaxPooling((3,3), strides=(2,2))(net)
-
-        net = C.layers.Dense(64)(net)
-        net = C.layers.Dense(out_dims, activation=None)(net)
-
-    return net
-```
-
-The following is the same CNN using the Layer API and, then, Sequential class to make the code compact.
-
-```python
-def create_basic_model_terse(input, out_dims):
-
-    with C.layers.default_options(init=C.glorot_uniform(), activation=C.relu):
-        model = C.layers.Sequential([
-            C.layers.For(range(3), lambda i: [
-                C.layers.Convolution((5,5), [32,32,64][i], pad=True),
-                C.layers.MaxPooling((3,3), strides=(2,2))
-                ]),
-            C.layers.Dense(64),
-            C.layers.Dense(out_dims, activation=None)
-        ])
-
-    return model(input)
-```
-
-    # Instantiate the trainer object to drive the model training
-    lr = learning_parameter_schedule_per_sample(1)
-    trainer = Trainer(z, (ce, pe), adadelta(z.parameters, lr), progress_writers)
-
-    training_session(
-        trainer=trainer,
-        mb_source = reader_train,
-        mb_size = minibatch_size,
-        model_inputs_to_streams = input_map,
-        max_samples = num_samples_per_sweep * num_sweeps_to_train_with,
-        progress_frequency=num_samples_per_sweep
-    ).train()
-
-    # Load test data
-    path = os.path.normpath(os.path.join(data_dir, "Test-28x28_cntk_text.txt"))
-    check_path(path)
-
-    reader_test = create_reader(path, False, input_dim, num_output_classes)
-
-    input_map = {
-        feature  : reader_test.streams.features,
-        label  : reader_test.streams.labels
-    }
-
-... [snipped]
-
-```
-
-### Maybe Caffe2
 
 ## The Code
 
@@ -316,9 +141,6 @@ def create_basic_model_terse(input, out_dims):
 
 ## References
 
-1.  Kaggle Keras code sample [Ref](https://www.kaggle.com/tonypoe/keras-cnn-example?scriptVersionId=589403)
-2.  PyTorch code sample [Ref](https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py)
-3.  CNTK code sample with Layer API [Doc](https://cntk.ai/pythondocs/CNTK_201B_CIFAR-10_ImageHandsOn.html)
-4.  TensorFlow code sample with Layers API [Doc](https://www.tensorflow.org/tutorials/layers)
+1. 
 
 Thanks for reading.
