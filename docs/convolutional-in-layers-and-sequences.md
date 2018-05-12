@@ -14,43 +14,51 @@ tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 
 ## Introduction
 
-I've found, recently, that the Sequential class in Keras and PyTorch are very similar to the Layer or Layers APIs in CNTK and TensorFlow - perhaps Sequential is a little bit higher-level so it depends on how much customizability you want, as usual, in these cases.  Below you will see examples of similar CNN architectures in the four different frameworks.
+I've found recently that the Sequential class and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious about using these modules/APIs in each framework to define a Convolutional neural network ([ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
+
+The neural network archicture here is:
+
+1. Convolutional layer
+2. Max pooling layer
+3. Convolutional layer
+4. Max pooling layer
+5. Fully connected or dense layer with 10 outputs and softmax activation (to get probabilities)
+
+> Note: Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer and Dropout layers may be added after the convolutional layers (or pooling) or right before a dense layer to decrease parameter space to help prevent overfitting.
 
 ### Keras
 
 ```python
+"""
+Adapted from:
+https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py
+"""
+
 import keras
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers import Dense, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 
-def convNetKeras(num_classes):
-    """ Adapted from: http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/
-    """
-    # Create the model
-    model = Sequential()
-    model.add(Convolution2D(32, 3, 3, input_shape=(125, 200, 3), border_mode='same', activation='relu', W_constraint=maxnorm(3)))
-    model.add(Dropout(0.2))
-    model.add(Convolution2D(32, 3, 3, activation='relu', border_mode='same', W_constraint=maxnorm(3)))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Flatten())
-    model.add(Dense(512, activation='relu', W_constraint=maxnorm(3)))
-    model.add(Dense(num_classes, activation='softmax'))
+model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3),
+                 activation='relu',
+                 input_shape=input_shape))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(num_classes, activation='softmax'))
 
-    epochs = 25
-    lrate = 0.01
-    decay = lrate/epochs
-    sgd = SGD(lr=lrate, momentum=0.9, decay=decay,
-         nesterov=False)
-    model.compile(loss='categorical_crossentropy',
-         optimizer=sgd, metrics=['accuracy'])
-    return model
+model.compile(loss=keras.losses.categorical_crossentropy,
+              optimizer=keras.optimizers.Adadelta(),
+              metrics=['accuracy'])
 ```
 
 What you don't see is:
 * Fit/train (`model.fit()`)
 * Evaluate with given metric (`model.evaluate()`)
-* To add dropout after the `Convolution2D()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g., `Dropout(0.5)`
+* To add dropout after the `Convolution2D()` layer (or after the fully connected in any of these examples) a dropout function will be used, e.g., `Dropout(0.5)`
+* Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer.
 
 ### PyTorch
 
@@ -59,30 +67,47 @@ What you don't see is:
 ```python
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 class ConvNetPyTorch(nn.Module):
     """Adapted from:
-    https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py
+    https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb
     """
     def __init__(self, num_classes=10):
         super(ConvNet, self).__init__()
         self.layer1 = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=5, stride=1, padding=2),
+            # 28x28x1 => 28x28x4
+            nn.Conv2d(in_channels=1,
+                      out_channels=4,
+                      kernel_size=(3, 3),
+                      stride=(1, 1),
+                      padding=1), # (1(28-1) - 28 + 3) / 2 = 1
             nn.ReLU(),
-            nn.Dropout(0.5)
-            nn.MaxPool2d(kernel_size=2, stride=2))
+            # 28x28x4 => 14x14x4
+            nn.MaxPool2d(kernel_size=(2, 2),
+                         stride=(2, 2),
+                         padding=0)) # (2(14-1) - 28 + 2) = 0    
         self.layer2 = nn.Sequential(
-            nn.Conv2d(16, 32, kernel_size=5, stride=1, padding=2),
+            # 14x14x4 => 14x14x8
+            nn.Conv2d(in_channels=4,
+                      out_channels=8,
+                      kernel_size=(3, 3),
+                      stride=(1, 1),
+                      padding=1) # (1(14-1) - 14 + 3) / 2 = 1   
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2))
-        self.fc = nn.Linear(7*7*32, num_classes)
+            # 14x14x8 => 7x7x8 
+            nn.MaxPool2d(kernel_size=(2, 2),
+                         stride=(2, 2),
+                         padding=0)) # (2(7-1) - 14 + 2) = 0
+        self.linear_1 = nn.Linear(7*7*8, num_classes)
         
     def forward(self, x):
         out = self.layer1(x)
         out = self.layer2(out)
         out = out.reshape(out.size(0), -1)
-        out = self.fc(out)
-        return out
+        logits = self.linear_1(out.view(-1, 7*7*8))
+        probas = F.softmax(logits, dim=1)
+        return logits, probas
 
 model = ConvNetPyTorch(num_classes).to(device)
 ```
@@ -91,6 +116,7 @@ What you don't see is:
 * Fit/train (`model.train()`)
 * Evaluate with given metric (`model.eval()`)
 * To add dropout after the `nn.ReLU()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `nn.Dropout(0.5)`
+* Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer.
 
 ### Tensorflow
 
@@ -141,6 +167,7 @@ What you don't see is:
 * Fit/train (`model.train()`)
 * Evaluate with given metric (`model.evaluate()`)
 * To add dropout after the `tf.layers.conv2d()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `tf.layers.dropout(inputs=net_layer, rate=0.5, training=is_training)`
+* Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer.
 
 For more see tensorflow in the [References](#references) below.
 
@@ -186,19 +213,26 @@ def convNetCNTK(input, out_dims):
 What you don't see is:
 * Fit/train (`trainer = C.Trainer()` and `trainer.train_minibatch()`)
 * Evaluate with given metric (`out = C.softmax()` and `out.eval()`)
-* To add dropout after the `C.layers.Convolution()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `C.layers.Dropout(0.5)`
+* To add dropout after the `C.layers.Convolution()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `C.layers.Dropout(0.5)`.
+* Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer.
 
 ## Conclusion
 
 ## References
 
-1.  Kaggle Keras code sample [Ref](https://www.kaggle.com/tonypoe/keras-cnn-example?scriptVersionId=589403)
-2.  PyTorch code sample [Ref](https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py)
+Samples used in this post:
+
+1.  Keras code sample [Ref](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)
+2.  PyTorch code sample [Ref](https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb)
 3.  CNTK code sample with Layer API [Doc](https://cntk.ai/pythondocs/CNTK_201B_CIFAR-10_ImageHandsOn.html)
 4.  TensorFlow code sample with Layers API [Doc](https://www.tensorflow.org/tutorials/layers) and ConvNets Tutorial at this [Doc](https://www.tensorflow.org/tutorials/deep_cnn)
 
+
+Even more nice code samples:
+
+*  Kaggle Keras code sample [Ref](https://www.kaggle.com/tonypoe/keras-cnn-example?scriptVersionId=589403)
 * Keras example:  http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/
-* PyTorch example:  https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py
+* PyTorch example: https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py
 * TensorFlow example: https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py
 * CNTK example:  https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html 
 
