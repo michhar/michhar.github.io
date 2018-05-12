@@ -1,18 +1,19 @@
 ---
 img:  IMG_3568.JPG
 layout: post
-title: Back-Propagation in Deep Learning Frameworks
+title: ConvNets
 comments: true
 description: A tech piece on back-propagation
 cover:  
 tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 ---
 
-**tl;dr**:  
+**tl;dr**:  Un-confusing the naming of current classes and APIs for deep learning frameworks, plus a nice convolutional neural network defined in four deep learning frameworks.
 
 **Posted:**  2018-05-12
 
 ![ConvNet Diagram](https://i.stack.imgur.com/ZgG1Z.png)
+[Source](http://www.mshahriarinia.com/home/ai/machine-learning/neural-networks/deep-learning/python/theano-mnist/3-convolutional-neural-network-lenet)
 
 ## Introduction
 
@@ -26,13 +27,11 @@ The neural network archicture here is:
 4. Max pooling layer
 5. Fully connected or dense layer with 10 outputs and softmax activation (to get probabilities)
 
-A convolutional layer creates the first feature map (using a _filter_ or _kernel_, which I like to refer to it as a "flashlight", shinning on the image and stepping through with a sliding window of 1 unit, that's a _stride_ of 1, by the way).  A good reference for this is in the CNTK tutorial at this [Ref](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html#Convolution-Layer).
+A convolutional layer creates a feature map (using a _filter_ or _kernel_, which I like to refer to as a "flashlight", shinning on the image and stepping through with a sliding window of 1 unit, that's a _stride_ of 1, by the way).  A good reference for this is in the CNTK [Tutorial](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html#Convolution-Layer).
 
-A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has gone ahead processed (extracted salient features from) an image in our case.
+A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has already done the processing (extracted salient features from) an image in our case.  Remember, the power of a convolutional layer is that we don't have to do much upfront raw image processing.  The layer(s) will subsequently find the most salient features for us.
 
-> Note: Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer and Dropout layers may be added after the convolutional layers (or pooling) or right before a dense layer to decrease parameter space to help prevent overfitting.
-
-In this post you will find ConvNets defined for four frameworks with adpations to create a good comparison.  Please leave comments as needed.  The full example code can be found as a Jupyter notebook - [Ref](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
+In this post you will find ConvNets defined for four frameworks with adaptations to create easier comparisons (please leave comments as needed).  The full example code can be found as a Jupyter notebook - [Ref](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
 
 ### Keras
 
@@ -71,6 +70,7 @@ model.compile(loss='categorical_crossentropy',
 ```
 
 What you don't see is:
+
 * Fit/train (`model.fit()`)
 * Evaluate with given metric (`model.evaluate()`)
 * To add dropout after the `Convolution2D()` layer (or after the fully connected in any of these examples) a dropout function will be used, e.g., `Dropout(0.5)`
@@ -129,6 +129,7 @@ model = ConvNetPyTorch(num_classes).to(device)
 ```
 
 What you don't see is:
+
 * Fit/train (`model.train()`)
 * Evaluate with given metric (`model.eval()`)
 * To add dropout after the `nn.ReLU()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `nn.Dropout(0.5)`
@@ -182,6 +183,7 @@ model = tf.estimator.Estimator(model_fn)
 ```
 
 What you don't see is:
+
 * Fit/train (`model.train()`)
 * Evaluate with given metric (`model.evaluate()`)
 * To add dropout after the `tf.layers.conv2d()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `tf.layers.dropout(inputs=net_layer, rate=0.5, training=is_training)`
@@ -213,6 +215,7 @@ def convNetCNTK(features, num_output_classes):
 ```
 
 What you don't see is:
+
 * Fit/train (`trainer = C.Trainer()` and `trainer.train_minibatch()`)
 * Evaluate with given metric (`out = C.softmax()` and `out.eval()`)
 * To add dropout after the `C.layers.Convolution()` layer (or even after the fully connected in any of these examples) a dropout function will be used, e.g. `C.layers.Dropout(0.5)`.
@@ -222,24 +225,25 @@ What you don't see is:
 
 No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.
 
+The full code samples are in this Jupyter [Notebook](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
+
 ## References
 
-Samples used in this post:
+Samples adapted in this post:
 
 1.  Keras code sample [Ref](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)
 2.  PyTorch code sample [Ref](https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb)
-3.  CNTK code sample with Layer API [Doc](https://cntk.ai/pythondocs/CNTK_201B_CIFAR-10_ImageHandsOn.html)
-4.  TensorFlow code sample with Layers API [Doc](https://www.tensorflow.org/tutorials/layers) and ConvNets Tutorial at this [Doc](https://www.tensorflow.org/tutorials/deep_cnn)
+4.  TensorFlow code sample with Layers and Estimators APIs [Ref](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py) and ConvNets Tutorial at this [Doc](https://www.tensorflow.org/tutorials/deep_cnn)
+3.  CNTK code sample with Layer API [Doc](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html)
 
-A great book from which I took many concepts written in this post:  [Book](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-second-edition) and [Code]()
+A great book from which I took some of the concepts written in this post:  [Book](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-second-edition) and [Code]()
 
 Even more nice code samples:
 
-*  Kaggle Keras code sample [Ref](https://www.kaggle.com/tonypoe/keras-cnn-example?scriptVersionId=589403)
+*  Kaggle Keras code sample:  https://www.kaggle.com/tonypoe/keras-cnn-example?scriptVersionId=589403
 * Keras example:  http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/
 * PyTorch example: https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/02-intermediate/convolutional_neural_network/main.py
-* TensorFlow example: https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py
-* CNTK example:  https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html 
+* CNTK example:  https://cntk.ai/pythondocs/CNTK_201B_CIFAR-10_ImageHandsOn.html 
 * TensorFlow Estimators example:  https://jhui.github.io/2017/03/14/TensorFlow-Estimator/
 
 Thanks for reading.

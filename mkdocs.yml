@@ -2,7 +2,7 @@ site_name: Micheleen's Blog
 pages:
     - Home: index.md
     # 2018:
-    - 'The Use of the Layer-like Classes in Different Deep Learning Frameworks - How?': 'convolutional-in-layers-and-sequences.md' 
+    - 'Convolutional Neural Networks in Four Deep Learning Frameworks - Commonalities and Differences by Example': 'convolutional-in-layers-and-sequences.md' 
     - 'Deploying a Machine Learning Model Easily with Azure ML CLI': 'deploy-with-azureml-cli-boldly.md'
     # 2017
     - 'The Cognitive Toolkit (CNTK) Understands How You Feel': 'cntk-has-feelings-too.md'
