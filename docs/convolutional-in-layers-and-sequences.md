@@ -8,7 +8,7 @@ cover:
 tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 ---
 
-**tl;dr**:  Un-confusing the naming of current classes and APIs for deep learning frameworks, plus a nice convolutional neural network defined in four deep learning frameworks.
+**tl;dr**:  Un-confusing ConvNets and the naming of current classes or APIs for four deep learning frameworks with code examples.
 
 **Posted:**  2018-05-12
 
@@ -19,7 +19,7 @@ tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 
 I've found recently that the Sequential class and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious about using these modules/APIs in each framework to define a Convolutional neural network ([ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
 
-Let's get through some terminology.  You can skip to the [Code](#keras) if you are already familiar with ConvNets.
+Let's get through some terminology, first.  You can skip to the [Code](#keras) if you are already familiar with ConvNets.  Note, the code originates from projects working with MNIST handwritten digits.
 
 The neural network architecture used in this post is as follows.
 
@@ -35,7 +35,7 @@ A convolutional layer creates a feature map (using a _filter_ or _kernel_, which
 [Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
 
 
-A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has already done the processing (extracted salient features from) an image in our case.
+A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has already extracted salient features from an image in our case.
 
 ![Pooling](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-61-638.jpg?cb=1449100605)
 [Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
