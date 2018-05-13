@@ -574,7 +574,7 @@
                   <h1>Convolutional Neural Networks in Four Deep Learning Frameworks by Example</h1>
                 
                 <p><strong>tl;dr</strong>:  No secret: ConvNets are still complex when you compare APIs that sound like each other for four deep learning frameworks.  Also, included is a little ConvNet breakdown.  Lots of sample code.</p>
-<p><strong>Posted:</strong>  2018-05-12</p>
+<p><strong>Posted:</strong>  2018-05-13</p>
 <p><img alt="" src="../img/backprop/IMG_4473.jpg" /></p>
 <h2 id="introduction">Introduction</h2>
 <p>I've found recently that the Sequential classes and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious how easy it would be to use these modules/APIs in each framework to define the same Convolutional neural network (<a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">ConvNet</a>).</p>
@@ -776,8 +776,8 @@
 <li>Sometimes another fully connected (dense) layer with, say, ReLU activation, is added right before the final fully connected layer.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.</p>
-<p>The full code samples are in this Jupyter <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb">Notebook</a>.</p>
+<p>No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.  I did find Keras to be the fastest <em>and</em> easiest - albeit with a lot abstracted away, which is in general good if one needs a good jumping off point. The benchmarks are not official.</p>
+<p>The full code samples are in this Jupyter <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb">Notebook</a>.  Certainly some room for improvement in code and benchmarking so if you have any ideas, please leave a comment.</p>
 <h2 id="references">References</h2>
 <p>Samples adapted in this post:</p>
 <ol>
