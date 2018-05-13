@@ -9,7 +9,7 @@ tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 
 **tl;dr**:  No secret: ConvNets are still complex when you compare APIs that sound like each other for four deep learning frameworks.  Also, included is a little ConvNet breakdown.  Lots of sample code.
 
-**Posted:**  2018-05-12
+**Posted:**  2018-05-13
 
 ![](img/backprop/IMG_4473.jpg)
 
@@ -244,9 +244,9 @@ What you don't see is:
 
 ## Conclusion
 
-No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.
+No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.  I did find Keras to be the fastest _and_ easiest - albeit with a lot abstracted away, which is in general good if one needs a good jumping off point. The benchmarks are not official.
 
-The full code samples are in this Jupyter [Notebook](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
+The full code samples are in this Jupyter [Notebook](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).  Certainly some room for improvement in code and benchmarking so if you have any ideas, please leave a comment.
 
 ## References
 
