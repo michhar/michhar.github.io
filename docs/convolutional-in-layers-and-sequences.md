@@ -244,7 +244,7 @@ What you don't see is:
 
 ## Conclusion
 
-No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.  I did find Keras to be the fastest _and_ easiest - albeit with a lot abstracted away, which is in general good if one needs a good jumping off point. The benchmarks are not official.
+No real conclusion except to say these frameworks do pretty much the same sorts of things and all have different API layers, high-level to low-level.  I did find Keras to be the easiest and just a fast as TensorFlow - albeit with a lot abstracted away, which is in general good if one needs a good jumping off point. The benchmarks are not official.
 
 The full code samples are in this Jupyter [Notebook](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).  Certainly some room for improvement in code and benchmarking so if you have any ideas, please leave a comment.
 
