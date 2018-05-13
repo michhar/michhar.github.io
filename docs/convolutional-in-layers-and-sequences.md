@@ -72,13 +72,13 @@ from keras.layers import Conv2D, MaxPooling2D
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3),
                  strides=(1, 1),
-                 padding='valid',
+                 padding='same',
                  activation='relu',
                  input_shape=input_shape))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, kernel_size=(3, 3),
                  strides=(1, 1),
-                 padding='valid',
+                 padding='same',
                  activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
