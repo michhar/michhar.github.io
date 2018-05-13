@@ -1,0 +1,917 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.4.0">
+    
+    
+      
+        <title>"Deploying a Machine Learning Model Easily with Azure ML CLI"</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.7fb6a6f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="teal">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Micheleen's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Micheleen's Blog
+              </span>
+              <span class="md-header-nav__topic">
+                Deploying a Machine Learning Model Easily with Azure ML CLI
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Micheleen's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../convolutional-in-layers-and-sequences/" title="Convolutional Neural Networks in Four Deep Learning Frameworks by Example" class="md-nav__link">
+      Convolutional Neural Networks in Four Deep Learning Frameworks by Example
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Deploying a Machine Learning Model Easily with Azure ML CLI
+      </label>
+    
+    <a href="./" title="Deploying a Machine Learning Model Easily with Azure ML CLI" class="md-nav__link md-nav__link--active">
+      Deploying a Machine Learning Model Easily with Azure ML CLI
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" title="Context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-begin" title="To Begin" class="md-nav__link">
+    To Begin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-local-deployment-test-always-a-good-idea" title="For a Local Deployment test (always a good idea)" class="md-nav__link">
+    For a Local Deployment test (always a good idea)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-remote-cluster-deployment" title="For the Remote Cluster deployment" class="md-nav__link">
+    For the Remote Cluster deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-command-sequence" title="The Command Sequence" class="md-nav__link">
+    The Command Sequence
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-locally-to-test" title="Deploy locally to test" class="md-nav__link">
+    Deploy locally to test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-to-a-cluster" title="Deploy to a cluster" class="md-nav__link">
+    Deploy to a cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cntk-has-feelings-too/" title="The Cognitive Toolkit (CNTK) Understands How You Feel" class="md-nav__link">
+      The Cognitive Toolkit (CNTK) Understands How You Feel
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../masks_to_polygons_and_back/" title="Shapely Shapes and OpenCV Visions" class="md-nav__link">
+      Shapely Shapes and OpenCV Visions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../single-artifical-neuron-for-nonlinear-separable-data/" title="On using an Adaline Artificial Neuron for Classification" class="md-nav__link">
+      On using an Adaline Artificial Neuron for Classification
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../my-new-static-site-generator-hobby/" title="Overlaying a Website ontop of a GitHub Repository" class="md-nav__link">
+      Overlaying a Website ontop of a GitHub Repository
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../data-science-story-part1/" title="On Being a Data Scientist" class="md-nav__link">
+      On Being a Data Scientist
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../two-cents-on-python-package-structure/" title="Wading In a Tide Pool of Choices, How to Write a Package in Python?" class="md-nav__link">
+      Wading In a Tide Pool of Choices, How to Write a Package in Python?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-gets-attached/" title="OCRBot Gets Attached" class="md-nav__link">
+      OCRBot Gets Attached
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../jupyter-and-beaker-make-a-case/" title="The Notebook Superhero -- Is It Always a Contest?" class="md-nav__link">
+      The Notebook Superhero -- Is It Always a Contest?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript-and-python-have-a-party/" title="Javascript and Python Meet through Magic and IPython" class="md-nav__link">
+      Javascript and Python Meet through Magic and IPython
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../confusion-matrix-code-revealed/" title="A Simple, Presentable Confusion Matrix with K-means Data" class="md-nav__link">
+      A Simple, Presentable Confusion Matrix with K-means Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../a-python-flask-webapp-gets-smart/" title="Creating a Smart Python Flask Web App using Azure Machine Learning" class="md-nav__link">
+      Creating a Smart Python Flask Web App using Azure Machine Learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-makes-a-connection/" title="OCRBot Makes a Connection to the Cloud" class="md-nav__link">
+      OCRBot Makes a Connection to the Cloud
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-to-bot-on-mac/" title="Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac" class="md-nav__link">
+      Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../teaching-notes-post/" title="Tips I have Learned by Being a Trainer for a Year" class="md-nav__link">
+      Tips I have Learned by Being a Trainer for a Year
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../notebooks1-post/" title="Python for Data Science Goes Into the Wild" class="md-nav__link">
+      Python for Data Science Goes Into the Wild
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" title="Context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-begin" title="To Begin" class="md-nav__link">
+    To Begin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-local-deployment-test-always-a-good-idea" title="For a Local Deployment test (always a good idea)" class="md-nav__link">
+    For a Local Deployment test (always a good idea)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-remote-cluster-deployment" title="For the Remote Cluster deployment" class="md-nav__link">
+    For the Remote Cluster deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-command-sequence" title="The Command Sequence" class="md-nav__link">
+    The Command Sequence
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-locally-to-test" title="Deploy locally to test" class="md-nav__link">
+    Deploy locally to test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-to-a-cluster" title="Deploy to a cluster" class="md-nav__link">
+    Deploy to a cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Deploying a Machine Learning Model Easily with Azure ML CLI</h1>
+                
+                <p><strong>Posted:</strong>  2018-03-11</p>
+<h2 id="context">Context</h2>
+<p>I was looking for an easy way to deploy a machine learning model I'd trained for classification, built with Microsoft Cogntive Toolkit (CNTK), a deep learning framework.  I wanted still to test locally with the Python code I wrote, then dockerize and test my image locally, as well.  If the local image ran, I wished to, then, deploy the tested, dockerized service to a cluster for a realtime scoring endpoint (with just a handful of commands if possible - and, indeed, it was).</p>
+<p>This post is mainly about the commands to use for deploying with the new, in Preview, Azure ML CLI, however for example scoring files and schema with CNTK, see the <a href="#references">References</a> below.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>AzureML CLI (Install Using the CLI in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli">Doc</a>)</li>
+<li>Docker installed (for local service testing) - <a href="https://docs.docker.com/get-started/">Ref</a></li>
+<li>A scoring script (see <a href="#references">References</a> for examples)</li>
+<li>Any other necessary files like labels or necessary <code>pip</code> installs in a <code>requirements.txt</code></li>
+</ol>
+<p>Note:  The following was all done in Jupyter on a Linux Ubuntu Data Science Virutal Machine (<a href="https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro">Doc</a>)</p>
+<h2 id="overview">Overview</h2>
+<p>Save for writing the actual code and installing the prerequisites, all can be done with the CLI, even running a quick service test call.</p>
+<p>The general story goes as follows.  There is a local testing grounds and a remote cluster deployment in the overview outline.</p>
+<h3 id="to-begin">To Begin</h3>
+<ol>
+<li>Write a scoring script that has <code>run</code> and <code>init</code> methods, with a <code>main</code> method to make the service payload schema (an example <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py">Ref</a>).  The scoring script is packaged up for use later, but has a dual purpose of generating a schema for the service.  Run this script to generate the schema.  Package and deploy this script to make prediction service.</li>
+<li>Write a conda dependencies and/or <code>pip</code> install requirements file (this will have the reference to the CNTK wheel to install cntk into the docker image - we'll talk about in a second)</li>
+<li>Register three Environment Providers (for the cluster deployment)</li>
+<li>
+<p>Create a Model Management Account in Azure</p>
+</li>
+<li>
+<p>There's an option to use one master, do-it-all, command or run separate commands as done here.  The separate commands perform the following.</p>
+</li>
+</ol>
+<h3 id="for-a-local-deployment-test-always-a-good-idea">For a Local Deployment test (always a good idea)</h3>
+<ol>
+<li>Set up the local Environment in Azure and switch to it</li>
+<li>Register a model (the ML model, e.g. a saved CNTK model in a <a href="https://en.wikipedia.org/wiki/Protocol_Buffers">Protobuf</a> based format)</li>
+<li>Create a manifest for all requirements to build an image (e.g. model, dependencies and can include multiple models)</li>
+<li>Create a docker image with the environment and pertinent files</li>
+<li>Create and deploy the service using the docker image</li>
+</ol>
+<h3 id="for-the-remote-cluster-deployment">For the Remote Cluster deployment</h3>
+<ol>
+<li>Set up the remote cluster Environment in Azure and switch to it</li>
+<li>Create and deploy the service with the same image as from local deployment</li>
+</ol>
+<h2 id="the-command-sequence">The Command Sequence</h2>
+<p>After creating the scoring file, <code>score.py</code> here, and placing all necessary package installs into a <code>requirements.txt</code> file (for a Python package manager to use) we can begin our deployment.</p>
+<h3 id="deploy-locally-to-test">Deploy locally to test</h3>
+<p>For most of the commands as reference see this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a>, however some more specific instructions are here that may be useful for a specialized framework model as can be made with CNTK or TensorFlow, for example.  Other commands around setup are found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration">Doc</a>.</p>
+<p>These commands can be run in a Jupyter notebook, hence the bang, "!", preceding the command.</p>
+<p><strong>Log into Azure</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># Using two system variable, one is Azure Username and other is the password</span>
+! az login --username <span class="s2">&quot;</span><span class="nv">$AZ_USER</span><span class="s2">&quot;</span> --password <span class="s2">&quot;</span><span class="nv">$AZ_PASS</span><span class="s2">&quot;</span>
+</pre></div>
+
+<p><strong>Register three Environment Providers</strong></p>
+<p>To start the setup process, you need to register a few environment providers by entering the following commands</p>
+<div class="highlight"><pre><span></span>! az provider register -n Microsoft.MachineLearningCompute
+! az provider register -n Microsoft.ContainerRegistry
+! az provider register -n Microsoft.ContainerService
+</pre></div>
+
+<p><strong>Create a Model Management Account in Azure</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># ! az ml account modelmanagement create -l [Azure region, e.g. eastus2] -n [your account name] -g [resource group name] --sku-instances [number of instances, e.g. 1] --sku-name [Pricing tier for example S1]</span>
+! az ml account modelmanagement create -l westeurope -n happymodelmgmt -g happyprojrg --sku-instances <span class="m">1</span> --sku-name S1
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># az ml account modelmanagement set -n [your account name] -g [resource group it was created in]</span>
+! az ml account modelmanagement <span class="nb">set</span> -n happymodelmgmt -g happyprojrg
+</pre></div>
+
+<p><strong>Set up the local Environment in Azure and switch to it</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># az ml env setup -l [Azure Region, e.g. eastus2] -n [your environment name] [-g [existing resource group]]</span>
+! <span class="nb">printf</span> <span class="s1">&#39;y&#39;</span> <span class="p">|</span> az ml env setup -l <span class="s2">&quot;West Europe&quot;</span> -n localenv -g happyprojrg
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># az ml env show -n [environment name] -g [resource group]</span>
+! az ml env show -n localenv -g happyprojrg
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># az ml env set -n [environment name] -g [resource group]</span>
+! az ml env <span class="nb">set</span> -n localenv -g happyprojrg
+</pre></div>
+
+<p><strong>Register a model  (the ML model, e.g. a saved CNTK model in a <a href="https://en.wikipedia.org/wiki/Protocol_Buffers">Protobuf</a> based format)</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># Get help on this</span>
+! az ml model register --help
+</pre></div>
+
+<p>This will output the model ID:
+<div class="highlight"><pre><span></span><span class="c1"># az ml model register --model [path to model file] --name [model name]</span>
+! az ml model register --model happy_classifier_cntk.model --name happy_classifier_cntk.registered.model
+</pre></div></p>
+<div class="highlight"><pre><span></span><span class="c1"># Show the registered models</span>
+! az ml model list -o table
+</pre></div>
+
+<p><strong>Create a manifest for all requirements to build an image</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># Get help on this</span>
+! az ml manifest create --help
+</pre></div>
+
+<p>After having the requirements file (user generated list of <code>pip</code> installable packages needed) and the service schema file (representing the json payload for the service call which is created by running the <code>main</code> method in <code>score.py</code> mentioned above, e.g., <code>python score.py</code>), one can create the manifest to hold this information along with other requirements.</p>
+<div class="highlight"><pre><span></span><span class="c1"># az ml manifest create --manifest-name [your new manifest name] --model-id [model id] -f [path to code file] -r [runtime for the image, e.g. spark-py] -p [pip installs, e.g. requirements.txt] -d [extra files, e.g. a label file] -s [service schema. e.g. service_schema.json] --verbose --debug</span>
+<span class="c1"># Note must have requirements file and manifest name mustn&#39;t have underscores but rather &#39;.&#39; or &#39;-&#39;</span>
+! az ml manifest create --manifest-name happyclassifiermanifest --model-id <span class="o">[</span>model id from register command<span class="o">]</span> -r python -p requirements.txt -d target_set.txt -f score.py -s service_schema.json <span class="c1">#--verbose --debug</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>! az ml manifest show -i <span class="o">[</span>manifest id<span class="o">]</span>
+</pre></div>
+
+<p><strong>Create a docker image with the environment and pertinent files</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># Ensure correct permissions for docker and add user to docker group</span>
+! sudo chmod -R ugo+rwx /var/run/
+! sudo usermod -aG docker <span class="o">[</span>your current user<span class="o">]</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Get help on this</span>
+! az ml image create --help
+</pre></div>
+
+<p>This will produce an image ID:
+<div class="highlight"><pre><span></span><span class="c1"># az ml image create -n [image name] --manifest-id [the manifest ID]</span>
+! az ml image create -n happyclassifierimage --manifest-id <span class="o">[</span>manifest id<span class="o">]</span>
+</pre></div></p>
+<div class="highlight"><pre><span></span><span class="c1"># Get the usage in order to pull the image</span>
+! az ml image usage -i <span class="o">[</span>image id<span class="o">]</span>
+</pre></div>
+
+<p><strong>(Optional) Test the docker image</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># To log in as a docker user</span>
+! az ml env get-credentials -g happyprojrg -n localenv
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Log in to docker and pull down image from ACR, then run</span>
+! docker login -u <span class="o">[</span>username<span class="o">]</span> -p <span class="o">[</span>password<span class="o">]</span> <span class="o">[</span>loginServer<span class="o">]</span>
+! docker pull <span class="o">[</span>image name from usage command<span class="o">]</span>
+! docker run <span class="o">[</span>image name from usage command<span class="o">]</span>
+</pre></div>
+
+<p><strong>Create and deploy the service using the docker image</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># az ml service create realtime --image-id [image id] -n [service name]</span>
+! <span class="nb">printf</span> <span class="s1">&#39;y&#39;</span> <span class="p">|</span> az ml service create realtime --image-id <span class="o">[</span>image id<span class="o">]</span> -n localhappywebservice
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Get logs from creation in case something went wrong</span>
+! az ml service logs realtime -i localhappywebservice
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># az ml service usage realtime -i [service id]</span>
+! az ml service usage realtime -i localhappywebservice
+</pre></div>
+
+<p><strong>Test it</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># az ml service run realtime -i &lt;service id&gt; -d &quot;{\&quot;input_df\&quot;: [{\&quot;sepal length\&quot;: 3.0, \&quot;sepal width\&quot;: 3.6, \&quot;petal width\&quot;: 1.3, \&quot;petal length\&quot;:0.25}]}&quot;</span>
+<span class="c1"># Note the removal in the json payload of the &quot;u&quot; or unicode designation from docs</span>
+! az ml service run realtime -i localhappywebservice -d <span class="s2">&quot;{\&quot;request_package\&quot;: {\&quot;url\&quot;: \&quot;https://contents.mediadecathlon.com/p350121/2000x2000/sq/mountaineering_boots_-_blue_standard_sizes41_42_43_44_45_46_simond_8324356_350121.jpg?k=362304aaf6fecd4b2c8750987a2fb104\&quot;}}&quot;</span>
+</pre></div>
+
+<h3 id="deploy-to-a-cluster">Deploy to a cluster</h3>
+<p>Follow this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#cluster-deployment">Doc</a> for more information on cluster deployment.  Below are the pertinent commands working at of 2018-03-11.</p>
+<p><strong>Set up the remote cluster Environment in Azure and switch to it</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># az ml env setup --cluster -n [your environment name] -l [Azure region e.g. eastus2] [-g [resource group]]</span>
+! <span class="nb">printf</span> <span class="s1">&#39;n\nY&#39;</span> <span class="p">|</span> az ml env setup --cluster -n clusterenv -l westeurope -g happyprojrg
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Is the environment ready?</span>
+! az ml env show -g happyprojrg -n clusterenv
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Set the environment to the remote cluster</span>
+! az ml env <span class="nb">set</span> -g happyprojrg -n clusterenv
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Set to same model management account as local</span>
+! az ml account modelmanagement <span class="nb">set</span> -n happymodelmgmt -g happyprojrg
+</pre></div>
+
+<p><strong>Create and deploy the service with the same image as from local deployment</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># One command to do it all from &quot;scratch&quot;</span>
+<span class="c1"># ! az ml service create realtime --model-file happy_classifier_cntk.model -f score.py -n remotehappywebservice -s service_schema.json -r python -p requirements.txt -d target_set.txt --verbose --debug</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Remotely deployed kubernetes cluster for predicting and scoring new images with the model </span>
+! az ml service create realtime --image-id <span class="o">[</span>image id<span class="o">]</span> -n remotehappywebservice
+</pre></div>
+
+<p><strong>Test it</strong></p>
+<div class="highlight"><pre><span></span>! az ml service run realtime -i <span class="o">[</span>service id<span class="o">]</span> -d <span class="s2">&quot;{\&quot;request_package\&quot;: {\&quot;url\&quot;: \&quot;https://contents.mediadecathlon.com/p350121/2000x2000/sq/mountaineering_boots_-_blue_standard_sizes41_42_43_44_45_46_simond_8324356_350121.jpg?k=362304aaf6fecd4b2c8750987a2fb104\&quot;}}&quot;</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="c1"># Even though successful, might still take some time to deprovision everything in Azure</span>
+! az ml service delete realtime --id <span class="o">[</span>service id<span class="o">]</span>
+</pre></div>
+
+<p>Finis!</p>
+<h2 id="references">References</h2>
+<p><strong>Important Notes</strong></p>
+<ul>
+<li>There are different input data type options for sending up to the service and you can specify this when you generate the schema for the service call.</li>
+<li>Install the Azure ML CLI into the system Python if using a DSVM and the main Python in a local setup with (from this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration#using-the-cli">Doc</a>):
+    <code>! sudo pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file</code></li>
+<li>When creating the image with the <code>az ml</code> cli, remember to include all files necessary with the <code>-d</code> flag such as any label or data files.  Avoid using the <code>-c</code> flag for the conda dependencies file for the time being.  If particluar installs are needed, a <code>requirements.txt</code> file can be used with the <code>pip</code> installable packages specified and this files should go after a<code>-p</code> flag.</li>
+</ul>
+<p><strong>Overview</strong></p>
+<ul>
+<li>Overview of Azure ML model management <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-overview" target="_blank">Doc</a></li>
+<li>Deployment walkthrough <a href="https://azure.github.io/LearnAI-Bootcamp/lab04.2-deploying_a_scoring_service_to_aks/0_README" target="_blank">Ref</a></li>
+</ul>
+<p><strong>More on Deployment</strong></p>
+<ul>
+<li>Microsoft Blog on deploying from Azure ML Workbench and the Azure ML CLI <a href="https://blogs.technet.microsoft.com/machinelearning/2017/09/25/deploying-machine-learning-models-using-azure-machine-learning/" target="_blank">Ref</a></li>
+<li>Setting up with the Azure ML CLI for deployment 
+<a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration" target="_blank">Doc</a></li>
+<li>Non-CLI deployment methods (AML alternative) <a href="https://github.com/Azure/ACS-Deployment-Tutorial" target="_blank">Ref</a></li>
+</ul>
+<p><strong>Scoring File and Schema Creation References</strong></p>
+<ul>
+<li>Example of schema generation <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#2-create-a-schemajson-file" target="_blank">Doc</a></li>
+<li>Example of the scoring file showing a CNTK model and serializing an image as a <code>PANDAS</code> data type for input data to service <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py" target="_blank">Ref</a></li>
+<li>Example of the scoring file showing a <code>scikit-learn</code> model and a <code>STANDARD</code> data type (json) for input data to service <a href="https://github.com/Azure/Machine-Learning-Operationalization/blob/master/samples/python/code/newsgroup/score.py" target="_blank">Ref</a></li>
+<li>After creating a <code>run</code> and <code>init</code> methods as in the links above, plus a schema file, begin with "Register a model" found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a></li>
+<li>Note one change required:  </li>
+</ul>
+<p><strong>Docker</strong></p>
+<ul>
+<li>Docker Docs <a href="https://docs.docker.com/get-started/" target="_blank">Ref</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../convolutional-in-layers-and-sequences/" title="Convolutional Neural Networks in Four Deep Learning Frameworks by Example" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Convolutional Neural Networks in Four Deep Learning Frameworks by Example
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../cntk-has-feelings-too/" title="The Cognitive Toolkit (CNTK) Understands How You Feel" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                The Cognitive Toolkit (CNTK) Understands How You Feel
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/michhar" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/rheartpython" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/micheleenharris" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

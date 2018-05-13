@@ -1,0 +1,725 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Answer - there are guidelines and a general consensus with a touch of flexibility">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.4.0">
+    
+    
+      
+        <title>Wading In a Tide Pool of Choices, How to Write a Package in Python?</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.7fb6a6f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="teal">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Micheleen's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Micheleen's Blog
+              </span>
+              <span class="md-header-nav__topic">
+                Wading In a Tide Pool of Choices, How to Write a Package in Python?
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Micheleen's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../convolutional-in-layers-and-sequences/" title="Convolutional Neural Networks in Four Deep Learning Frameworks by Example" class="md-nav__link">
+      Convolutional Neural Networks in Four Deep Learning Frameworks by Example
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../deploy-with-azureml-cli-boldly/" title="Deploying a Machine Learning Model Easily with Azure ML CLI" class="md-nav__link">
+      Deploying a Machine Learning Model Easily with Azure ML CLI
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cntk-has-feelings-too/" title="The Cognitive Toolkit (CNTK) Understands How You Feel" class="md-nav__link">
+      The Cognitive Toolkit (CNTK) Understands How You Feel
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../masks_to_polygons_and_back/" title="Shapely Shapes and OpenCV Visions" class="md-nav__link">
+      Shapely Shapes and OpenCV Visions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../single-artifical-neuron-for-nonlinear-separable-data/" title="On using an Adaline Artificial Neuron for Classification" class="md-nav__link">
+      On using an Adaline Artificial Neuron for Classification
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../my-new-static-site-generator-hobby/" title="Overlaying a Website ontop of a GitHub Repository" class="md-nav__link">
+      Overlaying a Website ontop of a GitHub Repository
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../data-science-story-part1/" title="On Being a Data Scientist" class="md-nav__link">
+      On Being a Data Scientist
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wading In a Tide Pool of Choices, How to Write a Package in Python?
+      </label>
+    
+    <a href="./" title="Wading In a Tide Pool of Choices, How to Write a Package in Python?" class="md-nav__link md-nav__link--active">
+      Wading In a Tide Pool of Choices, How to Write a Package in Python?
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-very-quick-example-of-a-barebones-package" title="A very quick example of a barebones package" class="md-nav__link">
+    A very quick example of a barebones package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-onthe-dual-purpose-readme" title="Read on...the dual-purpose README" class="md-nav__link">
+    Read on...the dual-purpose README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-folderfiles-in-a-package" title="Summary of the folder/files in a package" class="md-nav__link">
+    Summary of the folder/files in a package
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics:" class="md-nav__link">
+    Basics:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#often-included" title="Often included:" class="md-nav__link">
+    Often included:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-places-to-go-for-more" title="References and places to go for more" class="md-nav__link">
+    References and places to go for more
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-gets-attached/" title="OCRBot Gets Attached" class="md-nav__link">
+      OCRBot Gets Attached
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../jupyter-and-beaker-make-a-case/" title="The Notebook Superhero -- Is It Always a Contest?" class="md-nav__link">
+      The Notebook Superhero -- Is It Always a Contest?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript-and-python-have-a-party/" title="Javascript and Python Meet through Magic and IPython" class="md-nav__link">
+      Javascript and Python Meet through Magic and IPython
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../confusion-matrix-code-revealed/" title="A Simple, Presentable Confusion Matrix with K-means Data" class="md-nav__link">
+      A Simple, Presentable Confusion Matrix with K-means Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../a-python-flask-webapp-gets-smart/" title="Creating a Smart Python Flask Web App using Azure Machine Learning" class="md-nav__link">
+      Creating a Smart Python Flask Web App using Azure Machine Learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-makes-a-connection/" title="OCRBot Makes a Connection to the Cloud" class="md-nav__link">
+      OCRBot Makes a Connection to the Cloud
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-to-bot-on-mac/" title="Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac" class="md-nav__link">
+      Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../teaching-notes-post/" title="Tips I have Learned by Being a Trainer for a Year" class="md-nav__link">
+      Tips I have Learned by Being a Trainer for a Year
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../notebooks1-post/" title="Python for Data Science Goes Into the Wild" class="md-nav__link">
+      Python for Data Science Goes Into the Wild
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-very-quick-example-of-a-barebones-package" title="A very quick example of a barebones package" class="md-nav__link">
+    A very quick example of a barebones package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-onthe-dual-purpose-readme" title="Read on...the dual-purpose README" class="md-nav__link">
+    Read on...the dual-purpose README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-folderfiles-in-a-package" title="Summary of the folder/files in a package" class="md-nav__link">
+    Summary of the folder/files in a package
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics:" class="md-nav__link">
+    Basics:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#often-included" title="Often included:" class="md-nav__link">
+    Often included:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-places-to-go-for-more" title="References and places to go for more" class="md-nav__link">
+    References and places to go for more
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Wading In a Tide Pool of Choices, How to Write a Package in Python?</h1>
+                
+                <p><img alt="" src="../img/packages1/whatspackage.jpg" /></p>
+<p><a href="https://en.wikipedia.org/wiki/TL;DR"><strong>tl;dr</strong></a>:  There's a standard for structuring a Python package and <code>setup.py</code> is at the heart of it.</p>
+<p><strong>Posted</strong>:  2017-03-06</p>
+<p>I've pulled from several sources (see Resources below) and have mashed them together to create a brief synopsis of what I plan on doing for my first python package.  I thought I'd share these findings with you.  I've tried to be python &#8532; agnostic as needed.</p>
+<p>To make the most barebones package we can use the following structure (if we include the right code in <code>setup.py</code> this could be a <code>pip</code> installable package in no time!).  <code>coolname_project</code> is the GitHub repo name and what I refer to as the base folder.  This is the structure of our barebones package:</p>
+<div class="highlight"><pre><span></span>coolname_project
+    coolname/
+        __init__.py
+    setup.py
+</pre></div>
+
+<p>An example of a more common structure I've seen:</p>
+<div class="highlight"><pre><span></span>coolname_project
+    coolname/
+        __init__.py
+        somecoolmodule.py
+        command_line.py
+        test/
+            test_somecoolmodule.py
+            test_command_line.py
+    docs/
+        greatdoc.txt
+    bin/
+        runsomestuff.sh
+    examples/
+        snippet.py
+    setup.py
+    README
+</pre></div>
+
+<p>Keep reading to find out what goes in these folders and files.</p>
+<h3 id="a-very-quick-example-of-a-barebones-package">A very quick example of a barebones package</h3>
+<p>To <code>__init__.py</code> add this:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+
+<p>Now we can use our brand new package in python:</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; import coolname
+&gt;&gt;&gt; coolname.foo<span class="o">()</span>
+</pre></div>
+
+<p>Add the following to <code>setup.py</code> (more should go here and we'll see in a bit, but this is barebones right now):</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;coolname&#39;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The coolest package around&#39;</span><span class="p">,</span>
+      <span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://github.com/&lt;your username&gt;/coolname_project&#39;</span><span class="p">,</span>
+      <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Your Name&#39;</span><span class="p">,</span>
+      <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;name@example.com&#39;</span><span class="p">,</span>
+      <span class="n">license</span><span class="o">=</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;coolname&#39;</span><span class="p">],</span>
+      <span class="n">zip_safe</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+<p>Adding a <code>setup.py</code> with certain info allows us to be able to do an awesome thing: <code>pip install</code> our package (here, locally).  In our base package folder just type:</p>
+<p><code>pip install .</code></p>
+<p>Congrats!  You have an awesome, little package (although it doesn't do anything very cool yet - that's up to you!).</p>
+<p>Note:  the <code>setup.py</code> is a powerful tool and will likely contain much, much more like dependency specifications, more metadata around the package, entry points, testing framework specs, etc.</p>
+<h3 id="read-onthe-dual-purpose-readme">Read on...the dual-purpose README</h3>
+<p>Don't you just love reusability?</p>
+<p>If we write our README in reStructuredText format it not only will look good on GitHub, it'll serve as the <code>long_description</code> or detailed description of our package on PyPi.  To make sure this happens we need a file called <code>MANIFEST.in</code> as well.  <code>MANIFEST.in</code> also does some more useful things (see Jeff Knupp's article in Resources below).</p>
+<p>So, we could, for example, have in our <code>README.rst</code> file:</p>
+<div class="highlight"><pre><span></span>The Coolest Package Ever
+--------
+
+To use (with caution), simply do::
+    &gt;&gt;&gt; import coolname
+    &gt;&gt;&gt; coolname.foo()
+</pre></div>
+
+<p>The in our <code>MANIFEST.in</code> (this file does other things down the road, but for now we'll use it to include our README):</p>
+<div class="highlight"><pre><span></span>include README.rst
+</pre></div>
+
+<h3 id="summary-of-the-folderfiles-in-a-package">Summary of the folder/files in a package</h3>
+<p>This is what I've gleaned so far from guides.</p>
+<h4 id="basics">Basics:</h4>
+<p><code>coolname/</code> — the source folder with sub-modules (e.g. sub-module file called <code>dosomething.py</code>) and containing an <code>__init__.py</code> file (usually empty, but req'd for installation)</p>
+<p><code>coolname/test/</code> — package folder to hold tests; place files that begin with "test" such as <code>test_dosomething.py</code> so that programs like <a href="http://doc.pytest.org/en/latest/contents.html"><code>pytest</code></a> can find them and execute.</p>
+<p>NOTE:  There's an alternative test folder structure where the test-containing folder is named <code>tests</code> (plural) and placed at the base of the package (with <code>setup.py</code>) - check out <a href="http://doc.pytest.org/en/latest/goodpractices.html">this</a> doc on <code>pytest</code>'ing and folder structures.</p>
+<p><code>setup.py</code> — script to install/test the package and provide metadata (e.g. the long_description for PyPi) - necessary to have a <code>pip</code> installable package.</p>
+<p><code>README</code> — basic information on the package, how to use, how to install, etc.</p>
+<p><code>bin/</code> - executables folder (non-py files)</p>
+<h4 id="often-included">Often included:</h4>
+<p><code>docs/</code> — documentation folder for the package (as .txt, .md, etc. — need to indicate this folder in <code>setup.py</code> if you want it in distribution)</p>
+<p><code>examples/</code> - a folder with some samples and code snippets of package usage</p>
+<p><code>scripts/</code> — folder for command line tools like entry points (e.g. with a <code>main()</code>)</p>
+<p><code>Makefile</code> — a file sometimes included for running the unit tests and more</p>
+<p>Note:   if there's only one file containing all the source code you can skip creating the <code>/coolname</code> project folder with the <code>__init__.py</code> and just place the source code file in the base directory.</p>
+<h3 id="references-and-places-to-go-for-more">References and places to go for more</h3>
+<p>Check out the python-packaging guide which walks you through pip-friendly package creation <a href="https://python-packaging.readthedocs.io/en/latest/">here</a> (although it's targeted for python 2). </p>
+<p>Check out <a href="https://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/">Open Sourcing a Python Project the Right Way</a> for a detailed package dev workflow with tons of sample code and great explanations by Jeff Knupp.</p>
+<p>Jake VanderPlas has a great blog post with videos talking about writing python packages and testing with PyTest among other things <a href="http://jakevdp.github.io/blog/2017/03/03/reproducible-data-analysis-in-jupyter/">here</a>.</p>
+<p>Check out the <a href="http://as.ynchrono.us/2007/12/filesystem-structure-of-python-project_21.html">do's and don'ts here</a> for a quick "do/don't-do" synopsis around packaging in python by Jean-Paul Calderone.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../data-science-story-part1/" title="On Being a Data Scientist" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                On Being a Data Scientist
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ocrbot-gets-attached/" title="OCRBot Gets Attached" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                OCRBot Gets Attached
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/michhar" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/rheartpython" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/micheleenharris" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
