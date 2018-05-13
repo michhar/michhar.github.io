@@ -19,7 +19,9 @@ tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 
 I've found recently that the Sequential class and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious about using these modules/APIs in each framework to define a Convolutional neural network ([ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
 
-The neural network archicture here is:
+Let's get through some terminology.  You can skip to the [Code](#keras) if you are already familiar with ConvNets.
+
+The neural network architecture used in this post is as follows.
 
 1. Convolutional layer
 2. Max pooling layer
@@ -29,7 +31,26 @@ The neural network archicture here is:
 
 A convolutional layer creates a feature map (using a _filter_ or _kernel_, which I like to refer to as a "flashlight", shinning on the image and stepping through with a sliding window of 1 unit, that's a _stride_ of 1, by the way).  A good reference for this is in the CNTK [Tutorial](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html#Convolution-Layer).
 
-A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has already done the processing (extracted salient features from) an image in our case.  Remember, the power of a convolutional layer is that we don't have to do much upfront raw image processing.  The layer(s) will subsequently find the most salient features for us.
+![Convolutional layer](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-58-638.jpg?cb=1449100605)
+[Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
+
+
+A pooling layer is a way to subsample an input feature map, or output from the convolutional layer that has already done the processing (extracted salient features from) an image in our case.
+
+![Pooling](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-61-638.jpg?cb=1449100605)
+[Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
+
+Remember, the power of a convolutional layer is that we don't have to do much upfront raw image processing.  The layer(s) will subsequently find the most salient features for us.
+
+A fully connected layer is defined such that every input unit is connected to every output unit much like the [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron).
+
+![Dense layer](https://image.slidesharecdn.com/layersintensorflow-170621125437/95/networks-are-like-onions-practical-deep-learning-with-tensorflow-21-638.jpg?cb=1498049767)
+[Source](https://www.slideshare.net/barbarafusinska/networks-are-like-onions-practical-deep-learning-with-tensorflow)
+
+Not represented in the code below, but important nonetheless, is dropout.  Dropout removes a percentage of the neuron connections - helping to prevent overfitting by reducing the feature space for convolutional or, especially, dense layers.
+
+![Dropout](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-68-638.jpg?cb=1449100605)
+[Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
 
 In this post you will find ConvNets defined for four frameworks with adaptations to create easier comparisons (please leave comments as needed).  The full example code can be found as a Jupyter notebook - [Ref](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
 
