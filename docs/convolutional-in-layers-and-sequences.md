@@ -1,25 +1,23 @@
 ---
-img:  IMG_3568.JPG
 layout: post
 title: ConvNets
 comments: true
-description: A tech piece on back-propagation
+description: A comparison by code of a ConvNet in four frameworks
 cover:  
 tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 ---
 
-**tl;dr**:  Un-confusing ConvNets and the naming of current classes or APIs for four deep learning frameworks with code examples.
+**tl;dr**:  No secret: ConvNets are still complex when you compare APIs that sound like each other for four deep learning frameworks.  Also, included is a little ConvNet breakdown.  Lots of sample code.
 
 **Posted:**  2018-05-12
 
-![ConvNet Diagram](https://i.stack.imgur.com/ZgG1Z.png)
-[Source](http://www.mshahriarinia.com/home/ai/machine-learning/neural-networks/deep-learning/python/theano-mnist/3-convolutional-neural-network-lenet)
+![](img/backprop/IMG_4473.jpg)
 
 ## Introduction
 
-I've found recently that the Sequential class and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious about using these modules/APIs in each framework to define a Convolutional neural network ([ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
+I've found recently that the Sequential classes and Layer/Layers modules are names used across Keras, PyTorch, TensorFlow and CNTK - making it a little confusing to switch from one framework to another.  I was also curious how easy it would be to use these modules/APIs in each framework to define the same Convolutional neural network ([ConvNet](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
 
-Let's get through some terminology, first.  You can skip to the [Code](#keras) if you are already familiar with ConvNets.  Note, the code originates from projects working with MNIST handwritten digits.
+Let's get through some terminology, first.  You can skip to the [Code](#keras) if you are already familiar with ConvNets on images.  Note, the code originates from projects working with MNIST handwritten digits dataset.
 
 The neural network architecture used in this post is as follows.
 
@@ -40,19 +38,21 @@ A pooling layer is a way to subsample an input feature map, or output from the c
 ![Pooling](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-61-638.jpg?cb=1449100605)
 [Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
 
-Remember, the power of a convolutional layer is that we don't have to do much upfront raw image processing.  The layer(s) will subsequently find the most salient features for us.
-
 A fully connected layer is defined such that every input unit is connected to every output unit much like the [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
 ![Dense layer](https://image.slidesharecdn.com/layersintensorflow-170621125437/95/networks-are-like-onions-practical-deep-learning-with-tensorflow-21-638.jpg?cb=1498049767)
 [Source](https://www.slideshare.net/barbarafusinska/networks-are-like-onions-practical-deep-learning-with-tensorflow)
 
-Not represented in the code below, but important nonetheless, is dropout.  Dropout removes a percentage of the neuron connections - helping to prevent overfitting by reducing the feature space for convolutional or, especially, dense layers.
+Not represented in the code below, but important nonetheless, is dropout.  Dropout removes a percentage of the neuron connections - helping to prevent overfitting by reducing the feature space for convolutional and, especially, dense layers.
 
 ![Dropout](https://image.slidesharecdn.com/convnets-151015164458-lva1-app6891/95/deep-learning-convolutional-neural-networks-68-638.jpg?cb=1449100605)
 [Source](https://www.slideshare.net/perone/deep-learning-convolutional-neural-networks)
 
+Remember, the power of a convolutional layer is that we don't have to do much upfront raw image processing.  The layer(s) will subsequently find the most salient features for us.
+
 In this post you will find ConvNets defined for four frameworks with adaptations to create easier comparisons (please leave comments as needed).  The full example code can be found as a Jupyter notebook - [Ref](https://github.com/michhar/python-jupyter-notebooks/blob/master/multi_framework/ConvNet_Comparisons.ipynb).
+
+## The Frameworks
 
 ### Keras
 
@@ -179,7 +179,7 @@ def convNetTensorFlow(x_dict, n_classes, reuse, is_training):
         x = tf.reshape(x, shape=[-1, 28, 28, 1])
 
         # Convolution Layer with 32 filters and a kernel size of 5
-        conv1 = tf.layers.conv2d(x, 32, 5, activation=tf.nn.relu)
+        conv1 = tf.layers.conv2d(x, 32, 3, activation=tf.nn.relu)
         # Max Pooling (down-sampling) with strides of 2 and kernel size of 2
         conv1 = tf.layers.max_pooling2d(conv1, 2, 2)
 
@@ -252,10 +252,10 @@ The full code samples are in this Jupyter [Notebook](https://github.com/michhar/
 
 Samples adapted in this post:
 
-1.  Keras code sample [Ref](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)
-2.  PyTorch code sample [Ref](https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb)
-4.  TensorFlow code sample with Layers and Estimators APIs [Ref](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py) and ConvNets Tutorial at this [Doc](https://www.tensorflow.org/tutorials/deep_cnn)
-3.  CNTK code sample with Layer API [Doc](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html)
+1.  Keras code sample with `Sequential` model [Ref](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)
+2.  PyTorch code sample with `Sequential` container [Ref](https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb)
+4.  TensorFlow code sample with `Layers` and `Estimators` APIs [Ref](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py) and ConvNets Tutorial at this [Doc](https://www.tensorflow.org/tutorials/deep_cnn)
+3.  CNTK code sample with `Layer` API [Doc](https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html)
 
 A great book from which I took some of the concepts written in this post:  [Book](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-second-edition) and [Code]()
 
@@ -271,17 +271,24 @@ Thanks for reading.
 
 ## Appendix
 
-Nice explanation of tensor layouts (PyTorch vs. TensorFlow) in a PyTorch forum post by Mamy Ratsimbazafy ([Post](https://discuss.pytorch.org/t/tensorflow-vs-pytorch-convnet-benchmark/8738/3):
+Nice explanation of tensor layouts (PyTorch vs. TensorFlow) in a PyTorch forum post by Mamy Ratsimbazafy ([Post](https://discuss.pytorch.org/t/tensorflow-vs-pytorch-convnet-benchmark/8738/3)):
 
-> Furthermore there might be a difference due to the Tensor layouts:
+```text
+Furthermore there might be a difference due to the Tensor layouts:
 
-> PyTorch use NCHW and Tensorflow uses NHWC, NCHW was the first layout supported by CuDNN but presents a big challenge for optimization (due to access patterns in convolutions, memory coalescing and such …).
-NHWC is easier to optimize for convolutions but suffer in linear layers iirc because you have to physically transpose/permute the dimensions.
+PyTorch use NCHW and Tensorflow uses NHWC, NCHW was the first layout supported by 
+CuDNN but presents a big challenge for optimization (due to access patterns in 
+convolutions, memory coalescing and such …).
+NHWC is easier to optimize for convolutions but suffer in linear layers iirc 
+because you have to physically transpose/permute the dimensions.
 
-> Furthermore, due to it’s dynamic nature, PyTorch allocate new memory at each new batch while Tensorflow can just reuse previous memory locations since size is known in advance.
+Furthermore, due to it’s dynamic nature, PyTorch allocate new memory at 
+each new batch while Tensorflow can just reuse previous memory locations 
+since size is known in advance.
 
-> Memory is THE bottleneck in Deep Learning not CPU, the big challenge is how to feed data fast enough to the CPU and GPU to get the maximum GFLOPS throughput.
-
+Memory is THE bottleneck in Deep Learning not CPU, the big challenge is how 
+to feed data fast enough to the CPU and GPU to get the maximum GFLOPS throughput.
+```
 
 <div id="disqus_thread"></div>
 <script>
