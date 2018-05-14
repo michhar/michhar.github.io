@@ -7,7 +7,7 @@ cover:
 tags: [python, deep-learning, tensorflow, cntk, keras, pytorch]
 ---
 
-**tl;dr**:  No secret: ConvNets are still complex when you compare APIs that sound like each other for four deep learning frameworks.  Also, included is a little ConvNet breakdown.  Lots of sample code.
+**tl;dr**:  No secret: ConvNets are still complex even when you compare across APIs that sound similar for four deep learning frameworks.  Here, you'll find an attempt to comapre simple ConvNets in these frameworks.  Also, included is a little ConvNet conceptual breakdown.  Lots of reference code.
 
 **Posted:**  2018-05-13
 
