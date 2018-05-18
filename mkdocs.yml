@@ -50,8 +50,11 @@ extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 
-google_analytics: ['UA-86308542-1', 'https://michhar.github.io']
-
+# google_analytics: ['UA-86308542-1', 'https://michhar.github.io']
+google_analytics:
+  - UA-86308542-1
+  - auto
+  
 extra:
   social:
     - type: 'github'
