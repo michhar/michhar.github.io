@@ -1,4 +1,6 @@
-## Notes on Training a Tiny YOLO v3 Model for Use in an iOS App
+# Notes on Training a Tiny YOLO v3 Model for Use in an iOS App
+
+# Windows
 
 My System
 * Windows 10
@@ -20,6 +22,27 @@ Steps:
 3.  Built `darknet` for Windows according to instructions at https://github.com/AlexeyAB/darknet#how-to-compile-on-windows
 4.  Label `jpg`s with the Yolo_mark annotation tool from https://github.com/AlexeyAB/Yolo_mark 
 5.  Train a Tiny YOLO v3 model on custom images according to more instructions at https://github.com/AlexeyAB/darknet#how-to-train-tiny-yolo-to-detect-your-custom-objects
+
+# macOS
+
+My System
+* macOS High Sierra
+
+As in https://pjreddie.com/darknet/yolo/ do:
+
+```
+    git clone https://github.com/pjreddie/darknet
+    cd darknet
+    make
+```
+
+Build `darknet` with opencv:
+  1.  `brew install opencv@2`
+  2.  In the `Makefile` make `OPENCV=1`
+  3.  `make` in the base `darknet` directory
+  
+
+Note, put your `obj.data` file in the `cfg` folder and use full paths to the `train.txt` and `obj.names`
 
 What is YOLO
 
