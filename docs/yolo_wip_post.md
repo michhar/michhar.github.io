@@ -40,6 +40,8 @@
 
 ## Windows Instructions
 
+> TIP:  when moving any files from Windows to macOS, check for proper newlines (e.g. lack of `^M` characters in text files)
+
 ### My System
 * Windows 10
 * NVIDIA GeForce GTX 1060 Graphics Card
@@ -49,7 +51,7 @@
 ### Steps (WIP)
 
 Setup - see https://github.com/AlexeyAB/darknet for details and download links
-* MS Visual Studio 2015
+* MS Visual Studio 2017 (Instructions said 2015, but to get Platform toolkit v141 needed VS 2017)
 * OpenCV 3.4.0
 
 1.  Built `Yolo_mark` for Windows according to instructions at https://github.com/AlexeyAB/Yolo_mark (clone and run)
@@ -58,6 +60,8 @@ Setup - see https://github.com/AlexeyAB/darknet for details and download links
   * Find files `opencv_world320.dll` and `opencv_ffmpeg320_64.dll` (or `opencv_world340.dll` and `opencv_ffmpeg340_64.dll`) in `C:\opencv_3.0\opencv\build\x64\vc14\bin` and put it near with `yolo_mark.exe`
 2.  Label images with bouding boxes and classes according to the steps on `Yolo_mark` under "To use for labeling your custom images"
 3.  Built `darknet` for Windows according to instructions at https://github.com/AlexeyAB/darknet#how-to-compile-on-windows
+  * Except, use VS 2017 as it has v141 platform toolkit
+  > TIP:  when installing the NVIDIA CUDA Toolkit 9.1, you may need to do an Advanced/Custom install and "uncheck" Visual Studio Integration as this may cause install not to work properly
 5.  Train a Tiny YOLO v3 model on custom images according to more instructions at https://github.com/AlexeyAB/darknet#how-to-train-tiny-yolo-to-detect-your-custom-objects
 
 ## What is YOLO and Object Detection
