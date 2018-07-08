@@ -34,7 +34,7 @@
 
     4.3 Run with:
 
-        ./darknet detector train cfg/helmets.data yolov3-tiny.cfg yolov3-tiny.conv.15
+        ./darknet detector train cfg/lego.data experiment/yolov3-tiny.cfg experiment/yolov3-tiny.conv.15
     
     4.4 The final trained model with be in the `backup` folder.
 
@@ -68,6 +68,11 @@ Setup - see https://github.com/AlexeyAB/darknet for details and download links
   * May need to
     * Place certain cuDNN libs into v9.1 CUDA directory 
       (e.g. `cudnn64_7.dll` found in search after a cuDNN intall into `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin`)
+  * Run with:
+  
+      `darknet.exe detector train cfg\lego.data experiment\yolov3-tiny.cfg experiment\yolov3-tiny.conv.15`
+      
+  * The final trained model with be in the `backup` folder.
 
 ## What is YOLO and Object Detection
 
