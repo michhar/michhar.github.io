@@ -45,7 +45,7 @@
 ### My System
 * Windows 10
 * NVIDIA GeForce GTX 1060 Graphics Card
-* CUDA 9.0
+* CUDA 9.1
 * cuDNN 7.0
 
 ### Steps (WIP)
@@ -65,6 +65,9 @@ Setup - see https://github.com/AlexeyAB/darknet for details and download links
   * Make sure `cudnn.lib` is in `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64` folder
   > TIP:  when installing the NVIDIA CUDA Toolkit 9.1, you may need to do an Advanced/Custom install and "uncheck" Visual Studio Integration as this may cause install not to work properly
 5.  Train a Tiny YOLO v3 model on custom images according to more instructions at https://github.com/AlexeyAB/darknet#how-to-train-tiny-yolo-to-detect-your-custom-objects
+  * May need to
+    * Place certain cuDNN libs into v9.1 CUDA directory 
+      (e.g. `cudnn64_7.dll` found in search after a cuDNN intall into `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin`)
 
 ## What is YOLO and Object Detection
 
