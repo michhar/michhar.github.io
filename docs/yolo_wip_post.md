@@ -1,8 +1,13 @@
 # Notes on Training a Tiny YOLO v3 Model for Use in an iOS App
 
+## Pipeline for Creating and Using a Darknet-Based YOLOv3 Model
 
+1.  Label and train with Darknet (Windows 10 and NVIDIA GeForce GPU)
+2.  Convert Darknet model to Keras (macOS) - `keras-yolo3` project
+3.  Convert Keras model to CoreML (macOS) - `coremltools` package is mac OS only as of writing this
+4.  Run iOS XCode project and build to iPhone/iPad
 
-## macOS Instructions
+## macOS Instructions for Training with Darknet (CPU)
 
 ### My System
 * macOS High Sierra 10.13.5
@@ -38,7 +43,7 @@
     
     4.4 The final trained model with be in the `backup` folder.
 
-## Windows Instructions
+## Windows Instructions for Training with Darknet (GPU)
 
 > TIP:  when moving any files from Windows to macOS, check for proper newlines (e.g. lack of `^M` characters in text files)
 
