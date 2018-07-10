@@ -5,8 +5,20 @@
 1.  Label and train with Darknet (Windows 10 and NVIDIA GeForce GPU)
 2.  Convert Darknet model to Keras (macOS) - `keras-yolo3` project
 3.  Convert Keras model to CoreML (macOS) - `coremltools` package is mac OS only as of writing this
-4.  Run iOS XCode project and build to iPhone/iPad
+4.  Run iOS XCode project and build to iPhone/iPad (macOS/iOS)
 
+Convert to Keras with script from https://github.com/qqwweee/keras-yolo3
+
+    python convert.py experiment/yolov3-tiny.cfg model_data/yolov3-tiny_lr0.001_July7.weights model_data/yolov3-tiny-minifig.h5
+
+CoreML in https://github.com/Ma-Dan/YOLOv3-CoreML/tree/master/Convert
+  * Update output??
+
+In https://github.com/hollance/YOLO-CoreML-MPSNNGraph XCode project
+  * Update `labels` in `Helpers.swift`
+  * Update `numClasses` in `YOLO.swift`
+  * Add the `TinyYOLO.mlmodel` from the custom training/conversion above
+  
 ## macOS Instructions for Training with Darknet (CPU)
 
 ### My System
