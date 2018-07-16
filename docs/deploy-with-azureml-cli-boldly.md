@@ -75,7 +75,7 @@ These commands can be run in a Jupyter notebook, hence the bang, "!", preceding 
 
 Simply:
 
- ```bash
+```bash
 # This will send a code to prompt for password through the browser
 ! az login
 ```
