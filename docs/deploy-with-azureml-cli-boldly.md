@@ -308,6 +308,7 @@ Finis!
 * Example of the scoring file showing a CNTK model and serializing an image as a `PANDAS` data type for input data to service <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py" target="_blank">Ref</a>
 * Example of the scoring file showing a `scikit-learn` model and a `STANDARD` data type (json) for input data to service <a href="https://github.com/Azure/Machine-Learning-Operationalization/blob/master/samples/python/code/newsgroup/score.py" target="_blank">Ref</a>
 * After creating a `run` and `init` methods as in the links above, plus a schema file, begin with "Register a model" found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a>
+* Sample code from Azure on GitHub:  <a href="https://github.com/Azure?utf8=%E2%9C%93&q=MachineLearningSamples&type=&language=">Ref</a>
 
 **Docker**
 
