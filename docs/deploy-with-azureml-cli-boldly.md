@@ -62,14 +62,31 @@ After creating the scoring file, `score.py` here, and placing all necessary pack
 
 For most of the commands as reference see this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model), however some more specific instructions are here that may be useful for a specialized framework model as can be made with CNTK or TensorFlow, for example.  Other commands around setup are found in this [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration).
 
-These commands can be run in a Jupyter notebook, hence the bang, "!", preceding the command.
+These commands can be run in a Jupyter notebook, hence the bang, "!", preceding the command.  If these are run on the command line please remove the "!".
+
+> TIP:  If on the Data Science Virtual Machine which has this CLI, you may need to run these commands a little differently (replace `az` with `{sys.executable} -m azure.cli`).  e.g. in a Jupyter code cell:
+> ```
+> # Get Azure ML CLI help on DSVM
+> import sys
+> ! {sys.executable} -m azure.cli ml -h
+> ```
 
 **Log into Azure**
 
+Simply:
+
+ ```bash
+# This will send a code to prompt for password through the browser
+! az login
+```
+
+Or if you've created a couple of system variables with the username and password:
+
 ```bash
-# Using two system variable, one is Azure Username and other is the password
+# Using two system variable, the user-defined Azure username and password
 ! az login --username "$AZ_USER" --password "$AZ_PASS"
 ```
+
 
 **Register three Environment Providers**
 
@@ -291,7 +308,6 @@ Finis!
 * Example of the scoring file showing a CNTK model and serializing an image as a `PANDAS` data type for input data to service <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py" target="_blank">Ref</a>
 * Example of the scoring file showing a `scikit-learn` model and a `STANDARD` data type (json) for input data to service <a href="https://github.com/Azure/Machine-Learning-Operationalization/blob/master/samples/python/code/newsgroup/score.py" target="_blank">Ref</a>
 * After creating a `run` and `init` methods as in the links above, plus a schema file, begin with "Register a model" found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a>
-  * Note one change required:  
 
 **Docker**
 
