@@ -192,110 +192,12 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Deploying a Machine Learning Model Easily with Azure ML CLI
-      </label>
     
     <a href="./" title="Deploying a Machine Learning Model Easily with Azure ML CLI" class="md-nav__link md-nav__link--active">
       Deploying a Machine Learning Model Easily with Azure ML CLI
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#context" title="Context" class="md-nav__link">
-    Context
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#to-begin" title="To Begin" class="md-nav__link">
-    To Begin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-a-local-deployment-test-always-a-good-idea" title="For a Local Deployment test (always a good idea)" class="md-nav__link">
-    For a Local Deployment test (always a good idea)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-the-remote-cluster-deployment" title="For the Remote Cluster deployment" class="md-nav__link">
-    For the Remote Cluster deployment
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-command-sequence" title="The Command Sequence" class="md-nav__link">
-    The Command Sequence
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deploy-locally-to-test" title="Deploy locally to test" class="md-nav__link">
-    Deploy locally to test
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deploy-to-a-cluster" title="Deploy to a cluster" class="md-nav__link">
-    Deploy to a cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -494,95 +396,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#context" title="Context" class="md-nav__link">
-    Context
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#to-begin" title="To Begin" class="md-nav__link">
-    To Begin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-a-local-deployment-test-always-a-good-idea" title="For a Local Deployment test (always a good idea)" class="md-nav__link">
-    For a Local Deployment test (always a good idea)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-the-remote-cluster-deployment" title="For the Remote Cluster deployment" class="md-nav__link">
-    For the Remote Cluster deployment
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-command-sequence" title="The Command Sequence" class="md-nav__link">
-    The Command Sequence
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deploy-locally-to-test" title="Deploy locally to test" class="md-nav__link">
-    Deploy locally to test
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deploy-to-a-cluster" title="Deploy to a cluster" class="md-nav__link">
-    Deploy to a cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -594,8 +409,6 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                  <h1>Deploying a Machine Learning Model Easily with Azure ML CLI</h1>
                 
                 <p><strong>Posted:</strong>  2018-03-11</p>
 <h2 id="context">Context</h2>
@@ -641,12 +454,25 @@
 <p>After creating the scoring file, <code>score.py</code> here, and placing all necessary package installs into a <code>requirements.txt</code> file (for a Python package manager to use) we can begin our deployment.</p>
 <h3 id="deploy-locally-to-test">Deploy locally to test</h3>
 <p>For most of the commands as reference see this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a>, however some more specific instructions are here that may be useful for a specialized framework model as can be made with CNTK or TensorFlow, for example.  Other commands around setup are found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/deployment-setup-configuration">Doc</a>.</p>
-<p>These commands can be run in a Jupyter notebook, hence the bang, "!", preceding the command.</p>
+<p>These commands can be run in a Jupyter notebook, hence the bang, "!", preceding the command.  If these are run on the command line please remove the "!".</p>
+<blockquote>
+<p>TIP:  If on the Data Science Virtual Machine which has this CLI, you may need to run these commands a little differently (replace <code>az</code> with <code>{sys.executable} -m azure.cli</code>).  e.g. in a Jupyter code cell:
+<div class="highlight"><pre><span></span># Get Azure ML CLI help on DSVM
+import sys
+! {sys.executable} -m azure.cli ml -h
+</pre></div></p>
+</blockquote>
 <p><strong>Log into Azure</strong></p>
-<div class="highlight"><pre><span></span><span class="c1"># Using two system variable, one is Azure Username and other is the password</span>
-! az login --username <span class="s2">&quot;</span><span class="nv">$AZ_USER</span><span class="s2">&quot;</span> --password <span class="s2">&quot;</span><span class="nv">$AZ_PASS</span><span class="s2">&quot;</span>
-</pre></div>
+<p>Simply:</p>
+<p>```bash</p>
+<h1 id="this-will-send-a-code-to-prompt-for-password-through-the-browser">This will send a code to prompt for password through the browser</h1>
+<p>! az login
+<div class="highlight"><pre><span></span>Or if you&#39;ve created a couple of system variables with the username and password:
 
+```bash
+# Using two system variable, the user-defined Azure username and password
+! az login --username &quot;$AZ_USER&quot; --password &quot;$AZ_PASS&quot;
+</pre></div></p>
 <p><strong>Register three Environment Providers</strong></p>
 <p>To start the setup process, you need to register a few environment providers by entering the following commands</p>
 <div class="highlight"><pre><span></span>! az provider register -n Microsoft.MachineLearningCompute
@@ -814,7 +640,6 @@
 <li>Example of the scoring file showing a CNTK model and serializing an image as a <code>PANDAS</code> data type for input data to service <a href="https://github.com/Azure/MachineLearningSamples-ImageClassificationUsingCntk/blob/master/scripts/deploymain.py" target="_blank">Ref</a></li>
 <li>Example of the scoring file showing a <code>scikit-learn</code> model and a <code>STANDARD</code> data type (json) for input data to service <a href="https://github.com/Azure/Machine-Learning-Operationalization/blob/master/samples/python/code/newsgroup/score.py" target="_blank">Ref</a></li>
 <li>After creating a <code>run</code> and <code>init</code> methods as in the links above, plus a schema file, begin with "Register a model" found in this <a href="https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy#4-register-a-model">Doc</a></li>
-<li>Note one change required:  </li>
 </ul>
 <p><strong>Docker</strong></p>
 <ul>
