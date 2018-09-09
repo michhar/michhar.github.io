@@ -2,6 +2,7 @@ site_name: Micheleen's Blog
 pages:
     - Home: index.md
     # 2018:
+    - 'A Reproducible Project Pattern and Workflow for ML Training and Deployments': 'setting-up-for-and-work-with-mlflow.md'
     - 'Convolutional Neural Networks in Four Deep Learning Frameworks by Example': 'convolutional-in-layers-and-sequences.md' 
     - 'Deploying a Machine Learning Model Easily with Azure ML CLI': 'deploy-with-azureml-cli-boldly.md'
     # 2017
