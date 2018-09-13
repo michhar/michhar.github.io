@@ -8,9 +8,7 @@ cover:  /img/flask-post-diagram.png
 tags: [python, keras, yolov3, mlflow]
 ---
 
-![header pic]()
-
-**tl;dr**:  
+**tl;dr**:  MLflow is already powerful, yet simple, even in alpha release.  It' integration with platforms for training and deployment, such as with AzureML, is incredibly helpful.  After all, don't we all want to deploy eventually?
 
 **Posted:**  2019-09-15
 
@@ -22,14 +20,16 @@ A few features that caught my eye:
 
 * Run training and deployment from a remote GitHub repo
 * Log the environment in which a model was trained (other logging and even a UI for tracking)
-* Many deployment options (local, Azure ML, AWS, etc.)
+* Many deployment options (local and Azure ML among others)
 
 After trying MLflow, I discovered that I liked:
 
-* Error messaging is clear and includes a stacktrace
+* The flexibility of running the project in several locations (local, [Databricks](https://databricks.com/), remote linux VMs, etc.)
+* Error messaging is clear and includes a nice stacktrace
+* The deployment was straighforward as the project for AzureML was generated for me with the files I needed
 
 
-## Get Model and Data
+## Get the Model and Data
 
 Feel free to follow along or create your own project.  This is an example of using MLFlow with an existing repo.
 
@@ -44,25 +44,22 @@ Feel free to follow along or create your own project.  This is an example of usi
 3.  Download the model, data (or create your own) and pointer file to data.
     * Get a Keras-friendly YOLOv3 base model, converted directly from the Tiny YOLOv3 Darknet model (here, the Tiny weights are used - nice for constrained devices):
 
-    > Click to access through Google Drive [here (34MB)](https://drive.google.com/open?id=1VulLSbrFrshPkEy71RgNhoVPpHdxEyrl), download and place model in `model_data` subdirectory
+      > Click to access through Azure Storage [here (34MB)](https://modelsdata.blob.core.windows.net/data/yolov3-tiny.h5), download and place model in `model_data` subdirectory
 
     * Get some sample data of lego minifigures with helmets and other head gear to train a model to detect what the figurine is wearing on its head, placing the uznipped folder in the `voc` subdirectory.
 
-    > Click to access through Google Drive [here (173MB)](https://drive.google.com/open?id=1NbzE9rVPoBsFNZvJ7zso4GLsTW6vjnZW) or use your own data (according to instructions on the repo [in Step 1]((https://github.com/michhar/keras-yolo3#training) - you'll need to label as well).
+      > Click to access through from [here (173MB)](https://modelsdata.blob.core.windows.net/data/JPEGImages.zip) or use your own data (according to instructions on this repo [in Step 1](https://github.com/michhar/keras-yolo3#training) - you'll need to label as well).
 
     * Get the list of images as a small text file with associated bounding boxes and class.
 
-    > Click to access through Google Drive [here](https://drive.google.com/open?id=1mbtjG0s1dMOsiWd-clCV2LXdGKJ02Yqa) and place it in the `voc` subdirectory
+      > Click to access from [here](https://modelsdata.blob.core.windows.net/data/list_master.txt) and place it in the `voc` subdirectory
 
 ## Setup for MLflow
 
 Required Python packages:
   * `mlflow`
-  * `azure-cli`
-
-Also run, for the AzureML deployment CLI:
-
-    `pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file`
+  * `azure-cli` (if deploying with AzureML)
+    * To deploy with `azureml` one will need, also, an Azure Subscription.
 
 `MLproject` file is an excellent source of control over things.  Optional, but recommended for the following reasons:
   * Points to conda dependencies file for building this environment before training
@@ -91,23 +88,27 @@ If there are defaults, none of these parameters need to exist on the command lin
 
 To train, all you should need to do from within the cloned repo folder is (runs with default parameters in MLproject entrypoint command):
 
-    `mlfow run .`
+    mlfow run .
 
 Or if you want to modify a default parameter or two (use `-P` per parameter) like the number of epochs for the transfer learning stage (`frozen_epochs`) and network fine tuning stage (`fine_tune_epochs`):
 
-    `mlflow run . -P frozen_epochs=5 -P fine_tune_epochs=3`
+    mlflow run . -P frozen_epochs=5 -P fine_tune_epochs=3
 
 Also, you can monitor the run through `tensorboard` which is part of a callback in the `model.fit` method (change logdir as appropriate).
 
-    `tensorboard --logdir logs/default`
+    tensorboard --logdir logs/default
+
+An `mlflow` option for monitoring is with:
+
+    mlflow ui
 
 The metric and model (as an artifact) is recorded by the following:
 
-    ```python
-    # Added for MLflow
-    mlflow.keras.log_model(model, "keras-yolo-model-frozen-pass")
-    mlflow.log_metric('frozen_loss', history.history['val_loss'][-1])
-    ```
+```python
+# Added for MLflow
+mlflow.keras.log_model(model, "keras-yolo-model-frozen-pass")
+mlflow.log_metric('frozen_loss', history.history['val_loss'][-1])
+```
 
 What does `mlflow run` actually do?  As follows:
 
@@ -133,24 +134,98 @@ It will be called something like `model.h5`.
 
 ## Deploying with the Azure Machine Learning Integration
 
-See [AzureML export option and CLI commands](https://mlflow.org/docs/latest/models.html#microsoft-azureml) for the main directions.
+Now, to get the package for the AzureML deployment CLI:
 
-For instance, to export to `azureml`-friendly deployment format/structure (and create neccessary files for this deployment type):
+    pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file
+
+(Corresponding to `azure-cli-ml==0.1.0a27.post3` at the time of writing).
+
+See [AzureML export option and CLI commands from mlflow](https://mlflow.org/docs/latest/models.html#microsoft-azureml) for the detailed directions.
+
+For instance, to export to `azureml`-friendly deployment format/structure (and create neccessary files for this deployment type) the command will have the format:
+
+    mlflow azureml export -m mlruns/<run folder>/<run id>/artifacts/<name of mlflow project> -o <name of new folder for azureml>
+
+E.g.:
 
     mlflow azureml export -m mlruns/0/8237d734f1d94fd893368dd455565f2d/artifacts/keras-yolo-model -o yolo-output
 
+Note, some additional libraries may need to be specified in the generated `score.py`'s `init()` and `run()`, such as `keras` here:
+
+```python
+def init():
+    global model
+    import keras
+    model = load_pyfunc("model")
+
+def run(s):
+    import keras
+    input_df = pd.read_json(s, orient="records")
+    return get_jsonable_obj(model.predict(input_df))
+```
+
+> Note: not including necessary packages is the most common source of error in deploying with AzureML
+
+Ensure `yolo-output` (or name used for `mlflow` generated file directory) has all necessary packages beyond `mlflow`, namely:
+
+```
+numpy==1.14.2
+matplotlib==2.2.2
+Keras==2.2.2
+tensorflow==1.8.0
+Pillow==5.1.0
+mlflow==0.5.2
+```
+
 The `azureml` CLI commands are:
 
-    ```unix
-    az ml env setup -l [Azure Region, e.g. eastus2] -n [your environment name] [-g [existing resource group]]
-    az ml env set -n [environment name] -g [resource group]
-    mlflow azureml deploy <parameters> - to deploy locally to test the model
+> Note: one may need to register some environment providers in Azure.
+> `az provider register -n Microsoft.MachineLearningCompute`
+> `az provider register -n Microsoft.ContainerRegistry`
+> `az provider register -n Microsoft.ContainerService`
+
+    az login
 
     az ml env setup -l [Azure Region, e.g. eastus2] -n [your environment name] [-g [existing resource group]]
+
     az ml env set -n [environment name] -g [resource group]
-    mlflow azureml deploy <parameters> - deploy to the cloud
+
+    mlflow azureml deploy <parameters>
+
   
-    ```
+See AzureML documentation for more information on the `az ml` commands for deployment or type `az ml -h`.
+
+Use a model management account (or create one).  List them with:
+
+    az ml account modelmanagement list
+
+Set one with:
+
+    az ml account modelmanagement set -g [resource group] -n [model management name]
+
+__For example, the commands used in this project to deploy locally are as follows__
+
+Log in to Azure:
+
+    az login
+
+Set up an environment:
+
+    az ml env setup -l eastus2 -g localyoloenvrg -n localyoloenv
+
+ - This will take a few minutes.
+
+Choose the environment:
+
+    az ml env set -g localyoloenvrg -n localyoloenv
+
+  Deploy the project, now (locally, but linked to a few resources online):
+
+    mlflow azureml deploy --model-path model -n yoloapp123
+
+  When done, clean up by deleting the resource group with:
+
+    az group delete -g localyoloenvrg
 
 ## Conclusion
 
