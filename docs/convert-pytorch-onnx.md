@@ -7,7 +7,7 @@ description:
 tags: [python, pytorch, onnx]
 ---
 
-![](img/pytorch_loves_onnx.jpg)
+![](img/pytorch_loves_onnx.png)
 
 Posted:  2018-09-27
 
