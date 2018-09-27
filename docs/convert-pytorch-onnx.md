@@ -89,6 +89,8 @@ Here, I showed how to take a pre-trained PyTorch model (a weights object and net
 ## More References
 
 1. [Example: End-to-end AlexNet from PyTorch to Caffe2](https://pytorch.org/docs/stable/onnx.html#module-torch.onnx)
+2. [ONNX GitHub](https://github.com/onnx/onnx)
+3. [PyTorch.org](https://pytorch.org)
 
 <div id="disqus_thread"></div>
 <script>
