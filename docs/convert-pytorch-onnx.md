@@ -30,6 +30,9 @@ I don't write out the model classes, however I wanted to share the steps and com
 
 The commands look something like:
 ```python
+import torch
+import torch.onnx
+
 model = MyModelClass()
 # Load the weights from a file (.pth usually)
 state_dict = torch.load(weights_path)
