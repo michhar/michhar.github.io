@@ -3,7 +3,7 @@ img:  IMG_3568.JPG
 layout: post
 title: Working with MLflow - A Reproducible Project Pattern for ML Training and Deployments
 comments: true
-description: Sample using a new OSS tool, MfFlow, for an entire Keras Object Detection workflow
+description: Sample using a new OSS tool, MfFlow, for an entire Keras Object Detection workflow including deployment with AzureML
 cover:  /img/flask-post-diagram.png
 tags: [python, keras, yolov3, mlflow]
 ---
@@ -90,7 +90,7 @@ To train, all you should need to do from within the cloned repo folder is (runs 
 
     mlfow run .
 
-Or if you want to modify a default parameter or two (use `-P` per parameter) like the number of epochs for the transfer learning stage (`frozen_epochs`) and network fine tuning stage (`fine_tune_epochs`):
+Or if you want to modify a default parameter or two (use `-P` per parameter) like the number of epochs for the transfer learning stage (`frozen_epochs`) and network fine tuning stage (`fine_tune_epochs`) (note you'd use 100s to 1000s of epochs for these in the real world):
 
     mlflow run . -P frozen_epochs=5 -P fine_tune_epochs=3
 
