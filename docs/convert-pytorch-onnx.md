@@ -1,7 +1,7 @@
 ---
 img:  IMG_3568.JPG
 layout: post
-title: Convert a PyTorch Model to ONNX Format
+title: How to Convert a PyTorch Model to ONNX Format
 comments: true
 description: 
 tags: [python, pytorch, onnx]
@@ -76,6 +76,10 @@ torch.onnx.export(model, dummy_input, "alexnet.onnx", verbose=True, input_names=
 ## Summary
 
 Here, I showed how to take a pre-trained PyTorch model (a weights object and network class object) and convert it to ONNX format (that contains the weights and net structure).
+
+## More References
+
+1. [Example: End-to-end AlexNet from PyTorch to Caffe2](https://pytorch.org/docs/stable/onnx.html#module-torch.onnx)
 
 <div id="disqus_thread"></div>
 <script>
