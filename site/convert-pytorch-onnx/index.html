@@ -32,7 +32,7 @@
     
     
       
-        <title>Convert a PyTorch Model to ONNX Format</title>
+        <title>How to Convert a PyTorch Model to ONNX Format</title>
       
     
     
@@ -228,6 +228,13 @@
         <li class="md-nav__item">
   <a href="#summary" title="Summary" class="md-nav__link">
     Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-references" title="More References" class="md-nav__link">
+    More References
   </a>
   
 </li>
@@ -510,6 +517,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#more-references" title="More References" class="md-nav__link">
+    More References
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -527,7 +541,8 @@
                 
                   <h1>How to Convert a PyTorch Model to ONNX Format</h1>
                 
-                <p>Posted:  2018-09-27</p>
+                <p><img alt="" src="../img/pytorch_loves_onnx.jpg" /></p>
+<p>Posted:  2018-09-27</p>
 <p>It might seem tricky or intimidating to convert model formats, but ONNX makes it easier.  However we must get our PyTorch model into the ONNX format.  This involves both the weights and network architecture defined by a <code>nn.Module</code> inherited class.</p>
 <p>I don't write out the model classes, however I wanted to share the steps and commands from the point of having the class definition and some weights (either in memory or from a model path file).  One could also do this with the pre-trained models from the torchvision library.</p>
 <h2 id="the-general-steps">The General Steps</h2>
@@ -545,7 +560,10 @@
 </ol>
 <h2 id="using-a-custom-model-class-and-weights-file">Using a Custom Model Class and Weights File</h2>
 <p>The commands look something like:
-<div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MyModelClass</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.onnx</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">MyModelClass</span><span class="p">()</span>
 <span class="c1"># Load the weights from a file (.pth usually)</span>
 <span class="n">state_dict</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">weights_path</span><span class="p">)</span>
 
@@ -585,6 +603,10 @@
 
 <h2 id="summary">Summary</h2>
 <p>Here, I showed how to take a pre-trained PyTorch model (a weights object and network class object) and convert it to ONNX format (that contains the weights and net structure).</p>
+<h2 id="more-references">More References</h2>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/onnx.html#module-torch.onnx">Example: End-to-end AlexNet from PyTorch to Caffe2</a></li>
+</ol>
 <div id="disqus_thread"></div>
 
 <script>
