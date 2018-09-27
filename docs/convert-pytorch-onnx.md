@@ -30,7 +30,7 @@ I don't write out the model classes, however I wanted to share the steps and cod
 
 ## Using a Custom Model Class and Weights File
 
-The Python look something like:
+The Python looks something like:
 ```python
 import torch
 import torch.onnx

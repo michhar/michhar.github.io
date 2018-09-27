@@ -10,7 +10,7 @@ comments: true
 
 **Posted:**  2018-03-11
 
-**UPDATE 2018-09-27**:  Please refer to this excellent new documentation on the newly release AML CLI [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/desktop-workbench/model-management-cli-reference).
+**UPDATE 2018-09-27**:  Please refer to this excellent new documentation on the newly released AML CLI [Doc](https://docs.microsoft.com/en-us/azure/machine-learning/desktop-workbench/model-management-cli-reference).
 
 ## Context
 
