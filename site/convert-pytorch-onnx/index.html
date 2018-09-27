@@ -10,8 +10,6 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="A quick discovery post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.">
-      
       
       
       
@@ -34,7 +32,7 @@
     
     
       
-        <title>Overlaying a Website ontop of a GitHub Repository</title>
+        <title>Convert a PyTorch Model to ONNX Format</title>
       
     
     
@@ -94,7 +92,7 @@
                 Micheleen's Blog
               </span>
               <span class="md-header-nav__topic">
-                Overlaying a Website ontop of a GitHub Repository
+                How to Convert a PyTorch Model to ONNX Format
               </span>
             
           
@@ -175,11 +173,71 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../convert-pytorch-onnx/" title="How to Convert a PyTorch Model to ONNX Format" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        How to Convert a PyTorch Model to ONNX Format
+      </label>
+    
+    <a href="./" title="How to Convert a PyTorch Model to ONNX Format" class="md-nav__link md-nav__link--active">
       How to Convert a PyTorch Model to ONNX Format
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-general-steps" title="The General Steps" class="md-nav__link">
+    The General Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-custom-model-class-and-weights-file" title="Using a Custom Model Class and Weights File" class="md-nav__link">
+    Using a Custom Model Class and Weights File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-pre-trained-model-from-torchvision" title="A Pre-Trained Model from torchvision" class="md-nav__link">
+    A Pre-Trained Model from torchvision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -259,57 +317,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Overlaying a Website ontop of a GitHub Repository
-      </label>
-    
-    <a href="./" title="Overlaying a Website ontop of a GitHub Repository" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../my-new-static-site-generator-hobby/" title="Overlaying a Website ontop of a GitHub Repository" class="md-nav__link">
       Overlaying a Website ontop of a GitHub Repository
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#chalk" title="Chalk" class="md-nav__link">
-    Chalk
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webjeda-cards" title="Webjeda Cards" class="md-nav__link">
-    Webjeda Cards
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs" title="MkDocs" class="md-nav__link">
-    MkDocs
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -464,22 +476,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chalk" title="Chalk" class="md-nav__link">
-    Chalk
+  <a href="#the-general-steps" title="The General Steps" class="md-nav__link">
+    The General Steps
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#webjeda-cards" title="Webjeda Cards" class="md-nav__link">
-    Webjeda Cards
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mkdocs" title="MkDocs" class="md-nav__link">
-    MkDocs
+  <a href="#using-a-custom-model-class-and-weights-file" title="Using a Custom Model Class and Weights File" class="md-nav__link">
+    Using a Custom Model Class and Weights File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-pre-trained-model-from-torchvision" title="A Pre-Trained Model from torchvision" class="md-nav__link">
+    A Pre-Trained Model from torchvision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -499,128 +525,90 @@
               
                 
                 
-                  <h1>Overlaying a Website ontop of a GitHub Repository</h1>
+                  <h1>How to Convert a PyTorch Model to ONNX Format</h1>
                 
-                <p><img alt="Octocat" src="../img/sitegenpost/octocat_web_mharris.png" /></p>
-<p><strong>tl:dr</strong>:  A little post on using static site generators to overlay a website on top of a GitHub repo for displaying docs, portfolios/products, and blogs.</p>
-<p><strong>Posted</strong>:  2017-06-18</p>
-<p>I recently discovered I can have a static website for each of my GitHub repositories, which seems like overkill for 35+ repos.  That being said, it certainly would be nice to attractively present some of my content I've painstakingly written in Markdown files to showcase my work.</p>
-<p>Using static site generators, like Jekyll or MkDocs (and others — good article <a href="https://www.fullstackpython.com/static-site-generator.html">here</a>) combined with a templating engine like Jinga, opens up a lovely world of having human-friendly interfaces on top of my repos that I want to share.  The complexity of the sites can get quite intricate — to my hearts content.</p>
-<p><img alt="My personal webjeda cards site" src="../img/sitegenpost/my_webjeda_main.png" /></p>
-<p align="right"><b>Usage of the Jekyll Webjeda theme for a course listing site</b></p>
+                <p>Posted:  2018-09-27</p>
+<p>It might seem tricky or intimidating to convert model formats, but ONNX makes it easier.  However we must get our PyTorch model into the ONNX format.  This involves both the weights and network architecture defined by a <code>nn.Module</code> inherited class.</p>
+<p>I don't write out the model classes, however I wanted to share the steps and commands from the point of having the class definition and some weights (either in memory or from a model path file).  One could also do this with the pre-trained models from the torchvision library.</p>
+<h2 id="the-general-steps">The General Steps</h2>
+<ol>
+<li>Define the model class if using a custom model</li>
+<li>Train the model or load the weights (<code>.pth</code> file by convention) to something usually called the <code>state_dict</code></li>
+<li>Create a properly shaped input vector</li>
+<li>(Optional) Give the input and output layers names (to later reference back)</li>
+<li>Export to ONNX format with the PyTorch ONNX exporter</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>PyTorch and torchvision installed</li>
+<li>A PyTorch model class and model weights</li>
+</ol>
+<h2 id="using-a-custom-model-class-and-weights-file">Using a Custom Model Class and Weights File</h2>
+<p>The commands look something like:
+<div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MyModelClass</span><span class="p">()</span>
+<span class="c1"># Load the weights from a file (.pth usually)</span>
+<span class="n">state_dict</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">weights_path</span><span class="p">)</span>
 
-<p>Markup languages like Markdown are pretty easy to write in and create text files with headings, lists, tables and such (GitHub made a nice guide <a href="https://guides.github.com/features/mastering-markdown/">here</a>).  However, if you like reStructuredText or HTML better there are generators out there for you.</p>
-<p>There's a great site to shop for a Jekyll theme (where I began this journey), <a href="http://jekyllthemes.org/">here</a>.  They are mostly slanted towards blog writers as that was the reason for the genesis of Jekyll by the founder of GitHub (thanks Tom Preston-Werner!  Find out more about Jekyll on <a href="https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/#jekyll">this</a> blog).</p>
-<p>There is of course the use of GitHub Pages to simply render the repo's README markdown file by clicking on <strong>Settings</strong> and scrolling down to <strong>GitHub Pages</strong>, then selecting a theme directly at that point.  </p>
-<p>Basically, I'm just scratching the surface here on another way.  Also, the generators I chose all look good on hand-held devices - an important aspect to consider.</p>
-<p>These are some scenarios for the site generators I'm introducing based on research and actual work I've done:</p>
-<ul>
-<li><strong>Chalk</strong></li>
-<li>Blogs</li>
-<li>
-<p>Things listed by dates</p>
-</li>
-<li>
-<p><strong>Webjeda Cards</strong></p>
-</li>
-<li>Blogs</li>
-<li>Portfolios</li>
-<li>
-<p>Modular presentations e.g. product cards</p>
-</li>
-<li>
-<p><strong>MkDocs</strong></p>
-</li>
-<li>Documentation</li>
-<li>Guides or tutorials</li>
-</ul>
-<p>With the following information, hopefully you can begin to successfully build sites based on these generators.  I hope to fork them at some point for contributing back and encourage you to do so if you figure out something useful.</p>
-<p>Clarification on project setups:  some themes or static site generators that use repositories for content, have a branch for building the site (source) and a branch (usually called <code>gh-pages</code>) for the sites deployment files (MkDocs sites do this).  Some themes just work under <code>master</code> or have a mirrored dev branch.</p>
-<h3 id="chalk">Chalk</h3>
-<p><img alt="Chalk screenshot" src="../img/sitegenpost/chalk_main.png" />
-<p align="right"><b>Chalk demo site</b></p></p>
-<p><em>Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll.</em></p>
-<p>Creator's Profile:  <a href="https://github.com/nielsenramon">https://github.com/nielsenramon</a></p>
-<p>Chalk is my favorite Jekyll theme for blogging.  It's simple and clean in its look.  However, Chalk doesn't support the standard way of working with Jekyll on GitHub pages due to custom plugins.  There's a little bit more complexity around building the site with these plugins, but all of the scripts are provided so it's actually quite easy in the long run to build and deploy to GitHub Pages or another hosting service.</p>
-<p>Check out these sites:</p>
-<p><a href="http://chalk.nielsenramon.com/">Demo site</a></p>
-<p><a href="https://github.com/nielsenramon/chalk">Chalk GitHub repo</a></p>
-<p>Recommended tweaks: </p>
-<ul>
-<li>
-<p>Use the dark code highlighting theme inside of the light Chalk theme for a Sublime Editor-like effect.  Modify an import at the bottom of the <code>/_assets/stylesheets/light.scss</code>:</p>
-<div class="highlight"><pre><span></span>@import &quot;modules/highlights-dark&quot;;
+<span class="c1"># Load the weights now into a model net architecture defined by our class</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_dict</span><span class="p">)</span>
+
+<span class="c1"># Create the right input shape (e.g. for an image)</span>
+<span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">sample_batch_size</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+
+<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="s2">&quot;onnx_model_name.onnx&quot;</span><span class="p">)</span>
+</pre></div></p>
+<p>Note, the pretrained model weights that comes with <code>torchvision.models</code> went into a home folder <code>~/.torch/models</code> in case you go looking for it later.</p>
+<p>The state dictionary, or <code>state_dict</code>, is a Python dict containing parameter values and persistent buffers.  (<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module.load_state_dict">Docs</a>)</p>
+<blockquote>
+<p>Note:  The preferred way of saving the weights is with <code>torch.save(the_model.state_dict(), &lt;name_here.pth&gt;)</code>. (<a href="https://pytorch.org/docs/stable/notes/serialization.html#recommended-approach-for-saving-a-model">Docs</a>)</p>
+</blockquote>
+<h2 id="a-pre-trained-model-from-torchvision">A Pre-Trained Model from torchvision</h2>
+<p>If using the <code>torchvision.models</code> pretrained vision models all you need to do is, e.g., for AlexNet:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="kn">as</span> <span class="nn">models</span>
+
+<span class="c1"># Use an existing model from Torchvision, note it </span>
+<span class="c1"># will download this if not already on your computer (might take time)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Create some sample input in the shape this model expects</span>
+<span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+
+<span class="c1"># It&#39;s optional to label the input and output layers</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;actual_input_1&quot;</span> <span class="p">]</span> <span class="o">+</span> <span class="p">[</span> <span class="s2">&quot;learned_</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">output_names</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;output1&quot;</span> <span class="p">]</span>
+
+<span class="c1"># Use the exporter from torch to convert to onnx </span>
+<span class="c1"># model (that has the weights and net arch)</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="s2">&quot;alexnet.onnx&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_names</span><span class="o">=</span><span class="n">input_names</span><span class="p">,</span> <span class="n">output_names</span><span class="o">=</span><span class="n">output_names</span><span class="p">)</span>
 </pre></div>
 
-</li>
-<li>
-<p>Add an icon to the post listing page (main page) by editing the <code>index.html</code> with a <code>div</code> tag:</p>
-<p><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article-list-tags&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ post.logo }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;post logo&quot;</span> 
-      <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url | relative_url }}&quot;</span> 
-      <span class="na">width</span><span class="o">=</span><span class="s">&quot;30%&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">img</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-And adding the <code>post.logo</code> to the YAML heading on the post as in:</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span> ---
- ...
- comments: true
- description: A short chatterbot dev story
- logo:  &quot;../resources/images/ocrbot_local.png&quot;
- tags:
- ...
- ---
-</pre></div>
+<h2 id="summary">Summary</h2>
+<p>Here, I showed how to take a pre-trained PyTorch model (a weights object and network class object) and convert it to ONNX format (that contains the weights and net structure).</p>
+<div id="disqus_thread"></div>
 
-<p><img alt="Chalk screenshot my site" src="../img/sitegenpost/my_chalk_main.png" />
-<p align="right"><b>A tweaked Chalk-based site with icons on main page</b></p></p>
-<h3 id="webjeda-cards">Webjeda Cards</h3>
-<p><img alt="Webjeda screenshot" src="../img/sitegenpost/webjeda_main.png" />
-<p align="right"><b>Webjeda demo site</b></p></p>
-<p><em>Webjeda Cards is a Bootstrap based jekyll theme for portfolio, photography or any kind of blog.</em></p>
-<p>Creator's Profile:  <a href="https://github.com/sharu725">https://github.com/sharu725</a></p>
-<p>This Jekyll theme is fantastic for more modular postings (like course or product listings).  It could also be a great place to show off your work like photos you've taken with a nice write-up.  Perhaps, this could be the main page of your site and you could link to all of the repos you'd like to share from this card layout design.</p>
-<p>Setup note:  you can of course simply use the master branch here for building <em>and</em> deploying, but it's always nice to have a separate branch we often see called <code>gh-pages</code> for the sites actual deployed content.</p>
-<p>Check out these sites:</p>
-<p><a href="http://webjeda.com/cards/">Demo site</a></p>
-<p><a href="https://github.com/sharu725/cards">Webjeda Cards GitHub repo</a></p>
-<p>Recommended tweaks:</p>
-<ul>
-<li>
-<p>In <code>index.html</code> added a variable to automatically pull in the "Read" button name (so, instead of just "Read" it's a custom label on the button).  This is done with the <code>post.label</code>:</p>
-<div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-body&quot;</span><span class="p">&gt;</span>
- <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-title pull-left&quot;</span><span class="p">&gt;</span>{{ post.title }}
-    <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-meta pull-right&quot;</span><span class="p">&gt;&lt;</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
- <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url | prepend: site.baseurl }}&quot;</span> 
-    <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-sm pull-right mt10&quot;</span><span class="p">&gt;</span>
-    Go to {{post.label}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
- <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
 
-</li>
-<li>
-<p>Then, in the post you'll have a YAML header with a <code>label</code> variable like:</p>
-<div class="highlight"><pre><span></span>---
-layout: post
-title:  Microsoft R Server and SQL Server R Services Labs
-categories: mrs
-img: hikeclouds.jpg
-label: Labs
-resource:
----
-</pre></div>
+    var disqus_config = function () {
+        this.page.url = 'https://michhar.github.io/convolutional-in-layers-and-sequences/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 
-</li>
-</ul>
-<h3 id="mkdocs">MkDocs</h3>
-<p><img alt="MkDocs screenshot" src="../img/sitegenpost/my_mkdocs_main.png" />
-<p align="right"><b>Docs for one of my projects using the readthedocs theme</b></p></p>
-<p><em>MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation.</em></p>
-<p>Creators' profile:  <a href="https://github.com/mkdocs">https://github.com/mkdocs</a></p>
-<p>This is a great alternative to a Sphinx build for a readthedocs style documentation page.  It's very easy to setup and use.  There are other builtin themes as well.  It's fairly pre-baked, but very good for what it's good for.</p>
-<p><a href="http://www.mkdocs.org/#mkdocs">Documentation for MkDocs</a></p>
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://michhar.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                 
                   
                 
@@ -639,7 +627,7 @@ resource:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../single-artifical-neuron-for-nonlinear-separable-data/" title="On using an Adaline Artificial Neuron for Classification" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -648,19 +636,19 @@ resource:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                On using an Adaline Artificial Neuron for Classification
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../data-science-story-part1/" title="On Being a Data Scientist" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../setting-up-for-and-work-with-mlflow/" title="A Reproducible Project Pattern and Workflow for ML Training and Deployments" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                On Being a Data Scientist
+                A Reproducible Project Pattern and Workflow for ML Training and Deployments
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

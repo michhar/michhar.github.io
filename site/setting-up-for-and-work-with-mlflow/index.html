@@ -1,0 +1,880 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Sample using a new OSS tool, MfFlow, for an entire Keras Object Detection workflow including deployment with AzureML">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.4.0">
+    
+    
+      
+        <title>Working with MLflow - A Reproducible Project Pattern for ML Training and Deployments</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.7fb6a6f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="teal">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Micheleen's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Micheleen's Blog
+              </span>
+              <span class="md-header-nav__topic">
+                A Reproducible Project Pattern and Workflow for ML Training and Deployments
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Micheleen's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../convert-pytorch-onnx/" title="How to Convert a PyTorch Model to ONNX Format" class="md-nav__link">
+      How to Convert a PyTorch Model to ONNX Format
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        A Reproducible Project Pattern and Workflow for ML Training and Deployments
+      </label>
+    
+    <a href="./" title="A Reproducible Project Pattern and Workflow for ML Training and Deployments" class="md-nav__link md-nav__link--active">
+      A Reproducible Project Pattern and Workflow for ML Training and Deployments
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-mlflow" title="Introduction to MLFlow" class="md-nav__link">
+    Introduction to MLFlow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-model-and-data" title="Get the Model and Data" class="md-nav__link">
+    Get the Model and Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-for-mlflow" title="Setup for MLflow" class="md-nav__link">
+    Setup for MLflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training" title="Training" class="md-nav__link">
+    Training
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifacts" title="Artifacts" class="md-nav__link">
+    Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-with-the-azure-machine-learning-integration" title="Deploying with the Azure Machine Learning Integration" class="md-nav__link">
+    Deploying with the Azure Machine Learning Integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../convolutional-in-layers-and-sequences/" title="Convolutional Neural Networks in Four Deep Learning Frameworks by Example" class="md-nav__link">
+      Convolutional Neural Networks in Four Deep Learning Frameworks by Example
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../deploy-with-azureml-cli-boldly/" title="Deploying a Machine Learning Model Easily with Azure ML CLI" class="md-nav__link">
+      Deploying a Machine Learning Model Easily with Azure ML CLI
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cntk-has-feelings-too/" title="The Cognitive Toolkit (CNTK) Understands How You Feel" class="md-nav__link">
+      The Cognitive Toolkit (CNTK) Understands How You Feel
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../masks_to_polygons_and_back/" title="Shapely Shapes and OpenCV Visions" class="md-nav__link">
+      Shapely Shapes and OpenCV Visions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../single-artifical-neuron-for-nonlinear-separable-data/" title="On using an Adaline Artificial Neuron for Classification" class="md-nav__link">
+      On using an Adaline Artificial Neuron for Classification
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../my-new-static-site-generator-hobby/" title="Overlaying a Website ontop of a GitHub Repository" class="md-nav__link">
+      Overlaying a Website ontop of a GitHub Repository
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../data-science-story-part1/" title="On Being a Data Scientist" class="md-nav__link">
+      On Being a Data Scientist
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../two-cents-on-python-package-structure/" title="Wading In a Tide Pool of Choices, How to Write a Package in Python?" class="md-nav__link">
+      Wading In a Tide Pool of Choices, How to Write a Package in Python?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-gets-attached/" title="OCRBot Gets Attached" class="md-nav__link">
+      OCRBot Gets Attached
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../jupyter-and-beaker-make-a-case/" title="The Notebook Superhero -- Is It Always a Contest?" class="md-nav__link">
+      The Notebook Superhero -- Is It Always a Contest?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript-and-python-have-a-party/" title="Javascript and Python Meet through Magic and IPython" class="md-nav__link">
+      Javascript and Python Meet through Magic and IPython
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../confusion-matrix-code-revealed/" title="A Simple, Presentable Confusion Matrix with K-means Data" class="md-nav__link">
+      A Simple, Presentable Confusion Matrix with K-means Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../a-python-flask-webapp-gets-smart/" title="Creating a Smart Python Flask Web App using Azure Machine Learning" class="md-nav__link">
+      Creating a Smart Python Flask Web App using Azure Machine Learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ocrbot-makes-a-connection/" title="OCRBot Makes a Connection to the Cloud" class="md-nav__link">
+      OCRBot Makes a Connection to the Cloud
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-to-bot-on-mac/" title="Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac" class="md-nav__link">
+      Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../teaching-notes-post/" title="Tips I have Learned by Being a Trainer for a Year" class="md-nav__link">
+      Tips I have Learned by Being a Trainer for a Year
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../notebooks1-post/" title="Python for Data Science Goes Into the Wild" class="md-nav__link">
+      Python for Data Science Goes Into the Wild
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-mlflow" title="Introduction to MLFlow" class="md-nav__link">
+    Introduction to MLFlow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-model-and-data" title="Get the Model and Data" class="md-nav__link">
+    Get the Model and Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-for-mlflow" title="Setup for MLflow" class="md-nav__link">
+    Setup for MLflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training" title="Training" class="md-nav__link">
+    Training
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifacts" title="Artifacts" class="md-nav__link">
+    Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-with-the-azure-machine-learning-integration" title="Deploying with the Azure Machine Learning Integration" class="md-nav__link">
+    Deploying with the Azure Machine Learning Integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>A Reproducible Project Pattern and Workflow for ML Training and Deployments</h1>
+                
+                <p><strong>tl;dr</strong>:  MLflow is already powerful, yet simple, even in alpha release.  It' integration with platforms for training and deployment, such as with AzureML, is incredibly helpful.  After all, don't we all want to deploy eventually?</p>
+<p><strong>Posted:</strong>  2019-09-15</p>
+<h2 id="introduction-to-mlflow">Introduction to MLFlow</h2>
+<p>Recently, I discovered MLflow on a hunt for a way to track my models and environment, parameters, training and deployments (that was a nice addition) in a single project and a single place.</p>
+<p>A few features that caught my eye:</p>
+<ul>
+<li>Run training and deployment from a remote GitHub repo</li>
+<li>Log the environment in which a model was trained (other logging and even a UI for tracking)</li>
+<li>Many deployment options (local and Azure ML among others)</li>
+</ul>
+<p>After trying MLflow, I discovered that I liked:</p>
+<ul>
+<li>The flexibility of running the project in several locations (local, <a href="https://databricks.com/">Databricks</a>, remote linux VMs, etc.)</li>
+<li>Error messaging is clear and includes a nice stacktrace</li>
+<li>The deployment was straighforward as the project for AzureML was generated for me with the files I needed</li>
+</ul>
+<h2 id="get-the-model-and-data">Get the Model and Data</h2>
+<p>Feel free to follow along or create your own project.  This is an example of using MLFlow with an existing repo.</p>
+<ol>
+<li>Clone the YOLOv3 Keras example repo:  </li>
+</ol>
+<blockquote>
+<p><code>git clone https://github.com/michhar/mlflow-keras-example.git</code></p>
+</blockquote>
+<ol>
+<li>cd into model directory:</li>
+</ol>
+<blockquote>
+<p><code>cd mlflow-keras-example/model_data/</code></p>
+</blockquote>
+<ol>
+<li>
+<p>Download the model, data (or create your own) and pointer file to data.</p>
+<ul>
+<li>Get a Keras-friendly YOLOv3 base model, converted directly from the Tiny YOLOv3 Darknet model (here, the Tiny weights are used - nice for constrained devices):</li>
+</ul>
+<blockquote>
+<p>Click to access through Azure Storage <a href="https://modelsdata.blob.core.windows.net/data/yolov3-tiny.h5">here (34MB)</a>, download and place model in <code>model_data</code> subdirectory</p>
+</blockquote>
+<ul>
+<li>Get some sample data of lego minifigures with helmets and other head gear to train a model to detect what the figurine is wearing on its head, placing the uznipped folder in the <code>voc</code> subdirectory.</li>
+</ul>
+<blockquote>
+<p>Click to access through from <a href="https://modelsdata.blob.core.windows.net/data/JPEGImages.zip">here (173MB)</a> or use your own data (according to instructions on this repo <a href="https://github.com/michhar/keras-yolo3#training">in Step 1</a> - you'll need to label as well).</p>
+</blockquote>
+<ul>
+<li>Get the list of images as a small text file with associated bounding boxes and class.</li>
+</ul>
+<blockquote>
+<p>Click to access from <a href="https://modelsdata.blob.core.windows.net/data/list_master.txt">here</a> and place it in the <code>voc</code> subdirectory</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="setup-for-mlflow">Setup for MLflow</h2>
+<p>Required Python packages:
+  * <code>mlflow</code>
+  * <code>azure-cli</code> (if deploying with AzureML)
+    * To deploy with <code>azureml</code> one will need, also, an Azure Subscription.</p>
+<p><code>MLproject</code> file is an excellent source of control over things.  Optional, but recommended for the following reasons:
+  * Points to conda dependencies file for building this environment before training
+  * Parameters, types and defaults
+  * Entrypoint command (with all options) - this is the master command that is run when the mlflow training is run on the command line</p>
+<p>A simplified <code>MLproject</code> file is as follows:</p>
+<div class="highlight"><pre><span></span>name: My Awesome Project
+
+conda_env: smart_conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      parameter1: {type: str, default: &quot;voc/list_master.txt&quot;}
+      parameter2: {type: float, default: 1e-2}
+      parameter3: {type: int, default: 16}
+    command: &quot;python train.py --parameter1 {parameter1} --parameter2 {parameter2} --parameter3 {parameter3}&quot;
+</pre></div>
+
+<p>If there are defaults, none of these parameters need to exist on the command line when running with <code>mlflow</code>, however they may be overridden.</p>
+<h2 id="training">Training</h2>
+<p>To train, all you should need to do from within the cloned repo folder is (runs with default parameters in MLproject entrypoint command):</p>
+<pre><code>mlfow run .
+</code></pre>
+<p>Or if you want to modify a default parameter or two (use <code>-P</code> per parameter) like the number of epochs for the transfer learning stage (<code>frozen_epochs</code>) and network fine tuning stage (<code>fine_tune_epochs</code>) (note you'd use 100s to 1000s of epochs for these in the real world):</p>
+<pre><code>mlflow run . -P frozen_epochs=5 -P fine_tune_epochs=3
+</code></pre>
+<p>Also, you can monitor the run through <code>tensorboard</code> which is part of a callback in the <code>model.fit</code> method (change logdir as appropriate).</p>
+<pre><code>tensorboard --logdir logs/default
+</code></pre>
+<p>An <code>mlflow</code> option for monitoring is with:</p>
+<pre><code>mlflow ui
+</code></pre>
+<p>The metric and model (as an artifact) is recorded by the following:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Added for MLflow</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">log_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;keras-yolo-model-frozen-pass&quot;</span><span class="p">)</span>
+<span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s1">&#39;frozen_loss&#39;</span><span class="p">,</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+<p>What does <code>mlflow run</code> actually do?  As follows:</p>
+<ul>
+<li>Creates the conda environment based on the <code>yolo_conda.yml</code> file (or whatever you named the dependencies file)</li>
+<li>Runs the entrypoint script described in the <code>MLproject</code> file (this file is not mandatory, but makes customizing the training process much easier).</li>
+<li>Logs any artifacts specified in <code>train.py</code> (e.g. save model as an asset with <code>mlflow.keras.log_model(model, &quot;keras-yolo-model-frozen-pass&quot;)</code>)</li>
+<li>Logs any metrics specified in <code>train.py</code> (e.g. log loss with <code>mlflow.log_metric('finetune_loss', model.loss)</code>)</li>
+</ul>
+<h3 id="artifacts">Artifacts</h3>
+<p>If model is logged as in this training script, a folder should appear in the <code>mlflow</code> UI with information on the training run and the model itself.</p>
+<p>To find the model, look in the <code>mlruns</code> directory at the base of the project:</p>
+<pre><code>ls mlruns/0/&lt;run id given at end of successful run&gt;/artifacts/&lt;model key from train.py&gt;
+</code></pre>
+<p>E.g. For the final model after fine-tuning:</p>
+<pre><code>ls mlruns/0/8237d734f1d94fd893368dd455565f2d/artifacts/keras-yolo-model
+</code></pre>
+<p>It will be called something like <code>model.h5</code>.</p>
+<h2 id="deploying-with-the-azure-machine-learning-integration">Deploying with the Azure Machine Learning Integration</h2>
+<p>Now, to get the package for the AzureML deployment CLI:</p>
+<pre><code>pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file
+</code></pre>
+<p>(Corresponding to <code>azure-cli-ml==0.1.0a27.post3</code> at the time of writing).</p>
+<p>See <a href="https://mlflow.org/docs/latest/models.html#microsoft-azureml">AzureML export option and CLI commands from mlflow</a> for the detailed directions.</p>
+<p>For instance, to export to <code>azureml</code>-friendly deployment format/structure (and create neccessary files for this deployment type) the command will have the format:</p>
+<pre><code>mlflow azureml export -m mlruns/&lt;run folder&gt;/&lt;run id&gt;/artifacts/&lt;name of mlflow project&gt; -o &lt;name of new folder for azureml&gt;
+</code></pre>
+<p>E.g.:</p>
+<pre><code>mlflow azureml export -m mlruns/0/8237d734f1d94fd893368dd455565f2d/artifacts/keras-yolo-model -o yolo-output
+</code></pre>
+<p>Note, some additional libraries may need to be specified in the generated <code>score.py</code>'s <code>init()</code> and <code>run()</code>, such as <code>keras</code> here:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">model</span>
+    <span class="kn">import</span> <span class="nn">keras</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">load_pyfunc</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">keras</span>
+    <span class="n">input_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">get_jsonable_obj</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_df</span><span class="p">))</span>
+</pre></div>
+
+<blockquote>
+<p>Note: not including necessary packages is the most common source of error in deploying with AzureML</p>
+</blockquote>
+<p>Ensure <code>yolo-output</code> (or name used for <code>mlflow</code> generated file directory) has all necessary packages beyond <code>mlflow</code>, namely:</p>
+<div class="highlight"><pre><span></span>numpy==1.14.2
+matplotlib==2.2.2
+Keras==2.2.2
+tensorflow==1.8.0
+Pillow==5.1.0
+mlflow==0.5.2
+</pre></div>
+
+<p>The <code>azureml</code> CLI commands are:</p>
+<blockquote>
+<p>Note: one may need to register some environment providers in Azure.
+<code>az provider register -n Microsoft.MachineLearningCompute</code>
+<code>az provider register -n Microsoft.ContainerRegistry</code>
+<code>az provider register -n Microsoft.ContainerService</code></p>
+</blockquote>
+<pre><code>az login
+
+az ml env setup -l [Azure Region, e.g. eastus2] -n [your environment name] [-g [existing resource group]]
+
+az ml env set -n [environment name] -g [resource group]
+
+mlflow azureml deploy &lt;parameters&gt;
+</code></pre>
+<p>See AzureML documentation for more information on the <code>az ml</code> commands for deployment or type <code>az ml -h</code>.</p>
+<p>Use a model management account (or create one).  List them with:</p>
+<pre><code>az ml account modelmanagement list
+</code></pre>
+<p>Set one with:</p>
+<pre><code>az ml account modelmanagement set -g [resource group] -n [model management name]
+</code></pre>
+<p><strong>For example, the commands used in this project to deploy locally are as follows</strong></p>
+<p>Log in to Azure:</p>
+<pre><code>az login
+</code></pre>
+<p>Set up an environment:</p>
+<pre><code>az ml env setup -l eastus2 -g localyoloenvrg -n localyoloenv
+</code></pre>
+<ul>
+<li>This will take a few minutes.</li>
+</ul>
+<p>Choose the environment:</p>
+<pre><code>az ml env set -g localyoloenvrg -n localyoloenv
+</code></pre>
+<p>Deploy the project, now (locally, but linked to a few resources online):</p>
+<pre><code>mlflow azureml deploy --model-path model -n yoloapp123
+</code></pre>
+<p>When done, clean up by deleting the resource group with:</p>
+<pre><code>az group delete -g localyoloenvrg
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<div id="disqus_thread"></div>
+
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = 'https://michhar.github.io/setting-up-for-and-work-with-mlflow/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://michhar.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../convert-pytorch-onnx/" title="How to Convert a PyTorch Model to ONNX Format" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                How to Convert a PyTorch Model to ONNX Format
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../convolutional-in-layers-and-sequences/" title="Convolutional Neural Networks in Four Deep Learning Frameworks by Example" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Convolutional Neural Networks in Four Deep Learning Frameworks by Example
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/michhar" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/rheartpython" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/micheleenharris" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
