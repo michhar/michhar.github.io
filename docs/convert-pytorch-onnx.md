@@ -11,14 +11,14 @@ tags: [python, pytorch, onnx]
 
 Posted:  2018-09-27
 
-It might seem tricky or intimidating to convert model formats, but ONNX makes it easier.  However we must get our PyTorch model into the ONNX format.  This involves both the weights and network architecture defined by a `nn.Module` inherited class.
+It might seem tricky or intimidating to convert model formats, but ONNX makes it easier.  However, we must get our PyTorch model into the ONNX format.  This involves both the weights and network architecture defined by a PyToch model class (inheriting from `nn.Module`).
 
-I don't write out the model classes, however I wanted to share the steps and code from the point of having the class definition and some weights (either in memory or from a model path file).  One could also do this with the pre-trained models from the torchvision library.
+I don't write out the model classes, however, I wanted to share the steps and code from the point of having the class definition and some weights (either in memory or from a model path file).  One could also do this with the pre-trained models from the torchvision library.
 
 ## The General Steps
 
-1. Define the model class if using a custom model
-2. Train the model or load the weights (`.pth` file by convention) to something usually called the `state_dict`
+1. Define the model class (if using a custom model)
+2. Train the model and load the weights (`.pth` file by convention) to something usually called the `state_dict` or load a pre-trained model such as is found in `torchvision.models`
 3. Create a properly shaped input vector
 5. (Optional) Give the input and output layers names (to later reference back)
 6. Export to ONNX format with the PyTorch ONNX exporter
