@@ -7,6 +7,8 @@ description:
 tags: [python, pytorch, onnx]
 ---
 
+![](img/pytorch_loves_onnx.jpg)
+
 Posted:  2018-09-27
 
 It might seem tricky or intimidating to convert model formats, but ONNX makes it easier.  However we must get our PyTorch model into the ONNX format.  This involves both the weights and network architecture defined by a `nn.Module` inherited class.
