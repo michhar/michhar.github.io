@@ -35,7 +35,9 @@ The Python look something like:
 import torch
 import torch.onnx
 
+# A model class instance (class not shown)
 model = MyModelClass()
+
 # Load the weights from a file (.pth usually)
 state_dict = torch.load(weights_path)
 
@@ -48,7 +50,7 @@ dummy_input = torch.randn(sample_batch_size, channel, height, width)
 torch.onnx.export(model, dummy_input, "onnx_model_name.onnx")
 ```
 
-Note, the pretrained model weights that comes with `torchvision.models` went into a home folder `~/.torch/models` in case you go looking for it later.
+
 
 The state dictionary, or `state_dict`, is a Python dict containing parameter values and persistent buffers.  ([Docs](https://pytorch.org/docs/stable/nn.html#torch.nn.Module.load_state_dict))
 
@@ -77,6 +79,8 @@ output_names = [ "output1" ]
 # model (that has the weights and net arch)
 torch.onnx.export(model, dummy_input, "alexnet.onnx", verbose=True, input_names=input_names, output_names=output_names)
 ```
+
+> Note, the pretrained model weights that comes with `torchvision.models` went into a home folder `~/.torch/models` in case you go looking for it later.
 
 ## Summary
 
