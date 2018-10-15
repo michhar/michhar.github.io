@@ -21,6 +21,10 @@
       
         <meta name="lang:search.language" content="en">
       
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
         <meta name="lang:search.result.none" content="No matching documents">
       
         <meta name="lang:search.result.one" content="1 matching document">
@@ -30,17 +34,22 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
-        <title>"The Cognitive Toolkit (CNTK) Understands How You Feel"</title>
+        <title>The Cognitive Toolkit (CNTK) Understands How You Feel</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.7fb6a6f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -48,20 +57,19 @@
     
     
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
   </head>
   
     
     
-    
-      <body data-md-color-primary="teal">
-    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="">
   
     <svg class="md-svg">
       <defs>
@@ -69,9 +77,14 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#some-background" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -84,7 +97,7 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
@@ -103,14 +116,14 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
             
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -148,12 +161,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Micheleen's Blog" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Micheleen's Blog
   </label>
   
@@ -216,10 +229,10 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         The Cognitive Toolkit (CNTK) Understands How You Feel
       </label>
     
@@ -232,7 +245,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -330,6 +343,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -523,7 +538,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -624,6 +639,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -639,7 +656,7 @@
                 
                   <h1>The Cognitive Toolkit (CNTK) Understands How You Feel</h1>
                 
-                <p><img alt="header pic" src="../assets/img/cntk.jpg" /></p>
+                <p><img alt="header pic" src="/assets/img/cntk.jpg" /></p>
 <p><strong>Posted:</strong>  2017-12-12</p>
 <h2 id="some-background">Some Background</h2>
 <h3 id="cntk">CNTK</h3>
@@ -656,7 +673,7 @@
 <p>Since I'm on a Mac, I chose to use the Docker image of CNTK (instructions found <a href="https://docs.microsoft.com/en-us/cognitive-toolkit/CNTK-Docker-Containers">here</a>).  This pulls down an image of a pre-created system and I run it in my own Docker container basically recreating an Ubuntu setup with CNTK locally.  It's pretty neat!  And then I can run Jupyter notebooks on my system and pull in local files and write out data as needed.  Let me show you how and then after we'll talk about the CNNs.</p>
 <p>By following this <a href="https://docs.microsoft.com/en-us/cognitive-toolkit/CNTK-Docker-Containers">Doc</a> I got a Jupyter notebook up and running with CNTK with all of the Tutorial notebooks at the ready and the ability to upload or create new ones as needed.</p>
 <p>I ran these commands to get a Jupyter notebook set up with CNTK (v2.1 used here).  </p>
-<p>An important note:  in the <code>run</code> command for Docker I mounted a volume with <code>&quot;$PWD/data:/data&quot;</code>.  This "/data" folder can be accessed from the Jupyter notebook, as you can see if you check them out (link below), but also used to add data or pull data from the docker container just like any file folder on your system.  A very handy trick!</p>
+<p>An important note:  in the <code>run</code> command for Docker I mounted a volume with <code>"$PWD/data:/data"</code>.  This "/data" folder can be accessed from the Jupyter notebook, as you can see if you check them out (link below), but also used to add data or pull data from the docker container just like any file folder on your system.  A very handy trick!</p>
 <pre><code>docker pull microsoft/cntk:2.1-cpu-python3.5
 
 docker run -d --volume "$PWD/data:/data" -p 8888:8888 --name cntk-jupyter-notebooks -t microsoft/cntk:2.1-cpu-python3.5
@@ -711,7 +728,7 @@ docker exec -it cntk-jupyter-notebooks bash -c "source /cntk/activate-cntk &amp;
 <p>If you have seen some networks in CNTK, note I'm using the Sequential notation "shortcut" for repeating some layers, but maybe with different params (more in this <a href="https://cntk.ai/pythondocs/layerref.html#sequential">Doc</a>).</p>
 <p>The above "simple" CNN resulted in an average test error of 28.53%.</p>
 <p>I decided I'd like to try a more complex network and so began reading some papers on emotion recognition.  I came across one that appeared to be using the same size images (likely the same dataset).  Their proposed CNN architecture looked like this (<a href="https://arxiv.org/pdf/1706.01509.pdf">Ref</a>):</p>
-<p><img alt="Propsed architecture from paper" src="../img/cntk_feels/proposed_cnn_Dachapally.png" /></p>
+<p><img alt="Propsed architecture from paper" src="/img/cntk_feels/proposed_cnn_Dachapally.png" /></p>
 <p>I implemented the paper's architecture in the CNTK Python API as follows (it had 5935330 parameters in 12 parameter tensors):</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
@@ -766,7 +783,7 @@ docker exec -it cntk-jupyter-notebooks bash -c "source /cntk/activate-cntk &amp;
 <p>In the last architecture I had 37917906 parameters in 12 parameter tensors with an average test error of 22.35% (which, to be honest, could cause an issue of over-fitting due to the very large number of parameters - just something to consider).  A validation step would be highly recommended in this case given sufficient computational power!</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>I picked a few random pictures from an online image search of happy and sad faces.  With my error rate of 22% it did pretty well, even on pictures of my own face (not shown).  These, for instance, were correctly identified as happy and sad.</p>
-<p><img alt="happy and sad kids" src="../img/cntk_feels/kids_happy_sad.png" /></p>
+<p><img alt="happy and sad kids" src="/img/cntk_feels/kids_happy_sad.png" /></p>
 <p>(Note, the images may not show correctly as their 48x48 square size in this browser).</p>
 <p>The improvements are not an exhaustive list of everything one can try to gain better results of course, but do represent some common ways to deal with image data using CNNs.  If you have GPU-acceleration options, give some more complex network architectures a try - you could spin up an Azure Deep Learning VM which is what I usually do at my day job.  Happy deep learning!</p>
 <p><strong>The Jupyter notebooks associated with this post can be found on GitHub <a href="https://github.com/michhar/python-jupyter-notebooks/tree/master/cntk">here</a></strong></p>
@@ -783,6 +800,8 @@ Networks and Representational Autoencoder Units by Prudhvi Raj Dachapally</a></l
               
               
                 
+
+
               
             </article>
           </div>
@@ -832,7 +851,7 @@ Networks and Representational Autoencoder Units by Prudhvi Raj Dachapally</a></l
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
@@ -840,8 +859,7 @@ Networks and Representational Autoencoder Units by Prudhvi Raj Dachapally</a></l
       
         
   <div class="md-footer-social">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/michhar" class="md-footer-social__link fa fa-github"></a>
     
@@ -858,16 +876,16 @@ Networks and Representational Autoencoder Units by Prudhvi Raj Dachapally</a></l
       
     </div>
     
-      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>

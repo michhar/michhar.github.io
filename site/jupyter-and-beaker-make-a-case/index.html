@@ -21,6 +21,10 @@
       
         <meta name="lang:search.language" content="en">
       
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
         <meta name="lang:search.result.none" content="No matching documents">
       
         <meta name="lang:search.result.one" content="1 matching document">
@@ -30,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -38,9 +42,14 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.7fb6a6f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -48,20 +57,19 @@
     
     
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
   </head>
   
     
     
-    
-      <body data-md-color-primary="teal">
-    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="">
   
     <svg class="md-svg">
       <defs>
@@ -69,9 +77,14 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#whats-a-notebook" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -84,7 +97,7 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
@@ -103,14 +116,14 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
             
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -148,12 +161,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Micheleen's Blog" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Micheleen's Blog
   </label>
   
@@ -300,10 +313,10 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         The Notebook Superhero -- Is It Always a Contest?
       </label>
     
@@ -316,7 +329,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -374,6 +387,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -483,7 +498,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -544,6 +559,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -559,7 +576,7 @@
                 
                   <h1>The Notebook Superhero -- Is It Always a Contest?</h1>
                 
-                <p><img alt="header pic" src="../img/jupyter_beaker/header_beaker_n_jupyter.jpg" /></p>
+                <p><img alt="header pic" src="/img/jupyter_beaker/header_beaker_n_jupyter.jpg" /></p>
 <p><a href="https://en.wikipedia.org/wiki/TL;DR"><strong>tl;dr</strong></a>:  Once you learn how to use one kind of notebook system, the knowledge will transfer easily to another.  Here, we're discussing two, Jupyter and Beaker.  Because Jupyter is much more mature of a project, it'd probably be the best place to start.  But for those with that extreme sense of adventure and/or use Python 2 a lot with other languages, give the Beaker notebooks a chance.  Loads of potential for data scientists there.</p>
 <p><strong>Posted:</strong>  2017-02-19</p>
 <h3 id="whats-a-notebook">What's a notebook?</h3>
@@ -580,7 +597,7 @@
 <p>They are both open source projects and being built on IPython have similar notebook interfaces so it'd be easy to switch over from one to another once you get the hang of notebooks.</p>
 <p>Differences and distinguishing factors discussed below.</p>
 <h3 id="jupyter-customizable-and-sometimes-magic">Jupyter:  customizable and sometimes magic</h3>
-<p><img alt="jupyter with a grade3 theme" src="../img/jupyter_beaker/jupyter_grade3theme.png" />
+<p><img alt="jupyter with a grade3 theme" src="/img/jupyter_beaker/jupyter_grade3theme.png" />
 <p align="right"><b>A Python 3 flavored Jupyter notebook with a "grade3" theme (theme from Kyle Dunovan's jupyter-themes repo)</b></p></p>
 <p>The Jupyter project is much more mature than the Beaker project and thus has a reliable and almost totally bug-free experience (nothing is completely bug-free).  It's pretty much the classic notebook system, but gives the us the ability to use it for reproducible research, publish papers, do presentations with live code, create blogs (not this one, although it's in markdown at least), and the list goes on.  It's a mature project with many add-ons and features available.</p>
 <p>Returning to basecamp, Jupyter notebook setups can be simple and basic, one language supported and the basic theme, or much more complex, supporting several languages chosen from a drop-down menu and having extensions to check spelling and perhaps a custom theme to pretty it up.  Out of the box, they simply work with the default Python.  It's a very transparent system.  What you add on is done by you, but you must take care of what that add-on requires.  Jupyter notebooks are meant to be simple, useful and clean (I've seen and made many of messes so I aim for this).</p>
@@ -606,7 +623,7 @@
 <p>A really nifty meta-feature is that GitHub renders static versions of IPython/Jupyter notebooks (.ipynb files which are just JSON) which makes viewing your work and the work of others very easy from GitHub.</p>
 <p>You can find the Jupyter project on GitHub at <a href="https://github.com/jupyter/notebook">https://github.com/jupyter/notebook</a>.</p>
 <h3 id="beaker-a-true-polyglot">Beaker:  a true polyglot</h3>
-<p><img alt="beaker screenshot" src="../img/jupyter_beaker/beaker_d3.png" /></p>
+<p><img alt="beaker screenshot" src="/img/jupyter_beaker/beaker_d3.png" /></p>
 <p align="right"><b>Python 2 and JavaScript with D3 sharing variables (entire code sample is in the D3 Demo notebook that comes with Beaker)</b></p>
 
 <p>A Beaker notebook is different from a Jupyter notebook in that it can easily pass data from one cell to the next even if the code in each cell is in a different programming language.  This is the <strong>big</strong> selling point of Beaker notebooks.  Literally, we can share one variable from Python to Javascript, for example, by just prefacing it with <code>beaker.</code>.  Woah.  This opens up a realm of possibilities.</p>
@@ -647,7 +664,7 @@
 <p>The tricky part sometimes for Jupyter is getting other kernels (support for other languages) installed.  But my other <em>de facto</em> language is R and I simply used the conda compatible <a href="https://anaconda.org/r/r-essentials">R-Essentials</a>, which gives me the R kernel option (Yay!!) (and by far the easiest way to get the R kernel working that I've found - see <a href="https://www.continuum.io/blog/developer/jupyter-and-conda-r">this</a> blog for more on R-Essentials).  I gave up getting R to work in Beaker after toying around for an hour or so (granted that wasn't a long time and smarter folks could probably get it working) running up against an undocumented R package called Rserve, a dependency for R in Beaker.</p>
 <p>It appears Beaker by default expects, as it <a href="https://github.com/twosigma/beaker-notebook/wiki/Python-Mismatch-Errors">says here</a>, a Python 2 conda install (which is weird I thought due to Python 2 becoming a legacy language soon).  So, when I tried it with my Python-3-only conda install, I had bad luck running an IPython cell, although Python 3 cells worked.  I did solve the IPython cell issue according to some pretty easy-to-follow advice on their wiki about specifying the IPython path and adding a Python path pointing to a Python 2 install (in a config file called <code>beaker.pref.json</code>).  Beaker's wiki is, in general, very helpful I've found thus far.</p>
 <h3 id="themes-design-can-win-people-over">Themes:  design can win people over</h3>
-<p><img alt="" src="../img/jupyter_beaker/jupyter_basic_js.png" />
+<p><img alt="" src="/img/jupyter_beaker/jupyter_basic_js.png" />
 <p align="right"><b>A Jupyter notebook with the <code>mm_dark_theme</code> (theme by Milos Miljkovic and found on GitHub)</b></p></p>
 <p>Out of the box, we get a couple of themes for our notebooks with Beaker,  Default and Ambiance.  With Jupyter, we can add any theme we'd like or like to create in a few ways, but my favorite and simplest is just adding a <code>custom.js</code> and <code>custom.css</code>  to a folder called <code>~/.jupyter/custom/</code> (create one if it's not there).  The <code>~</code> refers to the user's base directory, often used in Unix systems. </p>
 <p>For the Jupyter notebook above, I used a dark theme which is found <a href="https://github.com/miishke/mm_dark_theme">here</a>, but you can find them all over place on GitHub.  The installs will vary so I stick with the <code>custom.js</code> from the <code>mm_dark_theme</code> project/repository and just switch out the css files (probably not the best practice mind you, but I always give credit to the creators of the css, or stylesheets).</p>
@@ -668,6 +685,8 @@
               
               
                 
+
+
               
             </article>
           </div>
@@ -717,7 +736,7 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
@@ -725,8 +744,7 @@
       
         
   <div class="md-footer-social">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/michhar" class="md-footer-social__link fa fa-github"></a>
     
@@ -743,16 +761,16 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-86308542-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
