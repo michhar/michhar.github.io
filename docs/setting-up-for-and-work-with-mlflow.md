@@ -227,7 +227,41 @@ Choose the environment:
 
     az group delete -g localyoloenvrg
 
-## Conclusion
+## Setting up MLflow on Databricks
+
+Recommendations.  
+Set this up and begin with a PyTorch tutorial with Mlflow server to ensure all is well before moving on to code.
+
+Note:  Make sure the versions of packages on Databricks matches the versions of packages on the Linux VM hosting the Mlflow tracking server.
+
+
+1. Provision Databricks workspace on Azure - Premium tier in WestUS2 (Premium tier for access control so we can manage users)
+2. Provision a small, general-purpose Linux VM (Ubuntu 16.04 Server is good) for an ML tracking server to let us monitor, log and save artifacts from training experiments on Databricks:
+
+    * Use Password for authentication
+    * Open up traffic to 80 (HTTP) and 22 (SSH)
+3. Provision a new Storage Account or create a container for mlflow artifacts in an existing blob Storage Account.
+4. Follow directions for setting up the Mlflow tracking server on this new Linux VM at https://docs.azuredatabricks.net/spark/latest/mllib/mlflow.html#mlflow-mlflow-quick-start-notebook under "Set up a Remote MLflow Tracking Server"
+    * Use "python3" and "pip3"
+    * To get requirements installed (namely `azure-storage`), must first run from the VM:   
+    
+    `sudo apt-get install python3-pip python3-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev`
+
+    * Need to install "flask" to get this server working right:   pip3 install flask
+    * Add inbound rule for port 5000 to the network security gateway for this VM (should be in the same resource group as VM) - docs for this at https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal, but just note, an NSG already exists, so just add the rule there
+    * When starting the server make sure to start it in background with "&" - it should then be at  your `http://dnsname:5000`
+5. Set up for PyTorch and MLFlow by following this tutorial (instructions on Cluster set up there - do GPU with runtime 4.3): https://docs.azuredatabricks.net/_static/notebooks/mlflow/mlflow-pytorch-azure.html
+    * Make sure to set the Azure blob storage connection string in Databricks before trying Mlflow server tracking (see https://docs.azuredatabricks.net/spark/latest/mllib/mlflow.html#mlflow-mlflow-quick-start-notebook)
+    * If encountering trouble with cluster deployment, try Worker as NC12 and driver as NC12 type VM and ensure you have the proper quotas
+
+Set these in something like ".azurerc" and source it before launching the tracking server:
+
+AZURE_STORAGE_ACCESS_KEY=<keypart==>
+AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=whatsinaname;AccountKey=lotsofalphanumericsymbols==;EndpointSuffix=core.windows.net"
+
+## Example
+
+See an example MLflow project at https://github.com/michhar/mlflow-keras-example.
 
 <div id="disqus_thread"></div>
 <script>
