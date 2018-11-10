@@ -7,7 +7,9 @@ cover:
 tags: [build, pytorch, pytorch-1.0, how-to]
 ---
 
-<img src="img/pytorch_grows_up.jpg" width="30%" align="left" border=10>
+
+![](img/pytorch_grows_up.jpg)
+
 
 **tl;dr**:  Notes on building PyTorch 1.0 Preview and other versions from source including LibTorch, the PyTorch C++ API for fast inference with a strongly typed, compiled language.  So fast.
 
@@ -62,7 +64,7 @@ rm -fr pytorch
 
 * USE_OPENCV=1 - build with OpenCV support
 * BUILD_TORCH=ON - build LibTorch (C++ API)
-* CMAKE_PREFIX_PATH="/usr/bin/" - where to fine Python
+* CMAKE_PREFIX_PATH="/usr/bin/" - where to find Python
 * LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH - build lib paths
 * CUDA_BIN_PATH=/usr/local/cuda/bin - where to find current CUDA
 * CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda/ - where to find current CUDA Toolkit
@@ -80,17 +82,17 @@ rm -fr pytorch
 * Update `pip3` to `pip` as necessary (However, it's recommended to build with Python 3 system installs)
 * Update `CMAKE_PREFIX_PATH` to your `bin` where Python lives
 * Update `PYTORCH_COMMIT_ID` to one you wish to use.  Official release commit ids are
-  * v0.3.1 - `2b47480` (which I still needed for a project)
-  * v0.4.0 - `3749c58`
-  * v0.4.1 - `a24163a`
-  * v1.0rc1 - `ff608a9`
+    * v0.3.1 - `2b47480` (which I still needed for a project)
+    * v0.4.0 - `3749c58`
+    * v0.4.1 - `a24163a`
+    * v1.0rc1 - `ff608a9`
 * If compiling on macOS, update to the following:
-  * CC=clang
-  * CXX=clang++
-  * CUDA_HOST_COMPILER=clang
+    * CC=clang
+    * CXX=clang++
+    * CUDA_HOST_COMPILER=clang
 * To compile without CUDA support (e.g. on CPU-only), update to the following:
-  * USE_CUDA=0
-  * USE_NNPACK=0
+    * USE_CUDA=0
+    * USE_NNPACK=0
 
 ## Resources
 
@@ -102,8 +104,9 @@ Two binaries are available here, built with:
 - GPU:  NVIDIA GTX 1080
 
 Binaries built with above system:
+
 | PyTorch Version or Commit ID | Download Link |
-|---|---|
+| --- | --- |
 | 1.0 (commit id: 8619230) 94 MB | https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl |
 | 0.3.1 (commit id:  2b47480) 172 MB | https://generalstore123.blob.core.windows.net/pytorchwheels/torch-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl |
 
@@ -132,8 +135,8 @@ To PyTorch GitHub Issues with great activity and insights (https://github.com/py
      */
     
     var disqus_config = function () {
-        this.page.url = 'https://michhar.github.io/convolutional-in-layers-and-sequences/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'happycat1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://michhar.github.io/how-i-built-pytorch-gpu/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
