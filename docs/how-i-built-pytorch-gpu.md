@@ -118,6 +118,7 @@ Given the right hardware (Linux amd64 or even aarch64 like a TX2) - the above sc
 
 ## References
 
+1.  [PyTorch official build instructions](https://pytorch.org/get-started/locally/#mac-from-source)
 1.  [PyTorch official Dockerfile](https://github.com/pytorch/pytorch/blob/master/docker/pytorch/Dockerfile)
 2.  [Micheleen's GPU VM Dockerfile with a PyTorch+LibTorch build included](https://github.com/michhar/custom-jupyterhub-linux-vm/blob/master/Linux_py35_GPU.dockerfile#L199)
 3.  [NVCC from NVIDIA Docs](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
