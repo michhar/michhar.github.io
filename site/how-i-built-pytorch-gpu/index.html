@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="A report back on a tutorial on Python at the Data Science Summit in Atlanta, GA, 2016.">
+        <meta name="description" content="How to Build PyTorch Preview and Other Versions">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Python for Data Science Goes Into the Wild</title>
+        <title>Building PyTorch with LibTorch From Source with CUDA Support</title>
       
     
     
@@ -81,6 +81,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -103,7 +107,7 @@
                 Micheleen's Blog
               </span>
               <span class="md-header-nav__topic">
-                Python for Data Science Goes Into the Wild
+                Building PyTorch with LibTorch From Source with CUDA Support
               </span>
             
           
@@ -184,10 +188,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       2018
@@ -203,11 +209,100 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../how-i-built-pytorch-gpu/" title="Building PyTorch with LibTorch From Source with CUDA Support" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Building PyTorch with LibTorch From Source with CUDA Support
+      </label>
+    
+    <a href="./" title="Building PyTorch with LibTorch From Source with CUDA Support" class="md-nav__link md-nav__link--active">
       Building PyTorch with LibTorch From Source with CUDA Support
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" title="Instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-flag-meanings" title="Build flag meanings" class="md-nav__link">
+    Build flag meanings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-script-that-may-be-necessary" title="Changes to script that may be necessary" class="md-nav__link">
+    Changes to script that may be necessary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" title="Resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-yous" title="Thank Yous" class="md-nav__link">
+    Thank Yous
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -412,12 +507,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       2016
@@ -469,18 +562,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Python for Data Science Goes Into the Wild" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../notebooks1-post/" title="Python for Data Science Goes Into the Wild" class="md-nav__link">
       Python for Data Science Goes Into the Wild
     </a>
-    
   </li>
 
         
@@ -496,115 +582,245 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" title="Instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-flag-meanings" title="Build flag meanings" class="md-nav__link">
+    Build flag meanings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-script-that-may-be-necessary" title="Changes to script that may be necessary" class="md-nav__link">
+    Changes to script that may be necessary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" title="Resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-yous" title="Thank Yous" class="md-nav__link">
+    Thank Yous
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Python for Data Science Goes Into the Wild</h1>
+                  <h1>Building PyTorch with LibTorch From Source with CUDA Support</h1>
                 
-                <p><strong>Posted:</strong> 2016-10-07</p>
-<p>I had a great time interacting with some of the most motivated people I've ever met at the <strong>Data Science Summit</strong> in Atlanta, GA, on September 26 and 27<sup>th</sup>.  </p>
-<p>The attendees showed up to learn new skills in the analytics domain.  A colleague and I delivered two courses for the price of one (well, at the very least they were in the same room - choose your own adventure) and we saw people so motivated, they worked for a full 3 hour session, heads down, and with an intense drive.  The courses were self-paced and self-guided with us there as proctors.  The other course in the room was on Microsoft R Server and SQL Server R Services, however my expertise lay in <strong>Python for Data Science</strong>, a course I created and that was recently released on the landing page of <a href="https://notebooks.azure.com">https://notebooks.azure.com</a>.  This course's audience includes those:</p>
+                <p><img alt="" src="../img/pytorch_grows_up.jpg" /></p>
+<p><strong>tl;dr</strong>:  Notes on building PyTorch 1.0 Preview and other versions from source including LibTorch, the PyTorch C++ API for fast inference with a strongly typed, compiled language.  So fast.</p>
+<p><strong>Posted:</strong>  2018-11-10</p>
+<h2 id="introduction">Introduction</h2>
+<p>I'd like to share some notes on building PyTorch from source from various releases using commit ids.  This process allows you to build from any commit id, so you are not limited to a release number only.</p>
+<p>I've used this to build PyTorch with LibTorch for Linux amd64 with an NVIDIA GPU and Linux aarch64 (e.g. NVIDIA Jetson TX2).</p>
+<h2 id="instructions">Instructions</h2>
+<p>Create a shell script with the following contents (this being only an example) and refer to rest of post for possible changes you may have to make.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Post 1.0rc1 for a few fixes I needed</span>
+<span class="nv">PYTORCH_COMMIT_ID</span><span class="o">=</span><span class="s2">&quot;8619230&quot;</span>
+
+<span class="c1"># Clone, checkout specific commit and build for GPU with CUDA support</span>
+git clone https://github.com/pytorch/pytorch.git <span class="o">&amp;&amp;</span><span class="se">\</span>
+    <span class="nb">cd</span> pytorch <span class="o">&amp;&amp;</span> git checkout <span class="si">${</span><span class="nv">PYTORCH_COMMIT_ID</span><span class="si">}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    git submodule update --init --recursive  <span class="o">&amp;&amp;</span><span class="se">\</span>
+    pip3 install <span class="nv">pyyaml</span><span class="o">==</span><span class="m">3</span>.13 <span class="o">&amp;&amp;</span><span class="se">\</span>
+    pip3 install -r requirements.txt <span class="o">&amp;&amp;</span><span class="se">\</span>
+    <span class="nv">USE_OPENCV</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">BUILD_TORCH</span><span class="o">=</span>ON <span class="se">\</span>
+    <span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/bin/&quot;</span> <span class="se">\</span>
+    <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda/lib64:/usr/local/lib:<span class="nv">$LD_LIBRARY_PATH</span> <span class="se">\</span>
+    <span class="nv">CUDA_BIN_PATH</span><span class="o">=</span>/usr/local/cuda/bin <span class="se">\</span>
+    <span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span>/usr/local/cuda/ <span class="se">\</span>
+    <span class="nv">CUDNN_LIB_DIR</span><span class="o">=</span>/usr/local/cuda/lib64 <span class="se">\</span>
+    <span class="nv">CUDA_HOST_COMPILER</span><span class="o">=</span>cc <span class="se">\</span>
+    <span class="nv">USE_CUDA</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">USE_NNPACK</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">CC</span><span class="o">=</span>cc <span class="se">\</span>
+    <span class="nv">CXX</span><span class="o">=</span>c++ <span class="se">\</span>
+    <span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;3.5 5.2 6.0 6.1+PTX&quot;</span> <span class="se">\</span>
+    <span class="nv">TORCH_NVCC_FLAGS</span><span class="o">=</span><span class="s2">&quot;-Xfatbin -compress-all&quot;</span> <span class="se">\</span>
+    python3 setup.py bdist_wheel
+
+<span class="c1"># Install the Python wheel (includes LibTorch)</span>
+pip3 install dist/*.whl
+
+<span class="c1"># Clean up resources</span>
+rm -fr pytorch
+</pre></div>
+
 <ul>
-<li>New to Python</li>
-<li>Experienced with Python, but not data science</li>
-<li>In need of a refresher</li>
-<li>Hoping to learn a little about the Python 2 to 3 change</li>
-<li>In need of a handy modular reference</li>
-<li>...</li>
+<li>Note, the size of the binary/wheel can be up to 180 MB.</li>
 </ul>
-<p>Azure Notebooks was released the first day of the courses and used for the 13-module <code>Python for Data Science</code> course covering,</p>
-<p><em>for those new to Python,</em></p>
+<h3 id="build-flag-meanings">Build flag meanings</h3>
+<ul>
+<li>USE_OPENCV=1 - build with OpenCV support</li>
+<li>BUILD_TORCH=ON - build LibTorch (C++ API)</li>
+<li>CMAKE_PREFIX_PATH="/usr/bin/" - where to find Python</li>
+<li>LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH - build lib paths</li>
+<li>CUDA_BIN_PATH=/usr/local/cuda/bin - where to find current CUDA</li>
+<li>CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda/ - where to find current CUDA Toolkit</li>
+<li>CUDNN_LIB_DIR=/usr/local/cuda/lib64 - where to find cuDNN install</li>
+<li>CUDA_HOST_COMPILER=cc - sets the host compiler to be used by nvcc</li>
+<li>USE_CUDA=1 - compile with CUDA support</li>
+<li>USE_NNPACK=1 - compile with cuDNN</li>
+<li>CC=cc - which C compiler to use for PyTorch build</li>
+<li>CXX=c++ - which C++ compiler to use for PyTorch build</li>
+<li>TORCH_CUDA_ARCH_LIST="3.5 5.2 6.0 6.1+PTX" - GPU architectures to accomodate</li>
+<li>TORCH_NVCC_FLAGS="-Xfatbin -compress-all" - extra <code>nvcc</code> (NVIDIA CUDA compiler driver) flags</li>
+</ul>
+<h3 id="changes-to-script-that-may-be-necessary">Changes to script that may be necessary</h3>
+<ul>
+<li>Update <code>pip3</code> to <code>pip</code> as necessary (However, it's recommended to build with Python 3 system installs)</li>
+<li>Update <code>CMAKE_PREFIX_PATH</code> to your <code>bin</code> where Python lives</li>
+<li>Update <code>PYTORCH_COMMIT_ID</code> to one you wish to use.  Official release commit ids are<ul>
+<li>v0.3.1 - <code>2b47480</code> (which I still needed for a project)</li>
+<li>v0.4.0 - <code>3749c58</code></li>
+<li>v0.4.1 - <code>a24163a</code></li>
+<li>v1.0rc1 - <code>ff608a9</code></li>
+</ul>
+</li>
+<li>If compiling on macOS, update to the following:<ul>
+<li>CC=clang</li>
+<li>CXX=clang++</li>
+<li>CUDA_HOST_COMPILER=clang</li>
+</ul>
+</li>
+<li>To compile without CUDA support (e.g. on CPU-only), update to the following:<ul>
+<li>USE_CUDA=0</li>
+<li>USE_NNPACK=0</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<p>Two binaries are available here, built with:</p>
+<ul>
+<li>System: Linux Ubuntu 16.04</li>
+<li>Machine: x86_64</li>
+<li>CUDA:  9.2</li>
+<li>GPU:  NVIDIA GTX 1080</li>
+</ul>
+<p>Binaries built with above system:</p>
+<table>
+<thead>
+<tr>
+<th>PyTorch Version or Commit ID</th>
+<th>Download Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0 (commit id: 8619230) 94 MB</td>
+<td><a href="https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl">https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl</a></td>
+</tr>
+<tr>
+<td>0.3.1 (commit id:  2b47480) 172 MB</td>
+<td><a href="https://generalstore123.blob.core.windows.net/pytorchwheels/torch-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl">https://generalstore123.blob.core.windows.net/pytorchwheels/torch-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>aarch64 binaries coming soon.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Given the right hardware (Linux amd64 or even aarch64 like a TX2) - the above script will work to build PyTorch and LibTorch.  Leave a comment if you wish - issues or suggestions welcome.</p>
+<h2 id="references">References</h2>
 <ol>
-<li>Basics</li>
-<li>Data Structures</li>
-<li>Functional Programming</li>
-<li>Sorting and Pattern Matching</li>
-<li>Object Oriented Programming</li>
-<li>Basic Difference from 2 to 3<br><br><em>and for the DS,</em><br><br></li>
-<li>Numerical Computing</li>
-<li>Data Analysis with pandas I</li>
-<li>Data Analysis with pandas II</li>
-<li>Machine Learning I - ML Basics and Data Exploration</li>
-<li>Machine Learning II - Supervised and Unsupervised Learning</li>
-<li>Machine Learning III - Parameter Tuning and Model Evaluation</li>
-<li>Visualization</li>
+<li><a href="https://github.com/pytorch/pytorch/blob/master/docker/pytorch/Dockerfile">PyTorch official Dockerfile</a></li>
+<li><a href="https://github.com/michhar/custom-jupyterhub-linux-vm/blob/master/Linux_py35_GPU.dockerfile#L199">Micheleen's GPU VM Dockerfile with a PyTorch+LibTorch build included</a></li>
+<li><a href="https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html">NVCC from NVIDIA Docs</a></li>
 </ol>
-<p>This course includes the gambit.  From list comprehension:</p>
-<p><div class="highlight"><pre><span></span><span class="c1"># Solution to list comprehension exercise</span>
-<span class="c1"># Solution to list comprehension exercise</span>
-<span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;thepurposeoflife&#39;</span><span class="p">)</span>
+<h2 id="thank-yous">Thank Yous</h2>
+<p>To PyTorch GitHub Issues with great activity and insights (<a href="https://github.com/pytorch/pytorch/issues">https://github.com/pytorch/pytorch/issues</a>) and the official PyTorch Forums (<a href="https://discuss.pytorch.org/">https://discuss.pytorch.org/</a>).</p>
+<div id="disqus_thread"></div>
 
-<span class="c1"># Place your list comprehension below</span>
-<span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;e&#39;</span> <span class="k">else</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">]</span>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
-</pre></div>
-<br>
-Which gets you: <code>thEpurposEoflifE</code></p>
-<p>To anomaly detection with a one-class SVM in <code>scikit-learn</code>:</p>
-<p><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
+    var disqus_config = function () {
+        this.page.url = 'https://michhar.github.io/how-i-built-pytorch-gpu/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
+        s.src = 'https://michhar.disqus.com/embed.js';
 
-<span class="c1"># Iris data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
-<span class="c1"># Taking only two columns...</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="c1"># split</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> 
-    <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># make some outliers</span>
-<span class="n">X_weird</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># fit the model</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">OneClassSVM</span><span class="p">(</span><span class="n">nu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-
-<span class="c1"># predict labels</span>
-<span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred_outliers</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_weird</span><span class="p">)</span>
-</pre></div>
-<br></p>
-<p>Which when plotted in <code>matplotlib</code> results in revealing some decision boundaries around if a value is weird or not from the iris dataset (and some made-up values for testing):</p>
-<p><img alt="anomalies in scikit-learn image" src="../img/novelty.png" /></p>
-<p>You can find the Notebooks offering at <a href="https://notebooks.azure.com">https://notebooks.azure.com</a> and the Python course on the main page with the tutorials near the bottom and titled  <em>Fundamentals of Data Science with Python</em>.  It's free, just like the product, Azure Notebooks.  The course is actually a <em>Library</em>.  </p>
-<p>It was a really fun and challenging to create and I'm so very glad to have it released into the wild.  It contains exercises as well, some simple and some for those who enjoy a challenge themselves.  </p>
-<p>For example, in this exercise a student is asked to create a Wallet for your friend Amy, let Amy earn some money and then let Amy spend some of that money.</p>
-<p><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Wallet</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;The Wallet class holds cash for a owner.&#39;&#39;&#39;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">cash</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cash</span> <span class="o">=</span> <span class="n">cash</span>
-
-    <span class="c1"># Spend method</span>
-    <span class="k">def</span> <span class="nf">spend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;The spend method removes a given amount of money from the wallet.&#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cash</span> <span class="o">-=</span> <span class="n">amount</span>
-
-    <span class="c1"># Earn method</span>
-    <span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;The earn method adds a given amount of money to the wallet.&#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cash</span> <span class="o">+=</span> <span class="n">amount</span>
-</pre></div>
-<br></p>
-<p>I can't wait to add more modules.  Python will attack big data in the next one with <code>dask</code>.  Stay tuned.</p>
-<p>My colleague and I also made use of the "stickies" teacher's aid.  We handed out blue and red sticky notes to all of the attendees and so when they had a question or got stuck, they could simply place a red sticky on the front of their laptop and we could see the "flag" and come to help.  This way the attendees didn't need to raise a hand at all, creating a situation where everyone had a chance to get questions answered or help when they needed without a tired arm or feeling as if they were disrupting the self-paced classroom.</p>
-<p>The Jupyter notebooks were new to about 90% of the attendees so an <em>in promptu</em> tutorial was given at the beginning to familiarize the attendees with the learning framework.  An introduction to Python-flavored Jupyter notebooks is provided on my GitHub on  <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/general/NotebookAnatomy.ipynb">this notebook</a>.  If you are looking for an R-flavored one, I have one <a href="https://github.com/michhar/useR2016-tutorial-jupyter/blob/master/notebook_basics/02.General%20anatomy.ipynb">here</a>.  Please enjoy and know there are tons of resources on the net regarding Jupyter notebooks and learning Python or R (Jupyter actually is a portmanteau of Julia, Python and R).  I plan to write a short blog on using them and multi-tenant Jupyter notebook frameworks for teaching in another blog post.  Many posts have been promised so I better end this one.</p>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                 
                   
                 
@@ -625,7 +841,7 @@ Which gets you: <code>thEpurposEoflifE</code></p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../teaching-notes-post/" title="Tips I have Learned by Being a Trainer for a Year" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -634,11 +850,25 @@ Which gets you: <code>thEpurposEoflifE</code></p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Tips I have Learned by Being a Trainer for a Year
+                Home
               </span>
             </div>
           </a>
         
+        
+          <a href="../convert-pytorch-onnx/" title="How to Convert a PyTorch Model to ONNX Format" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                How to Convert a PyTorch Model to ONNX Format
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
