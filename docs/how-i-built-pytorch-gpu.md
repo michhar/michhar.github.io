@@ -7,7 +7,7 @@ cover:
 tags: [build, pytorch, pytorch-1.0, how-to]
 ---
 
-<img src="img/pytorch_grows_up.md" width="30%" align="left" border=10>
+<img src="img/pytorch_grows_up.jpg" width="30%" align="left" border=10>
 
 **tl;dr**:  Notes on building PyTorch 1.0 Preview and other versions from source including LibTorch, the PyTorch C++ API for fast inference with a strongly typed, compiled language.  So fast.
 
