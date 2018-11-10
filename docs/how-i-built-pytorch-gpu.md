@@ -8,7 +8,7 @@ tags: [build, pytorch, pytorch-1.0, how-to]
 ---
 
 
-![](img/pytorch_grows_up.jpg)
+![](img/my_desk_building_pytorch.jpg)
 
 
 **tl;dr**:  Notes on building PyTorch 1.0 Preview and other versions from source including LibTorch, the PyTorch C++ API for fast inference with a strongly typed, compiled language.  So fast.
