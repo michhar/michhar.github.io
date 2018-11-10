@@ -21,7 +21,7 @@ I've used this to build PyTorch with LibTorch for Linux amd64 with an NVIDIA GPU
 
 ## Instructions
 
-Create a shell script with the following contents as an example and refer to rest of post for possible changes you may have to make.
+Create a shell script with the following contents (this being only an example) and refer to rest of post for possible changes you may have to make.
 
 ```bash
 # Post 1.0rc1 for a few fixes I needed
