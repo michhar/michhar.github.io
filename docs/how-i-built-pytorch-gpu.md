@@ -92,25 +92,7 @@ rm -fr pytorch
     * CUDA_HOST_COMPILER=clang
 * To compile without CUDA support (e.g. on CPU-only), update to the following:
     * USE_CUDA=0
-    * USE_NNPACK=0
-
-## Resources
-
-Two binaries are available here, built with:
-
-- System: Linux Ubuntu 16.04
-- Machine: x86_64
-- CUDA:  9.2
-- GPU:  NVIDIA GTX 1080
-
-Binaries built with above system:
-
-| PyTorch Version or Commit ID | Download Link |
-| --- | --- |
-| 1.0 (commit id: 8619230) 94 MB | https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl |
-| 0.3.1 (commit id:  2b47480) 172 MB | https://generalstore123.blob.core.windows.net/pytorchwheels/torch-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl |
-
-* aarch64 binaries coming soon.
+    * USE_NNPACK=0 
 
 ## Conclusion
 
