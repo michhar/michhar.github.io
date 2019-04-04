@@ -40,9 +40,9 @@ In a CRF, we have the concept of a _transition matrix_ which is the costs associ
 
 Say **B** is the tag for the beginning of an entity, **I** signifies that we are inside an entity (will follow a **B**) and **O** means we are outside an entity. 
 
-Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by the way, there are a myriad of other schemes out there - see [Referenes](#references) for some more).
+Next, is an example of B-I-O scheme labeling for finding nouns in a sentence (by the way, there are a myriad of other schemes out there - see [Referenes](#references) for some more).
 
-| Word | Schema Tag |
+| Word | Scheme Tag |
 | --- | --- |
 | She | B |
 | was | O |
@@ -56,17 +56,17 @@ Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by
 | in | O |
 | Texas | B |
 
-Let's look at the transition matrix for the costs of moving from one tag (using our B-I-O schema) to the next (remember our Bi-LSTM is understanding both the forward and reverse ordering to get more accurate boundaries for the named entities).
+Let's look at the transition matrix for the costs of moving from one tag (using our B-I-O scheme) to the next (remember our Bi-LSTM is understanding both the forward and reverse ordering to get more accurate boundaries for the named entities).
 
 <img src="https://raw.githubusercontent.com/PythonWorkshop/intro-to-nlp-with-pytorch/master/images//crf_transition_matrix.png" width="70%">
 
-The mathematical derivations for calculating this matrix and decoding it is beyond the scope of this workshop, however if you wish to learn more see [this](http://www.cs.columbia.edu/~mcollins/crf.pdf) article.
+The mathematical derivations for calculating this matrix and decoding it is beyond the scope of this post, however if you wish to learn more see [this](http://www.cs.columbia.edu/~mcollins/crf.pdf) article.
 
 ### Viterbi Algorithm
 
 If each Bi-LSTM instance (time step) has an associated output feature map and CRF transition and emission values, then each of these time step outputs will need to be decoded into a path through potential tags and a final score determined.  This is the purpose of the Viterbi algorithm, here, which is commonly used in conjunction with CRFs.
 
-Specifically, the Viterbi algorithm finds the optimal path through a sequence given a cost function by tracing backwards through a graph of all possible paths.  There are computational tricks to finding this path in the high dimensional space and we will see this in the code below (`_forward_backwards_trick`).
+Specifically, the Viterbi algorithm finds the optimal path through a sequence given a cost function by tracing backwards through a graph of all possible paths.  There are computational tricks to finding this path in the high dimensional space and you can find out more in the PyTorch tutorial code link [below](#code) (`_forward_backwards_trick`).
 
 Here, let's see a simple example of just the Viterbi algorithm.  The simplicity of Viterbi is that at each time step, it "looks to the left" to find that best path and then moves to the right, repeating this "look to the left" until a "survivor path" or optimal path is found with the last column being the possible tags.  The score may also be found by tracing backwards along this path and using the metric decided upon.
 
