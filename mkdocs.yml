@@ -1,6 +1,8 @@
 site_name: happy donuts and machine learning tidbits
 pages:
     - Home: index.md
+    - 2019:
+        - 'Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm': 'bilstm-crf-this-is-mind-bending.md'
     - 2018:
       - 'Building PyTorch with LibTorch From Source with CUDA Support': 'how-i-built-pytorch-gpu.md'
       - 'How to Convert a PyTorch Model to ONNX Format': 'convert-pytorch-onnx.md'
