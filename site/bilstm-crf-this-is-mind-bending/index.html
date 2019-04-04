@@ -747,12 +747,12 @@
 <p>We don't have to stop at the output vector from the Bi-LSTM!  We're not at our tag for the entity, yet.  We need to understand costs of moving from one tag to the next (or staying put on a tag, even).</p>
 <p>In a CRF, we have the concept of a <em>transition matrix</em> which is the costs associated with transitioning from one tag to another - a transition matrix is calculated/trained for each time step.  It is used in the determination of the best path through all potential sequences.</p>
 <p>Say <strong>B</strong> is the tag for the beginning of an entity, <strong>I</strong> signifies that we are inside an entity (will follow a <strong>B</strong>) and <strong>O</strong> means we are outside an entity. </p>
-<p>Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by the way, there are a myriad of other schemes out there - see <a href="#references">Referenes</a> for some more).</p>
+<p>Next, is an example of B-I-O scheme labeling for finding nouns in a sentence (by the way, there are a myriad of other schemes out there - see <a href="#references">Referenes</a> for some more).</p>
 <table>
 <thead>
 <tr>
 <th>Word</th>
-<th>Schema Tag</th>
+<th>Scheme Tag</th>
 </tr>
 </thead>
 <tbody>
@@ -802,12 +802,12 @@
 </tr>
 </tbody>
 </table>
-<p>Let's look at the transition matrix for the costs of moving from one tag (using our B-I-O schema) to the next (remember our Bi-LSTM is understanding both the forward and reverse ordering to get more accurate boundaries for the named entities).</p>
+<p>Let's look at the transition matrix for the costs of moving from one tag (using our B-I-O scheme) to the next (remember our Bi-LSTM is understanding both the forward and reverse ordering to get more accurate boundaries for the named entities).</p>
 <p><img src="https://raw.githubusercontent.com/PythonWorkshop/intro-to-nlp-with-pytorch/master/images//crf_transition_matrix.png" width="70%"></p>
-<p>The mathematical derivations for calculating this matrix and decoding it is beyond the scope of this workshop, however if you wish to learn more see <a href="http://www.cs.columbia.edu/~mcollins/crf.pdf">this</a> article.</p>
+<p>The mathematical derivations for calculating this matrix and decoding it is beyond the scope of this post, however if you wish to learn more see <a href="http://www.cs.columbia.edu/~mcollins/crf.pdf">this</a> article.</p>
 <h3 id="viterbi-algorithm">Viterbi Algorithm</h3>
 <p>If each Bi-LSTM instance (time step) has an associated output feature map and CRF transition and emission values, then each of these time step outputs will need to be decoded into a path through potential tags and a final score determined.  This is the purpose of the Viterbi algorithm, here, which is commonly used in conjunction with CRFs.</p>
-<p>Specifically, the Viterbi algorithm finds the optimal path through a sequence given a cost function by tracing backwards through a graph of all possible paths.  There are computational tricks to finding this path in the high dimensional space and we will see this in the code below (<code>_forward_backwards_trick</code>).</p>
+<p>Specifically, the Viterbi algorithm finds the optimal path through a sequence given a cost function by tracing backwards through a graph of all possible paths.  There are computational tricks to finding this path in the high dimensional space and you can find out more in the PyTorch tutorial code link <a href="#code">below</a> (<code>_forward_backwards_trick</code>).</p>
 <p>Here, let's see a simple example of just the Viterbi algorithm.  The simplicity of Viterbi is that at each time step, it "looks to the left" to find that best path and then moves to the right, repeating this "look to the left" until a "survivor path" or optimal path is found with the last column being the possible tags.  The score may also be found by tracing backwards along this path and using the metric decided upon.</p>
 <p>In this example the optimal score (via a metric) is the lowest one, however, one could also look for the highest scoring path if another metric is used as is shown next.</p>
 <p><img src="https://raw.githubusercontent.com/PythonWorkshop/intro-to-nlp-with-pytorch/master/images/viterbi.png" width="70%"></p>
