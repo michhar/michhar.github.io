@@ -58,7 +58,7 @@ Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by
 
 Let's look at the transition matrix for the costs of moving from one tag (using our B-I-O schema) to the next (remember our Bi-LSTM is understanding both the forward and reverse ordering to get more accurate boundaries for the named entities).
 
-<img src="img/bilstm/crf_transition_matrix.png" width="60%">
+<img src="https://raw.githubusercontent.com/PythonWorkshop/intro-to-nlp-with-pytorch/master/images//crf_transition_matrix.png" width="70%">
 
 The mathematical derivations for calculating this matrix and decoding it is beyond the scope of this workshop, however if you wish to learn more see [this](http://www.cs.columbia.edu/~mcollins/crf.pdf) article.
 
@@ -79,7 +79,7 @@ Getting more realistic...
 
 With regards to our NER work here, below is an example of a "survivor" path within the context of the linear-CRF where we are trying to find the highest scoring path through a sequence (giving us the tags and final score).  The transition matrix values are represented by the arrows and a sequence vector is shown as part of the overall cost function.
 
-<img src="img/bilstm/linear_crf_example.png" width="70%">
+<img src="https://raw.githubusercontent.com/PythonWorkshop/intro-to-nlp-with-pytorch/master/images/linear_crf_example.png" width="70%">
 
 ### Putting it All Together
 
