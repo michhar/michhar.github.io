@@ -729,23 +729,25 @@
 <p><strong>Posted:</strong>  2019-04-03</p>
 <h2 id="outline">Outline</h2>
 <ul>
-<li>Definitions</li>
+<li>Definitions<ul>
 <li>Bi-LSTM</li>
 <li>Named Entity Recognition Task</li>
 <li>CRF and potentials</li>
 <li>Viterbi</li>
 </ul>
+</li>
+</ul>
 <h2 id="definitions">Definitions</h2>
 <h3 id="bi-lstm-bidirectional-long-short-term-memory">Bi-LSTM (Bidirectional-Long Short-Term Memory)</h3>
-<p>As we saw, an LSTM addresses the vanishing gradient problem of the generic RNN by adding cell state and more non-linear activation function layers to pass on or attenuate signals to varying degrees.  However, the main limitation of an LSTM is that it can <strong>only account for context from the past</strong>, that is, the hidden state, h_t, takes only past information as input.</p>
+<p>As you may know an LSTM addresses the vanishing gradient problem of the generic RNN by adding cell state and more non-linear activation function layers to pass on or attenuate signals to varying degrees.  However, the main limitation of an LSTM is that it can <strong>only account for context from the past</strong>, that is, the hidden state, h_t, takes only past information as input.</p>
 <h3 id="named-entity-recognition-task">Named Entity Recognition Task</h3>
-<p>For the task of <strong>Named Entity Recognition (NER)</strong> it is helpful to have context from past as well as the future, or left and right contexts.  This can be addressed with a Bi-LSTM which is two LSTMs, one processing information in a forward fashion as we have already seen and another LSTM that processes the sequences in a reverse fashion giving the future context.  <em>That second LSTM is just reading the sentence in reverse.</em>  </p>
+<p>For the task of <strong>Named Entity Recognition (NER)</strong> it is helpful to have context from past as well as the future, or left and right contexts.  This can be addressed with a Bi-LSTM which is two LSTMs, one processing information in a forward fashion and another LSTM that processes the sequences in a reverse fashion giving the future context.  <em>That second LSTM is just reading the sentence in reverse.</em>  </p>
 <p>The hidden states from both LSTMs are then concatenated into a final output layer or vector.</p>
 <h3 id="conditional-random-field">Conditional Random Field</h3>
 <p>We don't have to stop at the output vector from the Bi-LSTM!  We're not at our tag for the entity, yet.  We need to understand costs of moving from one tag to the next (or staying put on a tag, even).</p>
 <p>In a CRF, we have the concept of a <em>transition matrix</em> which is the costs associated with transitioning from one tag to another - a transition matrix is calculated/trained for each time step.  It is used in the determination of the best path through all potential sequences.</p>
 <p>Say <strong>B</strong> is the tag for the beginning of an entity, <strong>I</strong> signifies that we are inside an entity (will follow a <strong>B</strong>) and <strong>O</strong> means we are outside an entity. </p>
-<p>Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by the way, there are a myriad of other schemas out there - see <a href="#references">Referenes</a> for some more).</p>
+<p>Next, is an example of B-I-O schema labeling for finding nouns in a sentence (by the way, there are a myriad of other schemes out there - see <a href="#references">Referenes</a> for some more).</p>
 <table>
 <thead>
 <tr>
@@ -822,14 +824,38 @@
 <p>For a more in-depth discussion, see this excellent post describing the Bi-LSTM, CRF and usage of the Viterbi Algorithm (among other NER concepts and equations): <a href="https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html" target="_blank">Reference</a>.</p>
 </blockquote>
 <h3 id="code">Code</h3>
-<p>See this PyTorch official <a href="https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html" target="_blank">Tutorial Link</a> for the code and wonderful explanations.</p>
+<p>See this PyTorch official <a href="https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html" target="_blank">Tutorial Link</a> for the code and good explanations.</p>
 <h3 id="references">References</h3>
 <ol>
 <li><a href="https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66">Understanding Bidirectional RNN in PyTorch</a></li>
 <li><a href="https://towardsdatascience.com/conditional-random-field-tutorial-in-pytorch-ca0d04499463">Conditional Random Field Tutorial in PyTorch</a></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/S1532046417300977">Character-level neural network for biomedical named entity recognition</a></li>
-<li><a href="https://lingpipe-blog.com/2009/10/14/coding-chunkers-as-taggers-io-bio-bmewo-and-bmewo/">Other named entity tag schemas</a></li>
+<li><a href="https://lingpipe-blog.com/2009/10/14/coding-chunkers-as-taggers-io-bio-bmewo-and-bmewo/">Other named entity tag schemes</a></li>
 </ol>
+<div id="disqus_thread"></div>
+
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = 'https://michhar.github.io/bilstm-crf-this-is-mind-bending/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://michhar.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                 
                   
                 
