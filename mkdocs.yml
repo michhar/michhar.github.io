@@ -1,4 +1,4 @@
-site_name: happy donuts and machine learning tidbits
+site_name: A blog on data science in the world of software development
 pages:
     - Home: index.md
     - 2019:
@@ -25,13 +25,10 @@ pages:
       - 'Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac': 'how-to-bot-on-mac.md' # 2016-11-07
       - 'Tips I have Learned by Being a Trainer for a Year': 'teaching-notes-post.md'
       - 'Python for Data Science Goes Into the Wild': 'notebooks1-post.md'
-
+repo_url: https://github.com/michhar/michhar.github.io
 theme: 
-  name: 'material'
-  palette:
-    primary: 'teal'
-    secondary: 'blue'
-
+  name: alabaster
+  custom_dir: docs/extra_html
 
 markdown_extensions:
   - pymdownx.arithmatex
@@ -55,12 +52,19 @@ extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 
-# google_analytics: ['UA-86308542-1', 'https://michhar.github.io']
 google_analytics:
   - UA-86308542-1
   - auto
   
 extra:
+  logo: img/RheartPython.jpg
+  homepage_sidebars:
+    - about
+    - navigation
+  sidebars:
+    - about
+    - navigation
+
   social:
     - type: 'github'
       link: 'https://github.com/michhar'
