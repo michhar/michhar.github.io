@@ -50,8 +50,8 @@
 <h2 id="the-general-steps">The General Steps</h2>
 <ol>
 <li>Define the model class (if using a custom model)</li>
-<li>Train the model and load the weights (<code>.pth</code> file by convention) to something usually called the <code>state_dict</code> or load a pre-trained model such as is found in <code>torchvision.models</code></li>
-<li>Create a properly shaped input vector</li>
+<li>Train the model and/or load the weights, usually a <code>.pth</code> or <code>.pt</code> file by convention, to something usually called the <code>state_dict</code> - note, we are <em>only</em> loading the weights from a file.  A pre-trained model such as is found in <code>torchvision.models</code> may also be used with the provided weights (using <code>pretrained=True</code> - see below).</li>
+<li>Create a properly shaped input vector (can be some sample data - the important part is the shape)</li>
 <li>(Optional) Give the input and output layers names (to later reference back)</li>
 <li>Export to ONNX format with the PyTorch ONNX exporter</li>
 </ol>
@@ -109,11 +109,13 @@
 </blockquote>
 <h2 id="summary">Summary</h2>
 <p>Here, I showed how to take a pre-trained PyTorch model (a weights object and network class object) and convert it to ONNX format (that contains the weights and net structure).</p>
+<p>As of now, we can not import an ONNX model for use in PyTorch.  There are other projects that are working on this as well as is shown in <a href="https://github.com/ysh329/deep-learning-model-convertor" target="_blank">this list</a>.</p>
 <h2 id="more-references">More References</h2>
 <ol>
-<li><a href="https://pytorch.org/docs/stable/onnx.html#module-torch.onnx">Example: End-to-end AlexNet from PyTorch to Caffe2</a></li>
-<li><a href="https://github.com/onnx/onnx">ONNX GitHub</a></li>
-<li><a href="https://pytorch.org">PyTorch.org</a></li>
+<li><a href="https://pytorch.org/docs/stable/onnx.html#module-torch.onnx" target="_blank">Example: End-to-end AlexNet from PyTorch to Caffe2</a></li>
+<li><a href="https://github.com/onnx/onnx" target="_blank">ONNX GitHub</a></li>
+<li><a href="https://pytorch.org" target="_blank">PyTorch.org</a></li>
+<li><a href="https://github.com/michhar/pytorch-yolo-v3-custom/blob/master/convert2onnx.py" target="_blank">For a more complicated example, see this conversion</a></li>
 </ol>
 <div id="disqus_thread"></div>
 
@@ -439,7 +441,7 @@
 
   <!--
   MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-04-17 00:12:46
+  Docs Build Date UTC : 2019-07-06 21:56:56
   -->
 </body>
 </html>
