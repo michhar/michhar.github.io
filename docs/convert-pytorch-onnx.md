@@ -18,8 +18,8 @@ I don't write out the model classes, however, I wanted to share the steps and co
 ## The General Steps
 
 1. Define the model class (if using a custom model)
-2. Train the model and load the weights (`.pth` file by convention) to something usually called the `state_dict` or load a pre-trained model such as is found in `torchvision.models`
-3. Create a properly shaped input vector
+2. Train the model and/or load the weights, usually a `.pth` or `.pt` file by convention, to something usually called the `state_dict` - note, we are _only_ loading the weights from a file.  A pre-trained model such as is found in `torchvision.models` may also be used with the provided weights (using `pretrained=True` - see below).
+3. Create a properly shaped input vector (can be some sample data - the important part is the shape)
 5. (Optional) Give the input and output layers names (to later reference back)
 6. Export to ONNX format with the PyTorch ONNX exporter
 
@@ -86,11 +86,16 @@ torch.onnx.export(model, dummy_input, "alexnet.onnx", verbose=True, input_names=
 
 Here, I showed how to take a pre-trained PyTorch model (a weights object and network class object) and convert it to ONNX format (that contains the weights and net structure).
 
+As of now, we can not import an ONNX model for use in PyTorch.  There are other projects that are working on this as well as is shown in <a href="https://github.com/ysh329/deep-learning-model-convertor" target="_blank">this list</a>.
+
+
+
 ## More References
 
-1. [Example: End-to-end AlexNet from PyTorch to Caffe2](https://pytorch.org/docs/stable/onnx.html#module-torch.onnx)
-2. [ONNX GitHub](https://github.com/onnx/onnx)
-3. [PyTorch.org](https://pytorch.org)
+1. <a href="https://pytorch.org/docs/stable/onnx.html#module-torch.onnx" target="_blank">Example: End-to-end AlexNet from PyTorch to Caffe2</a>
+2. <a href="https://github.com/onnx/onnx" target="_blank">ONNX GitHub</a>
+3. <a href="https://pytorch.org" target="_blank">PyTorch.org</a>
+4. <a href="https://github.com/michhar/pytorch-yolo-v3-custom/blob/master/convert2onnx.py" target="_blank">For a more complicated example, see this conversion</a>
 
 <div id="disqus_thread"></div>
 <script>
