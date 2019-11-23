@@ -162,6 +162,8 @@ The following is more of an implementation detail, but nonetheless, found it hel
 2. <a href="https://github.com/aleju/imgaug" target="_blank">`imgaug` augmentation Python library</a>
 3.  <a href="https://machinethink.net/blog/object-detection-with-yolo/" target="_blank">Real-time object detection with YOLO</a>
 4.  <a href="https://medium.com/luminovo/a-refresher-on-batch-re-normalization-5e0a1e902960" target="_blank">A refresher on batch (re-)normalization</a>
+
+
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -170,8 +172,8 @@ The following is more of an implementation detail, but nonetheless, found it hel
      */
     
     var disqus_config = function () {
-        this.page.url = 'https://michhar.github.io/bilstm-crf-this-is-mind-bending/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'happycat1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://michhar.github.io/learning-from-learning-yolov3/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'happycat3'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
