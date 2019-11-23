@@ -3,7 +3,7 @@ layout: post
 title: "Lessons from YOLO v3 Implementations in PyTorch"
 date: 2019-11-23 12:55:00 +0000
 description: Lessons from working on a YOLO v3 training script and custom data loader in PyTorch
-tag: [pytorch, yolov3]
+tags: [pytorch, yolov3]
 comments: true
 ---
 
