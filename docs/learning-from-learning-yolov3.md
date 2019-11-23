@@ -9,8 +9,8 @@ comments: true
 
 # Lessons from YOLO v3 Implementations in PyTorch
 
-![yolov3](https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png)<br>
-<a href="https://pjreddie.com/darknet/yolo/" target="_blank">Image source</a>
+![yolov3](img/pl14_out.jpg)
+<br>
 
 **tl:dr**:  YOLO (for "you only look once") v3 is a relatively recent (April 2018) architecture design for object detection.  PyTorch (recently merged with Caffe2 and production as of November 2018) is a very popular deep learning library with Python and C++ bindings for both training and inference that is known for having dynamic graphs.  This post is about what I learned expanding a PyTorch codebase that can train object detection models for any number of classes and on custom data (_We love you COCO, but we have our own interets, now._).
 
