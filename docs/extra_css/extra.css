@@ -27,7 +27,14 @@ div.sphinxsidebar ul ul li {
 
 /* shrink so horiz scroll is not necessary */
 div.body pre {
-	padding: 5px 5px;
+    padding: 5px 5px;
+    background-color: white;
+    background: white;
+}
+
+div.body code {
+    background-color: white;
+    background: white;
 }
 
 th {
