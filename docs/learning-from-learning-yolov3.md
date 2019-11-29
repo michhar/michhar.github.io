@@ -12,7 +12,7 @@ comments: true
 ![yolov3](img/pl14_out.jpg)
 <br>
 
-**tl:dr**:  YOLO (for "you only look once") v3 is a relatively recent (April 2018) architecture design for object detection.  PyTorch (recently merged with Caffe2 and production as of November 2018) is a very popular deep learning library with Python and C++ bindings for both training and inference that is known for having dynamic graphs.  This post is about what I learned expanding a PyTorch codebase that can train object detection models for any number of classes and on custom data (_We love you COCO, but we have our own interets, now._).
+**tl:dr**:  YOLO (for "you only look once") v3 is a relatively recent (April 2018) architecture design for object detection.  PyTorch (recently merged with Caffe2 and production as of November 2018) is a very popular deep learning library with Python and C++ bindings for both training and inference that is differentiated from Tensorflow by having a dynamic graph.  This post is about my lessons working on PyTorch YOLO v3 and a little insight into creating a good YOLO v3 custom model on custom data (_We love you COCO, but we have our own interets, now._).
 
 **Posted:**  2019-11-23
 
@@ -24,6 +24,32 @@ comments: true
 - <a href="https://github.com/michhar/pytorch-yolo-v3-custom" target="_blank">My fork and rewrite for custom data and fine-tuning, etc.</a>
 
 ## Lessons
+
+### Anchor boxes (and briefly how YOLO works)
+
+In order to understand the anchors or anchor boxes, a little background is needed on the YOLO v3 algorithm (source is the original YOLO and YOLO v3 papers).
+
+In the full-sized YOLO v3 there are 9 anchor boxes specified in total as can be seen in the <a href="https://github.com/michhar/pytorch-yolo-v3-custom/tree/master/cfg" target="_blank">`cfg` files</a> on the PyTorch repo. 
+
+    [[94, 89], [188, 190], [322, 308], [401, 401], [483, 475], [555, 539], [634, 646], [771, 765], [960, 866]]
+
+There are 3 scales at which YOLO "sees" and image in the network (these correspond to the three `yolo` layers).  Note, this allows YOLO to see big, medium and small sized objects.
+
+At each of the three scales, the image is broken in to a grid of 13x13 squares or cells (remember, our input is a `416x416` square in this implementation).  For each cell in a 13x13 grid, three anchor boxes are used (this corresponds to the three anchor boxes from above).  In other words, each cell has three anchor boxes overlayed on it and this happens at three different scales (all within the same pass through the network, even!  Hence, "you only look once" :-) ).
+
+So, when we list the array of 9 anchor boxes from above, the first three width/heights (`[94, 89], [188, 190], [322, 308]`), belong to the first scaling process, the second three (`[401, 401], [483, 475], [555, 539]`) to the second scaling process and, as follows, the final three to the third scaling process (`[634, 646], [771, 765], [960, 866]`).  Each set of three width/heights correspond to the width/heights of the three bounding boxes used for each grid cell at each of the three scales.
+
+To round out this story, the three anchor boxes are used to predict whether there is an object there (object/no object).  The grid cell is used to predict classes.  These are combined at the end of the network to figure out the shape of objects (bounding boxes) from anchor boxes and their classes from grid cells.
+
+This diagram shows this very well (anchor boxes on top path and grid cell predictions on bottom path):
+
+![](https://imgs.developpaper.com/imgs/1055126480-5cde54b80a7c3_articlex.png)
+
+<div align="right"><a href="https://pjreddie.com/media/files/papers/yolo.pdf" target="_blank">Image source</a></div>
+
+With this all being said, the lesson is to always calculate the anchor boxes on each new dataset before training.  The sizes of labeled objects (which determines sizes of anchor boxes) will be crucial to a good training experiment and well as inference which uses the same anchor box sizes.
+
+Anchor boxes are calculated using Kmeans clustering for every new dataset as is shown in code <a href="https://github.com/michhar/pytorch-yolo-v3-custom/blob/master/scripts/kmeans.py" target="_blank">here</a> (adapted from a Keras implementation of YOLO v3).
 
 ### Transfer learning
 
