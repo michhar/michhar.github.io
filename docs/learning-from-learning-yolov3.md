@@ -27,15 +27,15 @@ comments: true
 
 ### Anchor boxes (and briefly how YOLO works)
 
-In order to understand the anchors or anchor boxes, a little background is needed on the YOLO v3 algorithm (source is the original YOLO and YOLO v3 papers).
+In order to understand the anchors or anchor boxes, a little background is needed on the YOLO v3 algorithm (sources are the original YOLO and YOLO v3 papers).
 
-In the full-sized YOLO v3 there are 9 anchor boxes specified in total as can be seen in the <a href="https://github.com/michhar/pytorch-yolo-v3-custom/tree/master/cfg" target="_blank">`cfg` files</a> on the PyTorch repo. 
+In full-sized YOLO v3 there are 9 anchor boxes specified in total as can be seen in the <a href="https://github.com/michhar/pytorch-yolo-v3-custom/tree/master/cfg" target="_blank">`cfg` files</a> on the PyTorch repo. 
 
     [[94, 89], [188, 190], [322, 308], [401, 401], [483, 475], [555, 539], [634, 646], [771, 765], [960, 866]]
 
-There are 3 scales at which YOLO "sees" and image in the network (these correspond to the three `yolo` layers).  Note, this allows YOLO to see big, medium and small sized objects.
+There are 3 scales at which YOLO "sees" an image when passes through the network (these correspond to the three `yolo` layers).  Note, this allows YOLO to see big, medium and small sized objects all at once.
 
-At each of the three scales, the image is broken in to a grid of 13x13 squares or cells (remember, our input is a `416x416` square in this implementation).  For each cell in a 13x13 grid, three anchor boxes are used (this corresponds to the three anchor boxes from above).  In other words, each cell has three anchor boxes overlayed on it and this happens at three different scales (all within the same pass through the network, even!  Hence, "you only look once" :-) ).
+At each of the three scales, the image is broken in to a grid of 13x13 squares or cells (remember, our input image is converted to a `416x416` square in this implementation before running through the network).  For each cell in a 13x13 grid, three anchor boxes are used (this corresponds to the three anchor boxes from above).  In other words, each cell has three anchor boxes overlayed on it and this happens at three different scales (all within the same pass through the network, even!  Hence, "you only look once" :-) ).
 
 So, when we list the array of 9 anchor boxes from above, the first three width/heights (`[94, 89], [188, 190], [322, 308]`), belong to the first scaling process, the second three (`[401, 401], [483, 475], [555, 539]`) to the second scaling process and, as follows, the final three to the third scaling process (`[634, 646], [771, 765], [960, 866]`).  Each set of three width/heights correspond to the width/heights of the three bounding boxes used for each grid cell at each of the three scales.
 

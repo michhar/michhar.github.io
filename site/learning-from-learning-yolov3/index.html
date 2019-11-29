@@ -63,12 +63,12 @@
 </ul>
 <h2 id="lessons">Lessons</h2>
 <h3 id="anchor-boxes-and-briefly-how-yolo-works">Anchor boxes (and briefly how YOLO works)</h3>
-<p>In order to understand the anchors or anchor boxes, a little background is needed on the YOLO v3 algorithm (source is the original YOLO and YOLO v3 papers).</p>
-<p>In the full-sized YOLO v3 there are 9 anchor boxes specified in total as can be seen in the <a href="https://github.com/michhar/pytorch-yolo-v3-custom/tree/master/cfg" target="_blank"><code>cfg</code> files</a> on the PyTorch repo. </p>
+<p>In order to understand the anchors or anchor boxes, a little background is needed on the YOLO v3 algorithm (sources are the original YOLO and YOLO v3 papers).</p>
+<p>In full-sized YOLO v3 there are 9 anchor boxes specified in total as can be seen in the <a href="https://github.com/michhar/pytorch-yolo-v3-custom/tree/master/cfg" target="_blank"><code>cfg</code> files</a> on the PyTorch repo. </p>
 <pre><code>[[94, 89], [188, 190], [322, 308], [401, 401], [483, 475], [555, 539], [634, 646], [771, 765], [960, 866]]
 </code></pre>
-<p>There are 3 scales at which YOLO "sees" and image in the network (these correspond to the three <code>yolo</code> layers).  Note, this allows YOLO to see big, medium and small sized objects.</p>
-<p>At each of the three scales, the image is broken in to a grid of 13x13 squares or cells (remember, our input is a <code>416x416</code> square in this implementation).  For each cell in a 13x13 grid, three anchor boxes are used (this corresponds to the three anchor boxes from above).  In other words, each cell has three anchor boxes overlayed on it and this happens at three different scales (all within the same pass through the network, even!  Hence, "you only look once" :-) ).</p>
+<p>There are 3 scales at which YOLO "sees" an image when passes through the network (these correspond to the three <code>yolo</code> layers).  Note, this allows YOLO to see big, medium and small sized objects all at once.</p>
+<p>At each of the three scales, the image is broken in to a grid of 13x13 squares or cells (remember, our input image is converted to a <code>416x416</code> square in this implementation before running through the network).  For each cell in a 13x13 grid, three anchor boxes are used (this corresponds to the three anchor boxes from above).  In other words, each cell has three anchor boxes overlayed on it and this happens at three different scales (all within the same pass through the network, even!  Hence, "you only look once" :-) ).</p>
 <p>So, when we list the array of 9 anchor boxes from above, the first three width/heights (<code>[94, 89], [188, 190], [322, 308]</code>), belong to the first scaling process, the second three (<code>[401, 401], [483, 475], [555, 539]</code>) to the second scaling process and, as follows, the final three to the third scaling process (<code>[634, 646], [771, 765], [960, 866]</code>).  Each set of three width/heights correspond to the width/heights of the three bounding boxes used for each grid cell at each of the three scales.</p>
 <p>To round out this story, the three anchor boxes are used to predict whether there is an object there (object/no object).  The grid cell is used to predict classes.  These are combined at the end of the network to figure out the shape of objects (bounding boxes) from anchor boxes and their classes from grid cells.</p>
 <p>This diagram shows this very well (anchor boxes on top path and grid cell predictions on bottom path):</p>
@@ -568,7 +568,7 @@ class Normalize(object):
 
   <!--
   MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:01:08
+  Docs Build Date UTC : 2019-11-29 17:08:00
   -->
 </body>
 </html>
