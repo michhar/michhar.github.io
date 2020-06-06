@@ -80,7 +80,7 @@
 <h2 id="the-frameworks">The Frameworks</h2>
 <h3 id="keras">Keras</h3>
 <p>Below is a ConvNet defined with the <code>Sequential</code> model in Keras (<a href="https://keras.io/getting-started/sequential-model-guide/">Ref</a>).  This is a snippet with only the model definition parts - see the <a href="#references">References</a> for the full code example.</p>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Adapted from:</span>
 <span class="sd">https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -105,11 +105,11 @@
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
 
-<span class="n">sgd</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">nesterov</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">sgd</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">nesterov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
               <span class="n">optimizer</span><span class="o">=</span><span class="n">sgd</span><span class="p">,</span>
               <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 
 <p>What you don't see is:</p>
 <ul>
@@ -120,9 +120,9 @@
 </ul>
 <h3 id="pytorch">PyTorch</h3>
 <p>Below is a ConvNet defined with the <code>Sequential</code> container in PyTorch (<a href="https://pytorch.org/docs/master/nn.html?highlight=sequential#torch.nn.Sequential">Ref</a>).  This is a snippet with only the model definition parts - see the <a href="#references">References</a> for the full code example.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
-<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 <span class="k">class</span> <span class="nc">ConvNetPyTorch</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Adapted from:</span>
@@ -165,7 +165,7 @@
         <span class="k">return</span> <span class="n">logits</span><span class="p">,</span> <span class="n">probas</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">ConvNetPyTorch</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>What you don't see is:</p>
 <ul>
@@ -176,7 +176,7 @@
 </ul>
 <h3 id="tensorflow">Tensorflow</h3>
 <p>Below is a ConvNet defined with the <code>Layers</code> library and Estimators API in TensorFlow (<a href="https://www.tensorflow.org/programmers_guide/estimators">Ref</a>).  This is a snippet with only the model definition parts - see the <a href="#references">References</a> for the full code example.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
 <span class="c1"># Create the neural network</span>
 <span class="k">def</span> <span class="nf">convNetTensorFlow</span><span class="p">(</span><span class="n">x_dict</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">reuse</span><span class="p">,</span> <span class="n">is_training</span><span class="p">):</span>
@@ -207,7 +207,7 @@
         <span class="n">fc1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">conv2</span><span class="p">)</span>
 
         <span class="c1"># Output layer, class prediction</span>
-        <span class="n">logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">fc1</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">fc1</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">logits</span>
 
@@ -215,7 +215,7 @@
 
 <span class="c1"># Build the Estimator</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">model_fn</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>What you don't see is:</p>
 <ul>
@@ -227,22 +227,22 @@
 <p>For more see tensorflow in the <a href="#references">References</a> below.</p>
 <h3 id="cognitive-toolkit-cntk">Cognitive Toolkit (CNTK)</h3>
 <p>Below is a ConvNet defined with the <code>Layer</code> API in CNTK (<a href="https://www.tensorflow.org/programmers_guide/estimators">Ref</a>).  This is a snippet with only the model definition parts - see the <a href="#references">References</a> for the full code example (Note:  as of this writing CNTK is Windows or Linux only)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cntk</span> <span class="kn">as</span> <span class="nn">C</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">cntk</span> <span class="k">as</span> <span class="nn">C</span>
 
 <span class="k">def</span> <span class="nf">convNetCNTK</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">num_output_classes</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">For</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span>
-                <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Convolution</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Convolution</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
                 <span class="p">]),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span>
-            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">out_dims</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">out_dims</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="p">])</span>
 
     <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>What you don't see is:</p>
 <ul>
@@ -274,7 +274,7 @@
 <p>Thanks for reading.</p>
 <h2 id="appendix">Appendix</h2>
 <p>Nice explanation of tensor layouts (PyTorch vs. TensorFlow) in a PyTorch forum post by Mamy Ratsimbazafy (<a href="https://discuss.pytorch.org/t/tensorflow-vs-pytorch-convnet-benchmark/8738/3">Post</a>):</p>
-<div class="highlight"><pre><span></span>Furthermore there might be a difference due to the Tensor layouts:
+<div class="highlight"><pre><span></span><code>Furthermore there might be a difference due to the Tensor layouts:
 
 PyTorch use NCHW and Tensorflow uses NHWC, NCHW was the first layout supported by 
 CuDNN but presents a big challenge for optimization (due to access patterns in 
@@ -288,7 +288,7 @@ since size is known in advance.
 
 Memory is THE bottleneck in Deep Learning not CPU, the big challenge is how 
 to feed data fast enough to the CPU and GPU to get the maximum GFLOPS throughput.
-</pre></div>
+</code></pre></div>
 
 <div id="disqus_thread"></div>
 
@@ -639,15 +639,15 @@ to feed data fast enough to the CPU and GPU to get the maximum GFLOPS throughput
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

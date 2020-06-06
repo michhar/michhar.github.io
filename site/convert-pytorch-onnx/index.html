@@ -68,7 +68,7 @@
 </ol>
 <h2 id="using-a-custom-model-class-and-weights-file">Using a Custom Model Class and Weights File</h2>
 <p>The Python looks something like:
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.onnx</span>
 
 <span class="c1"># A model class instance (class not shown)</span>
@@ -84,19 +84,19 @@
 <span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">sample_batch_size</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 
 <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="s2">&quot;onnx_model_name.onnx&quot;</span><span class="p">)</span>
-</pre></div></p>
+</code></pre></div></p>
 <p>The state dictionary, or <code>state_dict</code>, is a Python dict containing parameter values and persistent buffers.  (<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module.load_state_dict">Docs</a>)</p>
 <blockquote>
 <p>Note:  The preferred way of saving the weights is with <code>torch.save(the_model.state_dict(), &lt;name_here.pth&gt;)</code>. (<a href="https://pytorch.org/docs/stable/notes/serialization.html#recommended-approach-for-saving-a-model">Docs</a>)</p>
 </blockquote>
 <h2 id="a-pre-trained-model-from-torchvision">A Pre-Trained Model from torchvision</h2>
 <p>If using the <code>torchvision.models</code> pretrained vision models all you need to do is, e.g., for AlexNet:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="kn">as</span> <span class="nn">models</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>
 
 <span class="c1"># Use an existing model from Torchvision, note it </span>
 <span class="c1"># will download this if not already on your computer (might take time)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Create some sample input in the shape this model expects</span>
 <span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
@@ -107,8 +107,8 @@
 
 <span class="c1"># Use the exporter from torch to convert to onnx </span>
 <span class="c1"># model (that has the weights and net arch)</span>
-<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="s2">&quot;alexnet.onnx&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_names</span><span class="o">=</span><span class="n">input_names</span><span class="p">,</span> <span class="n">output_names</span><span class="o">=</span><span class="n">output_names</span><span class="p">)</span>
-</pre></div>
+<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="s2">&quot;alexnet.onnx&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">input_names</span><span class="o">=</span><span class="n">input_names</span><span class="p">,</span> <span class="n">output_names</span><span class="o">=</span><span class="n">output_names</span><span class="p">)</span>
+</code></pre></div>
 
 <blockquote>
 <p>Note, the pretrained model weights that comes with <code>torchvision.models</code> went into a home folder <code>~/.torch/models</code> in case you go looking for it later.</p>
@@ -457,15 +457,15 @@
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

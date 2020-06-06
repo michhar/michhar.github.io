@@ -57,17 +57,17 @@
 <h2 id="my-system-by-the-way">My System (by the way)</h2>
 <p><img src=img/my_sys.png width=50%></p>
 <p><code>g++ --version</code>:</p>
-<div class="highlight"><pre><span></span>    Apple LLVM version 9.0.0 (clang-900.0.39.2)
+<div class="highlight"><pre><span></span><code>    Apple LLVM version 9.0.0 (clang-900.0.39.2)
     Target: x86_64-apple-darwin17.3.0
     Thread model: posix
     InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-</pre></div>
+</code></pre></div>
 
 <h2 id="mkl">MKL</h2>
 <p>For <a href="https://docs.microsoft.com/en-us/cognitive-toolkit/Setup-CNTK-on-Linux#mkl">https://docs.microsoft.com/en-us/cognitive-toolkit/Setup-CNTK-on-Linux#mkl</a> (MKL install) use the following:</p>
 <p>Create the directory for MKL:  <code>sudo mkdir /usr/local/mklmil</code></p>
 <p>Create a file <code>build_mklml.sh</code> and add the following to it.</p>
-<div class="highlight"><pre><span></span>sudo wget https://github.com/intel/mkl-dnn/releases/download/v0.14/mklml_mac_2018.0.3.20180406.tgz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>sudo wget https://github.com/intel/mkl-dnn/releases/download/v0.14/mklml_mac_2018.0.3.20180406.tgz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo tar -xzf mklml_mac_2018.0.3.20180406.tgz -C /usr/local/mklml <span class="o">&amp;&amp;</span> <span class="se">\</span>
 wget --no-verbose -O - https://github.com/01org/mkl-dnn/archive/v0.12.tar.gz <span class="p">|</span> tar -xzf - <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> mkl-dnn-0.12 <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -79,48 +79,48 @@ make <span class="o">&amp;&amp;</span> <span class="se">\</span>
 make install <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> ../.. <span class="o">&amp;&amp;</span> <span class="se">\</span>
 rm -rf mkl-dnn-0.12
-</pre></div>
+</code></pre></div>
 
 <p>Modify <code>build_mklml.sh</code> to be executible (<code>chmod +x build_mklml.sh</code>) and run (<code>./build_mklml.sh</code>).</p>
 <h2 id="openmpi">OpenMPI</h2>
 <p>This is not a modification, just a code snippet for a bash script.</p>
-<div class="highlight"><pre><span></span>wget https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.3.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>wget https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.3.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 tar -xzvf ./openmpi-1.10.3.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> openmpi-1.10.3 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./configure --prefix<span class="o">=</span>/usr/local/mpi <span class="o">&amp;&amp;</span> <span class="se">\</span>
 make -j all <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo make install
-</pre></div>
+</code></pre></div>
 
 <h2 id="protobuf">Protobuf</h2>
 <p>Skipped the <code>apt-get</code> commands.</p>
 <p>This is not a modification, just a code snippet for a bash script.</p>
-<div class="highlight"><pre><span></span>wget https://github.com/google/protobuf/archive/v3.1.0.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>wget https://github.com/google/protobuf/archive/v3.1.0.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 tar -xzf v3.1.0.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> protobuf-3.1.0 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./autogen.sh <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./configure <span class="nv">CFLAGS</span><span class="o">=</span>-fPIC <span class="nv">CXXFLAGS</span><span class="o">=</span>-fPIC --disable-shared --prefix<span class="o">=</span>/usr/local/protobuf-3.1.0 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 make -j <span class="k">$(</span>nproc<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo make install
-</pre></div>
+</code></pre></div>
 
 <h2 id="zlib">ZLIB</h2>
 <p>I did not need to <code>apt-get</code> or download/install this library as it was already installed, but if not on your system and the correct version, follow the instructions in the article.</p>
 <h2 id="libzip">LIBZIP</h2>
 <p>This is not a modification, just a code snippet for a bash script.</p>
-<div class="highlight"><pre><span></span>wget http://nih.at/libzip/libzip-1.1.2.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>wget http://nih.at/libzip/libzip-1.1.2.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 tar -xzvf ./libzip-1.1.2.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> libzip-1.1.2 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./configure <span class="o">&amp;&amp;</span> <span class="se">\</span>
 make -j all <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo make install
-</pre></div>
+</code></pre></div>
 
 <h2 id="boost">Boost</h2>
 <p>Skipped the <code>apt-get</code> commands.</p>
 <p>Ran as a bash script:</p>
-<div class="highlight"><pre><span></span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
 <p>It can take some time.</p>
             
@@ -399,15 +399,15 @@ sudo make install
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

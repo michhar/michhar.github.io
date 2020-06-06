@@ -142,19 +142,19 @@
 </ul>
 <h4 id="the-input-form-define-in-forms">The input form:  define in "forms"</h4>
 <p>Place the following text in the <code>forms.py</code> file:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">Form</span><span class="p">,</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">TextAreaField</span><span class="p">,</span> <span class="n">validators</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">Form</span><span class="p">,</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">TextAreaField</span><span class="p">,</span> <span class="n">validators</span>
 
 <span class="c1"># This class will be used in the webapp as the main input form</span>
 <span class="k">class</span> <span class="nc">SubmissionForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">)])</span>
     <span class="n">category</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">)])</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s1">&#39;Text&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1000</span><span class="p">)])</span>
-</pre></div>
+</code></pre></div>
 
 <h4 id="the-routing-on-the-page-define-in-the-views">The routing on the page:  define in the "views"</h4>
 <p>We will be modifying the existing template code as follows.</p>
 <p>The imports should look like:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -163,23 +163,23 @@
 <span class="kn">from</span> <span class="nn">FlaskAppAML</span> <span class="kn">import</span> <span class="n">app</span>
 
 <span class="kn">from</span> <span class="nn">FlaskAppAML.forms</span> <span class="kn">import</span> <span class="n">SubmissionForm</span>
-</pre></div>
+</code></pre></div>
 
 <p>Which added json handling, http request handling, os interaction and the way in which the forms class from above is available for use.</p>
 <p>Add a way to grab the API_KEY and URL at the beginning of the <code>views.py</code> file:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Deployment environment variables defined on Azure (pull in with os.environ)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Deployment environment variables defined on Azure (pull in with os.environ)</span>
 <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;API_KEY&#39;</span><span class="p">,</span> <span class="s2">&quot;optionally place a default value for local dev here&quot;</span><span class="p">)</span>
 <span class="n">URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;URL&#39;</span><span class="p">,</span> <span class="s2">&quot;optionally place a default value for local dev here&quot;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>and HEADERS global variable:</p>
-<p><div class="highlight"><pre><span></span><span class="c1"># Construct the HTTP request header</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Construct the HTTP request header</span>
 <span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Authorization&#39;</span><span class="p">:(</span><span class="s1">&#39;Bearer &#39;</span><span class="o">+</span> <span class="n">API_KEY</span><span class="p">)}</span>
-</pre></div>
+</code></pre></div>
 Change the "home route" (landing page functionality), <code>def home</code> method definition, to be:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Our main app page/route</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Our main app page/route</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Renders the home page which is the CNS of the web app currently, nothing pretty.&quot;&quot;&quot;</span>
 
@@ -222,7 +222,7 @@ Change the "home route" (landing page functionality), <code>def home</code> meth
             <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
             <span class="n">respdata</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">respdata</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
                 <span class="s1">&#39;result.html&#39;</span><span class="p">,</span>
                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;From your friendly AML experiment&#39;s Web Service:&quot;</span><span class="p">,</span>
@@ -243,7 +243,7 @@ Change the "home route" (landing page functionality), <code>def home</code> meth
         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Run App&#39;</span><span class="p">,</span>
         <span class="n">year</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
         <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Input form to gain insights into a company using Azure Machine Learning&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h4 id="the-html-templates-how-the-information-gets-served">The html templates:  how the information gets served</h4>
 <ul>
@@ -265,7 +265,7 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
 <li>Add web.config at project level (alongside requirements.txt file)</li>
 </ol>
 <p>It should look something like the following (you can actually add a template web.config similar to this one in VS by right-clicking on the FlaskAppAML folder -&gt; Add -&gt; New Item -&gt; Azure web.config for FastCGI, but it will need a few modifications).  Note that the Python version may change in the future and this script might need modification.</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
   <span class="nt">&lt;appSettings&gt;</span>
     <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;WSGI_ALT_VIRTUALENV_HANDLER&quot;</span> <span class="na">value=</span><span class="s">&quot;FlaskAppAML.app&quot;</span> <span class="nt">/&gt;</span>
@@ -307,7 +307,7 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
     <span class="nt">&lt;/rewrite&gt;</span>
   <span class="nt">&lt;/system.webServer&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</pre></div>
+</code></pre></div>
 
 <p>Possible modifications or places of note in the web config:</p>
 <ul>
@@ -334,7 +334,7 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
 <li>In Git bash on the Desktop, type into the terminal the command to clone the new repository, for example: (I'm using SSH because it will allow me to push changes back up):</li>
 <li><code>git clone git@github.com:&lt;your github username without these triangle brackets&gt;/flask-webapp-aml.git</code></li>
 <li>Copy all of the project code to this new repository folder locally (I just <code>cp</code> on the command line in Git bash) to match this structure:
-<div class="highlight"><pre><span></span>  FlaskAppAML/
+<div class="highlight"><pre><span></span><code>  FlaskAppAML/
   FlaskAppAML/__init__.py
   FlaskAppAML/forms.py
   FlaskAppAML/views.py
@@ -348,7 +348,7 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
   runtime.txt
   web.config
   .skipPythonDeployment
-</pre></div></li>
+</code></pre></div></li>
 <li>If the empty <code>.skipPythonDeployment</code> file is not in the base of your repository, add one now.  Also, make sure the <code>env</code> folder from the VS project is present.  This contains all of the python environment needed for running this web app (really anywhere).  We are skipping having the web service custom install all of the necessary modules by giving the service this <code>.skipPythonDeployment</code> file and the <code>env</code> folder.</li>
 <li>Add "__pycache__" on it's own line to my ".gitignore" file and anything you don't want uploaded to the GitHub when we "push" changes.</li>
 <li>
@@ -752,15 +752,15 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

@@ -82,7 +82,7 @@ docker exec -it cntk-jupyter-notebooks bash -c "source /cntk/activate-cntk &amp;
 <h3 id="improvement-2-intensity-normalization">Improvement #2:  Intensity normalization</h3>
 <p>I read about the sensitivity of CNNs to certain normalizations.  So, I decided to try a recommended pixel intensity normalization (<a href="https://stackoverflow.com/questions/7422204/intensity-normalization-of-image-using-pythonpil-speed-issues">Ref to nice StackOverflow hint</a>).  This update resulted in about a 5% increase in accuracy on the held-out test set.</p>
 <p>My code looked like:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Linear normalization</span>
 <span class="sd">    http://en.wikipedia.org/wiki/Normalization_%28image_processing%29</span>
@@ -94,84 +94,84 @@ docker exec -it cntk-jupyter-notebooks bash -c "source /cntk/activate-cntk &amp;
         <span class="n">arr</span> <span class="o">-=</span> <span class="n">minval</span>
         <span class="n">arr</span> <span class="o">*=</span> <span class="p">(</span><span class="mf">255.0</span><span class="o">/</span><span class="p">(</span><span class="n">maxval</span><span class="o">-</span><span class="n">minval</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">arr</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="improvement-3-adjust-or-even-search-hyperparameter-space">Improvement #3:  Adjust or even search hyperparameter space</h3>
 <p>Play with the hyperparameters.  I had a code cell full of my hyperparameters, e.g. learning rate and minibatch sizes.  I varied one or two at a time.  Just as an example, I took the learning rate down 10x (from 0.2 to 0.02) and my resulting accuracy increased approximately 5%.  Using the <a href="https://docs.microsoft.com/en-us/python/api/cntk.train.training_session?view=cntk-py-2.1">CNTK train package</a> one can design a "trainer" object encapsulating all training tasks and include parameter ranges inside it.  I also played with the strides and filter sizes or receptive fields in my CNN for the convolutional and pooling layers (see the Stanford CV course <a href="http://cs231n.github.io/convolutional-networks/#conv">notes</a> for great explanations of pretty much anything CNN and much more).  My big tip if you are starting out is simply to tune these adjustable parameters yourself and see what happens.</p>
 <h3 id="improvement-4-add-more-layers-but-be-careful-of-overfitting">Improvement #4:  Add more layers (but be careful of overfitting)</h3>
 <p>Interestingly, layering in three pooling layers in between the convolutional layers (last one before the dense output layer) resulted in about another 5% jump in accuracy on the test set.  (more on CNNs in the Stanford course <a href="http://cs231n.github.io/convolutional-networks">notes</a>)</p>
 <p>Here's what the relatively simple model looked like in the CNTK Python API:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">For</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Convolution2D</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> 
                                      <span class="n">num_filters</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> 
-                                     <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                                     <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
                                      <span class="n">strides</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)][</span><span class="n">i</span><span class="p">]),</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">AveragePooling</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                                     <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                    <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                                    <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                 <span class="p">]),</span>
-            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="p">])</span>
     <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>If you have seen some networks in CNTK, note I'm using the Sequential notation "shortcut" for repeating some layers, but maybe with different params (more in this <a href="https://cntk.ai/pythondocs/layerref.html#sequential">Doc</a>).</p>
 <p>The above "simple" CNN resulted in an average test error of 28.53%.</p>
 <p>I decided I'd like to try a more complex network and so began reading some papers on emotion recognition.  I came across one that appeared to be using the same size images (likely the same dataset).  Their proposed CNN architecture looked like this (<a href="https://arxiv.org/pdf/1706.01509.pdf">Ref</a>):</p>
 <p><img alt="Propsed architecture from paper" src="/img/cntk_feels/proposed_cnn_Dachapally.png" /></p>
 <p>I implemented the paper's architecture in the CNTK Python API as follows (it had 5935330 parameters in 12 parameter tensors):</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">For</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Convolution2D</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span>
                     <span class="p">[(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)][</span><span class="n">i</span><span class="p">],</span> 
                                      <span class="n">num_filters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
-                                     <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                                     <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
                                      <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
                     <span class="p">[</span><span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">AveragePooling</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                                     <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                    <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                                    <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
                     <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                                     <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                    <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                                    <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
                     <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                                     <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                    <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">)][</span><span class="n">i</span><span class="p">]]),</span>
+                                    <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">)][</span><span class="n">i</span><span class="p">]]),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
-            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="p">])</span>
     <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>The above CNN architecture which matched the paper, resulted in a 25.61% average test error.  Let's see if we can do even better.</p>
 <p>A slightly modified, even more complex version of this architecture looks like this in the CNTK Python API (my update was to increase the number of filters for each conv layer):</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">For</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Convolution2D</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> 
                                      <span class="n">num_filters</span><span class="o">=</span><span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">64</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> 
-                                     <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                                     <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
                                      <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
                 <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling</span><span class="p">(</span><span class="n">filter_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                                     <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                    <span class="n">pad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                                    <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                 <span class="p">]),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">),</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
-            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_output_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="p">])</span>
     <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>In the last architecture I had 37917906 parameters in 12 parameter tensors with an average test error of 22.35% (which, to be honest, could cause an issue of over-fitting due to the very large number of parameters - just something to consider).  A validation step would be highly recommended in this case given sufficient computational power!</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -527,15 +527,15 @@ Networks and Representational Autoencoder Units by Prudhvi Raj Dachapally</a></l
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

@@ -97,22 +97,22 @@
 <ul>
 <li>
 <p>Use the dark code highlighting theme inside of the light Chalk theme for a Sublime Editor-like effect.  Modify an import at the bottom of the <code>/_assets/stylesheets/light.scss</code>:</p>
-<div class="highlight"><pre><span></span>@import &quot;modules/highlights-dark&quot;;
-</pre></div>
+<div class="highlight"><pre><span></span><code>@import &quot;modules/highlights-dark&quot;;
+</code></pre></div>
 
 </li>
 <li>
 <p>Add an icon to the post listing page (main page) by editing the <code>index.html</code> with a <code>div</code> tag:</p>
-<p><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article-list-tags&quot;</span><span class="p">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article-list-tags&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ post.logo }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;post logo&quot;</span> 
       <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url | relative_url }}&quot;</span> 
       <span class="na">width</span><span class="o">=</span><span class="s">&quot;30%&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">img</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 And adding the <code>post.logo</code> to the YAML heading on the post as in:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span> ---
+<div class="highlight"><pre><span></span><code> ---
  ...
  comments: true
  description: A short chatterbot dev story
@@ -120,7 +120,7 @@ And adding the <code>post.logo</code> to the YAML heading on the post as in:</p>
  tags:
  ...
  ---
-</pre></div>
+</code></pre></div>
 
 <p><img alt="Chalk screenshot my site" src="/img/sitegenpost/my_chalk_main.png" />
 <p align="right"><b>A tweaked Chalk-based site with icons on main page</b></p></p>
@@ -138,19 +138,19 @@ And adding the <code>post.logo</code> to the YAML heading on the post as in:</p>
 <ul>
 <li>
 <p>In <code>index.html</code> added a variable to automatically pull in the "Read" button name (so, instead of just "Read" it's a custom label on the button).  This is done with the <code>post.label</code>:</p>
-<div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-body&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-body&quot;</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-title pull-left&quot;</span><span class="p">&gt;</span>{{ post.title }}
     <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-meta pull-right&quot;</span><span class="p">&gt;&lt;</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url | prepend: site.baseurl }}&quot;</span> 
     <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-sm pull-right mt10&quot;</span><span class="p">&gt;</span>
     Go to {{post.label}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 </li>
 <li>
 <p>Then, in the post you'll have a YAML header with a <code>label</code> variable like:</p>
-<div class="highlight"><pre><span></span>---
+<div class="highlight"><pre><span></span><code>---
 layout: post
 title:  Microsoft R Server and SQL Server R Services Labs
 categories: mrs
@@ -158,7 +158,7 @@ img: hikeclouds.jpg
 label: Labs
 resource:
 ---
-</pre></div>
+</code></pre></div>
 
 </li>
 </ul>
@@ -464,15 +464,15 @@ resource:
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:10
   -->
 </body>
 </html>

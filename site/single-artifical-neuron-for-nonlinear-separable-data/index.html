@@ -74,19 +74,19 @@
 <h3 id="choosing-an-activation-function">Choosing an activation function</h3>
 <p><img alt="" src="/img/single_layer_neuron/singleneuron_activation.png" /></p>
 <p>In code, given this "net input" function:</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">net_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">net_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate net input&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 
 <p>I update the activation function from linear as in:   </p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Compute linear activation&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>To a logistic sigmoidal function:</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Compute sigmoidal activation</span>
 
 <span class="sd">        Returns</span>
@@ -97,25 +97,25 @@
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
         <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">v</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-</pre></div>
+</code></pre></div>
 
 <p>Full code <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb">here</a> and <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py">here</a>.</p>
 <p><strong>We still get linear classification boundaries</strong></p>
 <p>These single-neuron classifiers can only result in linear decision boundaries, even if using a non-linear activation, because it's still using a single threshold value, <code>z</code> as in diagram above, to decide whether a data point is classified as 1 or -1.</p>
 <h3 id="the-noisy-data">The noisy data</h3>
 <p>The data was downloaded from the Machine Learning Data Set Repository <a href="https://mldata.org">mldata.org</a> using a convenience function from <code>scikit-learn</code>.  </p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets.mldata</span> <span class="kn">import</span> <span class="n">fetch_mldata</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets.mldata</span> <span class="kn">import</span> <span class="n">fetch_mldata</span>
 
 <span class="c1"># Fetch a small leukemia dataset from mldata.org</span>
 <span class="c1">#   http://mldata.org/repository/data/viewslug/leukemia-all-vs-aml/</span>
 <span class="n">test_data_home</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
-<span class="n">leuk</span> <span class="o">=</span> <span class="n">fetch_mldata</span><span class="p">(</span><span class="s1">&#39;leukemia&#39;</span><span class="p">,</span> <span class="n">transpose_data</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="n">leuk</span> <span class="o">=</span> <span class="n">fetch_mldata</span><span class="p">(</span><span class="s1">&#39;leukemia&#39;</span><span class="p">,</span> <span class="n">transpose_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                       <span class="n">data_home</span><span class="o">=</span><span class="n">test_data_home</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>The data is a small, but wide acute lymphocytic leukemia (ALL) vs. acute myelogenous leukemia (AML) dataset.  It has approximately 7000 biological markers (our features), vs. 72 samples (our data points).</p>
 <p>Given the noisy nature of the data and possible skewedness, it was standardized and normalized with convenience functions from <code>scikit-learn</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span><span class="p">,</span> <span class="n">Normalizer</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span><span class="p">,</span> <span class="n">Normalizer</span>
 
 <span class="c1"># Fit the scalar to the training dataset for </span>
 <span class="c1">#   zero mean and unit variance of features.</span>
@@ -134,13 +134,13 @@
 <span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>Full code <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/leukemia_notebook.ipynb">here</a> and <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/adaline_sgd.py">here</a>.</p>
 <p>I tried just one feature reduction with PCA to reduce all 7129 dimensions to 2D at first.  However, I could not separate out the ALL samples from AML - this wasn't necessarily important to my post on Adaline neurons I was writing, but I decided to try something I'd read about recently for kicks.  In fact the idea sprung from a comment in a Python script where a perceptron was used to create non-linear separation of data for a plot (from <a href="https://github.com/daniel-e/pymltools/blob/master/plot_scripts/plot_perceptron_nonlin.py">this</a> script on Github).  The comment went:</p>
-<div class="highlight"><pre><span></span># map the data into a space with one addition dimension so that
+<div class="highlight"><pre><span></span><code># map the data into a space with one addition dimension so that
 # it becomes linearly separable
-</pre></div>
+</code></pre></div>
 
 <p>So, I gave it a shot.</p>
 <h3 id="3d-to-run-through-network-and-2d-to-gain-insights">3D to run through network and 2D to gain insights</h3>
@@ -478,15 +478,15 @@
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:10
   -->
 </body>
 </html>

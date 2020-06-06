@@ -78,20 +78,20 @@
 <li>Visualization</li>
 </ol>
 <p>This course includes the gambit.  From list comprehension:</p>
-<p><div class="highlight"><pre><span></span><span class="c1"># Solution to list comprehension exercise</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Solution to list comprehension exercise</span>
 <span class="c1"># Solution to list comprehension exercise</span>
 <span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;thepurposeoflife&#39;</span><span class="p">)</span>
 
 <span class="c1"># Place your list comprehension below</span>
 <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;e&#39;</span> <span class="k">else</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+</code></pre></div>
 <br>
 Which gets you: <code>thEpurposEoflifE</code></p>
 <p>To anomaly detection with a one-class SVM in <code>scikit-learn</code>:</p>
-<p><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
 
@@ -122,14 +122,14 @@ Which gets you: <code>thEpurposEoflifE</code></p>
 <span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">y_pred_outliers</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_weird</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <br></p>
 <p>Which when plotted in <code>matplotlib</code> results in revealing some decision boundaries around if a value is weird or not from the iris dataset (and some made-up values for testing):</p>
 <p><img alt="anomalies in scikit-learn image" src="../img/novelty.png" /></p>
 <p>You can find the Notebooks offering at <a href="https://notebooks.azure.com">https://notebooks.azure.com</a> and the Python course on the main page with the tutorials near the bottom and titled  <em>Fundamentals of Data Science with Python</em>.  It's free, just like the product, Azure Notebooks.  The course is actually a <em>Library</em>.  </p>
 <p>It was a really fun and challenging to create and I'm so very glad to have it released into the wild.  It contains exercises as well, some simple and some for those who enjoy a challenge themselves.  </p>
 <p>For example, in this exercise a student is asked to create a Wallet for your friend Amy, let Amy earn some money and then let Amy spend some of that money.</p>
-<p><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Wallet</span><span class="p">:</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Wallet</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;The Wallet class holds cash for a owner.&#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">cash</span><span class="p">):</span>
@@ -145,7 +145,7 @@ Which gets you: <code>thEpurposEoflifE</code></p>
     <span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;The earn method adds a given amount of money to the wallet.&#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cash</span> <span class="o">+=</span> <span class="n">amount</span>
-</pre></div>
+</code></pre></div>
 <br></p>
 <p>I can't wait to add more modules.  Python will attack big data in the next one with <code>dask</code>.  Stay tuned.</p>
 <p>My colleague and I also made use of the "stickies" teacher's aid.  We handed out blue and red sticky notes to all of the attendees and so when they had a question or got stuck, they could simply place a red sticky on the front of their laptop and we could see the "flag" and come to help.  This way the attendees didn't need to raise a hand at all, creating a situation where everyone had a chance to get questions answered or help when they needed without a tired arm or feeling as if they were disrupting the self-paced classroom.</p>
@@ -430,15 +430,15 @@ Which gets you: <code>thEpurposEoflifE</code></p>
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:10
   -->
 </body>
 </html>

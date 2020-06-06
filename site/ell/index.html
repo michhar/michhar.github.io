@@ -73,12 +73,12 @@ brew upgrade
 <pre><code>(brew --prefix llvm)/bin
 </code></pre>
 <p>Added to <code>~/.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><span class="c1"># For building ELL</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># For building ELL</span>
 <span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib&quot;</span>
 <span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/opt/llvm/include -I/usr/local/opt/llvm/include/c++/v1/&quot;</span>
 <span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span>/usr/local/opt/llvm/bin/clang
 <span class="nb">export</span> <span class="nv">CXX</span><span class="o">=</span>/usr/local/opt/llvm/bin/clang++
-</pre></div>
+</code></pre></div>
 
 <pre><code>source ~/.bashrc
 </code></pre>
@@ -370,15 +370,15 @@ brew upgrade
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

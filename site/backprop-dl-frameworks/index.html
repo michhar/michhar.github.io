@@ -62,7 +62,7 @@
 </blockquote>
 <p>The Neural Net class uses the following to kick-off the back propagation calculation (taken from this <a href="https://github.com/leestott/IrisData/blob/master/nn_backprop.py">Code</a>).</p>
 <p>Before anything a few variables were set up in the NeuralNetwork class.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Number of input, hidden and output nodes respectively</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Number of input, hidden and output nodes respectively</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">ni</span> <span class="o">=</span> <span class="n">numInput</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">nh</span> <span class="o">=</span> <span class="n">numHidden</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">no</span> <span class="o">=</span> <span class="n">numOutput</span>
@@ -79,10 +79,10 @@
 <span class="c1"># The bias matrices</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">hBiases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nh</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">oBiases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">no</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>Part of the training code to initialize the gradients and signals (like gradients without their input terms) and looks like the following:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trainData</span><span class="p">,</span> <span class="n">maxEpochs</span><span class="p">,</span> <span class="n">learnRate</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trainData</span><span class="p">,</span> <span class="n">maxEpochs</span><span class="p">,</span> <span class="n">learnRate</span><span class="p">):</span>
     <span class="o">...</span>
 
     <span class="n">hoGrads</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nh</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">no</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># hidden-to-output weights gradients</span>
@@ -94,15 +94,15 @@
     <span class="n">hSignals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nh</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># hidden signals: gradients w/o assoc. input terms</span>
 
     <span class="o">...</span>
-</pre></div>
+</code></pre></div>
 
 <blockquote>
 <p>Pro tip:  "When working with neural networks, it's common, but not required, to work with the float32 rather than float64 data type" - Lee Stott</p>
 </blockquote>
 <p>Now, followed with these arrays which will hold the signals (remember these are gradients without their input terms mainly for convenience) (<code>oSignals</code> the one from output to hidden and <code>hSignals</code> the hidden to input layer).</p>
-<div class="highlight"><pre><span></span><span class="n">oSignals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">no</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">oSignals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">no</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">hSignals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">nh</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>The calculation of the gradients, or amount used for the weight updates, are the steps as follows:</p>
 <ol>
@@ -114,7 +114,7 @@
 <li>Compute hidden node bias gradients using hidden signals</li>
 </ol>
 <p><img alt="Backprop calculation" src="/img/backprop/0617vsm_McCaffreyFig2s.jpg" /></p>
-<div class="highlight"><pre><span></span><span class="c1"># In setting up the training we had two variables</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># In setting up the training we had two variables</span>
 <span class="n">x_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ni</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="c1"># Expected values (training labels)</span>
 <span class="n">t_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">no</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -153,7 +153,7 @@
 <span class="c1"># update weights and biases using the gradients</span>
 
 <span class="o">...</span>
-</pre></div>
+</code></pre></div>
 
 <p>Updating the weight matrix now with these gradients will be left up to the reader (or use that code sample link above).</p>
 <h2 id="the-code">The Code</h2>
@@ -440,15 +440,15 @@
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

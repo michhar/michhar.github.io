@@ -66,7 +66,7 @@
 </ol>
 <p><img alt="show opening as notebook" src="/img/cm_open_as_notebook.png" /></p>
 <p>This opened up a jupyter notebook with the following code snippet:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">azureml</span> <span class="kn">import</span> <span class="n">Workspace</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml</span> <span class="kn">import</span> <span class="n">Workspace</span>
 <span class="n">ws</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">()</span>
 <span class="n">experiment</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">experiments</span><span class="p">[</span><span class="s1">&#39;&lt;your experiment id shows up here&gt;&#39;</span><span class="p">]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">get_intermediate_dataset</span><span class="p">(</span>
@@ -75,18 +75,18 @@
     <span class="n">data_type_id</span><span class="o">=</span><span class="s1">&#39;GenericCSV&#39;</span>
 <span class="p">)</span>
 <span class="n">frame</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 <p>And imported my final dataset as a <code>pandas</code> DataFrame.</p>
 <p>To get a confusion matrix I used <code>pandas.crosstab</code> and <code>matplotlib</code>.</p>
 <p>I created a cell and used <code>pandas</code>'s <code>crosstab</code> to aggregate the Categories by Assignments and place into a matrix.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Creating our confusion matrix data</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating our confusion matrix data</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">frame</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">],</span> <span class="n">frame</span><span class="p">[</span><span class="s1">&#39;Assignments&#39;</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</code></pre></div>
 
 <p>So we went from </p>
-<div class="highlight"><pre><span></span>Category    Assignments
+<div class="highlight"><pre><span></span><code>Category    Assignments
 0   Information Technology  0
 1   Information Technology  9
 2   Consumer Discretionary  0
@@ -109,10 +109,10 @@
 19  Health Care 9
 
 ...
-</pre></div>
+</code></pre></div>
 
 <p>to</p>
-<div class="highlight"><pre><span></span>Assignments                   0  1   2  3   4  5   6   7   8   9
+<div class="highlight"><pre><span></span><code>Assignments                   0  1   2  3   4  5   6   7   8   9
 Category                                                        
 Consumer Discretionary       43  0   3  1   0  0   1  20   4   4
 Consumer Staples             14  0   0  0   9  0   2   4   0   6
@@ -121,13 +121,13 @@ Financials                   16  0   3  3   0  0   3   8  42   3
 Health Care                   3  0   0  1   1  0   0   0   0  47
 
 ...
-</pre></div>
+</code></pre></div>
 
 <p>And finally, I used <code>matplotlib</code> and a modified example from the python docs, with this code,</p>
-<div class="highlight"><pre><span></span><span class="c1"># Plot our confusion matrix</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Plot our confusion matrix</span>
 <span class="c1"># Code based on:  http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html</span>
 
-<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Confusion matrix&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">BuPu</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Confusion matrix&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">BuPu</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="c1"># Set figure size before anything else</span>
     <span class="n">colcnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
     <span class="n">rowcnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
@@ -166,24 +166,24 @@ Health Care                   3  0   0  1   1  0   0   0   0  47
 
 <span class="c1"># Plot the confusion matrix DataFrame</span>
 
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> 
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
                       <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Confusion matrix (</span><span class="si">%d</span><span class="s1"> centroids):  no normalization&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
 
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                       <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Confusion matrix (</span><span class="si">%d</span><span class="s1"> centroids):  with normalization&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 <p>to create the following awesome plots (a non-normalized and normalized confusion matrix):</p>
 <p><img alt="show the matrices" src="/img/confusion_matrices.png" /></p>
 <h3 id="step-2-second-way">Step 2 Second Way</h3>
 <p>I could have exported the AML Studio data as a file from the <code>Convert to CSV</code> module and downloaded the dataset after running.  I would then upload the dataset to a notebook (as is also shown in the sample notebook <a href="https://github.com/michhar/python-jupyter-notebooks/blob/master/machine_learning/A_Simple_Confusion_Matrix.ipynb">here</a>) and use the csv file with a 'Category' column and 'Assigments' column like is found <a href="https://github.com/michhar/michhar.github.io/tree/gh-pages-source/data">here</a>.  It imports the data as a <code>pandas</code> dataframe.</p>
 <p>The code snippet would have been:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Dataset living on my github account exported from Azure ML</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Dataset living on my github account exported from Azure ML</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/michhar/michhar.github.io/gh-pages-source/data/ngrams_and_clustering_result_dataset.csv&#39;</span>
 
 <span class="c1"># Importing the csv data with pandas</span>
 <span class="n">frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>Thanks for reading, check out the sample (static) jupyter notebook <a href="hhttps://github.com/michhar/python-jupyter-notebooks/blob/master/azure_machine_learning/A_Simple_Confusion_Matrix.ipynb">here</a> and best of luck with those confusion matrices!</p>
             
@@ -481,15 +481,15 @@ Health Care                   3  0   0  1   1  0   0   0   0  47
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:09
   -->
 </body>
 </html>

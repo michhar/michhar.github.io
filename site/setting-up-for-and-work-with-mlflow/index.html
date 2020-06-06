@@ -112,7 +112,7 @@
   * Parameters, types and defaults
   * Entrypoint command (with all options) - this is the master command that is run when the mlflow training is run on the command line</p>
 <p>A simplified <code>MLproject</code> file is as follows:</p>
-<div class="highlight"><pre><span></span>name: My Awesome Project
+<div class="highlight"><pre><span></span><code>name: My Awesome Project
 
 conda_env: smart_conda.yaml
 
@@ -123,7 +123,7 @@ entry_points:
       parameter2: {type: float, default: 1e-2}
       parameter3: {type: int, default: 16}
     command: &quot;python train.py --parameter1 {parameter1} --parameter2 {parameter2} --parameter3 {parameter3}&quot;
-</pre></div>
+</code></pre></div>
 
 <p>If there are defaults, none of these parameters need to exist on the command line when running with <code>mlflow</code>, however they may be overridden.</p>
 <h2 id="training">Training</h2>
@@ -140,10 +140,10 @@ entry_points:
 <pre><code>mlflow ui
 </code></pre>
 <p>The metric and model (as an artifact) is recorded by the following:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Added for MLflow</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Added for MLflow</span>
 <span class="n">mlflow</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">log_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;keras-yolo-model-frozen-pass&quot;</span><span class="p">)</span>
 <span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s1">&#39;frozen_loss&#39;</span><span class="p">,</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 
 <p>What does <code>mlflow run</code> actually do?  As follows:</p>
 <ul>
@@ -174,7 +174,7 @@ entry_points:
 <pre><code>mlflow azureml export -m mlruns/0/8237d734f1d94fd893368dd455565f2d/artifacts/keras-yolo-model -o yolo-output
 </code></pre>
 <p>Note, some additional libraries may need to be specified in the generated <code>score.py</code>'s <code>init()</code> and <code>run()</code>, such as <code>keras</code> here:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">model</span>
     <span class="kn">import</span> <span class="nn">keras</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">load_pyfunc</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
@@ -183,19 +183,19 @@ entry_points:
     <span class="kn">import</span> <span class="nn">keras</span>
     <span class="n">input_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">get_jsonable_obj</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_df</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 <blockquote>
 <p>Note: not including necessary packages is the most common source of error in deploying with AzureML</p>
 </blockquote>
 <p>Ensure <code>yolo-output</code> (or name used for <code>mlflow</code> generated file directory) has all necessary packages beyond <code>mlflow</code>, namely:</p>
-<div class="highlight"><pre><span></span>numpy==1.14.2
+<div class="highlight"><pre><span></span><code>numpy==1.14.2
 matplotlib==2.2.2
 Keras==2.2.2
 tensorflow==1.8.0
 Pillow==5.1.0
 mlflow==0.5.2
-</pre></div>
+</code></pre></div>
 
 <p>The <code>azureml</code> CLI commands are:</p>
 <blockquote>
@@ -570,15 +570,15 @@ AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=what
       
       
         
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.0.4</a>
+        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
         &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
       
     </div>
   
 
   <!--
-  MkDocs version      : 1.0.4
-  Docs Build Date UTC : 2019-11-29 17:08:00
+  MkDocs version      : 1.1
+  Docs Build Date UTC : 2020-06-06 19:19:10
   -->
 </body>
 </html>
