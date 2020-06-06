@@ -12,6 +12,8 @@ comments: true
 ![yolov3](img/pl14_out.jpg)
 <br>
 
+**UPDATE 2020-06-06**:  YOLO v4 has been recently published and implemented in PyTorch and can be found at https://github.com/Tianxiaomo/pytorch-YOLOv4.
+
 **tl:dr**:  YOLO (for "you only look once") v3 is a relatively recent (April 2018) architecture design for object detection.  PyTorch (recently merged with Caffe2 and production as of November 2018) is a very popular deep learning library with Python and C++ bindings for both training and inference that is differentiated from Tensorflow by having a dynamic graph.  This post is about my lessons working on PyTorch YOLO v3 and a little insight into creating a good YOLO v3 custom model on custom data (_We love you COCO, but we have our own interets, now._).
 
 **Posted:**  2019-11-23
@@ -21,7 +23,6 @@ comments: true
 - <a href="https://arxiv.org/pdf/1804.02767.pdf" target="_blank">Original YOLO v3 paper</a>
 - <a href="https://github.com/ayooshkathuria/pytorch-yolo-v3" target="_blank">Original PyTorch codebase</a>
 - <a href="https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/" target="_blank">Ayoosh Kathuria's original blog post on implementing YOLO v3 in PyTorch</a>
-- <a href="https://github.com/michhar/pytorch-yolo-v3-custom" target="_blank">My fork and rewrite for custom data and fine-tuning, etc.</a>
 
 ## Lessons
 
