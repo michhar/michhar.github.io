@@ -1,21 +1,20 @@
-site_name: A blog on data science in the world of software development
-pages:
+site_name: Data Science <3 Machine Learning Blog
+nav:
     - Home: index.md
-    - 2019:
+    - Posts:
+      - "Survive and Thrive in Your Data Science Career Meetup Summary": "survive-thrive-ds-career.md"
+    - Archive:
+      - 2019:
         - "Lessons from YOLO v3 Implementations in PyTorch": "learning-from-learning-yolov3.md"
         - 'Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm': 'bilstm-crf-this-is-mind-bending.md'
-    - 2018:
-      - 'Building PyTorch with LibTorch From Source with CUDA Support': 'how-i-built-pytorch-gpu.md'
-      - 'How to Convert a PyTorch Model to ONNX Format': 'convert-pytorch-onnx.md'
-      - 'Convolutional Neural Networks in Four Deep Learning Frameworks by Example': 'convolutional-in-layers-and-sequences.md' 
-      - 'Deploying a Machine Learning Model Easily with Azure ML CLI': 'deploy-with-azureml-cli-boldly.md'
-    - Archive:
+      - 2018:
+        - 'Building PyTorch with LibTorch From Source with CUDA Support': 'how-i-built-pytorch-gpu.md'
+        - 'How to Convert a PyTorch Model to ONNX Format': 'convert-pytorch-onnx.md'
+        - 'Convolutional Neural Networks in Four Deep Learning Frameworks by Example': 'convolutional-in-layers-and-sequences.md' 
       - 2017:
         - 'The Cognitive Toolkit (CNTK) Understands How You Feel': 'cntk-has-feelings-too.md'
         - 'Shapely Shapes and OpenCV Visions': 'masks_to_polygons_and_back.md'
-        - 'On using an Adaline Artificial Neuron for Classification': 'single-artifical-neuron-for-nonlinear-separable-data.markdown'
         - 'Overlaying a Website ontop of a GitHub Repository': 'my-new-static-site-generator-hobby.md' # 2017-06-18
-        - 'On Being a Data Scientist': 'data-science-story-part1.md' # 2017-05-15
         - 'Wading In a Tide Pool of Choices, How to Write a Package in Python?': 'two-cents-on-python-package-structure.md' # 2017-03-06
         - 'OCRBot Gets Attached': 'ocrbot-gets-attached.md' # 2017-03-01
         - 'The Notebook Superhero -- Is It Always a Contest?':  'jupyter-and-beaker-make-a-case.md' # 2017-02-19
@@ -30,8 +29,10 @@ pages:
 repo_url: https://github.com/michhar/michhar.github.io
 
 theme: 
-  name: alabaster
-  custom_dir: docs/extra_html
+  name: superhero
+  nav_style: dark
+
+  # custom_dir: docs/extra_html
 
 extra_css: [extra_css/extra.css, extra_css/syntax.css]
 
@@ -64,6 +65,7 @@ google_analytics:
   - auto
   
 extra:
+  generator: false
   logo: img/RheartPython.jpg
   homepage_sidebars:
     - about
@@ -71,7 +73,6 @@ extra:
   sidebars:
     - about
     - navigation
-
   social:
     - type: 'github'
       link: 'https://github.com/michhar'

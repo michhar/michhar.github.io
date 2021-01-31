@@ -1,13 +1,6 @@
-# A blog on data science in the world of software development
+# Data Science <3 Machine Learning Blog
 
-My name is Micheleen Harris (Twitter: [@rheartpython](https://twitter.com/rheartpython)) and I'm interested in data science, have taught it some and am still learning much.  My posts tend to be more like tutorials around exciting projects I've come across in my career.
-
-I'm currently fascinated by:
-
-  - Deep learning for computer vision and NLP
-  - PyTorch
-  - The Jupyter project
-  - ML on the Edge (IoT)
+My name is Micheleen Harris (On Twitter I'm [@rheartpython](https://twitter.com/rheartpython)).  I love the art of exploring and understanding data with scientific tools and languages and hopefully helping others in the process.
 
 
 

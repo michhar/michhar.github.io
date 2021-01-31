@@ -1,55 +1,211 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-  
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Creating a Smart Python Flask Web App using Azure Machine Learning - Data Science <3 Machine Learning Blog</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+        <link href="../extra_css/extra.css" rel="stylesheet">
+        <link href="../extra_css/syntax.css" rel="stylesheet">
 
-    <title>Creating a Smart Python Flask Web App using Azure Machine Learning &mdash; A blog on data science in the world of software development</title>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" href="../css/alabaster.css" type="text/css">
-    <link rel="stylesheet" href="../css/alabaster-overrides.css" type="text/css">
+            ga('create', 'UA-86308542-1', 'auto');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Data Science <3 Machine Learning Blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../survive-thrive-ds-career/" class="dropdown-item">Survive and Thrive in Your Data Science Career Meetup Summary</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archive <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2019</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../learning-from-learning-yolov3/" class="dropdown-item">Lessons from YOLO v3 Implementations in PyTorch</a>
+</li>
+            
+<li>
+    <a href="../bilstm-crf-this-is-mind-bending/" class="dropdown-item">Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2018</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../how-i-built-pytorch-gpu/" class="dropdown-item">Building PyTorch with LibTorch From Source with CUDA Support</a>
+</li>
+            
+<li>
+    <a href="../convert-pytorch-onnx/" class="dropdown-item">How to Convert a PyTorch Model to ONNX Format</a>
+</li>
+            
+<li>
+    <a href="../convolutional-in-layers-and-sequences/" class="dropdown-item">Convolutional Neural Networks in Four Deep Learning Frameworks by Example</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2017</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../cntk-has-feelings-too/" class="dropdown-item">The Cognitive Toolkit (CNTK) Understands How You Feel</a>
+</li>
+            
+<li>
+    <a href="../masks_to_polygons_and_back/" class="dropdown-item">Shapely Shapes and OpenCV Visions</a>
+</li>
+            
+<li>
+    <a href="../my-new-static-site-generator-hobby/" class="dropdown-item">Overlaying a Website ontop of a GitHub Repository</a>
+</li>
+            
+<li>
+    <a href="../two-cents-on-python-package-structure/" class="dropdown-item">Wading In a Tide Pool of Choices, How to Write a Package in Python?</a>
+</li>
+            
+<li>
+    <a href="../ocrbot-gets-attached/" class="dropdown-item">OCRBot Gets Attached</a>
+</li>
+            
+<li>
+    <a href="../jupyter-and-beaker-make-a-case/" class="dropdown-item">The Notebook Superhero -- Is It Always a Contest?</a>
+</li>
+            
+<li>
+    <a href="../javascript-and-python-have-a-party/" class="dropdown-item">Javascript and Python Meet through Magic and IPython</a>
+</li>
+            
+<li>
+    <a href="../confusion-matrix-code-revealed/" class="dropdown-item">A Simple, Presentable Confusion Matrix with K-means Data</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Creating a Smart Python Flask Web App using Azure Machine Learning</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ocrbot-makes-a-connection/" class="dropdown-item">OCRBot Makes a Connection to the Cloud</a>
+</li>
+            
+<li>
+    <a href="../how-to-bot-on-mac/" class="dropdown-item">Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</a>
+</li>
+            
+<li>
+    <a href="../teaching-notes-post/" class="dropdown-item">Tips I have Learned by Being a Trainer for a Year</a>
+</li>
+            
+<li>
+    <a href="../notebooks1-post/" class="dropdown-item">Python for Data Science Goes Into the Wild</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../confusion-matrix-code-revealed/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ocrbot-makes-a-connection/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/michhar/michhar.github.io/edit/master/docs/a-python-flask-webapp-gets-smart.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
 
     
-      <link href="../extra_css/extra.css" rel="stylesheet">
-    
-      <link href="../extra_css/syntax.css" rel="stylesheet">
-    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
-    
-      <script src="../search/main.js"></script>
-    
-
-    
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-86308542-1', 'auto');
-        ga('send', 'pageview');
-      </script>
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
-
-    
-  
-</head>
-<body>
-
-  <div class="document">
-    <div class="documentwrapper">
-      <div class="bodywrapper">
-        <div class="body" role="main">
-          
-            <p><img alt="header pic" src="/img/flask-post-diagram.png" /></p>
+<p><img alt="header pic" src="/img/flask-post-diagram.png" /></p>
 <p><strong>tl;dr</strong>:  Azure Machine Learning + Visual Studio + Python Flask + GitHub + Azure = A Live Custom ML Model for You!</p>
 <p><strong>Posted:</strong>  2017-02-05</p>
 <h2 id="introduction">Introduction</h2>
@@ -150,7 +306,6 @@
     <span class="n">category</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">)])</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s1">&#39;Text&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1000</span><span class="p">)])</span>
 </code></pre></div>
-
 <h4 id="the-routing-on-the-page-define-in-the-views">The routing on the page:  define in the "views"</h4>
 <p>We will be modifying the existing template code as follows.</p>
 <p>The imports should look like:</p>
@@ -164,14 +319,12 @@
 
 <span class="kn">from</span> <span class="nn">FlaskAppAML.forms</span> <span class="kn">import</span> <span class="n">SubmissionForm</span>
 </code></pre></div>
-
 <p>Which added json handling, http request handling, os interaction and the way in which the forms class from above is available for use.</p>
 <p>Add a way to grab the API_KEY and URL at the beginning of the <code>views.py</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Deployment environment variables defined on Azure (pull in with os.environ)</span>
 <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;API_KEY&#39;</span><span class="p">,</span> <span class="s2">&quot;optionally place a default value for local dev here&quot;</span><span class="p">)</span>
 <span class="n">URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;URL&#39;</span><span class="p">,</span> <span class="s2">&quot;optionally place a default value for local dev here&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>and HEADERS global variable:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># Construct the HTTP request header</span>
 <span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Authorization&#39;</span><span class="p">:(</span><span class="s1">&#39;Bearer &#39;</span><span class="o">+</span> <span class="n">API_KEY</span><span class="p">)}</span>
@@ -244,7 +397,6 @@ Change the "home route" (landing page functionality), <code>def home</code> meth
         <span class="n">year</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
         <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Input form to gain insights into a company using Azure Machine Learning&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <h4 id="the-html-templates-how-the-information-gets-served">The html templates:  how the information gets served</h4>
 <ul>
 <li>We add two new templates:  form.html, result.html</li>
@@ -308,7 +460,6 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
   <span class="nt">&lt;/system.webServer&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></div>
-
 <p>Possible modifications or places of note in the web config:</p>
 <ul>
 <li>
@@ -386,381 +537,86 @@ Grab the <code>result.html</code> code <a href="https://github.com/michhar/flask
 <li>Ensure in <code>web.config</code>, that the "scriptProcessor" key/value in handlers is correct (that these paths exist on the server file system).</li>
 <li>Check FREB Logs in the Portal for more information around warnings and errors (make sure you are logging for those during this phase).</li>
 <li>Post comments here or if around the code, under issues here:  <a href="https://github.com/michhar/flask-webapp-aml/issues">https://github.com/michhar/flask-webapp-aml/issues</a> - many thanks!</li>
-</ul>
-            
-          
+</ul></div>
+            </div>
         </div>
-      </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
-    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-      <div class="sphinxsidebarwrapper">
-        
-          
-            
-  <p class="logo">
-    <a href="..">
-      <img class="logo" src="../img/RheartPython.jpg" title="A blog on data science in the world of software development">
-    </a>
-  </p>
-  
-
-
-
-          
-            
-
-
-
-<nav>
-  <ul>
-  
-    
-      <li>
-        <a href="/">Home</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        2019
-        <ul>
-  
-    
-      <li>
-        <a href="/learning-from-learning-yolov3/">Lessons from YOLO v3 Implementations in PyTorch</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/bilstm-crf-this-is-mind-bending/">Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        2018
-        <ul>
-  
-    
-      <li>
-        <a href="/how-i-built-pytorch-gpu/">Building PyTorch with LibTorch From Source with CUDA Support</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/convert-pytorch-onnx/">How to Convert a PyTorch Model to ONNX Format</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/convolutional-in-layers-and-sequences/">Convolutional Neural Networks in Four Deep Learning Frameworks by Example</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/deploy-with-azureml-cli-boldly/">Deploying a Machine Learning Model Easily with Azure ML CLI</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        Archive
-        <ul>
-  
-    
-      <li>
-        2017
-        <ul>
-  
-    
-      <li>
-        <a href="/cntk-has-feelings-too/">The Cognitive Toolkit (CNTK) Understands How You Feel</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/masks_to_polygons_and_back/">Shapely Shapes and OpenCV Visions</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/single-artifical-neuron-for-nonlinear-separable-data/">On using an Adaline Artificial Neuron for Classification</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/my-new-static-site-generator-hobby/">Overlaying a Website ontop of a GitHub Repository</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/data-science-story-part1/">On Being a Data Scientist</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/two-cents-on-python-package-structure/">Wading In a Tide Pool of Choices, How to Write a Package in Python?</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/ocrbot-gets-attached/">OCRBot Gets Attached</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/jupyter-and-beaker-make-a-case/">The Notebook Superhero -- Is It Always a Contest?</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/javascript-and-python-have-a-party/">Javascript and Python Meet through Magic and IPython</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/confusion-matrix-code-revealed/">A Simple, Presentable Confusion Matrix with K-means Data</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/a-python-flask-webapp-gets-smart/">Creating a Smart Python Flask Web App using Azure Machine Learning</a>
-      </li>
-      
-        <ul>
-    
-      <li><a href="#introduction">Introduction</a></li>
-      <ul>
-    
-      <li><a href="#before-you-begin-a-few-things-to-do">Before you Begin, a Few Things to Do...</a></li>
-      <ul>
-    
-      <li><a href="#tools">Tools</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#accounts">Accounts</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-      <li><a href="#the-web-app-development">The Web App Development</a></li>
-      <ul>
-    
-      <li><a href="#the-input-form-define-in-forms">The input form:  define in "forms"</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#the-routing-on-the-page-define-in-the-views">The routing on the page:  define in the "views"</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#the-html-templates-how-the-information-gets-served">The html templates:  how the information gets served</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-      <li><a href="#prepare-to-deploy-the-web-app-to-azure">Prepare to Deploy the Web App to Azure</a></li>
-      <ul>
-    
-      <li><a href="#web-configuration-file">Web Configuration file</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#virtual-environment-proxy">Virtual Environment Proxy</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-      <li><a href="#deploy-the-flask-web-app">Deploy the Flask Web App</a></li>
-      <ul>
-    
-      <li><a href="#option-1-set-up-a-github-repository-as-the-deployment-option">Option 1: Set up a GitHub Repository as the Deployment Option</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#option-2-publish-and-deploy-from-vs-as-an-azure-app-service-web-app">Option 2: Publish and Deploy from VS as an Azure App Service Web App</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-      <li><a href="#make-it-your-own">Make it Your Own</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#troubleshooting">Troubleshooting</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-  </ul>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        2016
-        <ul>
-  
-    
-      <li>
-        <a href="/ocrbot-makes-a-connection/">OCRBot Makes a Connection to the Cloud</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/how-to-bot-on-mac/">Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/teaching-notes-post/">Tips I have Learned by Being a Trainer for a Year</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/notebooks1-post/">Python for Data Science Goes Into the Wild</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-  </ul>
-
-  
-  
-  <br/>
-  <br/>
-
-  <a href="https://github.com/michhar/michhar.github.io/" target="_blank" style="border-bottom: 0">
-    <i class="fab fa-github fa-2x"></i> Check out this repo on GitHub
-  </a>
-</nav>
-          
-        
-      </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
-    <div class="clearer"></div>
-  </div>
+</div>
 
-  
-    <div class="footer">
-      
-      
-        
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
-        &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
-      
-    </div>
-  
-
-  <!--
-  MkDocs version      : 1.1
-  Docs Build Date UTC : 2020-06-06 19:19:09
-  -->
-</body>
+    </body>
 </html>

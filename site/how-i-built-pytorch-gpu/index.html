@@ -1,55 +1,231 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-  
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Building PyTorch with LibTorch From Source with CUDA Support - Data Science <3 Machine Learning Blog</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+        <link href="../extra_css/extra.css" rel="stylesheet">
+        <link href="../extra_css/syntax.css" rel="stylesheet">
 
-    <title>Building PyTorch with LibTorch From Source with CUDA Support &mdash; A blog on data science in the world of software development</title>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" href="../css/alabaster.css" type="text/css">
-    <link rel="stylesheet" href="../css/alabaster-overrides.css" type="text/css">
+            ga('create', 'UA-86308542-1', 'auto');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Data Science <3 Machine Learning Blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../survive-thrive-ds-career/" class="dropdown-item">Survive and Thrive in Your Data Science Career Meetup Summary</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archive <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2019</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../learning-from-learning-yolov3/" class="dropdown-item">Lessons from YOLO v3 Implementations in PyTorch</a>
+</li>
+            
+<li>
+    <a href="../bilstm-crf-this-is-mind-bending/" class="dropdown-item">Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2018</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Building PyTorch with LibTorch From Source with CUDA Support</a>
+</li>
+            
+<li>
+    <a href="../convert-pytorch-onnx/" class="dropdown-item">How to Convert a PyTorch Model to ONNX Format</a>
+</li>
+            
+<li>
+    <a href="../convolutional-in-layers-and-sequences/" class="dropdown-item">Convolutional Neural Networks in Four Deep Learning Frameworks by Example</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2017</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../cntk-has-feelings-too/" class="dropdown-item">The Cognitive Toolkit (CNTK) Understands How You Feel</a>
+</li>
+            
+<li>
+    <a href="../masks_to_polygons_and_back/" class="dropdown-item">Shapely Shapes and OpenCV Visions</a>
+</li>
+            
+<li>
+    <a href="../my-new-static-site-generator-hobby/" class="dropdown-item">Overlaying a Website ontop of a GitHub Repository</a>
+</li>
+            
+<li>
+    <a href="../two-cents-on-python-package-structure/" class="dropdown-item">Wading In a Tide Pool of Choices, How to Write a Package in Python?</a>
+</li>
+            
+<li>
+    <a href="../ocrbot-gets-attached/" class="dropdown-item">OCRBot Gets Attached</a>
+</li>
+            
+<li>
+    <a href="../jupyter-and-beaker-make-a-case/" class="dropdown-item">The Notebook Superhero -- Is It Always a Contest?</a>
+</li>
+            
+<li>
+    <a href="../javascript-and-python-have-a-party/" class="dropdown-item">Javascript and Python Meet through Magic and IPython</a>
+</li>
+            
+<li>
+    <a href="../confusion-matrix-code-revealed/" class="dropdown-item">A Simple, Presentable Confusion Matrix with K-means Data</a>
+</li>
+            
+<li>
+    <a href="../a-python-flask-webapp-gets-smart/" class="dropdown-item">Creating a Smart Python Flask Web App using Azure Machine Learning</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ocrbot-makes-a-connection/" class="dropdown-item">OCRBot Makes a Connection to the Cloud</a>
+</li>
+            
+<li>
+    <a href="../how-to-bot-on-mac/" class="dropdown-item">Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</a>
+</li>
+            
+<li>
+    <a href="../teaching-notes-post/" class="dropdown-item">Tips I have Learned by Being a Trainer for a Year</a>
+</li>
+            
+<li>
+    <a href="../notebooks1-post/" class="dropdown-item">Python for Data Science Goes Into the Wild</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../bilstm-crf-this-is-mind-bending/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../convert-pytorch-onnx/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/michhar/michhar.github.io/edit/master/docs/how-i-built-pytorch-gpu.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
 
     
-      <link href="../extra_css/extra.css" rel="stylesheet">
-    
-      <link href="../extra_css/syntax.css" rel="stylesheet">
-    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#thank-yous" class="nav-link">Thank Yous</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
-    
-      <script src="../search/main.js"></script>
-    
-
-    
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-86308542-1', 'auto');
-        ga('send', 'pageview');
-      </script>
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
-
-    
-  
-</head>
-<body>
-
-  <div class="document">
-    <div class="documentwrapper">
-      <div class="bodywrapper">
-        <div class="body" role="main">
-          
-            <p><img alt="" src="../img/my_desk_building_pytorch.jpg" /></p>
+<p><img alt="" src="../img/my_desk_building_pytorch.jpg" /></p>
 <p><strong>tl;dr</strong>:  Notes on building PyTorch 1.0 Preview and other versions from source including LibTorch, the PyTorch C++ API for fast inference with a strongly typed, compiled language.  So fast.</p>
 <p><strong>Posted:</strong>  2018-11-10</p>
 <h2 id="introduction">Introduction</h2>
@@ -88,7 +264,6 @@ pip3 install dist/*.whl
 <span class="c1"># Clean up resources</span>
 rm -fr pytorch
 </code></pre></div>
-
 <ul>
 <li>Note, the size of the binary/wheel can be up to 180 MB.</li>
 </ul>
@@ -144,7 +319,6 @@ rm -fr pytorch
 <h2 id="thank-yous">Thank Yous</h2>
 <p>To PyTorch GitHub Issues with great activity and insights (<a href="https://github.com/pytorch/pytorch/issues">https://github.com/pytorch/pytorch/issues</a>) and the official PyTorch Forums (<a href="https://discuss.pytorch.org/">https://discuss.pytorch.org/</a>).</p>
 <div id="disqus_thread"></div>
-
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -165,332 +339,86 @@ rm -fr pytorch
         (d.head || d.body).appendChild(s);
     })();
 </script>
-
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-            
-          
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
+            </div>
         </div>
-      </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
-    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-      <div class="sphinxsidebarwrapper">
-        
-          
-            
-  <p class="logo">
-    <a href="..">
-      <img class="logo" src="../img/RheartPython.jpg" title="A blog on data science in the world of software development">
-    </a>
-  </p>
-  
-
-
-
-          
-            
-
-
-
-<nav>
-  <ul>
-  
-    
-      <li>
-        <a href="/">Home</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        2019
-        <ul>
-  
-    
-      <li>
-        <a href="/learning-from-learning-yolov3/">Lessons from YOLO v3 Implementations in PyTorch</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/bilstm-crf-this-is-mind-bending/">Named Entity Recognition using a Bi-LSTM with the Conditional Random Field Algorithm</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        2018
-        <ul>
-  
-    
-      <li>
-        <a href="/how-i-built-pytorch-gpu/">Building PyTorch with LibTorch From Source with CUDA Support</a>
-      </li>
-      
-        <ul>
-    
-      <li><a href="#introduction">Introduction</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#instructions">Instructions</a></li>
-      <ul>
-    
-      <li><a href="#build-flag-meanings">Build flag meanings</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#changes-to-script-that-may-be-necessary">Changes to script that may be necessary</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-    
-      <li><a href="#conclusion">Conclusion</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#references">References</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#thank-yous">Thank Yous</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/convert-pytorch-onnx/">How to Convert a PyTorch Model to ONNX Format</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/convolutional-in-layers-and-sequences/">Convolutional Neural Networks in Four Deep Learning Frameworks by Example</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/deploy-with-azureml-cli-boldly/">Deploying a Machine Learning Model Easily with Azure ML CLI</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        Archive
-        <ul>
-  
-    
-      <li>
-        2017
-        <ul>
-  
-    
-      <li>
-        <a href="/cntk-has-feelings-too/">The Cognitive Toolkit (CNTK) Understands How You Feel</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/masks_to_polygons_and_back/">Shapely Shapes and OpenCV Visions</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/single-artifical-neuron-for-nonlinear-separable-data/">On using an Adaline Artificial Neuron for Classification</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/my-new-static-site-generator-hobby/">Overlaying a Website ontop of a GitHub Repository</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/data-science-story-part1/">On Being a Data Scientist</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/two-cents-on-python-package-structure/">Wading In a Tide Pool of Choices, How to Write a Package in Python?</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/ocrbot-gets-attached/">OCRBot Gets Attached</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/jupyter-and-beaker-make-a-case/">The Notebook Superhero -- Is It Always a Contest?</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/javascript-and-python-have-a-party/">Javascript and Python Meet through Magic and IPython</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/confusion-matrix-code-revealed/">A Simple, Presentable Confusion Matrix with K-means Data</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/a-python-flask-webapp-gets-smart/">Creating a Smart Python Flask Web App using Azure Machine Learning</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-    
-      <li>
-        2016
-        <ul>
-  
-    
-      <li>
-        <a href="/ocrbot-makes-a-connection/">OCRBot Makes a Connection to the Cloud</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/how-to-bot-on-mac/">Building an OCR Chat Bot with the Microsoft Bot Framework on my Mac</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/teaching-notes-post/">Tips I have Learned by Being a Trainer for a Year</a>
-      </li>
-      
-    
-    <br/>
-  
-    
-      <li>
-        <a href="/notebooks1-post/">Python for Data Science Goes Into the Wild</a>
-      </li>
-      
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-  </ul>
-      </li>
-    
-    <br/>
-  
-  </ul>
-
-  
-  
-  <br/>
-  <br/>
-
-  <a href="https://github.com/michhar/michhar.github.io/" target="_blank" style="border-bottom: 0">
-    <i class="fab fa-github fa-2x"></i> Check out this repo on GitHub
-  </a>
-</nav>
-          
-        
-      </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
-    <div class="clearer"></div>
-  </div>
+</div>
 
-  
-    <div class="footer">
-      
-      
-        
-        Powered by <a href="http://www.mkdocs.org">mkdocs 1.1</a>
-        &amp; <a href="https://github.com/iamale/mkdocs-alabaster">mkdocs-alabaster</a>
-      
-    </div>
-  
-
-  <!--
-  MkDocs version      : 1.1
-  Docs Build Date UTC : 2020-06-06 19:19:09
-  -->
-</body>
+    </body>
 </html>
