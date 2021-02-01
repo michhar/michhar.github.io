@@ -50,18 +50,18 @@ We asked each of the panelists 5 questions pre-selected from attendee questions 
 
 9. These were skills mentioned and recommended for being successful in DS:
 
-- SQL
-- Python/R/Julia
-- Stats
-- Linear Algebra
-- Data structures and algos (i.e. fundamentals of CS)
+    - SQL
+    - Python/R/Julia
+    - Stats
+    - Linear Algebra
+    - Data structures and algos (i.e. fundamentals of CS)
 
 10. Here are some resources mentioned:
 
-- [Open government datasets for starter datasets](https://www.data.gov/)
-- [PyJanitor for data cleaning](https://pyjanitor.readthedocs.io/)
-- [QuantEcon - open source for economic modeling, financial modeling, game theory, etc. (goes well beyond econometrics)](https://quantecon.org/)
-- [Kaggle competitions to hone DS and ML skills](https://www.kaggle.com/)
+    - [Open government datasets for starter datasets](https://www.data.gov/)
+    - [PyJanitor for data cleaning](https://pyjanitor.readthedocs.io/)
+    - [QuantEcon - open source for economic modeling, financial modeling, game theory, etc. (goes well beyond econometrics)](https://quantecon.org/)
+    - [Kaggle competitions to hone DS and ML skills](https://www.kaggle.com/)
 
 ## In Conclusion
 
