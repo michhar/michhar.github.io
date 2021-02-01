@@ -30,7 +30,7 @@ We asked each of the panelists 5 questions pre-selected from attendee questions 
 
 1. One of the most important questions to yourself:  "Do I want to do this and why?".  Then, just be yourself.
 
-2. One of my favorite things said was learn to do more with less data.  To me this means getting creative with data exploration and ways to merge and enhance it.  Also, to me, it says to engage in careful study of approaches that can handle smaller datasets, which could involve cutting edge research.  Sounds like fun and a good excuse to read papers or pay attention to [Papers with Code](https://paperswithcode.com/)!
+2. One of my favorite things said was learn to do more with less data.  To me this means getting creative with data exploration and ways to merge and enhance it.  Also, this statement reminds me to engage in the careful study of approaches that can handle smaller datasets, which could involve cutting edge research.  Sounds like fun and a good excuse to read papers or pay attention to [Papers with Code](https://paperswithcode.com/)!
 
 3. On the future of AI I heard three main topics as callouts from the panelists:  AI infrastructure, security and explainability.  These are fields and topics to look out for as machine learning and data science matures and could evolve into future roles.
 
@@ -44,9 +44,9 @@ We asked each of the panelists 5 questions pre-selected from attendee questions 
 
 8. It was suggested to use GitHub like you would a portfolio.  It's a great way to showcase work and you can add links on your resume.  Ways to use GitHub include:
 
-- Showcase a cool project publicly - maybe even something you are currently learning (it's ok to learn in public)
-- Place any work-in-progress in a drafts folder if you wish
-- Add an informative and compelling readme, but note, it doesn't have to be professionally done (it can evolve with your project)
+    - Showcase a cool project publicly - maybe even something you are currently learning (it's ok to learn in public)
+    - Place any work-in-progress in a drafts folder if you wish
+    - Add an informative and compelling readme, but note, it doesn't have to be professionally done (it can evolve with your project)
 
 9. These were skills mentioned and recommended for being successful in DS:
 
@@ -57,7 +57,6 @@ We asked each of the panelists 5 questions pre-selected from attendee questions 
     - Data structures and algos (i.e. fundamentals of CS)
 
 10. Here are some resources mentioned:
-
     - [Open government datasets for starter datasets](https://www.data.gov/)
     - [PyJanitor for data cleaning](https://pyjanitor.readthedocs.io/)
     - [QuantEcon - open source for economic modeling, financial modeling, game theory, etc. (goes well beyond econometrics)](https://quantecon.org/)
