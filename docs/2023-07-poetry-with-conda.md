@@ -76,12 +76,7 @@ If a `pyproject.toml` already exists and the source code for the package, then t
    
 ### Updating the environment
 
-To add packages with `poetry` follow this [official guide](https://python-poetry.org/docs/basic-usage/#installing-dependencies) (go to Installing with `poetry.lock`).  The `poetry.lock` file should not be commited to this project repo.
-
-Note on JupyterLab: to get JupyterLab to work with Python 3.6 and Poetry, install as follows.
-
-    poetry add traitlets@4.3.3
-    poetry add jupyterlab@2.2.8
+To add packages with `poetry` follow this [official guide](https://python-poetry.org/docs/basic-usage/#installing-dependencies) (go to Installing with `poetry.lock`).
     
 
 ## References
