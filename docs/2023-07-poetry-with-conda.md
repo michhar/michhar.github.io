@@ -11,7 +11,7 @@ comments: true
 
 <br>
 
-**TL/DR**:  Both Conda and Poetry can be used for Python package management, however Poetry additionally helps one build a Python package.  Poetry is more modern and provides many more tools out-of-the-box for better reproducability and package builds.  It is not common to use both together, however if we want a specific Python version we can get that with Conda and then manage our dependencies and package with Poetry.
+**TL/DR**:  Both [Conda (from an Anaconda Distribution)](https://docs.anaconda.com/free/anaconda/getting-started/what-is-distro/) and [Poetry](https://python-poetry.org/docs/) can be used for Python package management, however Poetry additionally provides a mechanism to build a Python package.  Poetry is more modern and provides many more tools out-of-the-box for better reproducibility and package builds.  It is not common to use both together, however if we want a specific Python version we can get that with Conda and then manage our dependencies and package with Poetry.
 
 # Setup Poetry in a Conda Environment
 
