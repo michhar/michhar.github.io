@@ -1,8 +1,9 @@
-# To the Datapoint - Micheleen's ML Blog
+# Notes and Guides by Micheleen
+### Topics You'll Find Here: Machine Learning, Python, Azure, Open-Source
 
 ![](img/mich_enchantments.jpg)
 
-Hi.  My name is Micheleen Harris ([@rheartpython](https://twitter.com/rheartpython)) and I love the art of exploring and understanding data with scientific tools, languages and machine learning to create useful explanations of the world around us, a.k.a. models.
+Hi.  My name is Micheleen Harris ([LinkedIn](https://www.linkedin.com/in/micheleenharris/)) and I love the art of exploring and understanding data with scientific tools, languages and machine learning to create useful explanations of the world around us, a.k.a. models.
 
 
 A little bit about me...

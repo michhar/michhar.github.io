@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Tips I have Learned by Being a Trainer for a Year - Data Science <3 Machine Learning</title>
+        <title>How to Use Poetry with Conda for Package Management on a Specific Python Version - Data Science <3 Machine Learning</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -47,12 +47,12 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../2023-07-poetry-with-conda/" class="dropdown-item">How to Use Poetry with Conda for Package Management on a Specific Python Version</a>
+    <a href="./" class="dropdown-item active">How to Use Poetry with Conda for Package Management on a Specific Python Version</a>
 </li>
                                     
 <li>
@@ -60,7 +60,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archive <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -151,7 +151,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Tips I have Learned by Being a Trainer for a Year</a>
+    <a href="../teaching-notes-post/" class="dropdown-item">Tips I have Learned by Being a Trainer for a Year</a>
 </li>
             
 <li>
@@ -170,17 +170,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../how-to-bot-on-mac/" class="nav-link">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../notebooks1-post/" class="nav-link">
+                                <a rel="next" href="../survive-thrive-ds-career/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/michhar/michhar.github.io/edit/master/docs/teaching-notes-post.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/michhar/michhar.github.io/edit/master/docs/2023-07-poetry-with-conda.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -200,8 +200,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#teaching-notes" class="nav-link">Teaching notes</a>
+            <li class="nav-item" data-level="1"><a href="#how-to-use-poetry-with-conda-for-package-management-on-a-specific-python-version" class="nav-link">How to Use Poetry with Conda for Package Management on a Specific Python Version</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#setup-poetry-in-a-conda-environment" class="nav-link">Setup Poetry in a Conda Environment</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -209,49 +226,74 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><img alt="attendees at work" src="/img/hyd_class.jpg" /></p>
-<p><strong>Posted:</strong>  2016-10-24</p>
-<h2 id="teaching-notes">Teaching notes</h2>
-<h3 id="have-the-attendees-introduce-themselves-to-their-neighbors">Have the attendees introduce themselves to their neighbor(s)</h3>
-<p>The isolation and separateness that ones feels in a room of mostly strangers, about to embark on a few hours or a few days of training can melt away in the matter of 5 minutes.  In this technique, for about 5 minutes at the very beginning before any presentation begins, I ask everyone to take a moment and introduce themselves to their neighbors(s).  I encourage them to state their name, role and an interesting fact about themselves.</p>
-<p>This technique forms very useful connections that will serve in the future when one person may need help or a discussion needs to take place to formulate a question to the instructor.  When the hands-on-labs role around, the students now know some of their neighbors and can work together on a problem.  When it comes time for a build-a-thon or hackathon, the students will likely feel more comfortable forming groups.</p>
-<h3 id="lead-with-a-motivating-example-or-at-least-what-you-will-be-able-to-do-by-the-end">Lead with a motivating example or at least "what you will be able to do by the end"</h3>
-<p>In the best scenario I have a demo that wows the audience or at least immediately gets their attention.  The demo could be a Power BI dashboard driven by streaming data flowing in from a weather station.  It could be a service that allows me to upload a picture and returns the contents of that image in natural language (like <a href="https://www.captionbot.ai">CaptionBot</a>).  It could be a fast process, such as running a large machine learning computation out-of-core on a single laptop, lightning fast, perhaps predicting tens of thousands of numeric labels on a hand-written data set of digits using a trained classificaion model.  </p>
-<p>Seeing something run and produce an amazingly quick and/or fascinating result or a dashboard powered by fast moving data streaming in, real-time, can definitely inspire and motivate those who like that sort of thing.</p>
-<h3 id="always-have-advanced-exercises-for-students-who-want-to-go-ahead">Always have advanced exercises for students who want to go ahead</h3>
-<p>I feel one of the worse outcomes is not being challenged.  We mostly all like a good challenge and in the end, for me at least, it gives a feeling of accomplishment.  I learn best when I am challenged to think and/or be creative.  In the hands-on-labs this is especially important.  And it's really easy to incorporate <em>Advanced Exercises</em> into the lab instructions.  Then I simply let them work and encourage them to keep going if they finish something earlier than others.  Just remember, it's got to be motivating and fun.  Basically, I try to always peak their curiosity and keep it rolling.</p>
-<h3 id="make-mistakes-and-be-a-real-person">Make mistakes and be a real person</h3>
-<p>This helps normalize the instructor to the students, removing barriers that might be there or percieved.  It humanizes the instructor and puts the students at ease knowing they too can explore their studies and make mistakes.  After all, the instructor did this in front of everyone.</p>
-<p>When I make a mistake, I admit it and I ask for help from the audience.  Also, when I forget something, can't remember a detail or am stumped, I pose the question to the audience to get them both thinking and my answer back (hopefully).  In this way, it serves many purposes:  engagement by having a group exercise and audience participation, normalizing everyone (especially the instructor to the students) and getting the answer.</p>
-<h3 id="sticky-notes-red-i-need-help-or-im-not-ready-to-move-on-another-color-no-problem-here">Sticky notes (red = I need help or I'm not ready to move on, another color = no problem here)</h3>
-<p>I borrowed this idea from Michael Levy (see Credits at the bottom) who teaches R at scale.  The basic premise is to allow students to indicate a problem, be it I'm moving too fast, they don't fully understand something, they need more time or have a quesion.  The red sticky note is then placed on the front of the laptop so that I can see it from the front of the room.  It's mainly useful in the hands-on-labs portions or the build-a-thon/hackathon.  This way students don't have to keep a hand raised or feel they are intruding or disturbing a class.  It equalizes things a little bit I believe, adding to the ease and freedom to ask a quesion or ask for help.  It's been popular and successful in the past especially in situations where the room is very quiet (like in a self-paced, self-guided tutorial).</p>
-<p>At the end you may have the students leave the sticky notes (a red is dissatisfied and the other color is satisfied) in an anonymous spot.</p>
-<p>Some attendees expressing their appreciation:</p>
-<p><img alt="stars on the wall" src="/img/stars_small_edit.png" /></p>
-<h3 id="credits">Credits</h3>
-<p>I have to give Michael Levy credit for many of these ideas from his fantastic blog post on <em>Teaching R to 200 students in a week</em> <a href="http://environmentalpolicy.ucdavis.edu/node/394">here</a>.</p>
-<script id="dsq-count-scr" src="//michhar2.disqus.com/count.js" async></script>
-
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = http://127.0.0.1:8000/teaching-notes-post/;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = teaching-notes-post; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//michhar2.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<h1 id="how-to-use-poetry-with-conda-for-package-management-on-a-specific-python-version">How to Use Poetry with Conda for Package Management on a Specific Python Version</h1>
+<p><br></p>
+<p><strong>TL/DR</strong>:  Both Conda and Poetry can be used for Python package management, however Poetry additionally helps one build a Python package.  Poetry is more modern and provides many more tools out-of-the-box for better reproducability and package builds.  It is not common to use both together, however if we want a specific Python version we can get that with Conda and then manage our dependencies and package with Poetry.</p>
+<h1 id="setup-poetry-in-a-conda-environment">Setup Poetry in a Conda Environment</h1>
+<p>Here we will use <code>conda</code> for setting up with a specific Python version (3.9) and <code>poetry</code> for all package management. Note, we will not be using <code>conda</code> for package management to avoid getting the tools out of sync.  Always use <code>poetry</code> to install and update packages.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>
+<p>Anaconda3 or Miniconda3 installed (<a href="https://docs.anaconda.com/anaconda/install/index.html">Installation guide</a>).</p>
+</li>
+<li>
+<p>Updated <code>conda</code>.  To update <code>conda</code>, run the following from the <code>base</code> enviroment.  Elevated privileges may be necessary (e.g., an Admin console or <code>sudo</code>) if a permission error occurs.</p>
+<div class="highlight"><pre><span></span><code>conda update -n base -c defaults conda
+</code></pre></div>
+</li>
+</ol>
+<h2 id="instructions">Instructions</h2>
+<h3 id="setup-poetry-and-conda">Setup Poetry and Conda</h3>
+<ol>
+<li>
+<p>Install <code>poetry</code> by following this <a href="https://python-poetry.org/docs/#installation">Installation guide</a>.</p>
+</li>
+<li>
+<p>Configure <code>poetry</code> to use <code>conda</code> environment.</p>
+<div class="highlight"><pre><span></span><code>poetry config virtualenvs.path $CONDA_ENV_PATH
+poetry config virtualenvs.create false
+</code></pre></div>
+</li>
+</ol>
+<p>Where <code>$CONDA_ENV_PATH</code> is the path to the base <code>envs</code> folder (e.g., <code>/Users/myuser/anaconda3/envs</code>).</p>
+<ol>
+<li>
+<p>Create a Python 3.9 <code>conda</code> environment (here called <code>awesomeness</code>).</p>
+<div class="highlight"><pre><span></span><code>conda create -n awesomeness python=3.9
+</code></pre></div>
+</li>
+<li>
+<p>Activate the <code>conda</code> environment.</p>
+<div class="highlight"><pre><span></span><code>conda activate awesomeness
+</code></pre></div>
+</li>
+</ol>
+<p>If you have a <code>pyproject.toml</code>, go to your project directory and install from the <code>pyproject.toml</code> package specification file.</p>
+<pre><code>poetry install
+</code></pre>
+<blockquote>
+<p>IMPORTANT:  Always use poetry to update package versions and install new packages and NOT <code>conda</code> otherwise the local environment and <code>poetry</code> (and thus the project's <code>pyproject.toml</code>) will be out of sync.</p>
+</blockquote>
+<h3 id="building-the-package">Building the package</h3>
+<p>The <code>pyproject.toml</code> is also used to build packages.  To create it see the <a href="https://python-poetry.org/docs/pyproject/">Poetry documentation on the <code>pyproject.toml</code></a>.</p>
+<p>If a <code>pyproject.toml</code> already exists and the source code for the package, then the package can be built to be installed as standalone or pushed to PyPI for others to use.  To build a package:</p>
+<ol>
+<li>Build the package by following <a href="https://python-poetry.org/docs/libraries/#packaging">Packaging</a> (run from the base of the repo as it uses <code>pyproject.toml</code> to specify the package contents).  This places the package files into a folder called <code>dist</code>.</li>
+<li>Activate the conda environment if it's not already and pip install the Python wheel (<code>.whl</code>) from the <code>dist</code> folder as follows:
+    <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>awesomeness
+pip<span class="w"> </span>install<span class="w"> </span>dist/awesome_package-0.1.0-py3-none-any.whl
+</code></pre></div></li>
+</ol>
+<h3 id="updating-the-environment">Updating the environment</h3>
+<p>To add packages with <code>poetry</code> follow this <a href="https://python-poetry.org/docs/basic-usage/#installing-dependencies">official guide</a> (go to Installing with <code>poetry.lock</code>).  The <code>poetry.lock</code> file should not be commited to this project repo.</p>
+<p>Note on JupyterLab: to get JupyterLab to work with Python 3.6 and Poetry, install as follows.</p>
+<pre><code>poetry add traitlets@4.3.3
+poetry add jupyterlab@2.2.8
+</code></pre>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://github.com/python-poetry/poetry/issues/105#issuecomment-470829436">GitHub issue comment on installing Poetry and Conda to use together</a>.</li>
+</ol></div>
             </div>
         </div>
 

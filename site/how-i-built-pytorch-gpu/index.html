@@ -8,17 +8,17 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Building PyTorch with LibTorch From Source with CUDA Support - Data Science <3 Machine Learning Blog</title>
+        <title>Building PyTorch with LibTorch From Source with CUDA Support - Data Science <3 Machine Learning</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
         <link href="../extra_css/extra.css" rel="stylesheet">
         <link href="../extra_css/syntax.css" rel="stylesheet">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,7 +34,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="..">Data Science <3 Machine Learning Blog</a>
+                <a class="navbar-brand" href="..">Data Science <3 Machine Learning</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -50,6 +50,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../2023-07-poetry-with-conda/" class="dropdown-item">How to Use Poetry with Conda for Package Management on a Specific Python Version</a>
+</li>
                                     
 <li>
     <a href="../survive-thrive-ds-career/" class="dropdown-item">Survive and Thrive in Your Data Science Career Meetup Summary</a>
@@ -237,32 +241,32 @@
 <span class="nv">PYTORCH_COMMIT_ID</span><span class="o">=</span><span class="s2">&quot;8619230&quot;</span>
 
 <span class="c1"># Clone, checkout specific commit and build for GPU with CUDA support</span>
-git clone https://github.com/pytorch/pytorch.git <span class="o">&amp;&amp;</span><span class="se">\</span>
-    <span class="nb">cd</span> pytorch <span class="o">&amp;&amp;</span> git checkout <span class="si">${</span><span class="nv">PYTORCH_COMMIT_ID</span><span class="si">}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    git submodule update --init --recursive  <span class="o">&amp;&amp;</span><span class="se">\</span>
-    pip3 install <span class="nv">pyyaml</span><span class="o">==</span><span class="m">3</span>.13 <span class="o">&amp;&amp;</span><span class="se">\</span>
-    pip3 install -r requirements.txt <span class="o">&amp;&amp;</span><span class="se">\</span>
-    <span class="nv">USE_OPENCV</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-    <span class="nv">BUILD_TORCH</span><span class="o">=</span>ON <span class="se">\</span>
-    <span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/bin/&quot;</span> <span class="se">\</span>
-    <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda/lib64:/usr/local/lib:<span class="nv">$LD_LIBRARY_PATH</span> <span class="se">\</span>
-    <span class="nv">CUDA_BIN_PATH</span><span class="o">=</span>/usr/local/cuda/bin <span class="se">\</span>
-    <span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span>/usr/local/cuda/ <span class="se">\</span>
-    <span class="nv">CUDNN_LIB_DIR</span><span class="o">=</span>/usr/local/cuda/lib64 <span class="se">\</span>
-    <span class="nv">CUDA_HOST_COMPILER</span><span class="o">=</span>cc <span class="se">\</span>
-    <span class="nv">USE_CUDA</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-    <span class="nv">USE_NNPACK</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-    <span class="nv">CC</span><span class="o">=</span>cc <span class="se">\</span>
-    <span class="nv">CXX</span><span class="o">=</span>c++ <span class="se">\</span>
-    <span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;3.5 5.2 6.0 6.1+PTX&quot;</span> <span class="se">\</span>
-    <span class="nv">TORCH_NVCC_FLAGS</span><span class="o">=</span><span class="s2">&quot;-Xfatbin -compress-all&quot;</span> <span class="se">\</span>
-    python3 setup.py bdist_wheel
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pytorch/pytorch.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="se">\</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span>pytorch<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span><span class="si">${</span><span class="nv">PYTORCH_COMMIT_ID</span><span class="si">}</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive<span class="w">  </span><span class="o">&amp;&amp;</span><span class="se">\</span>
+<span class="w">    </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">pyyaml</span><span class="o">==</span><span class="m">3</span>.13<span class="w"> </span><span class="o">&amp;&amp;</span><span class="se">\</span>
+<span class="w">    </span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="se">\</span>
+<span class="w">    </span><span class="nv">USE_OPENCV</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">BUILD_TORCH</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/bin/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda/lib64:/usr/local/lib:<span class="nv">$LD_LIBRARY_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CUDA_BIN_PATH</span><span class="o">=</span>/usr/local/cuda/bin<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span>/usr/local/cuda/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CUDNN_LIB_DIR</span><span class="o">=</span>/usr/local/cuda/lib64<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CUDA_HOST_COMPILER</span><span class="o">=</span>cc<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">USE_CUDA</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">USE_NNPACK</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CC</span><span class="o">=</span>cc<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">CXX</span><span class="o">=</span>c++<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;3.5 5.2 6.0 6.1+PTX&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">TORCH_NVCC_FLAGS</span><span class="o">=</span><span class="s2">&quot;-Xfatbin -compress-all&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>setup.py<span class="w"> </span>bdist_wheel
 
 <span class="c1"># Install the Python wheel (includes LibTorch)</span>
-pip3 install dist/*.whl
+pip3<span class="w"> </span>install<span class="w"> </span>dist/*.whl
 
 <span class="c1"># Clean up resources</span>
-rm -fr pytorch
+rm<span class="w"> </span>-fr<span class="w"> </span>pytorch
 </code></pre></div>
 <ul>
 <li>Note, the size of the binary/wheel can be up to 180 MB.</li>
@@ -364,16 +368,13 @@ rm -fr pytorch
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

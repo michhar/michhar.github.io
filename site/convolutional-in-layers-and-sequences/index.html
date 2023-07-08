@@ -8,17 +8,17 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Convolutional Neural Networks in Four Deep Learning Frameworks by Example - Data Science <3 Machine Learning Blog</title>
+        <title>Convolutional Neural Networks in Four Deep Learning Frameworks by Example - Data Science <3 Machine Learning</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
         <link href="../extra_css/extra.css" rel="stylesheet">
         <link href="../extra_css/syntax.css" rel="stylesheet">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,7 +34,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="..">Data Science <3 Machine Learning Blog</a>
+                <a class="navbar-brand" href="..">Data Science <3 Machine Learning</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -50,6 +50,10 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../2023-07-poetry-with-conda/" class="dropdown-item">How to Use Poetry with Conda for Package Management on a Specific Python Version</a>
+</li>
                                     
 <li>
     <a href="../survive-thrive-ds-career/" class="dropdown-item">Survive and Thrive in Your Data Science Career Meetup Summary</a>
@@ -300,7 +304,7 @@
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 <span class="k">class</span> <span class="nc">ConvNetPyTorch</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adapted from:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adapted from:</span>
 <span class="sd">    https://github.com/rasbt/deep-learning-book/blob/master/code/model_zoo/pytorch_ipynb/convnet.ipynb</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -354,7 +358,7 @@
 
 <span class="c1"># Create the neural network</span>
 <span class="k">def</span> <span class="nf">convNetTensorFlow</span><span class="p">(</span><span class="n">x_dict</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">reuse</span><span class="p">,</span> <span class="n">is_training</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adapted from:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adapted from:</span>
 <span class="sd">    https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/convolutional_network.py</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Define a scope for reusing the variables</span>
@@ -403,7 +407,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">cntk</span> <span class="k">as</span> <span class="nn">C</span>
 
 <span class="k">def</span> <span class="nf">convNetCNTK</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">num_output_classes</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;https://cntk.ai/pythondocs/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.html&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">default_options</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">glorot_uniform</span><span class="p">(),</span> <span class="n">activation</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">relu</span><span class="p">):</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
             <span class="n">C</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">For</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span>
@@ -507,16 +511,13 @@ to feed data fast enough to the CPU and GPU to get the maximum GFLOPS throughput
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

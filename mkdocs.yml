@@ -1,7 +1,8 @@
-site_name: Data Science <3 Machine Learning Blog
+site_name: Data Science <3 Machine Learning
 nav:
     - Home: index.md
     - Posts:
+      - "How to Use Poetry with Conda for Package Management on a Specific Python Version": "2023-07-poetry-with-conda.md"
       - "Survive and Thrive in Your Data Science Career Meetup Summary": "survive-thrive-ds-career.md"
     - Archive:
       - 2019:
