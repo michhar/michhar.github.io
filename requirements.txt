@@ -1,3 +1,0 @@
-mkdocs==1.4.3
-pymdown-extensions==10.0.1
-mkdocs-bootswatch==1.1
